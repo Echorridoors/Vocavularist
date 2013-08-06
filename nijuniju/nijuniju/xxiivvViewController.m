@@ -23,7 +23,7 @@
 - (void) start
 {
 	[self templateStart];
-	// [self performSelectorInBackground:@selector(captureBlur) withObject:nil];
+	[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
 }
 
 - (void) captureBlur {
@@ -35,15 +35,15 @@
     CIImage *imageToBlur = [CIImage imageWithCGImage:viewImage.CGImage];
     CIFilter *gaussianBlurFilter = [CIFilter filterWithName: @"CIGaussianBlur"];
     [gaussianBlurFilter setValue:imageToBlur forKey: @"inputImage"];
-    [gaussianBlurFilter setValue:[NSNumber numberWithFloat:2] forKey: @"inputRadius"];
+    [gaussianBlurFilter setValue:[NSNumber numberWithFloat:10] forKey: @"inputRadius"];
     CIImage *resultImage = [gaussianBlurFilter valueForKey: @"outputImage"];
     
     blurrredImage = [[UIImage alloc] initWithCIImage:resultImage];
     
     UIImageView *newView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     newView.image = blurrredImage;
-	newView.backgroundColor = [UIColor redColor];
-	newView.frame = screen;
+	newView.backgroundColor = [UIColor whiteColor];
+	newView.frame = CGRectMake(-30, -20, screen.size.width+60, screen.size.height+60);
     
     [self.blurContainerView insertSubview:newView belowSubview:self.transparentView];
 }
