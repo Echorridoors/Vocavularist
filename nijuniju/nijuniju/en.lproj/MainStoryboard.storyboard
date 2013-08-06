@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Xxiivv View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="xxiivvViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="EWZ-ZL-D1e" userLabel="blurTarget">
+                                <rect key="frame" x="100" y="242" width="120" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Default-568h@2x.png" id="Voa-Rg-Juu" userLabel="blurTargetPing">
+                                        <rect key="frame" x="-60" y="-32" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hello there" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FaD-fz-Zyr" userLabel="blurTargetGlyph">
+                                        <rect key="frame" x="-25" y="0.0" width="169" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cqx-Nf-zgj" userLabel="blurContainerView">
+                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fO9-xI-k8Q" userLabel="transparentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </scrollView>
+                                </subviews>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ZSc-5d-ZeO" userLabel="interfaceMenu">
+                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOk-xb-Bnp" userLabel="interfaceMenuProgress">
+                                        <rect key="frame" x="99" y="54" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OW2-OD-4tD" userLabel="interfaceMenuStop">
+                                        <rect key="frame" x="83" y="42" width="73" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zbf-R1-IDh" userLabel="interfaceOptions">
+                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="blurContainerView" destination="cqx-Nf-zgj" id="DvW-N6-lmz"/>
+                        <outlet property="blurTarget" destination="EWZ-ZL-D1e" id="GPz-Z7-aUL"/>
+                        <outlet property="blurTargetGlyph" destination="FaD-fz-Zyr" id="WrT-rQ-sfS"/>
+                        <outlet property="blurTargetPing" destination="Voa-Rg-Juu" id="l3f-vO-dQy"/>
+                        <outlet property="interfaceMenu" destination="ZSc-5d-ZeO" id="eJ2-e8-rGS"/>
+                        <outlet property="interfaceMenuProgress" destination="SOk-xb-Bnp" id="hjv-m9-fGn"/>
+                        <outlet property="interfaceMenuStop" destination="OW2-OD-4tD" id="dxK-hF-F5s"/>
+                        <outlet property="interfaceOptions" destination="Zbf-R1-IDh" id="ETn-wp-ysl"/>
+                        <outlet property="transparentView" destination="fO9-xI-k8Q" id="PNx-aI-TQo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Default-568h@2x.png" width="640" height="1136"/>
+    </resources>
+    <classes>
+        <class className="xxiivvViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/xxiivvViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="blurContainerView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="blurTarget" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="blurTargetGlyph" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="interfaceMenu" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="interfaceMenuProgress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="interfaceMenuStop" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="interfaceOptions" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="transparentView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
