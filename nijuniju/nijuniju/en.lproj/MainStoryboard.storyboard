@@ -36,6 +36,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fO9-xI-k8Q" userLabel="transparentView">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.80836232579958223" green="0.91158909944302946" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
                                     </scrollView>
                                 </subviews>
                             </scrollView>
@@ -46,11 +47,11 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOk-xb-Bnp" userLabel="interfaceMenuProgress">
                                         <rect key="frame" x="99" y="54" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OW2-OD-4tD" userLabel="interfaceMenuStop">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OW2-OD-4tD" userLabel="interfaceMenuStop">
                                         <rect key="frame" x="83" y="42" width="73" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -63,6 +64,7 @@
                                         </state>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.80681818181818177" green="0.90961509888077641" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zbf-R1-IDh" userLabel="interfaceOptions">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
@@ -97,6 +99,7 @@
                 <relationship kind="outlet" name="blurContainerView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="blurTarget" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="blurTargetGlyph" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="blurTargetPing" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenu" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="interfaceMenuProgress" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="interfaceMenuStop" candidateClass="UIButton"/>
