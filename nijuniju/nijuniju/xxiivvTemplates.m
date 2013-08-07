@@ -21,7 +21,8 @@
 	
 	self.transparentView.frame = screen;
 	self.blurContainerView.frame = screen;
-	self.blurContainerView.hidden = YES;
+	self.blurContainerView.hidden = NO;
+	self.blurContainerView.alpha = 0.5;
 	
 	CAGradientLayer *bgLayer = [self greyGradient];
 	bgLayer.frame = screen;

@@ -24,14 +24,14 @@
 {
 	[self templateStart];
 	[self gamePrepare];
-	//[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
+	[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
 }
 
 
 - (void) gamePrepare
 {
-	self.blurTarget.hidden = YES;
-	self.view.backgroundColor = [UIColor redColor];
+	self.blurTarget.hidden = NO;
+	self.view.backgroundColor = [UIColor whiteColor];
 	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameReady) userInfo:nil repeats:NO];
 
 	
@@ -49,11 +49,18 @@
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuNext.alpha = 1;
+	self.blurContainerView.alpha = 1;
 	[UIView commitAnimations];
 }
 
 - (void) gameStart
 {
+	
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+	self.blurTarget.alpha = 1;
+	[UIView commitAnimations];
 	
 	[self templateButtons];
 	[self templateButtonsAnimationShow];
@@ -62,6 +69,7 @@
 	[UIView setAnimationDuration:3];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, (screenMargin/4), (screenMargin/4) );
+	self.blurContainerView.alpha = 0.5;
 	[UIView commitAnimations];
 	
 	
@@ -99,6 +107,12 @@
 	[timeRemaining invalidate];
 	timeRemaining = nil;
 	
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+	self.blurTarget.alpha = 0;
+	[UIView commitAnimations];
+	
 	
 	// move label up
 	CGRect origin = self.interfaceMenuTimeRemainingLabel.frame;
@@ -135,7 +149,7 @@
     UIImageView *newView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     newView.image = blurrredImage;
 	newView.backgroundColor = [UIColor whiteColor];
-	newView.frame = CGRectMake(-30, -20, screen.size.width+60, screen.size.height+60);
+	newView.frame = CGRectMake(-30, 0, screen.size.width+60, screen.size.height+60);
     
     [self.blurContainerView insertSubview:newView belowSubview:self.transparentView];
 }
