@@ -12,6 +12,7 @@
 
 - (void) templateStart;
 - (void) templateButtons;
-- (void) templateButtonsAnimation;
+- (void) templateButtonsAnimationShow;
+- (void) templateButtonsAnimationHide;
 - (void) templateHintsAnimation;
 @end

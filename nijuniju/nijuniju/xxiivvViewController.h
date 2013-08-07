@@ -25,6 +25,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *interfaceMenuTimeRemaining;
 @property (strong, nonatomic) IBOutlet UIView *interfaceHint;
 @property (strong, nonatomic) IBOutlet UILabel *interfaceMenuTimeRemainingLabel;
+@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuNext;
+- (IBAction)interfaceMenuNext:(id)sender;
 	
 @end
 

@@ -80,10 +80,12 @@
 	
 	self.interfaceOptions.frame = CGRectMake(0, (screenMargin*3)+(screen.size.width-(2*screenMargin)), screen.size.width, screen.size.height - ((screenMargin*3)+(screen.size.width-(2*screenMargin))));
 	
+	self.interfaceMenuTimeBar.alpha = 0;
 	self.interfaceMenuTimeBar.frame = CGRectMake(screenMargin, 320, screen.size.width-(2*screenMargin), 16);
 	self.interfaceMenuTimeBar.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
 	self.interfaceMenuTimeBar.layer.cornerRadius = 8;
 	
+	self.interfaceMenuTimeRemaining.alpha = 0;
 	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+5, 320+4, 8, 8);
 	self.interfaceMenuTimeRemaining.backgroundColor = [UIColor whiteColor];
 	self.interfaceMenuTimeRemaining.layer.cornerRadius = 4;
@@ -97,7 +99,13 @@
 	self.interfaceMenuTimeRemainingLabel.textColor = [UIColor whiteColor];
 	self.interfaceMenuTimeRemainingLabel.font = [UIFont boldSystemFontOfSize:14.0f];
 	self.interfaceMenuTimeRemainingLabel.text = @"3 seconds left";
+	self.interfaceMenuTimeRemainingLabel.alpha = 0;
 	
+	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*7, screen.size.width- (2*screenMargin), screenMargin*2);
+	
+	self.interfaceMenuNext.frame = CGRectMake(screenMargin, screenMargin*7, screen.size.width- (2*screenMargin), screenMargin*2);
+	self.interfaceMenuNext.layer.cornerRadius = 6;
+	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
 }
 
 
@@ -105,6 +113,9 @@
 
 - (void) templateButtons
 {
+	for (UIView *subview in [self.interfaceOptions subviews]) {
+		[subview removeFromSuperview];
+	}
 	int i = 0;
 	while(i < 4){
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -122,7 +133,7 @@
 	}
 }
 
-- (void) templateButtonsAnimation
+- (void) templateButtonsAnimationShow
 {
 	int i = 3;
 	for (UIView *subview in [self.interfaceOptions subviews]) {
@@ -130,21 +141,57 @@
 		subview.frame = CGRectOffset(origin, 0, 100);
 		[UIView beginAnimations: @"Slide In" context:nil];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-		[UIView setAnimationDuration:0.2];
+		[UIView setAnimationDuration:0.25];
 		[UIView setAnimationDelay:(i*0.1)];
 		subview.frame = origin;
 		[UIView commitAnimations];
 		i += 1;
 	}
+	
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+	[UIView setAnimationDuration:0.5];
+	self.interfaceMenuTimeRemaining.alpha = 1;
+	[UIView commitAnimations];
+	
+}
+
+- (void) templateButtonsAnimationHide
+{
+	int i = 3;
+	for (UIView *subview in [self.interfaceOptions subviews]) {
+		CGRect origin = subview.frame;
+		[UIView beginAnimations: @"Slide In" context:nil];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+		[UIView setAnimationDuration:0.25];
+		[UIView setAnimationDelay:(i*0.1)];
+		subview.frame = CGRectOffset(origin, 0, 100);
+		[UIView commitAnimations];
+		i += 1;
+	}
+	
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+	[UIView setAnimationDuration:0.5];
+	self.interfaceMenuTimeRemaining.alpha = 1;
+	[UIView commitAnimations];
+	
 }
 
 
 - (void) templateHintsAnimation
-{	
+{
+//	CGRect origin = self.interfaceMenuTimeRemainingLabel.frame;
+//	self.interfaceMenuTimeRemainingLabel.frame = CGRectOffset(origin, 0, 5);
+	self.interfaceMenuTimeRemainingLabel.alpha = 1;
+	
 	[UIView beginAnimations: @"Slide In" context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationDuration:0.3];
 	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+5, 320+4, screen.size.width-(2*screenMargin+10), 8);
+	self.interfaceMenuTimeBar.alpha = 1;
+	self.interfaceMenuTimeRemainingLabel.alpha = 1;
+//	self.interfaceMenuTimeRemainingLabel.frame = origin;
 	[UIView commitAnimations];
 }
 
