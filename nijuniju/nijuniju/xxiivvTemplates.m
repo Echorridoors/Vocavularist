@@ -81,19 +81,18 @@
 	self.interfaceOptions.frame = CGRectMake(0, (screenMargin*3)+(screen.size.width-(2*screenMargin)), screen.size.width, screen.size.height - ((screenMargin*3)+(screen.size.width-(2*screenMargin))));
 	
 	self.interfaceMenuTimeBar.alpha = 0;
-	self.interfaceMenuTimeBar.frame = CGRectMake(screenMargin, 320, screen.size.width-(2*screenMargin), 16);
-	self.interfaceMenuTimeBar.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
-	self.interfaceMenuTimeBar.layer.cornerRadius = 8;
+	self.interfaceMenuTimeBar.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, screen.size.width-(2*screenMargin)-(2*(screenMargin/4)), (screenMargin/4) );
+	self.interfaceMenuTimeBar.backgroundColor = [UIColor colorWithWhite:1 alpha:0.4];
+	self.interfaceMenuTimeBar.layer.cornerRadius = (screenMargin/4)/2;
 	
 	self.interfaceMenuTimeRemaining.alpha = 0;
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+5, 320+4, 8, 8);
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, (screenMargin/4), (screenMargin/4) );
 	self.interfaceMenuTimeRemaining.backgroundColor = [UIColor whiteColor];
-	self.interfaceMenuTimeRemaining.layer.cornerRadius = 4;
+	self.interfaceMenuTimeRemaining.layer.cornerRadius = (screenMargin/4)/2;
 	
 	self.interfaceHint.frame = screen;
 	self.interfaceHint.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
 	
-	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, 295, screen.size.width-(2*screenMargin), 16);
 	self.interfaceMenuTimeRemainingLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
 	self.interfaceMenuTimeRemainingLabel.textAlignment = NSTextAlignmentCenter;
 	self.interfaceMenuTimeRemainingLabel.textColor = [UIColor whiteColor];
@@ -103,9 +102,9 @@
 	
 	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*7, screen.size.width- (2*screenMargin), screenMargin*2);
 	
-	self.interfaceMenuNext.frame = CGRectMake(screenMargin, screenMargin*7, screen.size.width- (2*screenMargin), screenMargin*2);
-	self.interfaceMenuNext.layer.cornerRadius = 6;
-	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
+	self.interfaceMenuNext.frame = CGRectMake(screenMargin/2, screenMargin*6.9, screen.size.width- (2*(screenMargin/2)), screenMargin*2);
+	self.interfaceMenuNext.layer.cornerRadius = (screenMargin/4)/2;
+	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
 }
 
 
@@ -120,7 +119,7 @@
 	while(i < 4){
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 		[button addTarget:self action:NSSelectorFromString([NSString stringWithFormat:@"option%d",i]) forControlEvents:UIControlEventTouchDown];
-		button.tag = 10;
+		button.tag = i+1;
 		button.frame = CGRectMake(i*((screen.size.width/3)+1), screenMargin/2, screen.size.width/3, self.interfaceOptions.frame.size.height-screenMargin);
 		button.backgroundColor = [UIColor whiteColor];
 		[button setTitle: [NSString stringWithFormat:@"Value %d",i] forState: UIControlStateNormal];
@@ -188,7 +187,7 @@
 	[UIView beginAnimations: @"Slide In" context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	[UIView setAnimationDuration:0.3];
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+5, 320+4, screen.size.width-(2*screenMargin+10), 8);
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, screen.size.width-(2*screenMargin)-(2*(screenMargin/4)), (screenMargin/4) );
 	self.interfaceMenuTimeBar.alpha = 1;
 	self.interfaceMenuTimeRemainingLabel.alpha = 1;
 //	self.interfaceMenuTimeRemainingLabel.frame = origin;

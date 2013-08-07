@@ -32,3 +32,4 @@
 
 CGRect screen;
 float screenMargin;
+NSTimer *timeRemaining;

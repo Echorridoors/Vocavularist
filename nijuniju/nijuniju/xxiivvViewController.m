@@ -33,6 +33,8 @@
 	self.blurTarget.hidden = YES;
 	self.view.backgroundColor = [UIColor redColor];
 	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameReady) userInfo:nil repeats:NO];
+
+	
 	self.interfaceMenuTimeRemainingLabel.text = @"Preparing..";
 	[self templateHintsAnimation];
 }
@@ -40,13 +42,14 @@
 - (void) gameReady
 {
 	
-	self.interfaceMenuNext.alpha = 1;
-	self.interfaceMenuNext.alpha = 1;
+	self.interfaceMenuTimeRemainingLabel.text = @"Next Kanji";
 	
-//	[self templateButtons];
-//	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameStart) userInfo:nil repeats:NO];
-	self.interfaceMenuTimeRemainingLabel.text = @"Ready";
-//	[self templateButtonsAnimation];
+	
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+	self.interfaceMenuNext.alpha = 1;
+	[UIView commitAnimations];
 }
 
 - (void) gameStart
@@ -58,17 +61,17 @@
 	[UIView beginAnimations: @"Slide In" context:nil];
 	[UIView setAnimationDuration:3];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+5, 320+4, 10, 8);
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, (screenMargin/4), (screenMargin/4) );
 	[UIView commitAnimations];
 	
 	
 	// move label up
-	CGRect origin = self.interfaceMenuTimeRemainingLabel.frame;
+	
 	[UIView beginAnimations: @"Slide In" context:nil];
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuNext.alpha = 0;
-	self.interfaceMenuTimeRemainingLabel.frame = CGRectOffset(origin, 0, -20);
+	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
 	[UIView commitAnimations];
 	
 	
@@ -76,9 +79,8 @@
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"3 Seconds Left";
 	
-	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameCountdown2) userInfo:nil repeats:NO];
-	[NSTimer scheduledTimerWithTimeInterval:(2) target:self selector:@selector(gameCountdown1) userInfo:nil repeats:NO];
-	[NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameFinish) userInfo:nil repeats:NO];
+	
+	timeRemaining = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameFinish) userInfo:nil repeats:NO];
 	
 }
 
@@ -94,7 +96,8 @@
 
 - (void) gameFinish
 {
-	
+	[timeRemaining invalidate];
+	timeRemaining = nil;
 	
 	
 	// move label up
@@ -103,7 +106,7 @@
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuNext.alpha = 0;
-	self.interfaceMenuTimeRemainingLabel.frame = CGRectOffset(origin, 0, 20);
+//	self.interfaceMenuTimeRemainingLabel.frame = CGRectOffset(origin, 0, 20);
 	[UIView commitAnimations];
 	
 	
@@ -138,18 +141,38 @@
 }
 
 
+
+- (void) optionSelection :(int)target
+{
+	NSLog(@"Selected: %d",target);
+	for (UIView *subview in [self.interfaceOptions subviews]) {
+		if( subview.tag != target ){
+			CGRect origin = subview.frame;
+			[UIView beginAnimations: @"Slide In" context:nil];
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+			[UIView setAnimationDuration:0.25];
+			subview.frame = CGRectOffset(origin, 0, 10);
+			[UIView commitAnimations];
+		}
+	}
+	[self gameFinish];
+}
+
+
 - (void) option0
 {
-	NSLog(@"!!1");
+	[self optionSelection:1];
 }
 - (void) option1
 {
-	NSLog(@"!!2");
+	[self optionSelection:2];
 }
 - (void) option2
 {
-	NSLog(@"!!3");
+	[self optionSelection:3];
 }
+
+
 
 
 
