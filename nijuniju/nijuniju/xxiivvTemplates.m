@@ -18,10 +18,10 @@
 	screenMargin = screen.size.width/8;
 	
 	[self templateInterface];
-	[self templateButtons];
 	
 	self.transparentView.frame = screen;
 	self.blurContainerView.frame = screen;
+	self.blurContainerView.hidden = YES;
 	
 	CAGradientLayer *bgLayer = [self greyGradient];
 	bgLayer.frame = screen;
@@ -84,7 +84,7 @@
 	self.interfaceMenuTimeBar.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
 	self.interfaceMenuTimeBar.layer.cornerRadius = 8;
 	
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+5, 320+4, 130, 8);
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+5, 320+4, 8, 8);
 	self.interfaceMenuTimeRemaining.backgroundColor = [UIColor whiteColor];
 	self.interfaceMenuTimeRemaining.layer.cornerRadius = 4;
 	
@@ -111,39 +111,44 @@
 		[button addTarget:self action:NSSelectorFromString([NSString stringWithFormat:@"option%d",i]) forControlEvents:UIControlEventTouchDown];
 		button.tag = 10;
 		button.frame = CGRectMake(i*((screen.size.width/3)+1), screenMargin/2, screen.size.width/3, self.interfaceOptions.frame.size.height-screenMargin);
-		button.backgroundColor = [UIColor greenColor];
-		[button setTitle: [NSString stringWithFormat:@"Value%d",i] forState: UIControlStateNormal];
+		button.backgroundColor = [UIColor whiteColor];
+		[button setTitle: [NSString stringWithFormat:@"Value %d",i] forState: UIControlStateNormal];
 		button.titleLabel.frame = CGRectMake(0, 0, 100, 100);
-		[button setTitleColor:[UIColor whiteColor] forState: UIControlStateNormal];
+		[button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
 		button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
 		button.titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-		
-//		button.layer.shadowColor = [[UIColor blackColor] CGColor];
-//		button.layer.shadowOffset = CGSizeMake(0, -1.0f);
-//		button.layer.shadowOpacity = 1.0f;
-//		button.layer.shadowRadius = 0;
-		
-		CALayer *leftBorder = [CALayer layer];
-		leftBorder.frame = CGRectMake(0, 0, 1, screenMargin*2);
-		leftBorder.backgroundColor = [UIColor colorWithWhite:0 alpha:1].CGColor;
-		[button.layer addSublayer:leftBorder];
-		CALayer *rightBorder = [CALayer layer];
-		rightBorder.frame = CGRectMake((screen.size.width/3)-1, 0, 1, screenMargin*2);
-		rightBorder.backgroundColor = [UIColor colorWithWhite:0 alpha:1].CGColor;
-		[button.layer addSublayer:rightBorder];
-		CALayer *topBorder = [CALayer layer];
-		topBorder.frame = CGRectMake(0, 0, button.frame.size.width, screenMargin/4);
-		topBorder.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1].CGColor;
-		[button.layer addSublayer:topBorder];
-		CAGradientLayer *bgLayer = [self darkGradient];
-		bgLayer.frame = button.bounds;
-		[button.layer insertSublayer:bgLayer atIndex:0];
-		
-		
 		[self.interfaceOptions addSubview:button];
 		i += 1;
 	}
 }
+
+- (void) templateButtonsAnimation
+{
+	int i = 3;
+	for (UIView *subview in [self.interfaceOptions subviews]) {
+		CGRect origin = subview.frame;
+		subview.frame = CGRectOffset(origin, 0, 100);
+		[UIView beginAnimations: @"Slide In" context:nil];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+		[UIView setAnimationDuration:0.2];
+		[UIView setAnimationDelay:(i*0.1)];
+		subview.frame = origin;
+		[UIView commitAnimations];
+		i += 1;
+	}
+}
+
+
+- (void) templateHintsAnimation
+{	
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+	[UIView setAnimationDuration:0.5];
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+5, 320+4, screen.size.width-(2*screenMargin+10), 8);
+	[UIView commitAnimations];
+}
+
+
 
 
 - (CAGradientLayer*) greyGradient {

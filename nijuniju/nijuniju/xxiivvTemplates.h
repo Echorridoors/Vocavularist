@@ -11,4 +11,7 @@
 @interface xxiivvViewController (Templates)
 
 - (void) templateStart;
+- (void) templateButtons;
+- (void) templateButtonsAnimation;
+- (void) templateHintsAnimation;
 @end

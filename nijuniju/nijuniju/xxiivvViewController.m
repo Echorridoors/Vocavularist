@@ -23,8 +23,38 @@
 - (void) start
 {
 	[self templateStart];
-	[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
+	[self gamePrepare];
+	//[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
 }
+
+
+- (void) gamePrepare
+{
+	self.blurTarget.hidden = YES;
+	self.view.backgroundColor = [UIColor redColor];
+	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameReady) userInfo:nil repeats:NO];
+	self.interfaceMenuTimeRemainingLabel.text = @"Preparing..";
+}
+
+- (void) gameReady
+{
+	[self templateButtons];
+	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameStart) userInfo:nil repeats:NO];
+	self.interfaceMenuTimeRemainingLabel.text = @"Ready";
+	[self templateButtonsAnimation];
+	[self templateHintsAnimation];
+}
+
+-(void) gameStart
+{
+	self.interfaceMenuTimeRemainingLabel.text = @"3 Seconds Left";
+	self.view.backgroundColor = [UIColor blueColor];
+	NSLog(@"POW !");
+}
+
+
+
+
 
 - (void) captureBlur {
     UIGraphicsBeginImageContext(self.view.bounds.size);
