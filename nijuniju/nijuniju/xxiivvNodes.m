@@ -26,13 +26,14 @@
 - (void) userStart
 {
 	userContentRecords = [[NSMutableArray alloc] init];
+	[userContentRecords addObject:[NSArray arrayWithObjects: @"1",@"1",nil]];
 }
 
 
 - (void) userSaveRecord :(int)location :(float)record
 {
 	NSLog(@"> Save  | Saved Record: %f", record);
-	[nodeContentArray addObject:[NSArray arrayWithObjects: [NSString stringWithFormat:@"%d",location], [NSString stringWithFormat:@"%f",record], nil]];
+	[userContentRecords addObject:[NSArray arrayWithObjects: [NSString stringWithFormat:@"%d",location], [NSString stringWithFormat:@"%f",record], nil]];
 	
 }
 

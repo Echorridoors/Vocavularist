@@ -24,6 +24,7 @@
 - (void) start
 {
 	[self nodeStart];
+	[self userStart];
 	
 	[self templateStart];
 	[self gamePrepare];
@@ -98,8 +99,37 @@
 - (void) gameVerify :(int)input
 {
 	if( input == [nodeContentArray[userLesson][4] intValue] ){
-		self.feedbackColour.backgroundColor = [self colorCyan];
-		[self userSaveRecord:userLesson :(3- [[timeRemaining fireDate] timeIntervalSinceNow])];
+		
+		float score = (3- [[timeRemaining fireDate] timeIntervalSinceNow]);
+		
+		// Save
+		[self userSaveRecord:userLesson :score];
+		
+		// Get average
+		float sum = 0.0;
+		float average = 0.0;
+		int i = 0;
+		float e = 0;
+		while( i < [userContentRecords count] ){
+			if( [userContentRecords[i][0] intValue] == userLesson ){
+				e+=1;
+				sum += [userContentRecords[i][1] floatValue];
+			}
+			i+=1;
+		}
+		
+		average = sum/e;
+		
+		if( e > 0 && score > average && score > 1.5 ){
+			self.feedbackColour.backgroundColor = [self colorYellow];
+		}
+		else if( e > 0 && score < average && score < 1 ){
+			self.feedbackColour.backgroundColor = [self colorBlue];
+		}
+		else{
+			self.feedbackColour.backgroundColor = [self colorCyan];
+		}
+		
 	}
 	else{
 		self.feedbackColour.backgroundColor = [self colorRed];
@@ -179,6 +209,14 @@
 - (UIColor*) colorGrey
 {
 	return [UIColor colorWithRed:0.9 green:0.9 blue:0.8 alpha:1];
+}
+- (UIColor*) colorYellow
+{
+	return [UIColor colorWithRed:0.9 green:0.9 blue:0.1 alpha:1];
+}
+- (UIColor*) colorBlue
+{
+	return [UIColor colorWithRed:0.6 green:1.0 blue:1.0 alpha:1];
 }
 
 
