@@ -11,7 +11,6 @@
 
 @implementation xxiivvViewController (Modules)
 
-
 - (void) templateStart
 {
 	screen = [[UIScreen mainScreen] bounds];
@@ -132,9 +131,6 @@
 	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
 }
 
-
-
-
 - (void) templateButtonsGenerate
 {
 	for (UIView *subview in [self.interfaceOptions subviews]) {
@@ -158,7 +154,6 @@
 		button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
 		button.titleLabel.font = [self fontMedium];
 		button.contentEdgeInsets = UIEdgeInsetsMake(-1*(screenMargin*0.2), 0, 0, 0);
-		
 		
 		UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (screenMargin*1.5)*0.55, button.frame.size.width, button.frame.size.height/3)];
 		hiragana.text = [NSString stringWithFormat:hiraganaForm];
@@ -217,7 +212,6 @@
 	
 }
 
-
 - (void) templatePrepareAnimation
 {
 	[UIView beginAnimations: @"Slide In" context:nil];
@@ -261,7 +255,6 @@
 	[UIView commitAnimations];
 }
 
-
 - (void) templateFinishAnimation
 {
 	[UIView beginAnimations: @"Slide In" context:nil];
@@ -270,11 +263,6 @@
 	self.blurTarget.alpha = 0;
 	[UIView commitAnimations];
 }
-
-
-
-
-
 
 - (CAGradientLayer*) greyGradient {
 	
@@ -296,30 +284,6 @@
     return headerLayer;
 	
 }
-
-
-
-- (CAGradientLayer*) cyanGradient {
-	
-    UIColor *colorOne	= [UIColor colorWithRed:0.1 green:0 blue:0 alpha:1];
-    UIColor *colorTwo	= [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.85 alpha:1.0];
-    UIColor *colorThree = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.7 alpha:1.0];
-	
-    NSArray *colors =  [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, colorThree.CGColor, nil];
-	
-    NSNumber *stopOne	= [NSNumber numberWithFloat:0.0];
-    NSNumber *stopTwo	= [NSNumber numberWithFloat:0.02];
-    NSNumber *stopThree = [NSNumber numberWithFloat:0.99];
-	
-    NSArray *locations = [NSArray arrayWithObjects:stopOne, stopTwo, stopThree, nil];
-    CAGradientLayer *headerLayer = [CAGradientLayer layer];
-    headerLayer.colors = colors;
-    headerLayer.locations = locations;
-	
-    return headerLayer;
-	
-}
-
 
 - (CAGradientLayer*) darkGradient {
 	
@@ -343,7 +307,6 @@
 	
 }
 
-
 - (void)fadeIn:(UIView*)viewToFadeIn d:(NSTimeInterval)delay t:(NSTimeInterval)duration
 {
 	[UIView beginAnimations: @"Fade In" context:nil];
@@ -362,7 +325,6 @@
 	[UIView commitAnimations];
 }
 
-
 - (UIFont*) fontTiny
 {
 	if( screen.size.width > 640 ){
@@ -370,9 +332,6 @@
 	}
 	return [UIFont fontWithName:@"Helvetica Neue" size:11.0f];
 }
-
-
-
 
 - (UIFont*) fontSmall
 {
@@ -389,9 +348,6 @@
 	}
 	return [UIFont boldSystemFontOfSize:14.0f];
 }
-
-
-
 
 
 @end

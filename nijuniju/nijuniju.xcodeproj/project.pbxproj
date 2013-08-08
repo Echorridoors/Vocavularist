@@ -150,14 +150,9 @@
 		0328718917B0870B00425BE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03DDF20017B3DFAF0070E1D4 /* icon.57.png */,
-				03DDF20117B3DFAF0070E1D4 /* icon.72.png */,
-				03DDF20217B3DFAF0070E1D4 /* icon.114.png */,
-				03DDF20317B3DFAF0070E1D4 /* icon.144.png */,
-				03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */,
-				03DDF1FC17B3DCE60070E1D4 /* fx.error.wav */,
-				03DDF1FA17B3DC120070E1D4 /* fx.click.wav */,
-				03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */,
+				03DDF21017B3EA400070E1D4 /* Icons */,
+				03DDF21117B3EA470070E1D4 /* Audio */,
+				03DDF21217B3EA4C0070E1D4 /* Images */,
 				0328718A17B0870B00425BE8 /* nijuniju-Info.plist */,
 				0328718B17B0870B00425BE8 /* InfoPlist.strings */,
 				0328718E17B0870B00425BE8 /* main.m */,
@@ -167,6 +162,35 @@
 				0328719817B0870B00425BE8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03DDF21017B3EA400070E1D4 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				03DDF20017B3DFAF0070E1D4 /* icon.57.png */,
+				03DDF20117B3DFAF0070E1D4 /* icon.72.png */,
+				03DDF20217B3DFAF0070E1D4 /* icon.114.png */,
+				03DDF20317B3DFAF0070E1D4 /* icon.144.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		03DDF21117B3EA470070E1D4 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */,
+				03DDF1FC17B3DCE60070E1D4 /* fx.error.wav */,
+				03DDF1FA17B3DC120070E1D4 /* fx.click.wav */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		03DDF21217B3EA4C0070E1D4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

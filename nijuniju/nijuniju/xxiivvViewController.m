@@ -132,9 +132,11 @@ AVAudioPlayer *audioPlayerSounds;
 		float score = (3- [[timeRemaining fireDate] timeIntervalSinceNow]);
 		
 		// Save
+		
 		[self userSaveRecord:userLesson :score];
 		
 		// Get average
+		
 		float sum = 0.0;
 		float average = 0.0;
 		float averageSum = 0.0;
@@ -159,10 +161,6 @@ AVAudioPlayer *audioPlayerSounds;
 		self.interfaceMenuTimeAverage.frame = CGRectMake(positionAverage, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
 		[UIView commitAnimations];
 		
-		
-		
-		NSLog(@"average width:%f",(averageSum/i)/3);
-		
 		// Progress if new item
 		
 		if( e == 1 && ([nodeContentArray count]-1) > userProgress ){
@@ -170,11 +168,11 @@ AVAudioPlayer *audioPlayerSounds;
 			self.interfaceMenuProgress.text = [NSString stringWithFormat:@"Chapter %d - Kanji 0 to %d",(userProgress/10)+1, ((userProgress/10)+1)*10];
 		}
 		
-		average = sum/e;
-		
 		self.interfaceChapterName.text = [NSString stringWithFormat:@"%@s average %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
 		
 		// Display the score in colours
+		
+		average = sum/e;
 		
 		if( score > 2.5 ){ self.feedbackColour.backgroundColor = [self colorWorse]; }
 		else if( score > 1.5 ){ self.feedbackColour.backgroundColor = [self colorAverage]; }
@@ -186,11 +184,14 @@ AVAudioPlayer *audioPlayerSounds;
 		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds", [[NSString stringWithFormat:@"%f", score] substringWithRange:NSMakeRange(0, 4)]];
 		
 		[self audioPlayerSounds:@"fx.accepted.wav"];
+		
 	}
 	else{
+		
 		[self audioPlayerSounds:@"fx.error.wav"];
 		self.feedbackColour.backgroundColor = [self colorBad];
 		self.blurTarget.alpha = 0;
+		
 	}
 }
 

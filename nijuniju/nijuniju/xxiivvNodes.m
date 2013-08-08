@@ -635,14 +635,11 @@
 	userContentRecords = [[NSMutableArray alloc] init];
 }
 
-
 - (void) userSaveRecord :(int)location :(float)record
 {
 	NSLog(@"> Save  | Saved Record: %f", record);
 	[userContentRecords addObject:[NSArray arrayWithObjects: [NSString stringWithFormat:@"%d",location], [NSString stringWithFormat:@"%f",record], nil]];
 }
-
-
 
 - (void) userReset
 {
@@ -654,8 +651,6 @@
 	[self gameFinish];
 	[self userStart];
 }
-
-
 
 - (void)userErase
 {

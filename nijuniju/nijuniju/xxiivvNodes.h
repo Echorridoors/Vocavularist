@@ -10,12 +10,12 @@
 
 @interface xxiivvViewController (Nodes)
 
-- (void) nodeStart;
-- (void) userStart;
-- (void) userReset;
-- (void) userSaveRecord :(int)location :(float)record;
-- (void) userErase;
-- (void) userLoad;
-- (void) userSave;
+	- (void) nodeStart;
+	- (void) userStart;
+	- (void) userReset;
+	- (void) userSaveRecord :(int)location :(float)record;
+	- (void) userErase;
+	- (void) userLoad;
+	- (void) userSave;
 
 @end
