@@ -11,5 +11,7 @@
 @interface xxiivvViewController (Nodes)
 
 - (void) nodeStart;
+- (void) userStart;
+- (void) userSaveRecord :(int)location :(float)record;
 
 @end

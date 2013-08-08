@@ -41,3 +41,10 @@ NSTimer *timeRemaining;
 int userLesson;
 
 NSMutableArray *nodeContentArray;
+NSMutableArray *userContentRecords;
+
+
+
+
+
+

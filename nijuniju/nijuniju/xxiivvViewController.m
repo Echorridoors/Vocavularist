@@ -84,8 +84,6 @@
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"Finished";
 	
-	NSLog(@"TEST %f", 3- [[timeRemaining fireDate] timeIntervalSinceNow]);
-
 	[timeRemaining invalidate];
 	timeRemaining = nil;
 	
@@ -101,6 +99,7 @@
 {
 	if( input == [nodeContentArray[userLesson][4] intValue] ){
 		self.feedbackColour.backgroundColor = [self colorCyan];
+		[self userSaveRecord:userLesson :(3- [[timeRemaining fireDate] timeIntervalSinceNow])];
 	}
 	else{
 		self.feedbackColour.backgroundColor = [self colorRed];

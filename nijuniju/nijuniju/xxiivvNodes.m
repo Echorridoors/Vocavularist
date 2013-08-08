@@ -23,5 +23,17 @@
 	[nodeContentArray addObject:[NSArray arrayWithObjects: @"子", @"Go|ひら", @"Eat|ひら", @"Kid|ひら",@"3", nil]];
 }
 
+- (void) userStart
+{
+	userContentRecords = [[NSMutableArray alloc] init];
+}
+
+
+- (void) userSaveRecord :(int)location :(float)record
+{
+	NSLog(@"> Save  | Saved Record: %f", record);
+	[nodeContentArray addObject:[NSArray arrayWithObjects: [NSString stringWithFormat:@"%d",location], [NSString stringWithFormat:@"%f",record], nil]];
+	
+}
 
 @end
