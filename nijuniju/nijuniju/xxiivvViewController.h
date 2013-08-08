@@ -28,15 +28,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *interfaceMenuTimeRemainingLabel;
 @property (strong, nonatomic) IBOutlet UIButton *interfaceMenuNext;
 - (IBAction)interfaceMenuNext:(id)sender;
-- (UIColor*) colorCyan;
-- (UIColor*) colorRed;
-- (UIColor*) colorGrey;
 
 @end
 
 CGRect screen;
 float screenMargin;
+float gameElapsing;
 NSTimer *timeRemaining;
+NSTimer *timeElapsing;
 
 int userLesson;
 

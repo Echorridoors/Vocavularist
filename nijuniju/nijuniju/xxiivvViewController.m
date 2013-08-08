@@ -76,17 +76,30 @@
 	[self templateButtonsAnimationShow];
 	[self templateStartAnimation];
 	
+	gameElapsing = 0;
+	
 	timeRemaining = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameFinish) userInfo:nil repeats:NO];
+	timeElapsing = [NSTimer scheduledTimerWithTimeInterval:(0.1) target:self selector:@selector(gameTime) userInfo:nil repeats:YES];
+
+}
+
+- (void) gameTime
+{
+	gameElapsing += 0.1;
+	
+	
+	self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds",[[NSString stringWithFormat:@"%f",gameElapsing] substringWithRange:NSMakeRange(0, 4)]];
+	
 }
 
 - (void) gameFinish
 {
 	NSLog(@"> Phase | Finished");
-	
-//	self.interfaceMenuTimeRemainingLabel.text = @"Finished";
-	
+		
 	[timeRemaining invalidate];
 	timeRemaining = nil;
+	[timeElapsing invalidate];
+	timeElapsing = nil;
 	
 	[self templateButtonsAnimationHide];
 	[self templateFinishAnimation];
@@ -122,20 +135,21 @@
 		
 		average = sum/e;
 		
-		self.interfaceMenuProgress.text = [NSString stringWithFormat:@"%@ seconds %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
+		self.interfaceMenuProgress.text = [NSString stringWithFormat:@"%@s average %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
 		
 		// Display the score in colours
 		
-		if( score > 2.5 ){ self.feedbackColour.backgroundColor = [self colorOrange]; }
-		else if( score > 1.5 ){ self.feedbackColour.backgroundColor = [self colorYellow]; }
-		else{ self.feedbackColour.backgroundColor = [self colorCyan]; }
-		if( e > 2 && score < average ){ self.feedbackColour.backgroundColor = [self colorBlue]; }
+		if( score > 2.5 ){ self.feedbackColour.backgroundColor = [self colorWorse]; }
+		else if( score > 1.5 ){ self.feedbackColour.backgroundColor = [self colorAverage]; }
+		else{ self.feedbackColour.backgroundColor = [self colorBetter]; }
+		if( e > 2 && score < average ){ self.feedbackColour.backgroundColor = [self colorGood]; }
 		
 		// Write time
 		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds", [[NSString stringWithFormat:@"%f", score] substringWithRange:NSMakeRange(0, 4)]];
 	}
 	else{
-		self.feedbackColour.backgroundColor = [self colorRed];
+		self.feedbackColour.backgroundColor = [self colorBad];
+		self.blurTarget.alpha = 0;
 	}
 }
 
@@ -201,29 +215,25 @@
 }
 
 
-- (UIColor*) colorCyan
+- (UIColor*) colorGood
 {
-	return [UIColor colorWithRed:0.2 green:0.9 blue:0.8 alpha:1];
+	return [UIColor colorWithWhite:0.7 alpha:1];
 }
-- (UIColor*) colorRed
+- (UIColor*) colorBad
 {
-	return [UIColor colorWithRed:0.9 green:0.2 blue:0.3 alpha:1];
+	return [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1];
 }
-- (UIColor*) colorGrey
+- (UIColor*) colorAverage
 {
-	return [UIColor colorWithRed:0.9 green:0.9 blue:0.8 alpha:1];
+	return [UIColor colorWithWhite:0.5 alpha:1];
 }
-- (UIColor*) colorYellow
+- (UIColor*) colorWorse
 {
-	return [UIColor colorWithRed:0.9 green:0.9 blue:0.1 alpha:1];
+	return [UIColor colorWithWhite:0.3 alpha:1];
 }
-- (UIColor*) colorBlue
+- (UIColor*) colorBetter
 {
-	return [UIColor colorWithRed:0.8 green:0.6 blue:1.0 alpha:1];
-}
-- (UIColor*) colorOrange
-{
-	return [UIColor colorWithRed:0.9 green:0.5 blue:0.0 alpha:1];
+	return [UIColor colorWithWhite:0.9 alpha:1];
 }
 
 
