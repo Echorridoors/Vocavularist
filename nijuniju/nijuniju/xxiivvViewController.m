@@ -146,9 +146,15 @@
 		
 		// Update Average pointer
 			
-		float test = screenMargin+(screenMargin/4) + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/i)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
+		float positionAverage = screenMargin+(screenMargin/4) + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/i)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
 		
-		self.interfaceMenuTimeAverage.frame = CGRectMake(test, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
+		[UIView beginAnimations: @"Slide In" context:nil];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+		[UIView setAnimationDuration:0.25];
+		self.interfaceMenuTimeAverage.frame = CGRectMake(positionAverage, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
+		[UIView commitAnimations];
+		
+		
 		
 		NSLog(@"average width:%f",(averageSum/i)/3);
 		
