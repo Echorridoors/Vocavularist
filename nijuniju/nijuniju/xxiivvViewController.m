@@ -146,6 +146,22 @@
 			i+=1;
 		}
 		
+		// Update Average pointer
+		
+//		CGRectMake(screenMargin+(screenMargin/4), screenMargin*8.35, (screenMargin/4), (screenMargin/4) )
+		
+		// (screenMargin+(screenMargin/4)) + ((averageSum/i)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)))
+		
+		float margin = screenMargin+(screenMargin/4);
+		
+		
+		
+		float test = margin + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/i)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
+		
+		self.interfaceMenuTimeAverage.frame = CGRectMake(test, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
+		
+		NSLog(@"average width:%f",(averageSum/i)/3);
+		
 		// Progress if new item
 		if( e == 1 && ([nodeContentArray count]-1) > userProgress ){
 			userProgress += 1;

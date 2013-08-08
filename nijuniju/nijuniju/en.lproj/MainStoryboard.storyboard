@@ -86,6 +86,10 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="F8o-ng-DxN" userLabel="interfaceMenuTimeAverage">
+                                        <rect key="frame" x="30" y="16" width="60" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -153,6 +157,7 @@
                         <outlet property="interfaceMenu" destination="ZSc-5d-ZeO" id="eJ2-e8-rGS"/>
                         <outlet property="interfaceMenuNext" destination="7tV-qG-bkN" id="1FM-k1-g0W"/>
                         <outlet property="interfaceMenuProgress" destination="SOk-xb-Bnp" id="hjv-m9-fGn"/>
+                        <outlet property="interfaceMenuTimeAverage" destination="F8o-ng-DxN" id="PoS-It-Ce2"/>
                         <outlet property="interfaceMenuTimeBar" destination="LF1-zV-jgu" id="3nd-ST-JaW"/>
                         <outlet property="interfaceMenuTimeRemaining" destination="qav-Ho-RpR" id="eMM-go-fGq"/>
                         <outlet property="interfaceMenuTimeRemainingLabel" destination="xD6-Kd-bY1" id="g24-uG-XrN"/>
@@ -172,8 +177,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/xxiivvViewController.h"/>
             <relationships>
                 <relationship kind="action" name="InterfaceMenuReset:"/>
-                <relationship kind="action" name="interfaceChapterNext:"/>
-                <relationship kind="action" name="interfaceChapterPrevious:"/>
                 <relationship kind="action" name="interfaceMenuNext:"/>
                 <relationship kind="outlet" name="InterfaceMenuReset" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="blurContainerView" candidateClass="UIView"/>
@@ -184,12 +187,11 @@
                 <relationship kind="outlet" name="feedbackColour" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceChapter" candidateClass="UIView"/>
                 <relationship kind="outlet" name="interfaceChapterName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceChapterNext" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceChapterPrevious" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="interfaceHint" candidateClass="UIView"/>
                 <relationship kind="outlet" name="interfaceMenu" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="interfaceMenuNext" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="interfaceMenuProgress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="interfaceMenuTimeAverage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeRemaining" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeRemainingLabel" candidateClass="UILabel"/>

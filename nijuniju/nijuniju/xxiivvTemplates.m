@@ -59,6 +59,9 @@
 	self.interfaceChapterName.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
 	self.interfaceChapter.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
 	
+	self.interfaceMenuTimeAverage.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
+	self.interfaceMenuTimeAverage.image = [UIImage imageNamed:@"icn.arrow.png"];
+	
 	
 }
 

@@ -22,6 +22,7 @@
 		032871A817B08A0900425BE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032871A717B08A0900425BE8 /* QuartzCore.framework */; };
 		032871AB17B0C63300425BE8 /* xxiivvTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 032871AA17B0C63300425BE8 /* xxiivvTemplates.m */; };
 		03DDF1F117B356C40070E1D4 /* xxiivvNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */; };
+		03DDF1F317B3D35A0070E1D4 /* icn.arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		032871AA17B0C63300425BE8 /* xxiivvTemplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvTemplates.m; sourceTree = "<group>"; };
 		03DDF1EF17B356C40070E1D4 /* xxiivvNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvNodes.h; sourceTree = "<group>"; };
 		03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvNodes.m; sourceTree = "<group>"; };
+		03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icn.arrow.png; path = en.assets/icn.arrow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		0328718917B0870B00425BE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */,
 				0328718A17B0870B00425BE8 /* nijuniju-Info.plist */,
 				0328718B17B0870B00425BE8 /* InfoPlist.strings */,
 				0328718E17B0870B00425BE8 /* main.m */,
@@ -182,6 +185,7 @@
 				0328719717B0870B00425BE8 /* Default@2x.png in Resources */,
 				0328719917B0870B00425BE8 /* Default-568h@2x.png in Resources */,
 				0328719C17B0870B00425BE8 /* MainStoryboard.storyboard in Resources */,
+				03DDF1F317B3D35A0070E1D4 /* icn.arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

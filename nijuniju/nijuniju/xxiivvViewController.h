@@ -31,7 +31,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *interfaceChapter;
 @property (strong, nonatomic) IBOutlet UILabel *interfaceChapterName;
-
+@property (strong, nonatomic) IBOutlet UIImageView *interfaceMenuTimeAverage;
 
 - (IBAction)interfaceMenuNext:(id)sender;
 - (IBAction)InterfaceMenuReset:(id)sender;
