@@ -39,6 +39,13 @@
 	self.blurTargetPing.frame = CGRectMake(10,400,100,100);
 	
 	self.feedbackColour.frame = screen;
+	
+	self.view.backgroundColor = [self colorGrey];
+	
+	
+	self.blurTarget.hidden = NO;
+	self.blurContainerView.hidden = YES;
+	
 }
 
 - (void) templateInterface
@@ -113,7 +120,7 @@
 
 
 
-- (void) templateButtons
+- (void) templateButtonsGenerate
 {
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		[subview removeFromSuperview];
@@ -181,21 +188,68 @@
 }
 
 
-- (void) templateHintsAnimation
+- (void) templatePrepareAnimation
 {
-//	CGRect origin = self.interfaceMenuTimeRemainingLabel.frame;
-//	self.interfaceMenuTimeRemainingLabel.frame = CGRectOffset(origin, 0, 5);
-	self.interfaceMenuTimeRemainingLabel.alpha = 1;
-	
 	[UIView beginAnimations: @"Slide In" context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	[UIView setAnimationDuration:0.3];
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, screen.size.width-(2*screenMargin)-(2*(screenMargin/4)), (screenMargin/4) );
 	self.interfaceMenuTimeBar.alpha = 1;
 	self.interfaceMenuTimeRemainingLabel.alpha = 1;
-//	self.interfaceMenuTimeRemainingLabel.frame = origin;
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, screen.size.width-(2*screenMargin)-(2*(screenMargin/4)), (screenMargin/4) );
 	[UIView commitAnimations];
 }
+
+- (void) templateReadyAnimation
+{
+	[self fadeIn:self.interfaceMenuNext d:0 t:0.5];
+}
+
+- (void) templateStartAnimation
+{
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+	self.blurTarget.alpha = 1;
+	[UIView commitAnimations];
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationDuration:3];
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, (screenMargin/4), (screenMargin/4) );
+	self.blurContainerView.alpha = 0.5;
+	[UIView commitAnimations];
+	
+	
+	// move label up
+	
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+	self.interfaceMenuNext.alpha = 0;
+	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
+	[UIView commitAnimations];
+}
+
+
+- (void) templateFinishAnimation
+{
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+	self.blurTarget.alpha = 0;
+	[UIView commitAnimations];
+	
+	
+	// move label up
+	CGRect origin = self.interfaceMenuTimeRemainingLabel.frame;
+	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
+	self.interfaceMenuNext.alpha = 0;
+	//	self.interfaceMenuTimeRemainingLabel.frame = CGRectOffset(origin, 0, 20);
+	[UIView commitAnimations];
+}
+
+
 
 
 
@@ -267,6 +321,24 @@
 	
 }
 
+
+- (void)fadeIn:(UIView*)viewToFadeIn d:(NSTimeInterval)delay t:(NSTimeInterval)duration
+{
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:duration];
+	[UIView setAnimationDelay:delay];
+	viewToFadeIn.alpha = 1;
+	[UIView commitAnimations];
+}
+
+- (void)fadeOut:(UIView*)viewToFadeIn d:(NSTimeInterval)delay t:(NSTimeInterval)duration
+{
+	[UIView beginAnimations: @"Fade Out" context:nil];
+	[UIView setAnimationDuration:duration];
+	[UIView setAnimationDelay:delay];
+	viewToFadeIn.alpha = 0;
+	[UIView commitAnimations];
+}
 
 
 

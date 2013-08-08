@@ -10,4 +10,6 @@
 
 @interface xxiivvViewController (Nodes)
 
+- (void) nodeStart;
+
 @end

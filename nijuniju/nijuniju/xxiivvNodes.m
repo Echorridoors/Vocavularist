@@ -11,7 +11,16 @@
 
 @implementation xxiivvViewController (Modules)
 
-
+- (void) nodeStart
+{
+//	nodeContentArray = [NSMutableArray arrayWithObjects:@"",nil];
+//	int myCount = 0;
+//	while ( myCount < 150 )	{ myCount++; nodeContentArray[myCount] = [NSArray arrayWithObjects: @"0", @"0", @"0", @"0", @"0", nil];	}
+//	
+//	nodeContentArray[0]		= [NSArray arrayWithObjects: @"行く", @"Go", @"Eat", @"Think",1, nil];
+//	nodeContentArray[1]		= [NSArray arrayWithObjects: @"食べ", @"Think", @"Must", @"Eat",3, nil];
+	
+}
 
 
 @end

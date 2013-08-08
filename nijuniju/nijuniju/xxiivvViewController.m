@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreImage/CoreImage.h>
 #import "xxiivvTemplates.h"
-#import "xxiivvTemplates.h"
+#import "xxiivvNodes.h"
 
 @interface xxiivvViewController ()
 
@@ -23,6 +23,8 @@
 
 - (void) start
 {
+	[self nodeStart];
+	
 	[self templateStart];
 	[self gamePrepare];
 	//[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
@@ -31,110 +33,75 @@
 
 - (void) gamePrepare
 {
-	self.blurTarget.hidden = NO;
-	self.blurContainerView.hidden = YES;
-	self.view.backgroundColor = [self colorCyan];
-	
-//	self.feedbackColour.backgroundColor = [self colorGrey];
-	
+	NSLog(@"> Phase | Prepare");
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"Preparing..";
-	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameReady) userInfo:nil repeats:NO];
-
-	[self templateHintsAnimation];
+	
+	[NSTimer scheduledTimerWithTimeInterval:(0.3) target:self selector:@selector(gameReady) userInfo:nil repeats:NO];
+	
+	[self templatePrepareAnimation];
 }
 
 - (void) gameReady
 {
+	NSLog(@"> Phase | Ready");
 	
-	self.interfaceMenuTimeRemainingLabel.text = @"Next Kanji";
+	self.interfaceMenuTimeRemainingLabel.text = @"Next Kanji Card";
 	
-	
-	[UIView beginAnimations: @"Slide In" context:nil];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.interfaceMenuNext.alpha = 1;
-	self.blurContainerView.alpha = 1;
-	[UIView commitAnimations];
+	[self gameSetup];
+
+	[self templateReadyAnimation];
 }
 
 - (void) gameStart
 {
-	
-	[UIView beginAnimations: @"Slide In" context:nil];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.blurTarget.alpha = 1;
-	[UIView commitAnimations];
-	
-	[self templateButtons];
-	[self templateButtonsAnimationShow];
-	
-	[UIView beginAnimations: @"Slide In" context:nil];
-	[UIView setAnimationDuration:3];
-	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, (screenMargin/4), (screenMargin/4) );
-	self.blurContainerView.alpha = 0.5;
-	[UIView commitAnimations];
-	
-	
-	// move label up
-	
-	[UIView beginAnimations: @"Slide In" context:nil];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.interfaceMenuNext.alpha = 0;
-	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
-	[UIView commitAnimations];
-	
-	
-	
+	NSLog(@"> Phase | Start");
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"3 Seconds Left";
 	
+	[self templateButtonsGenerate];
+	[self templateButtonsAnimationShow];
+	[self templateStartAnimation];
 	
 	timeRemaining = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameFinish) userInfo:nil repeats:NO];
-	
-}
-
-- (void) gameCountdown2
-{
-	self.interfaceMenuTimeRemainingLabel.text = @"2 Seconds Left";
-}
-
-- (void) gameCountdown1
-{
-	self.interfaceMenuTimeRemainingLabel.text = @"1 Seconds Left";
 }
 
 - (void) gameFinish
 {
+	NSLog(@"> Phase | Finished");
+	
+	self.interfaceMenuTimeRemainingLabel.text = @"Finished";
+	
 	[timeRemaining invalidate];
 	timeRemaining = nil;
 	
-	[UIView beginAnimations: @"Slide In" context:nil];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.blurTarget.alpha = 0;
-	[UIView commitAnimations];
-	
-	
-	// move label up
-	CGRect origin = self.interfaceMenuTimeRemainingLabel.frame;
-	[UIView beginAnimations: @"Slide In" context:nil];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.interfaceMenuNext.alpha = 0;
-//	self.interfaceMenuTimeRemainingLabel.frame = CGRectOffset(origin, 0, 20);
-	[UIView commitAnimations];
-	
-	
 	[self templateButtonsAnimationHide];
+	[self templateFinishAnimation];
 	
-	self.interfaceMenuTimeRemainingLabel.text = @"Finished";
 	[self gamePrepare];
-	NSLog(@"Finished");
 }
+
+-(void) gameSetup
+{
+	NSLog(@"> Phase | Setup");
+	
+	
+	
+}
+
+
+- (void) gameVerify :(int)input
+{
+	int answer = 1;
+	if( input == answer ){
+		self.feedbackColour.backgroundColor = [self colorCyan];
+	}
+	else{
+		self.feedbackColour.backgroundColor = [self colorRed];
+	}
+	
+}
+
 
 
 - (void) captureBlur {
@@ -163,7 +130,8 @@
 
 - (void) optionSelection :(int)target
 {
-	NSLog(@"Selected: %d",target);
+	NSLog(@"+ Acted | Option: %d",target);
+	
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		if( subview.tag != target ){
 			CGRect origin = subview.frame;
@@ -179,17 +147,7 @@
 	[self gameFinish];
 }
 
-- (void) gameVerify :(int)input
-{
-	int answer = 1;
-	if( input == answer ){
-		self.feedbackColour.backgroundColor = [self colorCyan];
-	}
-	else{
-		self.feedbackColour.backgroundColor = [self colorRed];
-	}
-	
-}
+
 
 
 - (void) option0
@@ -216,7 +174,7 @@
 }
 - (UIColor*) colorGrey
 {
-	return [UIColor colorWithRed:(42/255) green:(88/255) blue:(35/255) alpha:1];
+	return [UIColor colorWithRed:0.9 green:0.9 blue:0.8 alpha:1];
 }
 
 
@@ -226,6 +184,11 @@
 - (IBAction)interfaceMenuNext:(id)sender {
 	[self gameStart];
 }
+
+
+
+
+
 
 
 

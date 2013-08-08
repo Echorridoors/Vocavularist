@@ -11,8 +11,11 @@
 @interface xxiivvViewController (Templates)
 
 - (void) templateStart;
-- (void) templateButtons;
+- (void) templateButtonsGenerate;
 - (void) templateButtonsAnimationShow;
 - (void) templateButtonsAnimationHide;
-- (void) templateHintsAnimation;
+- (void) templatePrepareAnimation;
+- (void) templateReadyAnimation;
+- (void) templateStartAnimation;
+- (void) templateFinishAnimation;
 @end
