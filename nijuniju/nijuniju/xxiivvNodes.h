@@ -12,6 +12,7 @@
 
 - (void) nodeStart;
 - (void) userStart;
+- (void) userReset;
 - (void) userSaveRecord :(int)location :(float)record;
 
 @end

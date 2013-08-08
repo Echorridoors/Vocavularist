@@ -246,6 +246,9 @@
 
 
 
+- (IBAction)InterfaceMenuReset:(id)sender {
+	[self userReset];
+}
 
 
 

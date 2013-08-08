@@ -43,6 +43,7 @@
 	self.feedbackColour.frame = screen;
 	
 	
+	
 	self.blurTarget.hidden = NO;
 	self.blurContainerView.hidden = YES;
 	
@@ -60,7 +61,7 @@
 	CALayer *bottomBorder2 = [CALayer layer];bottomBorder2.frame = CGRectMake(0, screenMargin-2, screen.size.width, 1);bottomBorder2.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1].CGColor;[self.interfaceMenu.layer addSublayer:bottomBorder2];
 	
 	self.interfaceMenuProgress.frame = CGRectMake(screenMargin/4, 0, screen.size.width/2, screenMargin-2);
-	self.interfaceMenuProgress.text = @"Average Speed: 10.2";
+	self.interfaceMenuProgress.text = @"Press \"Next\" to begin";
 	self.interfaceMenuProgress.textColor = [UIColor colorWithWhite:0.5 alpha:1];
 	self.interfaceMenuProgress.layer.shadowColor = [[UIColor blackColor] CGColor];
 	self.interfaceMenuProgress.layer.shadowOffset = CGSizeMake(0, -1.0f);
@@ -69,24 +70,23 @@
 	self.interfaceMenuProgress.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
 	self.interfaceMenuProgress.font = [UIFont boldSystemFontOfSize:12.0f];
 	
-	self.interfaceMenuStop.frame = CGRectMake( screen.size.width-(self.interfaceMenuStop.titleLabel.frame.size.width)-(screenMargin/4), (screenMargin/4)/2, self.interfaceMenuStop.titleLabel.frame.size.width, (screenMargin-2)-(screenMargin/4));
-	self.interfaceMenuStop.titleLabel.text = @"Pause";
-	self.interfaceMenuStop.titleLabel.textAlignment = NSTextAlignmentCenter;
-	self.interfaceMenuStop.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
-	[self.interfaceMenuStop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	self.interfaceMenuStop.titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-	[self.interfaceMenuStop setTitle:@"Pause" forState:UIControlStateNormal];
-	self.interfaceMenuStop.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
-	self.interfaceMenuStop.layer.cornerRadius = 4; // this value vary as per your desire
-    self.interfaceMenuStop.clipsToBounds = YES;
-	self.interfaceMenuStop.layer.shadowColor = [[UIColor blackColor] CGColor];
-	self.interfaceMenuStop.layer.shadowOffset = CGSizeMake(0, -1.0f);
-	self.interfaceMenuStop.layer.shadowOpacity = 1.0f;
-	self.interfaceMenuStop.layer.shadowRadius = 0;
+	self.InterfaceMenuReset.frame = CGRectMake( screen.size.width-(self.InterfaceMenuReset.titleLabel.frame.size.width*2)-(screenMargin/4), (screenMargin/4)/2, self.InterfaceMenuReset.titleLabel.frame.size.width*2, (screenMargin-2)-(screenMargin/4));
+	self.InterfaceMenuReset.titleLabel.textAlignment = NSTextAlignmentCenter;
+	self.InterfaceMenuReset.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
+	[self.InterfaceMenuReset setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	self.InterfaceMenuReset.titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+	[self.InterfaceMenuReset setTitle:@"Start Over" forState:UIControlStateNormal];
+	self.InterfaceMenuReset.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
+	self.InterfaceMenuReset.layer.cornerRadius = 4; // this value vary as per your desire
+    self.InterfaceMenuReset.clipsToBounds = YES;
+	self.InterfaceMenuReset.layer.shadowColor = [[UIColor blackColor] CGColor];
+	self.InterfaceMenuReset.layer.shadowOffset = CGSizeMake(0, -1.0f);
+	self.InterfaceMenuReset.layer.shadowOpacity = 1.0f;
+	self.InterfaceMenuReset.layer.shadowRadius = 0;
 	CALayer *gradient = [CALayer layer];
-	gradient.frame = CGRectMake(0, 0, self.interfaceMenuStop.frame.size.width, self.interfaceMenuStop.frame.size.height/2);
+	gradient.frame = CGRectMake(0, 0, self.InterfaceMenuReset.frame.size.width, self.InterfaceMenuReset.frame.size.height/2);
 	gradient.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1].CGColor;
-	[self.interfaceMenuStop.layer addSublayer:gradient];
+	[self.InterfaceMenuReset.layer addSublayer:gradient];
 	
 	self.interfaceOptions.frame = CGRectMake(0, (screenMargin*3)+(screen.size.width-(2*screenMargin)), screen.size.width, screen.size.height - ((screenMargin*3)+(screen.size.width-(2*screenMargin))));
 	

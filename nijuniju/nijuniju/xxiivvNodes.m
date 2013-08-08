@@ -37,4 +37,15 @@
 	
 }
 
+
+
+- (void) userReset
+{
+	NSLog(@"> Reset | Reset User Records");
+	userContentRecords = [[NSMutableArray alloc] init];
+	[userContentRecords addObject:[NSArray arrayWithObjects: @"1",@"1",nil]];
+	self.interfaceMenuProgress.text = @"Press \"Next\" to begin";
+	[self gameFinish];
+}
+
 @end

@@ -17,7 +17,6 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *transparentView;
 @property (strong, nonatomic) IBOutlet UIScrollView *interfaceMenu;
 @property (strong, nonatomic) IBOutlet UILabel *interfaceMenuProgress;
-@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuStop;
 @property (strong, nonatomic) IBOutlet UIView *blurTarget;
 @property (strong, nonatomic) IBOutlet UILabel *blurTargetGlyph;
 @property (strong, nonatomic) IBOutlet UIScrollView *interfaceOptions;
@@ -27,8 +26,11 @@
 @property (strong, nonatomic) IBOutlet UIView *interfaceHint;
 @property (strong, nonatomic) IBOutlet UILabel *interfaceMenuTimeRemainingLabel;
 @property (strong, nonatomic) IBOutlet UIButton *interfaceMenuNext;
+@property (strong, nonatomic) IBOutlet UIImageView *blurError;
 - (IBAction)interfaceMenuNext:(id)sender;
-
+@property (strong, nonatomic) IBOutlet UIButton *InterfaceMenuReset;
+- (IBAction)InterfaceMenuReset:(id)sender;
+- (void) gameFinish;
 @end
 
 CGRect screen;
