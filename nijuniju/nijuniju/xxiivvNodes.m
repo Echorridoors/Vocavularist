@@ -15,12 +15,12 @@
 {
 	nodeContentArray = [[NSMutableArray alloc] init];
 	
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"食", @"Think", @"Must", @"Eat",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"行", @"Go", @"Eat", @"Think",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"飲", @"Think", @"Must", @"Eat",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"思", @"Go", @"Eat", @"Think",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"休", @"Think", @"Must", @"Eat",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"子", @"Go", @"Eat", @"Think",@"1", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"食", @"Think|ひら", @"Must|ひら", @"Eat|ひら",@"3", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"行", @"Go|ひら", @"Eat|ひら", @"Think|ひら",@"1", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"飲", @"Think|ひら", @"Drink|ひら", @"Eat|ひら",@"2", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"思", @"Half|ひら", @"Eat|ひら", @"Think|ひら",@"3", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"休", @"Think|ひら", @"Sleep|ひら", @"Eat|ひら",@"2", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"子", @"Go|ひら", @"Eat|ひら", @"Kid|ひら",@"3", nil]];
 }
 
 

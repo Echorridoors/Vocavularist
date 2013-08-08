@@ -38,4 +38,6 @@ CGRect screen;
 float screenMargin;
 NSTimer *timeRemaining;
 
+int userLesson;
+
 NSMutableArray *nodeContentArray;

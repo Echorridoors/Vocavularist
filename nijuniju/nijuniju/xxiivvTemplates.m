@@ -127,17 +127,31 @@
 		[subview removeFromSuperview];
 	}
 	int i = 0;
-	while(i < 4){
+	while(i < 3){
+		
+		NSArray* answerForm = [nodeContentArray[userLesson][i+1] componentsSeparatedByString: @"|"];
+		
+		NSString *hiraganaForm = [answerForm objectAtIndex: 1];
+		NSString *englishForm = [answerForm objectAtIndex: 0];
+		
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 		[button addTarget:self action:NSSelectorFromString([NSString stringWithFormat:@"option%d",i]) forControlEvents:UIControlEventTouchDown];
 		button.tag = i+1;
 		button.frame = CGRectMake(i*((screen.size.width/3)+1), screenMargin/2, screen.size.width/3, self.interfaceOptions.frame.size.height-screenMargin);
 		button.backgroundColor = [UIColor whiteColor];
-		[button setTitle: [NSString stringWithFormat:@"Value %d",i] forState: UIControlStateNormal];
+		[button setTitle: [NSString stringWithFormat:englishForm] forState: UIControlStateNormal];
 		button.titleLabel.frame = CGRectMake(0, 0, 100, 100);
 		[button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
 		button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
-		button.titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+		button.titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+		
+		UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (button.frame.size.height/3)*1.7, button.frame.size.width, button.frame.size.height/3)];
+		hiragana.text = [NSString stringWithFormat:hiraganaForm];
+		hiragana.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+		hiragana.textAlignment = NSTextAlignmentCenter;
+		hiragana.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
+		[button addSubview:hiragana];
+		
 		[self.interfaceOptions addSubview:button];
 		i += 1;
 	}

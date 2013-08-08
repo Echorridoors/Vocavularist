@@ -46,14 +46,7 @@
 {
 	NSLog(@"> Phase | Setup");
 	
-	NSLog(@"TEST %@",nodeContentArray[0][0]);
-	NSLog(@"COUNT %d",[nodeContentArray count]);
-	NSLog(@"RANDOM %d",(arc4random()%100)+1);
-	
-	
-	NSLog(@"RANDOM LESSON %@",nodeContentArray[((arc4random()%([nodeContentArray count]-1))+1)][0]);
-	
-	self.blurTargetGlyph.text = nodeContentArray[((arc4random()%([nodeContentArray count]-1))+1)][0];
+	userLesson = ((arc4random()%([nodeContentArray count]-1))+1);
 	
 	[self gameReady];
 }
@@ -75,6 +68,8 @@
 	NSLog(@"> Phase | Start");
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"3 Seconds Left";
+	
+	self.blurTargetGlyph.text = nodeContentArray[userLesson][0];
 	
 	[self templateButtonsGenerate];
 	[self templateButtonsAnimationShow];
@@ -102,14 +97,12 @@
 
 - (void) gameVerify :(int)input
 {
-	int answer = 1;
-	if( input == answer ){
+	if( input == [nodeContentArray[userLesson][4] intValue] ){
 		self.feedbackColour.backgroundColor = [self colorCyan];
 	}
 	else{
 		self.feedbackColour.backgroundColor = [self colorRed];
 	}
-	
 }
 
 
@@ -176,7 +169,7 @@
 
 - (UIColor*) colorCyan
 {
-	return [UIColor colorWithRed:0.2 green:0.8 blue:0.9 alpha:1];
+	return [UIColor colorWithRed:0.2 green:0.9 blue:0.8 alpha:1];
 }
 - (UIColor*) colorRed
 {
