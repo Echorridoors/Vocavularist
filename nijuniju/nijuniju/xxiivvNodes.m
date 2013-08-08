@@ -650,8 +650,47 @@
 	userContentRecords = [[NSMutableArray alloc] init];
 	[userContentRecords addObject:[NSArray arrayWithObjects: @"1",@"1",nil]];
 	self.interfaceMenuProgress.text = @"Press \"Next\" to begin";
+	[self userErase];
 	[self gameFinish];
 	[self userStart];
+}
+
+
+
+- (void)userErase
+{
+	NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
+	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
+}
+
+- (void)userLoad
+{
+	
+	if( [ [[NSUserDefaults standardUserDefaults] objectForKey:@"userLesson"] intValue] > 0 ){
+		
+		NSLog(@"= User  | Loading..");
+		
+		userLesson	= [ [[NSUserDefaults standardUserDefaults] objectForKey:@"userLesson"] intValue];
+		userNextType	= [ [[NSUserDefaults standardUserDefaults] objectForKey:@"userNextType"] intValue];
+		userProgress	= [ [[NSUserDefaults standardUserDefaults] objectForKey:@"userProgress"] intValue];
+		
+		NSLog(@"= User  | Loaded.");
+		
+	}
+	
+}
+
+- (void)userSave
+{
+	
+	NSLog(@"= User  | Saving..");
+	
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",userLesson] forKey:@"userLesson"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",userNextType] forKey:@"userNextType"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",userProgress] forKey:@"userProgress"];
+	
+	NSLog(@"= User  | Saved.");
+	
 }
 
 @end

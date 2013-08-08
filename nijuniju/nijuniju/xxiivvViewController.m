@@ -25,6 +25,7 @@
 {
 	[self nodeStart];
 	[self userStart];
+	[self userLoad];
 	
 	[self templateStart];
 	[self gamePrepare];
@@ -36,7 +37,7 @@
 {
 	NSLog(@"> Phase | Prepare");
 	
-//	self.interfaceMenuTimeRemainingLabel.text = @"Preparing..";
+	[self userSave];
 	
 	[NSTimer scheduledTimerWithTimeInterval:(0.3) target:self selector:@selector(gameSetup) userInfo:nil repeats:NO];
 	
@@ -151,10 +152,6 @@
 			self.interfaceMenuProgress.text = [NSString stringWithFormat:@"Chapter %d - Kanji 0 to %d",(userProgress/10)+1, ((userProgress/10)+1)*10];
 		}
 		
-		
-		
-		
-				
 		average = sum/e;
 		
 		self.interfaceChapterName.text = [NSString stringWithFormat:@"%@s average %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
@@ -174,31 +171,6 @@
 		self.blurTarget.alpha = 0;
 	}
 }
-
-
-
-- (void) captureBlur {
-    UIGraphicsBeginImageContext(self.view.bounds.size);
-    [self.blurTarget.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    CIImage *imageToBlur = [CIImage imageWithCGImage:viewImage.CGImage];
-    CIFilter *gaussianBlurFilter = [CIFilter filterWithName: @"CIGaussianBlur"];
-    [gaussianBlurFilter setValue:imageToBlur forKey: @"inputImage"];
-    [gaussianBlurFilter setValue:[NSNumber numberWithFloat:10] forKey: @"inputRadius"];
-    CIImage *resultImage = [gaussianBlurFilter valueForKey: @"outputImage"];
-    
-    blurrredImage = [[UIImage alloc] initWithCIImage:resultImage];
-    
-    UIImageView *newView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    newView.image = blurrredImage;
-	newView.backgroundColor = [UIColor whiteColor];
-	newView.frame = CGRectMake(-30, 0, screen.size.width+60, screen.size.height+60);
-    
-    [self.blurContainerView insertSubview:newView belowSubview:self.transparentView];
-}
-
 
 
 - (void) optionSelection :(int)target
@@ -269,6 +241,10 @@
 - (IBAction)InterfaceMenuReset:(id)sender {
 	[self userReset];
 }
+
+
+
+
 
 
 
