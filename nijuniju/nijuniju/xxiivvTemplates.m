@@ -53,7 +53,7 @@
 	self.interfaceChapterName.frame = CGRectMake(0, 0, screen.size.width, screenMargin);
 	self.interfaceChapterName.textAlignment = NSTextAlignmentLeft;
 	self.interfaceChapterName.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
-	self.interfaceChapterName.font = [UIFont boldSystemFontOfSize:12.0f];
+	self.interfaceChapterName.font = [self fontSmall];
 	self.interfaceChapterName.textColor = [UIColor colorWithWhite:0 alpha:0.2];
 	self.interfaceChapterName.text = @"New Game";
 	self.interfaceChapterName.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
@@ -61,7 +61,6 @@
 	
 	self.interfaceMenuTimeAverage.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
 	self.interfaceMenuTimeAverage.image = [UIImage imageNamed:@"icn.arrow.png"];
-	
 	
 }
 
@@ -84,13 +83,13 @@
 	self.interfaceMenuProgress.layer.shadowOpacity = 1.0f;
 	self.interfaceMenuProgress.layer.shadowRadius = 0;
 	self.interfaceMenuProgress.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
-	self.interfaceMenuProgress.font = [UIFont boldSystemFontOfSize:12.0f];
+	self.interfaceMenuProgress.font = [self fontSmall];
 	
 	self.InterfaceMenuReset.frame = CGRectMake( screen.size.width-(self.InterfaceMenuReset.titleLabel.frame.size.width*2)-(screenMargin/4), (screenMargin/4)/2, self.InterfaceMenuReset.titleLabel.frame.size.width*2, (screenMargin-2)-(screenMargin/4));
 	self.InterfaceMenuReset.titleLabel.textAlignment = NSTextAlignmentCenter;
 	self.InterfaceMenuReset.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
 	[self.InterfaceMenuReset setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	self.InterfaceMenuReset.titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+	self.InterfaceMenuReset.titleLabel.font = [self fontSmall];
 	[self.InterfaceMenuReset setTitle:@"Start Over" forState:UIControlStateNormal];
 	self.InterfaceMenuReset.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
 	self.InterfaceMenuReset.layer.cornerRadius = 4; // this value vary as per your desire
@@ -104,7 +103,7 @@
 	gradient.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1].CGColor;
 	[self.InterfaceMenuReset.layer addSublayer:gradient];
 	
-	self.interfaceOptions.frame = CGRectMake(0, (screenMargin*3)+(screen.size.width-(2*screenMargin)), screen.size.width, screen.size.height - ((screenMargin*3)+(screen.size.width-(2*screenMargin))));
+	self.interfaceOptions.frame = CGRectMake(0, screen.size.height - (screenMargin*2), screen.size.width, screenMargin*1.5);
 	
 	self.interfaceMenuTimeBar.alpha = 0;
 	self.interfaceMenuTimeBar.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, screen.size.width-(2*screenMargin)-(2*(screenMargin/4)), (screenMargin/4) );
@@ -122,7 +121,7 @@
 	self.interfaceMenuTimeRemainingLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
 	self.interfaceMenuTimeRemainingLabel.textAlignment = NSTextAlignmentCenter;
 	self.interfaceMenuTimeRemainingLabel.textColor = [UIColor whiteColor];
-	self.interfaceMenuTimeRemainingLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+	self.interfaceMenuTimeRemainingLabel.font = [self fontMedium];
 	self.interfaceMenuTimeRemainingLabel.text = @"3 seconds left";
 	self.interfaceMenuTimeRemainingLabel.alpha = 0;
 	
@@ -147,24 +146,25 @@
 		NSArray* answerForm = [nodeContentArray[userLesson][i+1] componentsSeparatedByString: @"|"];
 		
 		NSString *hiraganaForm = [answerForm objectAtIndex: 1];
-		NSString *englishForm = [answerForm objectAtIndex: 0];
+		NSString *englishForm = [[answerForm objectAtIndex: 0] capitalizedString];
 		
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 		[button addTarget:self action:NSSelectorFromString([NSString stringWithFormat:@"option%d",i]) forControlEvents:UIControlEventTouchDown];
 		button.tag = i+1;
-		button.frame = CGRectMake(i*((screen.size.width/3)+1), screenMargin/2, screen.size.width/3, self.interfaceOptions.frame.size.height-screenMargin);
+		button.frame = CGRectMake(i*((screen.size.width/3)+1), 0, screen.size.width/3, screenMargin*1.5);
 		button.backgroundColor = [UIColor whiteColor];
 		[button setTitle: [NSString stringWithFormat:englishForm] forState: UIControlStateNormal];
-		button.titleLabel.frame = CGRectMake(0, 0, 100, 100);
 		[button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
 		button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
-		button.titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+		button.titleLabel.font = [self fontMedium];
+		button.contentEdgeInsets = UIEdgeInsetsMake(-1*(screenMargin*0.2), 0, 0, 0);
 		
-		UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (button.frame.size.height/3)*1.7, button.frame.size.width, button.frame.size.height/3)];
+		
+		UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (screenMargin*1.5)*0.55, button.frame.size.width, button.frame.size.height/3)];
 		hiragana.text = [NSString stringWithFormat:hiraganaForm];
 		hiragana.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
 		hiragana.textAlignment = NSTextAlignmentCenter;
-		hiragana.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
+		hiragana.font = [self fontTiny];
 		[button addSubview:hiragana];
 		
 		[self.interfaceOptions addSubview:button];
@@ -177,7 +177,7 @@
 	int i = 3;
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		CGRect origin = subview.frame;
-		subview.frame = CGRectOffset(origin, 0, 100);
+		subview.frame = CGRectOffset(origin, 0, screenMargin*1.5);
 		[UIView beginAnimations: @"Slide In" context:nil];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 		[UIView setAnimationDuration:0.25];
@@ -204,7 +204,7 @@
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 		[UIView setAnimationDuration:0.25];
 		[UIView setAnimationDelay:(i*0.1)];
-		subview.frame = CGRectOffset(origin, 0, 100);
+		subview.frame = CGRectOffset(origin, 0, screenMargin*1.5);
 		[UIView commitAnimations];
 		i += 1;
 	}
@@ -361,6 +361,35 @@
 	viewToFadeIn.alpha = 0;
 	[UIView commitAnimations];
 }
+
+
+- (UIFont*) fontTiny
+{
+	if( screen.size.width > 640 ){
+		return [UIFont fontWithName:@"Helvetica Neue" size:22.0f];
+	}
+	return [UIFont fontWithName:@"Helvetica Neue" size:11.0f];
+}
+
+
+
+
+- (UIFont*) fontSmall
+{
+	if( screen.size.width > 640 ){
+		return [UIFont boldSystemFontOfSize:24.0f];
+	}
+	return [UIFont boldSystemFontOfSize:12.0f];
+}
+
+- (UIFont*) fontMedium
+{
+	if( screen.size.width > 640 ){
+		return [UIFont boldSystemFontOfSize:28.0f];
+	}
+	return [UIFont boldSystemFontOfSize:14.0f];
+}
+
 
 
 
