@@ -84,6 +84,8 @@
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"Finished";
 	
+	NSLog(@"TEST %f", 3- [[timeRemaining fireDate] timeIntervalSinceNow]);
+
 	[timeRemaining invalidate];
 	timeRemaining = nil;
 	
