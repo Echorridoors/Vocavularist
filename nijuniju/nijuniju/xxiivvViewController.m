@@ -36,7 +36,7 @@
 {
 	NSLog(@"> Phase | Prepare");
 	
-	self.interfaceMenuTimeRemainingLabel.text = @"Preparing..";
+//	self.interfaceMenuTimeRemainingLabel.text = @"Preparing..";
 	
 	[NSTimer scheduledTimerWithTimeInterval:(0.3) target:self selector:@selector(gameSetup) userInfo:nil repeats:NO];
 	
@@ -83,7 +83,7 @@
 {
 	NSLog(@"> Phase | Finished");
 	
-	self.interfaceMenuTimeRemainingLabel.text = @"Finished";
+//	self.interfaceMenuTimeRemainingLabel.text = @"Finished";
 	
 	[timeRemaining invalidate];
 	timeRemaining = nil;
@@ -108,6 +108,7 @@
 		// Get average
 		float sum = 0.0;
 		float average = 0.0;
+		float averageSum = 0.0;
 		int i = 0;
 		float e = 0;
 		while( i < [userContentRecords count] ){
@@ -115,21 +116,23 @@
 				e+=1;
 				sum += [userContentRecords[i][1] floatValue];
 			}
+			averageSum += [userContentRecords[i][1] floatValue];
 			i+=1;
 		}
 		
 		average = sum/e;
 		
-		if( e > 0 && score > average && score > 1.5 ){
-			self.feedbackColour.backgroundColor = [self colorYellow];
-		}
-		else if( e > 0 && score < average && score < 1 ){
-			self.feedbackColour.backgroundColor = [self colorBlue];
-		}
-		else{
-			self.feedbackColour.backgroundColor = [self colorCyan];
-		}
+		self.interfaceMenuProgress.text = [NSString stringWithFormat:@"%@ seconds %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
 		
+		// Display the score in colours
+		
+		if( score > 2.5 ){ self.feedbackColour.backgroundColor = [self colorOrange]; }
+		else if( score > 1.5 ){ self.feedbackColour.backgroundColor = [self colorYellow]; }
+		else{ self.feedbackColour.backgroundColor = [self colorCyan]; }
+		if( e > 2 && score < average ){ self.feedbackColour.backgroundColor = [self colorBlue]; }
+		
+		// Write time
+		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds", [[NSString stringWithFormat:@"%f", score] substringWithRange:NSMakeRange(0, 4)]];
 	}
 	else{
 		self.feedbackColour.backgroundColor = [self colorRed];
@@ -216,7 +219,11 @@
 }
 - (UIColor*) colorBlue
 {
-	return [UIColor colorWithRed:0.6 green:1.0 blue:1.0 alpha:1];
+	return [UIColor colorWithRed:0.8 green:0.6 blue:1.0 alpha:1];
+}
+- (UIColor*) colorOrange
+{
+	return [UIColor colorWithRed:0.9 green:0.5 blue:0.0 alpha:1];
 }
 
 
