@@ -74,7 +74,7 @@
 	CALayer *bottomBorder2 = [CALayer layer];bottomBorder2.frame = CGRectMake(0, screenMargin-2, screen.size.width, 1);bottomBorder2.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1].CGColor;[self.interfaceMenu.layer addSublayer:bottomBorder2];
 	
 	self.interfaceMenuProgress.frame = CGRectMake(screenMargin/4, 0, screen.size.width/2, screenMargin-2);
-	self.interfaceMenuProgress.text = @"Press \"Next\" to begin";
+	self.interfaceMenuProgress.text = @"Chapter 1 - Kanji 0 to 10";
 	self.interfaceMenuProgress.textColor = [UIColor colorWithWhite:0.5 alpha:1];
 	self.interfaceMenuProgress.layer.shadowColor = [[UIColor blackColor] CGColor];
 	self.interfaceMenuProgress.layer.shadowOffset = CGSizeMake(0, -1.0f);

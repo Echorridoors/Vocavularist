@@ -148,7 +148,7 @@
 		// Progress if new item
 		if( e == 1 && ([nodeContentArray count]-1) > userProgress ){
 			userProgress += 1;
-			self.interfaceChapterName.text = [NSString stringWithFormat:@"Chapter %d - Kanji 0 to %d",(userProgress/10)+1, ((userProgress/10)+1)*10];
+			self.interfaceMenuProgress.text = [NSString stringWithFormat:@"Chapter %d - Kanji 0 to %d",(userProgress/10)+1, ((userProgress/10)+1)*10];
 		}
 		
 		
@@ -157,7 +157,7 @@
 				
 		average = sum/e;
 		
-		self.interfaceMenuProgress.text = [NSString stringWithFormat:@"%@s average %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
+		self.interfaceChapterName.text = [NSString stringWithFormat:@"%@s average %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
 		
 		// Display the score in colours
 		
