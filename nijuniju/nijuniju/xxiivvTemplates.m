@@ -55,7 +55,7 @@
 	self.interfaceChapterName.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
 	self.interfaceChapterName.font = [UIFont boldSystemFontOfSize:12.0f];
 	self.interfaceChapterName.textColor = [UIColor colorWithWhite:0 alpha:0.2];
-	self.interfaceChapterName.text = @"Chapter 1 JLPT 100";
+	self.interfaceChapterName.text = @"New Game";
 	self.interfaceChapterName.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
 	self.interfaceChapter.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
 	

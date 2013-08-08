@@ -25,8 +25,8 @@
 
 - (void) userStart
 {
+	userProgress = 1;
 	userContentRecords = [[NSMutableArray alloc] init];
-	[userContentRecords addObject:[NSArray arrayWithObjects: @"1",@"1",nil]];
 }
 
 
@@ -34,7 +34,6 @@
 {
 	NSLog(@"> Save  | Saved Record: %f", record);
 	[userContentRecords addObject:[NSArray arrayWithObjects: [NSString stringWithFormat:@"%d",location], [NSString stringWithFormat:@"%f",record], nil]];
-	
 }
 
 

@@ -47,7 +47,21 @@
 {
 	NSLog(@"> Phase | Setup");
 	
-	userLesson = ((arc4random()%([nodeContentArray count]-1))+1);
+	userNextType +=1;
+	
+	if( userNextType % 2){
+		NSLog(@"> Tasks | Review");
+		userLesson = ((arc4random()%(userProgress))+1);
+	}
+	else{
+		NSLog(@"> Tasks | New");
+		userLesson = userProgress;
+	}
+	
+	NSLog(@"> Phase | Progress %d Next Lesson %d", userProgress, userLesson);
+	
+	
+	// userLesson = ((arc4random()%([nodeContentArray count]-1))+1);
 	
 	[self gameReady];
 }
@@ -86,8 +100,6 @@
 - (void) gameTime
 {
 	gameElapsing += 0.1;
-	
-	
 	self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds",[[NSString stringWithFormat:@"%f",gameElapsing] substringWithRange:NSMakeRange(0, 4)]];
 	
 }
@@ -133,6 +145,16 @@
 			i+=1;
 		}
 		
+		// Progress if new item
+		if( e == 1 && ([nodeContentArray count]-1) > userProgress ){
+			userProgress += 1;
+			self.interfaceChapterName.text = [NSString stringWithFormat:@"Chapter %d - Kanji 0 to %d",(userProgress/10)+1, ((userProgress/10)+1)*10];
+		}
+		
+		
+		
+		
+				
 		average = sum/e;
 		
 		self.interfaceMenuProgress.text = [NSString stringWithFormat:@"%@s average %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
@@ -141,8 +163,8 @@
 		
 		if( score > 2.5 ){ self.feedbackColour.backgroundColor = [self colorWorse]; }
 		else if( score > 1.5 ){ self.feedbackColour.backgroundColor = [self colorAverage]; }
-		else{ self.feedbackColour.backgroundColor = [self colorBetter]; }
-		if( e > 2 && score < average ){ self.feedbackColour.backgroundColor = [self colorGood]; }
+		else if( score > average ){ self.feedbackColour.backgroundColor = [self colorBetter]; }
+		else { self.feedbackColour.backgroundColor = [self colorGood]; }
 		
 		// Write time
 		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds", [[NSString stringWithFormat:@"%f", score] substringWithRange:NSMakeRange(0, 4)]];
@@ -237,14 +259,6 @@
 }
 
 
-
-
-
-- (IBAction)interfaceChapterPrevious:(id)sender {
-}
-
-- (IBAction)interfaceChapterNext:(id)sender {
-}
 
 - (IBAction)interfaceMenuNext:(id)sender {
 	[self gameStart];

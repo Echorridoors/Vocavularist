@@ -48,6 +48,8 @@ NSTimer *timeRemaining;
 NSTimer *timeElapsing;
 
 int userLesson;
+int userNextType;
+int userProgress;
 
 NSMutableArray *nodeContentArray;
 NSMutableArray *userContentRecords;
