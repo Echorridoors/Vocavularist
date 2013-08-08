@@ -37,9 +37,25 @@
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"Preparing..";
 	
-	[NSTimer scheduledTimerWithTimeInterval:(0.3) target:self selector:@selector(gameReady) userInfo:nil repeats:NO];
+	[NSTimer scheduledTimerWithTimeInterval:(0.3) target:self selector:@selector(gameSetup) userInfo:nil repeats:NO];
 	
 	[self templatePrepareAnimation];
+}
+
+-(void) gameSetup
+{
+	NSLog(@"> Phase | Setup");
+	
+	NSLog(@"TEST %@",nodeContentArray[0][0]);
+	NSLog(@"COUNT %d",[nodeContentArray count]);
+	NSLog(@"RANDOM %d",(arc4random()%100)+1);
+	
+	
+	NSLog(@"RANDOM LESSON %@",nodeContentArray[((arc4random()%([nodeContentArray count]-1))+1)][0]);
+	
+	self.blurTargetGlyph.text = nodeContentArray[((arc4random()%([nodeContentArray count]-1))+1)][0];
+	
+	[self gameReady];
 }
 
 - (void) gameReady
@@ -47,11 +63,12 @@
 	NSLog(@"> Phase | Ready");
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"Next Kanji Card";
-	
-	[self gameSetup];
 
 	[self templateReadyAnimation];
 }
+
+
+
 
 - (void) gameStart
 {
@@ -81,13 +98,6 @@
 	[self gamePrepare];
 }
 
--(void) gameSetup
-{
-	NSLog(@"> Phase | Setup");
-	
-	
-	
-}
 
 
 - (void) gameVerify :(int)input

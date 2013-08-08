@@ -13,13 +13,14 @@
 
 - (void) nodeStart
 {
-//	nodeContentArray = [NSMutableArray arrayWithObjects:@"",nil];
-//	int myCount = 0;
-//	while ( myCount < 150 )	{ myCount++; nodeContentArray[myCount] = [NSArray arrayWithObjects: @"0", @"0", @"0", @"0", @"0", nil];	}
-//	
-//	nodeContentArray[0]		= [NSArray arrayWithObjects: @"行く", @"Go", @"Eat", @"Think",1, nil];
-//	nodeContentArray[1]		= [NSArray arrayWithObjects: @"食べ", @"Think", @"Must", @"Eat",3, nil];
+	nodeContentArray = [[NSMutableArray alloc] init];
 	
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"食", @"Think", @"Must", @"Eat",@"3", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"行", @"Go", @"Eat", @"Think",@"1", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"飲", @"Think", @"Must", @"Eat",@"3", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"思", @"Go", @"Eat", @"Think",@"1", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"休", @"Think", @"Must", @"Eat",@"3", nil]];
+	[nodeContentArray addObject:[NSArray arrayWithObjects: @"子", @"Go", @"Eat", @"Think",@"1", nil]];
 }
 
 

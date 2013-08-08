@@ -31,12 +31,13 @@
 	self.blurTarget.backgroundColor = [UIColor whiteColor];
 	
 	self.blurTarget.frame = CGRectMake(0, screenMargin, screen.size.width, screen.size.height-screenMargin);
-	self.blurTargetGlyph.frame = CGRectMake(screenMargin, screenMargin, screen.size.width-(2*screenMargin), screen.size.width-(2*screenMargin));
+	self.blurTargetGlyph.frame = CGRectMake(0, screenMargin, screen.size.width, screen.size.width-(2*screenMargin));
 	self.blurTargetGlyph.textAlignment = NSTextAlignmentCenter;
 	self.blurTargetGlyph.font = [UIFont fontWithName:@"Helvetica Neue" size:152];
 	self.blurTargetGlyph.text = @"今";
 	
 	self.blurTargetPing.frame = CGRectMake(10,400,100,100);
+	self.blurTargetPing.hidden = YES;
 	
 	self.feedbackColour.frame = screen;
 	
