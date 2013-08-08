@@ -12,6 +12,11 @@
 #import "xxiivvTemplates.h"
 #import "xxiivvNodes.h"
 
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
+
+AVAudioPlayer *audioPlayerSounds;
+
 @interface xxiivvViewController ()
 
 @end
@@ -179,8 +184,11 @@
 		// Write time
 		
 		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds", [[NSString stringWithFormat:@"%f", score] substringWithRange:NSMakeRange(0, 4)]];
+		
+		[self audioPlayerSounds:@"fx.accepted.wav"];
 	}
 	else{
+		[self audioPlayerSounds:@"fx.error.wav"];
 		self.feedbackColour.backgroundColor = [self colorBad];
 		self.blurTarget.alpha = 0;
 	}
@@ -200,6 +208,8 @@
 			[UIView commitAnimations];
 		}
 	}
+	
+	[self audioPlayerSounds:@"fx.click.wav"];
 	
 	[self gameVerify:target];
 	[self gameFinish];
@@ -240,11 +250,37 @@
 }
 
 - (IBAction)interfaceMenuNext:(id)sender {
+	
+	[self audioPlayerSounds:@"fx.click.wav"];
+	
 	[self gameStart];
 }
 
 - (IBAction)InterfaceMenuReset:(id)sender {
+	
+	[self audioPlayerSounds:@"fx.click.wav"];
+	
 	[self userReset];
 }
+
+-(void)audioPlayerSounds: (NSString *)filename;
+{
+	NSLog(@"$ Audio | Play %@",filename);
+	NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+	resourcePath = [resourcePath stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
+	NSError* err;
+	audioPlayerSounds = [[AVAudioPlayer alloc] initWithContentsOfURL: [NSURL fileURLWithPath:resourcePath] error:&err];
+	
+	audioPlayerSounds.volume = 1.0;
+	audioPlayerSounds.numberOfLoops = 0;
+	audioPlayerSounds.currentTime = 0;
+	
+	if(err)	{ NSLog(@"%@",err); }
+	else	{
+		[audioPlayerSounds prepareToPlay];
+		[audioPlayerSounds play];
+	}
+}
+
 
 @end
