@@ -27,9 +27,17 @@
 @property (strong, nonatomic) IBOutlet UILabel *interfaceMenuTimeRemainingLabel;
 @property (strong, nonatomic) IBOutlet UIButton *interfaceMenuNext;
 @property (strong, nonatomic) IBOutlet UIImageView *blurError;
-- (IBAction)interfaceMenuNext:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *InterfaceMenuReset;
+
+@property (strong, nonatomic) IBOutlet UIView *interfaceChapter;
+@property (strong, nonatomic) IBOutlet UILabel *interfaceChapterName;
+
+
+- (IBAction)interfaceMenuNext:(id)sender;
 - (IBAction)InterfaceMenuReset:(id)sender;
+
+
+
 - (void) gameFinish;
 @end
 

@@ -240,6 +240,12 @@
 
 
 
+- (IBAction)interfaceChapterPrevious:(id)sender {
+}
+
+- (IBAction)interfaceChapterNext:(id)sender {
+}
+
 - (IBAction)interfaceMenuNext:(id)sender {
 	[self gameStart];
 }

@@ -122,6 +122,20 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.80681818181818177" green="0.90961509888077641" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" id="Rke-P2-qWj" userLabel="interfaceChapter">
+                                <rect key="frame" x="80" y="137" width="160" height="274"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="22w-sg-0ee" userLabel="interfaceChapterName">
+                                        <rect key="frame" x="59" y="127" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -133,6 +147,8 @@
                         <outlet property="blurTargetGlyph" destination="FaD-fz-Zyr" id="WrT-rQ-sfS"/>
                         <outlet property="blurTargetPing" destination="Voa-Rg-Juu" id="l3f-vO-dQy"/>
                         <outlet property="feedbackColour" destination="sIV-71-fxx" id="Fmw-Mz-Nno"/>
+                        <outlet property="interfaceChapter" destination="Rke-P2-qWj" id="AUH-uy-4ZP"/>
+                        <outlet property="interfaceChapterName" destination="22w-sg-0ee" id="IXx-Zm-YfG"/>
                         <outlet property="interfaceHint" destination="XoW-am-LqA" id="nXD-Ra-4WI"/>
                         <outlet property="interfaceMenu" destination="ZSc-5d-ZeO" id="eJ2-e8-rGS"/>
                         <outlet property="interfaceMenuNext" destination="7tV-qG-bkN" id="1FM-k1-g0W"/>
@@ -156,6 +172,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/xxiivvViewController.h"/>
             <relationships>
                 <relationship kind="action" name="InterfaceMenuReset:"/>
+                <relationship kind="action" name="interfaceChapterNext:"/>
+                <relationship kind="action" name="interfaceChapterPrevious:"/>
                 <relationship kind="action" name="interfaceMenuNext:"/>
                 <relationship kind="outlet" name="InterfaceMenuReset" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="blurContainerView" candidateClass="UIView"/>
@@ -164,6 +182,10 @@
                 <relationship kind="outlet" name="blurTargetGlyph" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="blurTargetPing" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="feedbackColour" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="interfaceChapter" candidateClass="UIView"/>
+                <relationship kind="outlet" name="interfaceChapterName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="interfaceChapterNext" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="interfaceChapterPrevious" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="interfaceHint" candidateClass="UIView"/>
                 <relationship kind="outlet" name="interfaceMenu" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="interfaceMenuNext" candidateClass="UIButton"/>

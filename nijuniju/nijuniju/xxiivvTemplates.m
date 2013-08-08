@@ -47,6 +47,19 @@
 	self.blurTarget.hidden = NO;
 	self.blurContainerView.hidden = YES;
 	
+	
+	self.interfaceChapter.frame = CGRectMake(screenMargin/4, screenMargin, screen.size.width, screenMargin);
+	
+	self.interfaceChapterName.frame = CGRectMake(0, 0, screen.size.width, screenMargin);
+	self.interfaceChapterName.textAlignment = NSTextAlignmentLeft;
+	self.interfaceChapterName.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
+	self.interfaceChapterName.font = [UIFont boldSystemFontOfSize:12.0f];
+	self.interfaceChapterName.textColor = [UIColor colorWithWhite:0 alpha:0.2];
+	self.interfaceChapterName.text = @"Chapter 1 JLPT 100";
+	self.interfaceChapterName.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	self.interfaceChapter.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	
+	
 }
 
 - (void) templateInterface
@@ -207,6 +220,7 @@
 	[UIView beginAnimations: @"Slide In" context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	[UIView setAnimationDuration:0.3];
+	self.interfaceChapter.alpha = 1;
 	self.interfaceMenuTimeBar.alpha = 1;
 	self.interfaceMenuTimeRemainingLabel.alpha = 1;
 	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, screen.size.width-(2*screenMargin)-(2*(screenMargin/4)), (screenMargin/4) );
@@ -239,6 +253,7 @@
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuNext.alpha = 0;
+	self.interfaceChapter.alpha = 0;
 	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
 	[UIView commitAnimations];
 }
