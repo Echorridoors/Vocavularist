@@ -29,7 +29,6 @@
 	
 	[self templateStart];
 	[self gamePrepare];
-	//[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
 }
 
 
@@ -61,9 +60,6 @@
 	
 	NSLog(@"> Phase | Progress %d Next Lesson %d", userProgress, userLesson);
 	
-	
-	// userLesson = ((arc4random()%([nodeContentArray count]-1))+1);
-	
 	[self gameReady];
 }
 
@@ -71,13 +67,15 @@
 {
 	NSLog(@"> Phase | Ready");
 	
-	self.interfaceMenuTimeRemainingLabel.text = @"Next Kanji Card";
-
+	if( userProgress == 1 ){
+		self.interfaceMenuTimeRemainingLabel.text = @"Click to Begin";
+	}
+	else{
+		self.interfaceMenuTimeRemainingLabel.text = @"Next Kanji Card";
+	}
+	
 	[self templateReadyAnimation];
 }
-
-
-
 
 - (void) gameStart
 {
@@ -147,22 +145,15 @@
 		}
 		
 		// Update Average pointer
-		
-//		CGRectMake(screenMargin+(screenMargin/4), screenMargin*8.35, (screenMargin/4), (screenMargin/4) )
-		
-		// (screenMargin+(screenMargin/4)) + ((averageSum/i)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)))
-		
-		float margin = screenMargin+(screenMargin/4);
-		
-		
-		
-		float test = margin + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/i)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
+			
+		float test = screenMargin+(screenMargin/4) + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/i)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
 		
 		self.interfaceMenuTimeAverage.frame = CGRectMake(test, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
 		
 		NSLog(@"average width:%f",(averageSum/i)/3);
 		
 		// Progress if new item
+		
 		if( e == 1 && ([nodeContentArray count]-1) > userProgress ){
 			userProgress += 1;
 			self.interfaceMenuProgress.text = [NSString stringWithFormat:@"Chapter %d - Kanji 0 to %d",(userProgress/10)+1, ((userProgress/10)+1)*10];
@@ -180,6 +171,7 @@
 		else { self.feedbackColour.backgroundColor = [self colorGood]; }
 		
 		// Write time
+		
 		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds", [[NSString stringWithFormat:@"%f", score] substringWithRange:NSMakeRange(0, 4)]];
 	}
 	else{
@@ -187,7 +179,6 @@
 		self.blurTarget.alpha = 0;
 	}
 }
-
 
 - (void) optionSelection :(int)target
 {
@@ -208,9 +199,6 @@
 	[self gameFinish];
 }
 
-
-
-
 - (void) option0
 {
 	[self optionSelection:1];
@@ -223,7 +211,6 @@
 {
 	[self optionSelection:3];
 }
-
 
 - (UIColor*) colorGood
 {
@@ -246,24 +233,12 @@
 	return [UIColor colorWithWhite:0.9 alpha:1];
 }
 
-
-
 - (IBAction)interfaceMenuNext:(id)sender {
 	[self gameStart];
 }
 
-
-
 - (IBAction)InterfaceMenuReset:(id)sender {
 	[self userReset];
 }
-
-
-
-
-
-
-
-
 
 @end

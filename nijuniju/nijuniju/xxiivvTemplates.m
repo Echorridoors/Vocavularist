@@ -35,7 +35,7 @@
 	self.blurTargetGlyph.textAlignment = NSTextAlignmentCenter;
 	self.blurTargetGlyph.font = [UIFont fontWithName:@"Helvetica Neue" size:152];
 	self.blurTargetGlyph.font = [UIFont boldSystemFontOfSize:152.0f];
-	self.blurTargetGlyph.text = @"今";
+	self.blurTargetGlyph.text = @"二十";
 	
 	self.blurTargetPing.frame = CGRectMake(10,400,100,100);
 	self.blurTargetPing.hidden = YES;
@@ -126,7 +126,7 @@
 	self.interfaceMenuTimeRemainingLabel.text = @"3 seconds left";
 	self.interfaceMenuTimeRemainingLabel.alpha = 0;
 	
-	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*7, screen.size.width- (2*screenMargin), screenMargin*2);
+	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
 	
 	self.interfaceMenuNext.frame = CGRectMake(screenMargin/2, screenMargin*6.9, screen.size.width- (2*(screenMargin/2)), screenMargin*2);
 	self.interfaceMenuNext.layer.cornerRadius = (screenMargin/4)/2;
@@ -268,16 +268,6 @@
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.blurTarget.alpha = 0;
-	[UIView commitAnimations];
-	
-	
-	// move label up
-	CGRect origin = self.interfaceMenuTimeRemainingLabel.frame;
-	[UIView beginAnimations: @"Slide In" context:nil];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.interfaceMenuNext.alpha = 0;
-	//	self.interfaceMenuTimeRemainingLabel.frame = CGRectOffset(origin, 0, 20);
 	[UIView commitAnimations];
 }
 
