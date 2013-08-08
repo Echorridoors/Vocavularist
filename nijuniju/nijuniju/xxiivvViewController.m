@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreImage/CoreImage.h>
 #import "xxiivvTemplates.h"
+#import "xxiivvTemplates.h"
 
 @interface xxiivvViewController ()
 
@@ -24,18 +25,22 @@
 {
 	[self templateStart];
 	[self gamePrepare];
-	[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
+	//[self performSelectorInBackground:@selector(captureBlur) withObject:nil];
 }
 
 
 - (void) gamePrepare
 {
 	self.blurTarget.hidden = NO;
-	self.view.backgroundColor = [UIColor whiteColor];
-	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameReady) userInfo:nil repeats:NO];
-
+	self.blurContainerView.hidden = YES;
+	self.view.backgroundColor = [self colorCyan];
+	
+//	self.feedbackColour.backgroundColor = [self colorGrey];
+	
 	
 	self.interfaceMenuTimeRemainingLabel.text = @"Preparing..";
+	[NSTimer scheduledTimerWithTimeInterval:(1) target:self selector:@selector(gameReady) userInfo:nil repeats:NO];
+
 	[self templateHintsAnimation];
 }
 
@@ -169,7 +174,21 @@
 			[UIView commitAnimations];
 		}
 	}
+	
+	[self gameVerify:target];
 	[self gameFinish];
+}
+
+- (void) gameVerify :(int)input
+{
+	int answer = 1;
+	if( input == answer ){
+		self.feedbackColour.backgroundColor = [self colorCyan];
+	}
+	else{
+		self.feedbackColour.backgroundColor = [self colorRed];
+	}
+	
 }
 
 
@@ -187,7 +206,18 @@
 }
 
 
-
+- (UIColor*) colorCyan
+{
+	return [UIColor colorWithRed:0.2 green:0.8 blue:0.9 alpha:1];
+}
+- (UIColor*) colorRed
+{
+	return [UIColor colorWithRed:0.9 green:0.2 blue:0.3 alpha:1];
+}
+- (UIColor*) colorGrey
+{
+	return [UIColor colorWithRed:(42/255) green:(88/255) blue:(35/255) alpha:1];
+}
 
 
 

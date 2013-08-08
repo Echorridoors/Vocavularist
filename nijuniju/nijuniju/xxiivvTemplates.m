@@ -37,6 +37,8 @@
 	self.blurTargetGlyph.text = @"今";
 	
 	self.blurTargetPing.frame = CGRectMake(10,400,100,100);
+	
+	self.feedbackColour.frame = screen;
 }
 
 - (void) templateInterface

@@ -12,6 +12,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="sIV-71-fxx" userLabel="feedbackColour">
+                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="sZw-Bh-aqn" userLabel="blurTarget">
                                 <rect key="frame" x="130" y="258" width="60" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -39,7 +43,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fO9-xI-k8Q" userLabel="transparentView">
                                         <rect key="frame" x="-60" y="-32" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="0.80836232579958223" green="0.91158909944302946" blue="1" alpha="0.34000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.80836232579958223" green="0.91158909944302946" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -119,6 +123,7 @@
                         <outlet property="blurTarget" destination="sZw-Bh-aqn" id="sBZ-65-EKq"/>
                         <outlet property="blurTargetGlyph" destination="FaD-fz-Zyr" id="WrT-rQ-sfS"/>
                         <outlet property="blurTargetPing" destination="Voa-Rg-Juu" id="l3f-vO-dQy"/>
+                        <outlet property="feedbackColour" destination="sIV-71-fxx" id="Fmw-Mz-Nno"/>
                         <outlet property="interfaceHint" destination="XoW-am-LqA" id="nXD-Ra-4WI"/>
                         <outlet property="interfaceMenu" destination="ZSc-5d-ZeO" id="eJ2-e8-rGS"/>
                         <outlet property="interfaceMenuNext" destination="7tV-qG-bkN" id="1FM-k1-g0W"/>
@@ -147,6 +152,7 @@
                 <relationship kind="outlet" name="blurTarget" candidateClass="UIView"/>
                 <relationship kind="outlet" name="blurTargetGlyph" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="blurTargetPing" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="feedbackColour" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceHint" candidateClass="UIView"/>
                 <relationship kind="outlet" name="interfaceMenu" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="interfaceMenuNext" candidateClass="UIButton"/>

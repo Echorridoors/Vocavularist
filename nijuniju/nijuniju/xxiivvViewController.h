@@ -12,6 +12,7 @@
 	UIImage *blurrredImage;
 }
 
+@property (strong, nonatomic) IBOutlet UIImageView *feedbackColour;
 @property (strong, nonatomic) IBOutlet UIView *blurContainerView;
 @property (strong, nonatomic) IBOutlet UIScrollView *transparentView;
 @property (strong, nonatomic) IBOutlet UIScrollView *interfaceMenu;

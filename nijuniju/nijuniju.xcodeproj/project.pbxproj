@@ -21,6 +21,7 @@
 		032871A617B089F900425BE8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032871A517B089F900425BE8 /* CoreImage.framework */; };
 		032871A817B08A0900425BE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032871A717B08A0900425BE8 /* QuartzCore.framework */; };
 		032871AB17B0C63300425BE8 /* xxiivvTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 032871AA17B0C63300425BE8 /* xxiivvTemplates.m */; };
+		03DDF1F117B356C40070E1D4 /* xxiivvNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		032871A717B08A0900425BE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		032871A917B0C63300425BE8 /* xxiivvTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvTemplates.h; sourceTree = "<group>"; };
 		032871AA17B0C63300425BE8 /* xxiivvTemplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvTemplates.m; sourceTree = "<group>"; };
+		03DDF1EF17B356C40070E1D4 /* xxiivvNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvNodes.h; sourceTree = "<group>"; };
+		03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvNodes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				0328719E17B0870B00425BE8 /* xxiivvViewController.m */,
 				032871A917B0C63300425BE8 /* xxiivvTemplates.h */,
 				032871AA17B0C63300425BE8 /* xxiivvTemplates.m */,
+				03DDF1EF17B356C40070E1D4 /* xxiivvNodes.h */,
+				03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */,
 				0328719A17B0870B00425BE8 /* MainStoryboard.storyboard */,
 				0328718917B0870B00425BE8 /* Supporting Files */,
 			);
@@ -191,6 +196,7 @@
 				0328719317B0870B00425BE8 /* xxiivvAppDelegate.m in Sources */,
 				0328719F17B0870B00425BE8 /* xxiivvViewController.m in Sources */,
 				032871AB17B0C63300425BE8 /* xxiivvTemplates.m in Sources */,
+				03DDF1F117B356C40070E1D4 /* xxiivvNodes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +319,7 @@
 				032871A417B0870B00425BE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
