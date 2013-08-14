@@ -11,7 +11,7 @@
 
 @implementation xxiivvViewController (Modules)
 
--(void)templateStart {
+-(void)templateStart{
 	
 	screen = [[UIScreen mainScreen] bounds];
 	screenMargin = screen.size.width/8;
@@ -65,7 +65,7 @@
 	self.interfaceMenuTimeAverage.image = [UIImage imageNamed:@"icn.arrow.png"];
 }
 
--(void)templateInterface {
+-(void)templateInterface{
 	
 	self.interfaceMenu.frame = CGRectMake(0, 0, screen.size.width, screenMargin);
 	
@@ -135,7 +135,7 @@
 	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
 }
 
--(void)templateButtonsGenerate {
+-(void)templateButtonsGenerate{
 	
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		[subview removeFromSuperview];
@@ -172,7 +172,7 @@
 
 #pragma mark Animations -
 
--(void)templateButtonsAnimationShow {
+-(void)templateButtonsAnimationShow{
 	
 	int i = 3;
 	for (UIView *subview in [self.interfaceOptions subviews]) {
@@ -195,7 +195,7 @@
 	
 }
 
--(void)templateButtonsAnimationHide {
+-(void)templateButtonsAnimationHide{
 	
 	int i = 3;
 	for (UIView *subview in [self.interfaceOptions subviews]) {
@@ -216,7 +216,7 @@
 	[UIView commitAnimations];
 }
 
--(void)templatePrepareAnimation {
+-(void)templatePrepareAnimation{
 	
 	[self.view.layer removeAnimationForKey:@"templateStartAnimation"];
 	
@@ -230,7 +230,7 @@
 	[UIView commitAnimations];
 }
 
--(void)templateReadyAnimation {
+-(void)templateReadyAnimation{
 	
 	[self fadeIn:self.interfaceMenuNext d:0 t:0.5];
 }
@@ -261,7 +261,7 @@
 	[UIView commitAnimations];
 }
 
--(void)templateFinishAnimation {
+-(void)templateFinishAnimation{
 	
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.5];
@@ -273,7 +273,7 @@
 
 #pragma mark Ui Elements -
 
--(CAGradientLayer*)greyGradient {
+-(CAGradientLayer*)greyGradient{
 	
     UIColor *colorOne	= [UIColor colorWithWhite:0.9 alpha:1.0];
     UIColor *colorTwo	= [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.85 alpha:1.0];
@@ -293,7 +293,7 @@
     return headerLayer;
 }
 
--(CAGradientLayer*)darkGradient {
+-(CAGradientLayer*)darkGradient{
 	
     UIColor *colorOne	= [UIColor colorWithRed:0.1 green:0 blue:0 alpha:1];
     UIColor *colorTwo	= [UIColor colorWithWhite:0.25 alpha:1];
@@ -333,7 +333,7 @@
 
 #pragma mark Responsive Values -
 
--(UIFont*)fontTiny {
+-(UIFont*)fontTiny{
 	
 	if( screen.size.width > 640 ){
 		return [UIFont fontWithName:@"Helvetica Neue" size:22.0f];
@@ -341,7 +341,7 @@
 	return [UIFont fontWithName:@"Helvetica Neue" size:11.0f];
 }
 
--(UIFont*)fontSmall {
+-(UIFont*)fontSmall{
 	
 	if( screen.size.width > 640 ){
 		return [UIFont boldSystemFontOfSize:24.0f];
@@ -349,7 +349,7 @@
 	return [UIFont boldSystemFontOfSize:12.0f];
 }
 
--(UIFont*)fontMedium {
+-(UIFont*)fontMedium{
 	
 	if( screen.size.width > 640 ){
 		return [UIFont boldSystemFontOfSize:28.0f];

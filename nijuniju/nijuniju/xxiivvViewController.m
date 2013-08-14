@@ -23,18 +23,18 @@ AVAudioPlayer *audioPlayerSounds;
 
 @implementation xxiivvViewController
 
--(void)viewDidLoad {
+-(void)viewDidLoad{
 	
 	[super viewDidLoad];
 	[self start];
 }
 
--(void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning{
 	
 	[super didReceiveMemoryWarning];
 }
 
--(void)start {
+-(void)start{
 	
 	[self nodeStart];
 	[self userStart];
@@ -47,7 +47,7 @@ AVAudioPlayer *audioPlayerSounds;
 
 #pragma mark Game -
 
--(void)gameIsPreparing {
+-(void)gameIsPreparing{
 	
 	NSLog(@"> Phase | Prepare");
 	
@@ -56,7 +56,7 @@ AVAudioPlayer *audioPlayerSounds;
 	[self templatePrepareAnimation];
 }
 
--(void)gameIsConfiguring {
+-(void)gameIsConfiguring{
 	
 	NSLog(@"> Phase | Setup");
 	
@@ -74,7 +74,7 @@ AVAudioPlayer *audioPlayerSounds;
 	[self gameIsReady];
 }
 
--(void)gameIsReady {
+-(void)gameIsReady{
 	
 	NSLog(@"> Phase | Ready");
 	
@@ -88,7 +88,7 @@ AVAudioPlayer *audioPlayerSounds;
 	[self templateReadyAnimation];
 }
 
--(void)gameIsStarting {
+-(void)gameIsStarting{
 	
 	NSLog(@"> Phase | Start");
 	
@@ -108,13 +108,13 @@ AVAudioPlayer *audioPlayerSounds;
 	gameTimeElapsing = [NSTimer scheduledTimerWithTimeInterval:(0.1) target:self selector:@selector(gameTimeIsCounting) userInfo:nil repeats:YES];
 }
 
--(void)gameTimeIsCounting {
+-(void)gameTimeIsCounting{
 	
 	gameTimeElapsed += 0.1;
 	self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%@_seconds", nil),[NSString stringWithFormat:@"%.2f",gameTimeElapsed]];
 }
 
--(void)gameIsFinished {
+-(void)gameIsFinished{
 	
 	NSLog(@"> Phase | Finished");
 		
@@ -127,7 +127,7 @@ AVAudioPlayer *audioPlayerSounds;
 	[self gameIsPreparing];
 }
 
--(void)gameVerify :(int)input {
+-(void)gameVerify:(int)input{
 	
 	if(input == gameCurrentKanjiAnswer){
 		userCurrentKanjiScore = (3- [[gameTimeRemaining fireDate] timeIntervalSinceNow]);
@@ -191,7 +191,7 @@ AVAudioPlayer *audioPlayerSounds;
 
 #pragma mark Options -
 
--(void)optionSelection :(id)sender {
+-(void)optionSelection:(id)sender{
 	
 	int optionId = ((UIView*)sender).tag;
 	
@@ -218,19 +218,19 @@ AVAudioPlayer *audioPlayerSounds;
 
 #pragma mark Interface Menu -
 
--(IBAction)interfaceMenuNext:(id)sender {
+-(IBAction)interfaceMenuNext:(id)sender{
 	
 	[self audioPlayerSounds:@"fx.click.wav"];
 	[self gameIsStarting];
 }
 
--(IBAction)interfaceMenuReset:(id)sender {
+-(IBAction)interfaceMenuReset:(id)sender{
 	
 	[self audioPlayerSounds:@"fx.click.wav"];
 	[self userReset];
 }
 
--(void)audioPlayerSounds:(NSString *)filename; {
+-(void)audioPlayerSounds:(NSString *)filename{
 	
 	NSLog(@"$ Audio | Play %@",filename);
 	

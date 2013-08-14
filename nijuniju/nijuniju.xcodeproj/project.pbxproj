@@ -131,12 +131,12 @@
 				0328719217B0870B00425BE8 /* xxiivvAppDelegate.m */,
 				0328719D17B0870B00425BE8 /* xxiivvViewController.h */,
 				0328719E17B0870B00425BE8 /* xxiivvViewController.m */,
-				0365EBBD17BB17740031B727 /* Localizable.strings */,
 				032871A917B0C63300425BE8 /* xxiivvTemplates.h */,
 				032871AA17B0C63300425BE8 /* xxiivvTemplates.m */,
 				03DDF1EF17B356C40070E1D4 /* xxiivvNodes.h */,
 				03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */,
 				0328719A17B0870B00425BE8 /* MainStoryboard.storyboard */,
+				0365EBBD17BB17740031B727 /* Localizable.strings */,
 				0328718917B0870B00425BE8 /* Supporting Files */,
 			);
 			path = nijuniju;

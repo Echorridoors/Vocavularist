@@ -11,7 +11,7 @@
 
 @implementation xxiivvViewController (Modules)
 
-- (void) nodeStart {
+-(void)nodeStart{
 	
 	gameContentArray = @[
 	@[@"日", @"two|ふた", @"sun|ひ", @"long|ながい",@"2"],
@@ -631,19 +631,19 @@
 
 #pragma mark User -
 
-- (void) userStart {
+-(void)userStart{
 	
 	userLastLessonReached = 1;
 	userContentRecords = [[NSMutableArray alloc] init];
 }
 
-- (void) userSaveRecord :(int)location :(float)record {
+-(void)userSaveRecord:(int)location :(float)record{
 	
 	NSLog(@"> Save  | Saved Record: %f", record);
 	[userContentRecords addObject:[NSArray arrayWithObjects: [NSString stringWithFormat:@"%d",location], [NSString stringWithFormat:@"%f",record], nil]];
 }
 
-- (void) userReset {
+-(void)userReset{
 	
 	NSLog(@"> Reset | Reset User Records");
 	userContentRecords = [[NSMutableArray alloc] init];
@@ -654,13 +654,13 @@
 	[self userStart];
 }
 
-- (void)userErase {
+-(void)userErase{
 	
 	NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
 	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
 }
 
-- (void)userLoad {
+-(void)userLoad{
 	
 	if( [[[NSUserDefaults standardUserDefaults] objectForKey:@"userLastLessonReached"] intValue] > 0 ){
 		
@@ -672,7 +672,7 @@
 	}
 }
 
-- (void)userIsSaving {
+-(void)userIsSaving{
 	
 	NSLog(@"= User  | Saving..");
 	
