@@ -40,8 +40,9 @@ AVAudioPlayer *audioPlayerSounds;
 	[self userStart];
 	[self userLoad];
 	
-	[self templateMenuBetweenKanjiRefresh];
 	[self templateStart];
+	[self templateMenuBetweenKanjiRefresh];
+	[self optionMenuAnimateHide];
 	[self gameIsPreparing];
 }
 
@@ -86,12 +87,16 @@ AVAudioPlayer *audioPlayerSounds;
 		self.interfaceMenuTimeRemainingLabel.text = NSLocalizedString(@"next_kanji_card", nil);
 	}
 	
+	gameTimeUntilMenu = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(optionMenuDisplay) userInfo:nil repeats:NO];
+	
 	[self templateReadyAnimation];
 }
 
 -(void)gameIsStarting{
 	
 	NSLog(@"> Phase | Start");
+	
+	[gameTimeUntilMenu invalidate];
 	
 	gameCurrentLessonKanji = gameContentArray[gameCurrentLesson][0];
 	
@@ -206,6 +211,10 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	[self gameVerify:optionId];
 	[self gameIsFinished];
+}
+
+-(void)optionMenuDisplay{
+	[self optionMenuAnimateShow];
 }
 
 #pragma mark Interface Menu -

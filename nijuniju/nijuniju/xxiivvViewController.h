@@ -77,6 +77,7 @@ int		gameCurrentLesson;
 NSString	*gameCurrentLessonKanji;
 NSTimer		*gameTimeRemaining;
 NSTimer		*gameTimeElapsing;
+NSTimer		*gameTimeUntilMenu;
 
 NSArray *gameContentArray;
 NSMutableArray *userContentRecords;

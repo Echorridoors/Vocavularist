@@ -70,6 +70,7 @@
 	
 	self.interfaceMenuBetweenKanjis.frame = screen;
 	self.interfaceMenuBetweenKanjis.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	self.interfaceMenuBetweenKanjis.alpha = 0;
 	
 	self.interfaceMenuModeView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
 	self.interfaceMenuModeView.frame = CGRectMake(screenMargin/2, screenMargin*4, buttonInterfaceMenuButton, buttonInterfaceMenuButton);
@@ -329,6 +330,8 @@
 
 -(void)templateStartAnimation {
 	
+	[self optionMenuAnimateHide];
+	
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
@@ -361,6 +364,13 @@
 	self.blurTarget.alpha = 0;
 	self.interfaceMenuTimeAverage.frame = CGRectMake(gamePositionAverage, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
 	[UIView commitAnimations];
+}
+
+-(void)optionMenuAnimateShow{
+	[self fadeIn:self.interfaceMenuBetweenKanjis d:0 t:0.5];
+}
+-(void)optionMenuAnimateHide{
+	[self fadeOut:self.interfaceMenuBetweenKanjis d:0 t:0.3];
 }
 
 #pragma mark Ui Elements -

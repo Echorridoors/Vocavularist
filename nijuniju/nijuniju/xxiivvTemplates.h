@@ -19,5 +19,6 @@
 	-(void)templateStartAnimation;
 	-(void)templateFinishAnimation;
 	-(void)templateMenuBetweenKanjiRefresh;
-
+	-(void)optionMenuAnimateShow;
+	-(void)optionMenuAnimateHide;
 @end
