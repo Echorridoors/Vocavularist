@@ -206,6 +206,7 @@ AVAudioPlayer *audioPlayerSounds;
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 			[UIView setAnimationDuration:0.25];
 			subview.frame = CGRectOffset(origin, 0, 10);
+			subview.alpha = 0.5;
 			[UIView commitAnimations];
 		}
 	}
