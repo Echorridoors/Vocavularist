@@ -120,7 +120,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="InterfaceMenuReset:" destination="2" eventType="touchUpInside" id="fzc-iY-URe"/>
+                                            <action selector="interfaceMenuReset:" destination="2" eventType="touchUpInside" id="fP4-1Q-gpK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -144,7 +144,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="InterfaceMenuReset" destination="OW2-OD-4tD" id="5nS-nv-Nnu"/>
                         <outlet property="blurContainerView" destination="3sd-FC-SAa" id="Ckk-pP-jpD"/>
                         <outlet property="blurError" destination="2SI-qo-wtJ" id="0hR-kd-96Q"/>
                         <outlet property="blurTarget" destination="sZw-Bh-aqn" id="sBZ-65-EKq"/>
@@ -157,6 +156,7 @@
                         <outlet property="interfaceMenu" destination="ZSc-5d-ZeO" id="eJ2-e8-rGS"/>
                         <outlet property="interfaceMenuNext" destination="7tV-qG-bkN" id="1FM-k1-g0W"/>
                         <outlet property="interfaceMenuProgress" destination="SOk-xb-Bnp" id="hjv-m9-fGn"/>
+                        <outlet property="interfaceMenuReset" destination="OW2-OD-4tD" id="Mw5-pE-UFq"/>
                         <outlet property="interfaceMenuTimeAverage" destination="F8o-ng-DxN" id="PoS-It-Ce2"/>
                         <outlet property="interfaceMenuTimeBar" destination="LF1-zV-jgu" id="3nd-ST-JaW"/>
                         <outlet property="interfaceMenuTimeRemaining" destination="qav-Ho-RpR" id="eMM-go-fGq"/>
@@ -176,9 +176,8 @@
         <class className="xxiivvViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/xxiivvViewController.h"/>
             <relationships>
-                <relationship kind="action" name="InterfaceMenuReset:"/>
                 <relationship kind="action" name="interfaceMenuNext:"/>
-                <relationship kind="outlet" name="InterfaceMenuReset" candidateClass="UIButton"/>
+                <relationship kind="action" name="interfaceMenuReset:"/>
                 <relationship kind="outlet" name="blurContainerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="blurError" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="blurTarget" candidateClass="UIView"/>
@@ -191,6 +190,7 @@
                 <relationship kind="outlet" name="interfaceMenu" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="interfaceMenuNext" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="interfaceMenuProgress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="interfaceMenuReset" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="interfaceMenuTimeAverage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeRemaining" candidateClass="UIImageView"/>

@@ -11,10 +11,16 @@
 
 @implementation xxiivvViewController (Modules)
 
-- (void) templateStart
-{
+-(void)templateStart {
+	
 	screen = [[UIScreen mainScreen] bounds];
 	screenMargin = screen.size.width/8;
+	
+	colorGood = [UIColor colorWithWhite:0.7 alpha:1];
+	colorBad = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1];
+	colorAverage = [UIColor colorWithWhite:0.5 alpha:1];
+	colorWorse = [UIColor colorWithWhite:0.3 alpha:1];
+	colorBetter = [UIColor colorWithWhite:0.9 alpha:1];
 	
 	[self templateInterface];
 	
@@ -41,11 +47,8 @@
 	
 	self.feedbackColour.frame = screen;
 	
-	
-	
 	self.blurTarget.hidden = NO;
 	self.blurContainerView.hidden = YES;
-	
 	
 	self.interfaceChapter.frame = CGRectMake(screenMargin/4, screenMargin, screen.size.width, screenMargin);
 	
@@ -60,19 +63,20 @@
 	
 	self.interfaceMenuTimeAverage.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
 	self.interfaceMenuTimeAverage.image = [UIImage imageNamed:@"icn.arrow.png"];
-	
 }
 
-- (void) templateInterface
-{
+-(void)templateInterface {
+	
 	self.interfaceMenu.frame = CGRectMake(0, 0, screen.size.width, screenMargin);
 	
 	CAGradientLayer *bgLayer = [self darkGradient];
 	bgLayer.frame = self.interfaceMenu.frame;
 	[self.interfaceMenu.layer insertSublayer:bgLayer atIndex:0];
 	
-	CALayer *bottomBorder = [CALayer layer];bottomBorder.frame = CGRectMake(0, screenMargin-1, screen.size.width, 1);bottomBorder.backgroundColor = [UIColor colorWithWhite:0 alpha:1].CGColor;[self.interfaceMenu.layer addSublayer:bottomBorder];
-	CALayer *bottomBorder2 = [CALayer layer];bottomBorder2.frame = CGRectMake(0, screenMargin-2, screen.size.width, 1);bottomBorder2.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1].CGColor;[self.interfaceMenu.layer addSublayer:bottomBorder2];
+	CALayer *bottomBorder = [CALayer layer];bottomBorder.frame = CGRectMake(0, screenMargin-1, screen.size.width, 1);
+	bottomBorder.backgroundColor = [UIColor colorWithWhite:0 alpha:1].CGColor;[self.interfaceMenu.layer addSublayer:bottomBorder];
+	CALayer *bottomBorder2 = [CALayer layer];bottomBorder2.frame = CGRectMake(0, screenMargin-2, screen.size.width, 1);
+	bottomBorder2.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1].CGColor;[self.interfaceMenu.layer addSublayer:bottomBorder2];
 	
 	self.interfaceMenuProgress.frame = CGRectMake(screenMargin/4, 0, screen.size.width/2, screenMargin-2);
 	self.interfaceMenuProgress.text = @"Chapter 1 - Kanji 0 to 10";
@@ -84,23 +88,23 @@
 	self.interfaceMenuProgress.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
 	self.interfaceMenuProgress.font = [self fontSmall];
 	
-	self.InterfaceMenuReset.frame = CGRectMake( screen.size.width-(self.InterfaceMenuReset.titleLabel.frame.size.width*2)-(screenMargin/4), (screenMargin/4)/2, self.InterfaceMenuReset.titleLabel.frame.size.width*2, (screenMargin-2)-(screenMargin/4));
-	self.InterfaceMenuReset.titleLabel.textAlignment = NSTextAlignmentCenter;
-	self.InterfaceMenuReset.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
-	[self.InterfaceMenuReset setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	self.InterfaceMenuReset.titleLabel.font = [self fontSmall];
-	[self.InterfaceMenuReset setTitle:@"Start Over" forState:UIControlStateNormal];
-	self.InterfaceMenuReset.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
-	self.InterfaceMenuReset.layer.cornerRadius = 4; // this value vary as per your desire
-    self.InterfaceMenuReset.clipsToBounds = YES;
-	self.InterfaceMenuReset.layer.shadowColor = [[UIColor blackColor] CGColor];
-	self.InterfaceMenuReset.layer.shadowOffset = CGSizeMake(0, -1.0f);
-	self.InterfaceMenuReset.layer.shadowOpacity = 1.0f;
-	self.InterfaceMenuReset.layer.shadowRadius = 0;
+	self.interfaceMenuReset.frame = CGRectMake( screen.size.width-(self.interfaceMenuReset.titleLabel.frame.size.width*2)-(screenMargin/4), (screenMargin/4)/2, self.interfaceMenuReset.titleLabel.frame.size.width*2, (screenMargin-2)-(screenMargin/4));
+	self.interfaceMenuReset.titleLabel.textAlignment = NSTextAlignmentCenter;
+	self.interfaceMenuReset.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
+	[self.interfaceMenuReset setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	self.interfaceMenuReset.titleLabel.font = [self fontSmall];
+	[self.interfaceMenuReset setTitle:@"Start Over" forState:UIControlStateNormal];
+	self.interfaceMenuReset.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
+	self.interfaceMenuReset.layer.cornerRadius = 4; // this value vary as per your desire
+    self.interfaceMenuReset.clipsToBounds = YES;
+	self.interfaceMenuReset.layer.shadowColor = [[UIColor blackColor] CGColor];
+	self.interfaceMenuReset.layer.shadowOffset = CGSizeMake(0, -1.0f);
+	self.interfaceMenuReset.layer.shadowOpacity = 1.0f;
+	self.interfaceMenuReset.layer.shadowRadius = 0;
 	CALayer *gradient = [CALayer layer];
-	gradient.frame = CGRectMake(0, 0, self.InterfaceMenuReset.frame.size.width, self.InterfaceMenuReset.frame.size.height/2);
+	gradient.frame = CGRectMake(0, 0, self.interfaceMenuReset.frame.size.width, self.interfaceMenuReset.frame.size.height/2);
 	gradient.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1].CGColor;
-	[self.InterfaceMenuReset.layer addSublayer:gradient];
+	[self.interfaceMenuReset.layer addSublayer:gradient];
 	
 	self.interfaceOptions.frame = CGRectMake(0, screen.size.height - (screenMargin*2), screen.size.width, screenMargin*1.5);
 	
@@ -131,49 +135,50 @@
 	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
 }
 
-- (void) templateButtonsGenerate
-{
+-(void)templateButtonsGenerate {
+	
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		[subview removeFromSuperview];
 	}
-	int i = 0;
-	while(i < 3){
+	
+	for(int i = 0; i < 3; i++){
 		
-		NSArray* answerForm = [nodeContentArray[userLesson][i+1] componentsSeparatedByString: @"|"];
+		NSArray* answerForm = [gameContentArray[gameCurrentLesson][i+1] componentsSeparatedByString: @"|"];
 		
 		NSString *hiraganaForm = [answerForm objectAtIndex: 1];
 		NSString *englishForm = [[answerForm objectAtIndex: 0] capitalizedString];
 		
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-		[button addTarget:self action:NSSelectorFromString([NSString stringWithFormat:@"option%d",i]) forControlEvents:UIControlEventTouchDown];
+		[button addTarget:self action:NSSelectorFromString(@"optionSelection:") forControlEvents:UIControlEventTouchDown];
 		button.tag = i+1;
 		button.frame = CGRectMake(i*((screen.size.width/3)+1), 0, screen.size.width/3, screenMargin*1.5);
 		button.backgroundColor = [UIColor whiteColor];
-		[button setTitle: [NSString stringWithFormat:englishForm] forState: UIControlStateNormal];
+		[button setTitle: englishForm forState: UIControlStateNormal];
 		[button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
 		button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
 		button.titleLabel.font = [self fontMedium];
 		button.contentEdgeInsets = UIEdgeInsetsMake(-1*(screenMargin*0.2), 0, 0, 0);
 		
 		UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (screenMargin*1.5)*0.55, button.frame.size.width, button.frame.size.height/3)];
-		hiragana.text = [NSString stringWithFormat:hiraganaForm];
+		hiragana.text = hiraganaForm;
 		hiragana.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
 		hiragana.textAlignment = NSTextAlignmentCenter;
 		hiragana.font = [self fontTiny];
 		[button addSubview:hiragana];
 		
 		[self.interfaceOptions addSubview:button];
-		i += 1;
 	}
 }
 
-- (void) templateButtonsAnimationShow
-{
+#pragma mark Animations -
+
+-(void)templateButtonsAnimationShow {
+	
 	int i = 3;
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		CGRect origin = subview.frame;
 		subview.frame = CGRectOffset(origin, 0, screenMargin*1.5);
-		[UIView beginAnimations: @"Slide In" context:nil];
+		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 		[UIView setAnimationDuration:0.25];
 		[UIView setAnimationDelay:(i*0.1)];
@@ -182,7 +187,7 @@
 		i += 1;
 	}
 	
-	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	[UIView setAnimationDuration:0.5];
 	self.interfaceMenuTimeRemaining.alpha = 1;
@@ -190,12 +195,12 @@
 	
 }
 
-- (void) templateButtonsAnimationHide
-{
+-(void)templateButtonsAnimationHide {
+	
 	int i = 3;
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		CGRect origin = subview.frame;
-		[UIView beginAnimations: @"Slide In" context:nil];
+		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 		[UIView setAnimationDuration:0.25];
 		[UIView setAnimationDelay:(i*0.1)];
@@ -204,17 +209,18 @@
 		i += 1;
 	}
 	
-	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	[UIView setAnimationDuration:0.5];
 	self.interfaceMenuTimeRemaining.alpha = 1;
 	[UIView commitAnimations];
-	
 }
 
-- (void) templatePrepareAnimation
-{
-	[UIView beginAnimations: @"Slide In" context:nil];
+-(void)templatePrepareAnimation {
+	
+	[self.view.layer removeAnimationForKey:@"templateStartAnimation"];
+	
+	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	[UIView setAnimationDuration:0.3];
 	self.interfaceChapter.alpha = 1;
@@ -224,29 +230,29 @@
 	[UIView commitAnimations];
 }
 
-- (void) templateReadyAnimation
-{
+-(void)templateReadyAnimation {
+	
 	[self fadeIn:self.interfaceMenuNext d:0 t:0.5];
 }
 
-- (void) templateStartAnimation
-{
-	[UIView beginAnimations: @"Slide In" context:nil];
+-(void)templateStartAnimation {
+	
+	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.blurTarget.alpha = 1;
 	[UIView commitAnimations];
-	[UIView beginAnimations: @"Slide In" context:nil];
+	
+	[UIView beginAnimations: @"templateStartAnimation" context:nil];
 	[UIView setAnimationDuration:3];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, (screenMargin/4), (screenMargin/4) );
 	self.blurContainerView.alpha = 0.5;
 	[UIView commitAnimations];
 	
-	
 	// move label up
 	
-	[UIView beginAnimations: @"Slide In" context:nil];
+	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuNext.alpha = 0;
@@ -255,16 +261,19 @@
 	[UIView commitAnimations];
 }
 
-- (void) templateFinishAnimation
-{
-	[UIView beginAnimations: @"Slide In" context:nil];
+-(void)templateFinishAnimation {
+	
+	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.blurTarget.alpha = 0;
+	self.interfaceMenuTimeAverage.frame = CGRectMake(gamePositionAverage, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
 	[UIView commitAnimations];
 }
 
-- (CAGradientLayer*) greyGradient {
+#pragma mark Ui Elements -
+
+-(CAGradientLayer*)greyGradient {
 	
     UIColor *colorOne	= [UIColor colorWithWhite:0.9 alpha:1.0];
     UIColor *colorTwo	= [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.85 alpha:1.0];
@@ -282,10 +291,9 @@
     headerLayer.locations = locations;
 	
     return headerLayer;
-	
 }
 
-- (CAGradientLayer*) darkGradient {
+-(CAGradientLayer*)darkGradient {
 	
     UIColor *colorOne	= [UIColor colorWithRed:0.1 green:0 blue:0 alpha:1];
     UIColor *colorTwo	= [UIColor colorWithWhite:0.25 alpha:1];
@@ -303,12 +311,10 @@
     headerLayer.locations = locations;
 	
     return headerLayer;
-
-	
 }
 
-- (void)fadeIn:(UIView*)viewToFadeIn d:(NSTimeInterval)delay t:(NSTimeInterval)duration
-{
+-(void)fadeIn:(UIView*)viewToFadeIn d:(NSTimeInterval)delay t:(NSTimeInterval)duration {
+	
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:duration];
 	[UIView setAnimationDelay:delay];
@@ -316,8 +322,8 @@
 	[UIView commitAnimations];
 }
 
-- (void)fadeOut:(UIView*)viewToFadeIn d:(NSTimeInterval)delay t:(NSTimeInterval)duration
-{
+-(void)fadeOut:(UIView*)viewToFadeIn d:(NSTimeInterval)delay t:(NSTimeInterval)duration {
+	
 	[UIView beginAnimations: @"Fade Out" context:nil];
 	[UIView setAnimationDuration:duration];
 	[UIView setAnimationDelay:delay];
@@ -325,24 +331,26 @@
 	[UIView commitAnimations];
 }
 
-- (UIFont*) fontTiny
-{
+#pragma mark Responsive Values -
+
+-(UIFont*)fontTiny {
+	
 	if( screen.size.width > 640 ){
 		return [UIFont fontWithName:@"Helvetica Neue" size:22.0f];
 	}
 	return [UIFont fontWithName:@"Helvetica Neue" size:11.0f];
 }
 
-- (UIFont*) fontSmall
-{
+-(UIFont*)fontSmall {
+	
 	if( screen.size.width > 640 ){
 		return [UIFont boldSystemFontOfSize:24.0f];
 	}
 	return [UIFont boldSystemFontOfSize:12.0f];
 }
 
-- (UIFont*) fontMedium
-{
+-(UIFont*)fontMedium {
+	
 	if( screen.size.width > 640 ){
 		return [UIFont boldSystemFontOfSize:28.0f];
 	}

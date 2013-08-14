@@ -27,32 +27,46 @@
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuTimeRemainingLabel;
 	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuNext;
 	@property (strong, nonatomic) IBOutlet UIImageView *blurError;
-	@property (strong, nonatomic) IBOutlet UIButton *InterfaceMenuReset;
+	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuReset;
 	@property (strong, nonatomic) IBOutlet UIView *interfaceChapter;
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceChapterName;
 	@property (strong, nonatomic) IBOutlet UIImageView *interfaceMenuTimeAverage;
 
-	- (IBAction)interfaceMenuNext:(id)sender;
-	- (IBAction)InterfaceMenuReset:(id)sender;
-	- (void) gameFinish;
+	-(IBAction)interfaceMenuNext:(id)sender;
+	-(IBAction)interfaceMenuReset:(id)sender;
+	-(void)gameIsFinished;
 
 @end
 
 CGRect screen;
 float screenMargin;
-float gameElapsing;
-NSTimer *timeRemaining;
-NSTimer *timeElapsing;
 
-int userLesson;
-int userNextType;
-int userProgress;
+// User Variables
 
-NSMutableArray *nodeContentArray;
+int		userLastLessonReached;
+float	userCurrentKanjiScore;
+int		userTotalKanjiSeen;
+int		userCurrentKanjiSeen;
+
+// Game Variables
+
+int		gameCurrentKanjiAnswer;
+float	gamePositionAverage;
+float	gameTimeElapsed;
+BOOL	gameNextLessonIsReview;
+int		gameCurrentLesson;
+NSString	*gameCurrentLessonKanji;
+NSTimer		*gameTimeRemaining;
+NSTimer		*gameTimeElapsing;
+
+NSArray *gameContentArray;
 NSMutableArray *userContentRecords;
 
-
-
+UIColor* colorGood;
+UIColor* colorBad;
+UIColor* colorAverage;
+UIColor* colorWorse;
+UIColor* colorBetter;
 
 
 

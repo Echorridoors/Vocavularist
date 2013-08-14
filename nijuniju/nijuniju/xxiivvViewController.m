@@ -23,186 +23,186 @@ AVAudioPlayer *audioPlayerSounds;
 
 @implementation xxiivvViewController
 
-- (void)viewDidLoad { [super viewDidLoad]; [self start];}
-- (void)didReceiveMemoryWarning{ [super didReceiveMemoryWarning]; }
+-(void)viewDidLoad {
+	
+	[super viewDidLoad];
+	[self start];
+}
 
-- (void) start
-{
+-(void)didReceiveMemoryWarning {
+	
+	[super didReceiveMemoryWarning];
+}
+
+-(void)start {
+	
 	[self nodeStart];
 	[self userStart];
 	[self userLoad];
 	
 	[self templateStart];
-	[self gamePrepare];
+	[self gameIsPreparing];
 }
 
 
-- (void) gamePrepare
-{
+#pragma mark Game -
+
+-(void)gameIsPreparing {
+	
 	NSLog(@"> Phase | Prepare");
 	
-	[self userSave];
-	
-	[NSTimer scheduledTimerWithTimeInterval:(0.3) target:self selector:@selector(gameSetup) userInfo:nil repeats:NO];
-	
+	[self userIsSaving];
+	[self gameIsConfiguring];
 	[self templatePrepareAnimation];
 }
 
--(void) gameSetup
-{
+-(void)gameIsConfiguring {
+	
 	NSLog(@"> Phase | Setup");
 	
-	userNextType +=1;
-	
-	if( userNextType % 2){
-		NSLog(@"> Tasks | Review");
-		userLesson = ((arc4random()%(userProgress))+1);
+	if(gameNextLessonIsReview == TRUE){
+		gameCurrentLesson = ((arc4random()%(userLastLessonReached))+1);
+		gameNextLessonIsReview = FALSE;
 	}
 	else{
-		NSLog(@"> Tasks | New");
-		userLesson = userProgress;
+		gameCurrentLesson = userLastLessonReached;
+		gameNextLessonIsReview = TRUE;
 	}
 	
-	NSLog(@"> Phase | Progress %d Next Lesson %d", userProgress, userLesson);
+	NSLog(@"> Phase | Progress %d Next Lesson %d", userLastLessonReached, gameCurrentLesson);
 	
-	[self gameReady];
+	[self gameIsReady];
 }
 
-- (void) gameReady
-{
+-(void)gameIsReady {
+	
 	NSLog(@"> Phase | Ready");
 	
-	if( userProgress == 1 ){
-		self.interfaceMenuTimeRemainingLabel.text = @"Click to Begin";
+	if( userLastLessonReached == 1 ){
+		self.interfaceMenuTimeRemainingLabel.text = NSLocalizedString(@"click_to_begin", nil);
 	}
 	else{
-		self.interfaceMenuTimeRemainingLabel.text = @"Next Kanji Card";
+		self.interfaceMenuTimeRemainingLabel.text = NSLocalizedString(@"next_kanji_card", nil);
 	}
 	
 	[self templateReadyAnimation];
 }
 
-- (void) gameStart
-{
+-(void)gameIsStarting {
+	
 	NSLog(@"> Phase | Start");
 	
-	self.interfaceMenuTimeRemainingLabel.text = @"3 Seconds Left";
+	gameCurrentLessonKanji = gameContentArray[gameCurrentLesson][0];
 	
-	self.blurTargetGlyph.text = nodeContentArray[userLesson][0];
+	self.interfaceMenuTimeRemainingLabel.text = NSLocalizedString(@"3_seconds_left", nil);
+	
+	self.blurTargetGlyph.text = gameCurrentLessonKanji;
 	
 	[self templateButtonsGenerate];
 	[self templateButtonsAnimationShow];
 	[self templateStartAnimation];
 	
-	gameElapsing = 0;
+	gameTimeElapsed = 0;
 	
-	timeRemaining = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameFinish) userInfo:nil repeats:NO];
-	timeElapsing = [NSTimer scheduledTimerWithTimeInterval:(0.1) target:self selector:@selector(gameTime) userInfo:nil repeats:YES];
-
+	gameTimeRemaining = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameIsFinished) userInfo:nil repeats:NO];
+	gameTimeElapsing = [NSTimer scheduledTimerWithTimeInterval:(0.1) target:self selector:@selector(gameTimeIsCounting) userInfo:nil repeats:YES];
 }
 
-- (void) gameTime
-{
-	gameElapsing += 0.1;
-	self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds",[[NSString stringWithFormat:@"%f",gameElapsing] substringWithRange:NSMakeRange(0, 4)]];
+-(void)gameTimeIsCounting {
 	
+	gameTimeElapsed += 0.1;
+	self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%@_seconds", nil),[NSString stringWithFormat:@"%.2f",gameTimeElapsed]];
 }
 
-- (void) gameFinish
-{
+-(void)gameIsFinished {
+	
 	NSLog(@"> Phase | Finished");
 		
-	[timeRemaining invalidate];
-	timeRemaining = nil;
-	[timeElapsing invalidate];
-	timeElapsing = nil;
-	
+	[gameTimeRemaining invalidate];
+	[gameTimeElapsing invalidate];
+		
 	[self templateButtonsAnimationHide];
 	[self templateFinishAnimation];
 	
-	[self gamePrepare];
+	[self gameIsPreparing];
 }
 
-
-
-- (void) gameVerify :(int)input
-{
-	if( input == [nodeContentArray[userLesson][4] intValue] ){
+-(void)gameVerify :(int)input {
+	
+	if(input == gameCurrentKanjiAnswer){
+		userCurrentKanjiScore = (3- [[gameTimeRemaining fireDate] timeIntervalSinceNow]);
 		
-		float score = (3- [[timeRemaining fireDate] timeIntervalSinceNow]);
-		
-		// Save
-		
-		[self userSaveRecord:userLesson :score];
-		
-		// Get average
-		
-		float sum = 0.0;
-		float average = 0.0;
-		float averageSum = 0.0;
-		int i = 0;
-		float e = 0;
-		while( i < [userContentRecords count] ){
-			if( [userContentRecords[i][0] intValue] == userLesson ){
-				e+=1;
-				sum += [userContentRecords[i][1] floatValue];
-			}
-			averageSum += [userContentRecords[i][1] floatValue];
-			i+=1;
+		[self userSaveRecord:gameCurrentLesson :userCurrentKanjiScore];
+		[self gameSetAverage];
+				
+		if( userCurrentKanjiSeen == 1 && ([gameContentArray count]-1) > userLastLessonReached ){
+			userLastLessonReached += 1;
+			self.interfaceMenuProgress.text = [NSString stringWithFormat:NSLocalizedString(@"chapter_%d_kanji_0_to_%@", nil),(userLastLessonReached/10)+1, ((userLastLessonReached/10)+1)*10];
 		}
 		
-		// Update Average pointer
-			
-		float positionAverage = screenMargin+(screenMargin/4) + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/i)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
-		
-		[UIView beginAnimations: @"Slide In" context:nil];
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-		[UIView setAnimationDuration:0.25];
-		self.interfaceMenuTimeAverage.frame = CGRectMake(positionAverage, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
-		[UIView commitAnimations];
-		
-		// Progress if new item
-		
-		if( e == 1 && ([nodeContentArray count]-1) > userProgress ){
-			userProgress += 1;
-			self.interfaceMenuProgress.text = [NSString stringWithFormat:@"Chapter %d - Kanji 0 to %d",(userProgress/10)+1, ((userProgress/10)+1)*10];
-		}
-		
-		self.interfaceChapterName.text = [NSString stringWithFormat:@"%@s average %d kanjis", [[NSString stringWithFormat:@"%f", averageSum/i] substringWithRange:NSMakeRange(0, 4)],i];
-		
-		// Display the score in colours
-		
-		average = sum/e;
-		
-		if( score > 2.5 ){ self.feedbackColour.backgroundColor = [self colorWorse]; }
-		else if( score > 1.5 ){ self.feedbackColour.backgroundColor = [self colorAverage]; }
-		else if( score > average ){ self.feedbackColour.backgroundColor = [self colorBetter]; }
-		else { self.feedbackColour.backgroundColor = [self colorGood]; }
-		
-		// Write time
-		
-		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:@"%@ Seconds", [[NSString stringWithFormat:@"%f", score] substringWithRange:NSMakeRange(0, 4)]];
-		
+		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%@_seconds", nil), [[NSString stringWithFormat:@"%f", userCurrentKanjiScore] substringWithRange:NSMakeRange(0, 4)]];
 		[self audioPlayerSounds:@"fx.accepted.wav"];
-		
 	}
 	else{
-		
 		[self audioPlayerSounds:@"fx.error.wav"];
-		self.feedbackColour.backgroundColor = [self colorBad];
+		self.feedbackColour.backgroundColor = colorBad;
 		self.blurTarget.alpha = 0;
-		
 	}
 }
 
-- (void) optionSelection :(int)target
-{
-	NSLog(@"+ Acted | Option: %d",target);
+-(void)gameSetAverage{
+	
+	float sum = 0.0;
+	float averageSum = 0.0;
+	
+	userTotalKanjiSeen = 0;
+	userCurrentKanjiSeen = 0;
+	
+	while(userTotalKanjiSeen < [userContentRecords count]){
+		if([userContentRecords[userTotalKanjiSeen][0] intValue] == gameCurrentLesson){
+			userCurrentKanjiSeen+=1;
+			sum += [userContentRecords[userTotalKanjiSeen][1] floatValue];
+		}
+		averageSum += [userContentRecords[userTotalKanjiSeen][1] floatValue];
+		userTotalKanjiSeen+=1;
+	}
+	
+	self.interfaceChapterName.text = [NSString stringWithFormat:NSLocalizedString(@"%@s_average_%d_kanjis", nil), [[NSString stringWithFormat:@"%f", averageSum/userTotalKanjiSeen] substringWithRange:NSMakeRange(0, 4)],userTotalKanjiSeen];
+	
+	// Update Average pointer
+	
+	gamePositionAverage = screenMargin+(screenMargin/4) + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/userTotalKanjiSeen)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
+	
+	// Update Background color
+	
+	if( userCurrentKanjiScore > 2.5 ){
+		self.feedbackColour.backgroundColor = colorWorse;
+	}
+	else if( userCurrentKanjiScore > 1.5 ){
+		self.feedbackColour.backgroundColor = colorAverage;
+	}
+	else if( userCurrentKanjiScore > (sum/userCurrentKanjiSeen) ){
+		self.feedbackColour.backgroundColor = colorBetter;
+	}
+	else {
+		self.feedbackColour.backgroundColor = colorGood;
+	}
+}
+
+#pragma mark Options -
+
+-(void)optionSelection :(id)sender {
+	
+	int optionId = ((UIView*)sender).tag;
+	
+	NSLog(@"+ Acted | Option: %d",optionId);
+	
+	gameCurrentKanjiAnswer = [gameContentArray[gameCurrentLesson][4] intValue];
 	
 	for (UIView *subview in [self.interfaceOptions subviews]) {
-		if( subview.tag != target ){
+		if( subview.tag != optionId ){
 			CGRect origin = subview.frame;
-			[UIView beginAnimations: @"Slide In" context:nil];
+			[UIView beginAnimations: nil context:nil];
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 			[UIView setAnimationDuration:0.25];
 			subview.frame = CGRectOffset(origin, 0, 10);
@@ -212,61 +212,28 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	[self audioPlayerSounds:@"fx.click.wav"];
 	
-	[self gameVerify:target];
-	[self gameFinish];
+	[self gameVerify:optionId];
+	[self gameIsFinished];
 }
 
-- (void) option0
-{
-	[self optionSelection:1];
-}
-- (void) option1
-{
-	[self optionSelection:2];
-}
-- (void) option2
-{
-	[self optionSelection:3];
-}
+#pragma mark Interface Menu -
 
-- (UIColor*) colorGood
-{
-	return [UIColor colorWithWhite:0.7 alpha:1];
-}
-- (UIColor*) colorBad
-{
-	return [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1];
-}
-- (UIColor*) colorAverage
-{
-	return [UIColor colorWithWhite:0.5 alpha:1];
-}
-- (UIColor*) colorWorse
-{
-	return [UIColor colorWithWhite:0.3 alpha:1];
-}
-- (UIColor*) colorBetter
-{
-	return [UIColor colorWithWhite:0.9 alpha:1];
-}
-
-- (IBAction)interfaceMenuNext:(id)sender {
+-(IBAction)interfaceMenuNext:(id)sender {
 	
 	[self audioPlayerSounds:@"fx.click.wav"];
-	
-	[self gameStart];
+	[self gameIsStarting];
 }
 
-- (IBAction)InterfaceMenuReset:(id)sender {
+-(IBAction)interfaceMenuReset:(id)sender {
 	
 	[self audioPlayerSounds:@"fx.click.wav"];
-	
 	[self userReset];
 }
 
--(void)audioPlayerSounds: (NSString *)filename;
-{
+-(void)audioPlayerSounds:(NSString *)filename; {
+	
 	NSLog(@"$ Audio | Play %@",filename);
+	
 	NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
 	resourcePath = [resourcePath stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
 	NSError* err;

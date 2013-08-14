@@ -11,681 +11,675 @@
 
 @implementation xxiivvViewController (Modules)
 
-- (void) nodeStart
-{
-	nodeContentArray = [[NSMutableArray alloc] init];
+- (void) nodeStart {
 	
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"日", @"sun|ひ", @"one|ひと", @"ten|とお",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"一", @"one|ひと", @"year|ネン", @"two|ふた",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"国", @"ten|とお", @"person|ひと", @"country|コク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"人", @"inside|なか", @"country|コク", @"person|ひと",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"年", @"person|ひと", @"year|ネン", @"hour|とき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"大", @"ten|とお", @"three|み", @"big|おお",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"十", @"long|ながい", @"ten|とお", @"one|ひと",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"二", @"person|ひと", @"three|み", @"two|ふた",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"本", @"going|いく", @"book|ホン", @"one|ひと",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"中", @"exit|でる", @"inside|なか", @"see|みる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"長", @"long|ながい", @"inside|なか", @"person|ひと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"出", @"hour|とき", @"exit|でる", @"ten|とお",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"三", @"three|み", @"going|いく", @"ten|とお",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"時", @"three|み", @"hour|とき", @"going|いく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"行", @"two|ふた", @"life|いきる", @"going|いく",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"見", @"hour|とき", @"see|みる", @"one|ひと",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"月", @"inside|なか", @"moon|ゲツ", @"space|あいだ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"後", @"inside|なか", @"one|ひと", @"back|のち",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"前", @"before|まえ", @"gold|かね", @"long|ながい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"生", @"big|おお", @"four|よ", @"life|いきる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"五", @"country|コク", @"above|うえ", @"five|いつ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"間", @"space|あいだ", @"gold|かね", @"ten|とお",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"上", @"one|ひと", @"study|ガク", @"above|うえ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"東", @"high|たかい", @"east|トウ", @"inside|なか",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"四", @"country|コク", @"four|よ", @"enter|いる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"今", @"year|ネン", @"now|コン", @"long|ながい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"金", @"gold|かね", @"exit|でる", @"now|コン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"九", @"gold|かね", @"nine|ここの", @"three|み",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"入", @"study|ガク", @"enter|いる", @"east|トウ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"学", @"child|こ", @"study|ガク", @"exit|でる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"高", @"above|うえ", @"two|ふた", @"high|たかい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"円", @"gold|かね", @"yen|まるい", @"come|くる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"子", @"six|む", @"talk|はなす", @"child|こ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"外", @"exit|でる", @"outside|そと", @"moon|ゲツ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"八", @"three|み", @"enter|いる", @"eight|や",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"六", @"six|む", @"high|たかい", @"east|トウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"下", @"low|した", @"year|ネン", @"gold|かね",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"来", @"come|くる", @"small|ちいさい", @"gold|かね",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"気", @"write|かく", @"spirit|いき", @"country|コク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"小", @"small|ちいさい", @"hundred|ヒャク", @"country|コク",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"七", @"seven|なな", @"big|おお", @"book|ホン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"山", @"six|む", @"nine|ここの", @"mountain|サン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"話", @"talk|はなす", @"river|セン", @"six|む",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"女", @"child|こ", @"inside|なか", @"woman|おんな",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"北", @"hour|とき", @"woman|おんな", @"north|ホク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"午", @"eight|や", @"noon|うま", @"two|ふた",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"百", @"hundred|ヒャク", @"long|ながい", @"exit|でる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"書", @"ten|とお", @"hour|とき", @"write|かく",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"先", @"life|いきる", @"gold|かね", @"before|さき",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"名", @"name|な", @"thousand|セン", @"west|セイ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"川", @"name|な", @"river|セン", @"long|ながい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"千", @"hundred|ヒャク", @"now|コン", @"thousand|セン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"水", @"three|み", @"six|む", @"water|みず",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"半", @"before|まえ", @"one|ひと", @"half|ハン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"男", @"male|おとこ", @"come|くる", @"country|コク",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"西", @"west|セイ", @"space|あいだ", @"before|まえ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"電", @"thousand|セン", @"study|ガク", @"electricity|デン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"校", @"exam|コウ", @"country|コク", @"west|セイ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"語", @"talk|はなす", @"speech|かたる", @"eight|や",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"土", @"gold|かね", @"soil|ド", @"now|コン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"木", @"yen|まるい", @"back|のち", @"wood|き",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"聞", @"before|まえ", @"ask|きく", @"write|かく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"食", @"eat|くう", @"before|さき", @"thousand|セン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"車", @"right|ウ", @"car|シャ", @"male|おとこ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"何", @"what|なに", @"eight|や", @"thousand|セン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"南", @"south|ナン", @"speech|かたる", @"mama|はは",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"万", @"10000|マン", @"east|トウ", @"hundred|ヒャク",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"毎", @"river|セン", @"three|み", @"every|ごと",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"白", @"white|しろ", @"above|うえ", @"exit|でる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"天", @"friend|ユウ", @"sky|あまつ", @"seven|なな",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"母", @"above|うえ", @"hundred|ヒャク", @"mama|はは",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"火", @"gold|かね", @"half|ハン", @"fire|ひ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"右", @"right|ウ", @"study|ガク", @"person|ひと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"読", @"four|よ", @"read|よむ", @"high|たかい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"友", @"friend|ユウ", @"talk|はなす", @"life|いきる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"左", @"ten|とお", @"left|サ", @"woman|おんな",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"休", @"five|いつ", @"ask|きく", @"rest|やすむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"父", @"before|まえ", @"rest|やすむ", @"father|ちち",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"雨", @"seven|なな", @"study|ガク", @"rain|あめ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"会", @"meet|あう", @"thousand|セン", @"write|かく",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"同", @"same|おなじ", @"river|セン", @"come|くる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"事", @"friend|ユウ", @"fact|こと", @"fire|ひ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"自", @"oneself|みずから", @"stand up|たつ", @"eat|くう",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"社", @"firm|シャ", @"moon|ゲツ", @"car|シャ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"発", @"emit|たつ", @"place|ば", @"exit|でる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"者", @"person|もの", @"before|まえ", @"fact|こと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"地", @"before|さき", @"earth|チ", @"country|コク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"業", @"stand up|たつ", @"water|みず", @"arts|ギョウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"方", @"book|ホン", @"back|のち", @"person|かた",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"新", @"new|あたらしい", @"emit|たつ", @"male|おとこ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"場", @"emit|たつ", @"above|うえ", @"place|ば",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"員", @"member|イ", @"space|あいだ", @"four|よ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"立", @"see|みる", @"low|した", @"stand up|たつ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"開", @"open|ひらく", @"before|まえ", @"four|よ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"手", @"exam|コウ", @"hand|て", @"water|みず",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"力", @"oneself|みずから", @"enter|いる", @"exert|リョク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"問", @"ask|とう", @"rain|あめ", @"seven|なな",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"代", @"high|たかい", @"age|かわる", @"three|み",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"明", @"light|あかり", @"person|ひと", @"exert|リョク",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"動", @"study|ガク", @"move|うごく", @"before|さき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"京", @"river|セン", @"capital|キョウ", @"see|みる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"目", @"mama|はは", @"back|のち", @"eye|め",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"通", @"avenue|とおる", @"friend|ユウ", @"eye|め",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"言", @"say|いう", @"spirit|いき", @"thousand|セン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"理", @"truth|リ", @"oneself|みずから", @"speech|かたる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"体", @"ask|とう", @"prince|コウ", @"body|からだ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"田", @"eye|め", @"father|ちち", @"rice paddy|デン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"主", @"three|み", @"lord|ぬし", @"water|みず",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"題", @"capital|キョウ", @"book|ホン", @"topic|ダイ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"意", @"nine|ここの", @"think|おもう", @"mind|",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"不", @"bad|フ", @"south|ナン", @"topic|ダイ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"作", @"rice paddy|デン", @"make|つくる", @"north|ホク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"用", @"two|ふた", @"body|からだ", @"use|ヨウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"度", @"rice paddy|デン", @"nine|ここの", @"time|たび",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"強", @"topic|ダイ", @"rice paddy|デン", @"strong|つよい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"公", @"fire|ひ", @"prince|コウ", @"soil|ド",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"持", @"nine|ここの", @"have|もつ", @"water|みず",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"野", @"field|の", @"two|ふた", @"mountain|サン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"以", @"rest|やすむ", @"because|イ", @"hundred|ヒャク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"思", @"right|ウ", @"think|おもう", @"ten|とお",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"家", @"left|サ", @"home|いえ", @"what|なに",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"世", @"going|いく", @"high|たかい", @"world|よ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"多", @"long|ながい", @"much|おおい", @"low|やすい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"正", @"justice|ただしい", @"male|おとこ", @"book|ホン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"安", @"one|ひと", @"low|やすい", @"place|ば",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"院", @"Inst.|イン", @"picture|えがく", @"use|ヨウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"心", @"enter|いる", @"now|コン", @"mind|りっしんべん",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"界", @"justice|ただしい", @"world|カイ", @"river|セン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"教", @"white|しろ", @"faith|おしえる", @"Inst.|イン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"文", @"art|ふみ", @"book|ホン", @"meet|あう",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"元", @"art|ふみ", @"fire|ひ", @"origin|ゲン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"重", @"art|ふみ", @"think|おもう", @"-fold|え",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"近", @"north|ホク", @"home|いえ", @"akin|キン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"考", @"consider|かんがえる", @"write|かく", @"-fold|え",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"画", @"friend|ユウ", @"picture|えがく", @"time|たび",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"海", @"three|み", @"sea|カイ", @"faith|おしえる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"売", @"sell|うる", @"prince|コウ", @"now|コン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"知", @"justice|ただしい", @"topic|ダイ", @"know|しる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"道", @"moral|ドウ", @"one|ひと", @"avenue|とおる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"集", @"meet|あつまる", @"faith|おしえる", @"inside|なか",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"別", @"body|からだ", @"fork|わかれる", @"die|しぬ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"物", @"sea|カイ", @"thing|もの", @"emit|たつ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"使", @"west|セイ", @"use|つかう", @"justice|ただしい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"品", @"read|よむ", @"goods|しな", @"country|コク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"計", @"plan|はかる", @"enter|いる", @"fact|こと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"死", @"die|しぬ", @"strong|つよい", @"inside|なか",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"特", @"prince|コウ", @"special|トク", @"hundred|ヒャク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"私", @"I|わたくし", @"west|セイ", @"prince|コウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"始", @"plan|はかる", @"bad|フ", @"begin|はじめる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"朝", @"stand up|たつ", @"wood|き", @"epoch|チョウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"運", @"lot|はこぶ", @"one|ひと", @"wood|き",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"終", @"end|おわる", @"car|シャ", @"truth|リ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"台", @"stand up|たつ", @"a stand|うてな", @"left|サ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"広", @"begin|はじめる", @"wide|ひろい", @"say|いう",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"住", @"woman|おんな", @"a stand|うてな", @"live|すむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"真", @"true|ま", @"mouth|くち", @"gold|かね",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"有", @"lord|ぬし", @"have|ユウ", @"low|した",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"口", @"mouth|くち", @"now|コン", @"long|ながい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"少", @"person|かた", @"mountain|サン", @"few|すくない",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"町", @"town|まち", @"year|ネン", @"fact|こと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"料", @"oneself|みずから", @"fee|リョウ", @"leg|あし",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"工", @"say|いう", @"north|ホク", @"craft|コウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"建", @"build|たてる", @"picture|えがく", @"akin|キン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"空", @"send|おくる", @"mama|はは", @"sky|そら",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"急", @"topic|ダイ", @"truth|リ", @"steep|いそぐ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"止", @"halt|とまる", @"thousand|セン", @"mouth|くち",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"送", @"low|した", @"know|しる", @"send|おくる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"切", @"I|わたくし", @"have|もつ", @"cut|きる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"転", @"field|の", @"seven|なな", @"change|ころがる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"研", @"origin|ゲン", @"polish|ケン", @"big|おお",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"足", @"rouse|おきる", @"leg|あし", @"emit|たつ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"究", @"study|キュウ", @"read|よむ", @"wait|まつ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"楽", @"open|ひらく", @"sell|うる", @"ease|たのしい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"起", @"rouse|おきる", @"mind|りっしんべん", @"don|きる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"着", @"don|きる", @"east|トウ", @"polish|ケン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"店", @"plan|はかる", @"shop|みせ", @"going|いく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"病", @"plan|はかる", @"ill|やむ", @"car|シャ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"質", @"much|おおい", @"matter|たち", @"doctor|いやす",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"待", @"wait|まつ", @"arts|ギョウ", @"reflect|うつる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"試", @"sky|そら", @"try|こころみる", @"south|ナン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"族", @"consider|かんがえる", @"gold|かね", @"tribe|ゾ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"銀", @"silver|ギン", @"above|うえ", @"effect|あかし",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"早", @"fast|はやい", @"leg|あし", @"make|つくる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"映", @"reflect|うつる", @"mind|りっしんべん", @"earth|チ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"親", @"space|あいだ", @"end|おわる", @"parent|おや",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"験", @"enter|いる", @"sell|うる", @"effect|あかし",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"英", @"English|エイ", @"every|ごと", @"pour|そそぐ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"医", @"speech|かたる", @"every|ごと", @"doctor|いやす",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"仕", @"doing|つかえる", @"mind|", @"use|つかう",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"去", @"akin|キン", @"sell|うる", @"past|さる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"味", @"time|たび", @"child|こ", @"taste|あじ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"写", @"sky|そら", @"mama|はは", @"copy|うつす",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"字", @"word|あざ", @"tribe|ゾ", @"know|しる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"答", @"think|おもう", @"long|ながい", @"answer|こたえる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"夜", @"same|おなじ", @"three|み", @"night|よ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"音", @"fact|こと", @"nine|ここの", @"noise|おと",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"注", @"fork|わかれる", @"pour|そそぐ", @"outside|そと",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"帰", @"going|いく", @"lead to|かえる", @"before|さき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"古", @"doing|つかえる", @"enter|いる", @"old|ふるい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"歌", @"eye|め", @"sing|うた", @"akin|キン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"買", @"buy|かう", @"what|なに", @"reflect|うつる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"悪", @"friend|ユウ", @"pour|そそぐ", @"bad|わるい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"図", @"black|くろ", @"map|え", @"new|あたらしい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"週", @"noise|おと", @"week|シュウ", @"river|セン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"室", @"move|うごく", @"room|むろ", @"sing|うた",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"歩", @"walk|あるく", @"eight|や", @"outside|そと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"風", @"car|シャ", @"cut|きる", @"air|かぜ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"紙", @"paper|かみ", @"same|おなじ", @"oneself|みずから",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"黒", @"black|くろ", @"half|ハン", @"origin|ゲン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"花", @"flower|カ", @"moral|ドウ", @"cut|きる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"春", @"springtime|シュン", @"small|ちいさい", @"strong|つよい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"赤", @"exam|コウ", @"send|おくる", @"red|あか",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"青", @"blue|あお", @"English|エイ", @"half|ハン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"館", @"palace|やかた", @"arts|ギョウ", @"every|ごと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"屋", @"low|した", @"inside|なか", @"shop|オク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"色", @"color|ショク", @"age|かわる", @"three|み",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"走", @"a stand|うてな", @"I|わたくし", @"run|ソウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"秋", @"eat|くう", @"noise|おと", @"autumn|あき",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"夏", @"summer|なつ", @"strong|つよい", @"one|ひと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"習", @"exam|コウ", @"learn|ならう", @"one|ひと",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"駅", @"rouse|おきる", @"west|セイ", @"station|エキ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"洋", @"die|しぬ", @"ten|とお", @"ocean|ヨ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"旅", @"before|まえ", @"trip|たび", @"open|ひらく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"服", @"obey|フ", @"use|ヨウ", @"mountain|サン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"夕", @"sea|カイ", @"evening|セキ", @"because|イ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"借", @"exertion|ベン", @"rent|かりる", @"bad|フ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"曜", @"weekday|ヨ", @"try|こころみる", @"don|きる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"飲", @"tribe|ゾ", @"enter|いる", @"take|のむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"肉", @"parent|おや", @"thing|もの", @"meat|ニク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"貸", @"I|わたくし", @"age|かわる", @"lend|かす",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"堂", @"rent|かりる", @"hall|ドウ", @"write|かく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"鳥", @"bird|チョウ", @"new|あたらしい", @"fast|はやい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"飯", @"stand up|たつ", @"meal|ハン", @"special|トク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"勉", @"lord|ぬし", @"exertion|ベン", @"flower|カ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"冬", @"bad|わるい", @"winter|ふゆ", @"matter|たち",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"昼", @"don|きる", @"noon|ひる", @"thing|もの",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"茶", @"small|ちいさい", @"before|さき", @"tea|チャ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"弟", @"I|わたくし", @"younger brother|テイ", @"strong|つよい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"牛", @"book|ホン", @"cow|ギュウ", @"hour|とき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"魚", @"ten|とお", @"fish|うお", @"lead to|かえる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"兄", @"see|みる", @"big brother|ケイ", @"word|あざ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"犬", @"dog|いぬ", @"mouth|くち", @"yen|まるい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"妹", @"west|セイ", @"palace|やかた", @"younger sister|マイ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"姉", @"body|からだ", @"elder sister|あね", @"avenue|とおる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"漢", @"China|カ", @"wide|ひろい", @"earth|チ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"政", @"akin|キン", @"politics|まつりごと", @"word|あざ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"議", @"prince|コウ", @"debate|", @"north|ホク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"民", @"have|ユウ", @"nation|ミン", @"study|キュウ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"連", @"lead|つらなる", @"talk|はなす", @"flower|カ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"対", @"even|あいて", @"four|よ", @"much|おおい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"部", @"lead|つらなる", @"dept|ブ", @"thing|もの",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"合", @"paper|かみ", @"0.1|あう", @"year|ネン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"市", @"city|シ", @"eat|くう", @"fish|うお",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"内", @"truth|み", @"home|いえ", @"home|ナイ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"相", @"send|おくる", @"phase|あい", @"say|いう",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"定", @"book|ホン", @"fix|さだめる", @"lead|つらなる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"回", @"exam|コウ", @"game|まわる", @"politics|まつりごと",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"選", @"evening|セキ", @"truth|リ", @"elect|えらぶ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"米", @"springtime|シュン", @"USA|こめ", @"before|さき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"実", @"friend|ユウ", @"thousand|セン", @"truth|み",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"関", @"prince|コウ", @"barrier|せき", @"all|まったく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"決", @"member|イ", @"try|こころみる", @"fix|きめる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"全", @"evening|セキ", @"few|すくない", @"all|まったく",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"表", @"rouse|おきる", @"-fold|え", @"table|おもて",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"戦", @"war|いくさ", @"because|イ", @"stand up|たつ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"経", @"rent|かりる", @"warp|へる", @"winter|ふゆ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"最", @"eight|や", @"most|もっとも", @"before|さき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"現", @"soil|ド", @"actual|あらわれる", @"eight|や",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"調", @"big|おお", @"tone|しらべる", @"hour|とき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"化", @"flower|カ", @"delude|ばける", @"earth|チ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"当", @"hall|ドウ", @"hit|あたる", @"because|イ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"約", @"open|ひらく", @"shrink|ヤク", @"oneself|みずから",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"首", @"neck|シュ", @"matter|たち", @"rouse|おきる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"法", @"send|おくる", @"origin|ゲン", @"law|ホウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"性", @"know|しる", @"hit|あたる", @"sex|さが",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"要", @"need|ヨウ", @"south|ナン", @"hand|て",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"制", @"law|セイ", @"lord|ぬし", @"origin|ゲン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"治", @"ill|やむ", @"govt|おさめる", @"silver|ギン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"務", @"ill|やむ", @"going|いく", @"task|ム",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"成", @"peace|やわらぐ", @"get|なる", @"use|つかう",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"期", @"bird|チョウ", @"time|キ", @"epoch|チョウ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"取", @"take|とる", @"emit|たつ", @"now|コン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"都", @"capital|ト", @"electricity|デン", @"shop|オク",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"和", @"much|おおい", @"before|まえ", @"peace|やわらぐ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"機", @"machine|はた", @"truth|み", @"bird|チョウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"平", @"flat|たいら", @"justice|ただしい", @"fork|わかれる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"加", @"know|しる", @"add|くわえる", @"electricity|デン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"受", @"get|うける", @"bad|わるい", @"meal|ハン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"続", @"series|つづく", @"arts|ギョウ", @"walk|あるく",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"進", @"rouse|おきる", @"bird|チョウ", @"proceed|すすむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"数", @"proceed|すすむ", @"law|かず", @"mountain|サン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"記", @"before|さき", @"scribe|キ", @"yen|まるい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"初", @"beginning|はじめ", @"tone|しらべる", @"word|あざ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"指", @"stand up|たつ", @"outside|そと", @"finger|ゆび",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"権", @"meet|あつまる", @"few|すくない", @"power|おもり",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"支", @"wood|き", @"field|ゲン", @"branch|しんよう",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"産", @"person|もの", @"news|むくいる", @"bear|うむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"点", @"lend|かす", @"air|かぜ", @"mark|つける",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"報", @"younger brother|テイ", @"lead|つらなる", @"news|むくいる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"済", @"strong|つよい", @"exam|コウ", @"finish|すむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"活", @"above|うえ", @"living|いきる", @"govt|おさめる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"原", @"fact|こと", @"mama|はは", @"field|ゲン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"共", @"exertion|ベン", @"rice paddy|デン", @"all|とも",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"得", @"avenue|とおる", @"get|える", @"flat|たいら",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"解", @"bear|うむ", @"10000|マン", @"key|とく",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"交", @"govt|おさめる", @"mixing|まじわる", @"justice|ただしい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"資", @"data|", @"epoch|チョウ", @"tribe|ゾ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"予", @"paper|かみ", @"nine|ここの", @"I|あらかじめ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"向", @"left|サ", @"defy|むく", @"study|ガク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"際", @"sky|あまつ", @"right|ウ", @"side|きわ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"勝", @"tribe|ゾ", @"add|くわえる", @"win|かつ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"面", @"task|ム", @"barrier|せき", @"face|おも",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"告", @"ten|とお", @"all|とも", @"tell|コク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"反", @"life|いきる", @"flat|たいら", @"anti-|そる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"判", @"seal|わかる", @"six|む", @"person|かた",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"認", @"eat|くう", @"witness|みとめる", @"winter|ふゆ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"参", @"field|の", @"die|まいる", @"finish|すむ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"利", @"exit|でる", @"profit|リ", @"shop|みせ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"組", @"big|おお", @"goods|しな", @"braid|くむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"信", @"truth|シ", @"braid|くむ", @"weekday|ヨ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"在", @"news|むくいる", @"speech|かたる", @"exist|ザイ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"件", @"life|いきる", @"case|くだん", @"face|おも",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"側", @"war|いくさ", @"mama|はは", @"lean|かわ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"任", @"answer|こたえる", @"woman|おんな", @"duty|まかせる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"引", @"anti-|そる", @"topic|ダイ", @"tug|ひく",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"求", @"epoch|チョウ", @"want|もとめる", @"doing|つかえる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"所", @"craft|コウ", @"going|いく", @"place|ところ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"次", @"country|コク", @"two|ふた", @"next|つぐ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"昨", @"previous|サク", @"north|ホク", @"finger|ゆび",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"論", @"task|ム", @"argument|ロン", @"obey|フ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"官", @"big|おお", @"bureaucrat|カン", @"room|むろ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"増", @"add|ます", @"country|コク", @"tribe|ゾ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"係", @"use|ヨウ", @"hour|とき", @"duty|かかる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"感", @"enter|いる", @"feeling|カン", @"father|ちち",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"情", @"cow|ギュウ", @"answer|こたえる", @"facts|なさけ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"投", @"buy|かう", @"new|あたらしい", @"join|なげる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"示", @"show|しめす", @"build|たてる", @"book|ホン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"変", @"change|かわる", @"tea|チャ", @"flat|たいら",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"打", @"USA|こめ", @"die|しぬ", @"hit|うつ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"直", @"I|わたくし", @"thing|もの", @"fix|ただちに",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"両", @"true|ま", @"two|てる", @"silver|ギン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"式", @"time|キ", @"rite|シ", @"study|ガク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"確", @"body|からだ", @"world|カイ", @"firm|たしか",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"果", @"autumn|あき", @"need|ヨウ", @"end|はたす",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"容", @"arts|ギョウ", @"form|ヨウ", @"read|よむ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"必", @"certain|かならず", @"inside|なか", @"flat|たいら",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"演", @"mouth|くち", @"younger sister|マイ", @"act|エン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"歳", @"high|たかい", @"age|とし", @"autumn|あき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"争", @"argue|あらそう", @"north|ホク", @"moon|ゲツ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"談", @"talk|ダン", @"noon|うま", @"tribe|ゾ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"能", @"skill|ノウ", @"politics|まつりごと", @"three|み",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"位", @"send|おくる", @"politics|まつりごと", @"some|くらい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"置", @"Inst.|イン", @"mind|", @"put|おく",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"流", @"because|イ", @"book|ホン", @"flow|ながれる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"格", @"fix|さだめる", @"law|かず", @"rank|カク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"疑", @"doubt|うたがう", @"emit|たつ", @"use|ヨウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"過", @"faith|おしえる", @"error|すぎる", @"father|ちち",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"局", @"board|つぼね", @"picture|えがく", @"some|くらい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"放", @"fire|はなす", @"life|いきる", @"law|ホウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"常", @"male|おとこ", @"usual|つね", @"live|すむ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"状", @"politics|まつりごと", @"small|ちいさい", @"form|ジョウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"球", @"previous|サク", @"old|ふるい", @"ball|キュウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"職", @"speech|かたる", @"work|ショク", @"room|むろ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"与", @"ill|やむ", @"younger brother|テイ", @"give|あたえる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"供", @"law|セイ", @"offer|そなえる", @"mind|",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"役", @"strong|つよい", @"stand up|たつ", @"war|ヤク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"構", @"make|つくる", @"build|かまえる", @"law|かず",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"割", @"get|える", @"cut|わる", @"facts|なさけ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"費", @"cost|ついやす", @"lead|つらなる", @"electricity|デン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"付", @"fire|ひ", @"attach|つける", @"duty|まかせる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"由", @"a reason|よし", @"end|おわる", @"need|ヨウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"説", @"three|み", @"rouse|おきる", @"rumor|セツ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"難", @"epoch|チョウ", @"truth|リ", @"defect|かたい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"優", @"old|ふるい", @"task|ム", @"excel|やさしい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"夫", @"outside|そと", @"ask|きく", @"man|おっと",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"収", @"consider|かんがえる", @"pay|おさめる", @"sell|うる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"断", @"mixing|まじわる", @"answer|こたえる", @"warn|たつ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"石", @"three|み", @"phase|あい", @"stone|セキ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"違", @"differ|ちがう", @"see|みる", @"act|エン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"消", @"taste|あじ", @"two|てる", @"cancel|きえる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"神", @"exam|コウ", @"mind|かみ", @"obey|フ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"番", @"warp|へる", @"warn|たつ", @"turn|バン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"規", @"write|かく", @"measure|", @"game|まわる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"術", @"facts|なさけ", @"art|すべ", @"spirit|いき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"備", @"sing|うた", @"equip|そなえる", @"dog|いぬ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"宅", @"ocean|ヨ", @"home|タ", @"say|いう",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"害", @"measure|", @"harm|ガイ", @"sex|さが",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"配", @"exile|くばる", @"shop|オク", @"-fold|え",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"警", @"admonish|いましめる", @"fire|はなす", @"argument|ロン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"育", @"end|はたす", @"field|の", @"rear|そだつ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"席", @"person|ひと", @"winter|ふゆ", @"mat|むしろ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"訪", @"visit|おとずれる", @"color|ショク", @"lead to|かえる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"乗", @"ill|やむ", @"mountain|サン", @"join|のる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"残", @"exit|でる", @"error|すぎる", @"balance|のこる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"想", @"idea|おもう", @"home|いえ", @"wait|まつ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"声", @"voice|こえ", @"tell|コク", @"person|かた",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"念", @"shrink|ヤク", @"idea|ネン", @"bad|わるい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"助", @"sell|うる", @"help|たすける", @"walk|あるく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"労", @"year|ネン", @"toil|ろうする", @"same|おなじ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"例", @"night|よ", @"time|キ", @"usage|たとえる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"然", @"lean|かわ", @"art|ふみ", @"so|しか",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"限", @"limit|かぎる", @"flower|カ", @"argument|ロン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"追", @"duty|かかる", @"chase|ツイ", @"prince|コウ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"商", @"person|ひと", @"walk|あるく", @"selling|ショウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"葉", @"obey|フ", @"taste|あじ", @"lobe|ヨウ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"伝", @"cost|ついやす", @"scribe|キ", @"follow|つたわる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"働", @"work|はたらく", @"leg|あし", @"walk|あるく",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"形", @"small|ちいさい", @"left|サ", @"form|かた",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"景", @"air|かぜ", @"admonish|いましめる", @"view|ケ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"落", @"drop|おちる", @"room|むろ", @"equip|そなえる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"好", @"key|とく", @"oneself|みずから", @"fond|このむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"退", @"repel|しりぞく", @"doubt|うたがう", @"leg|あし",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"頭", @"head|あたま", @"phase|あい", @"woman|おんな",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"負", @"faith|おしえる", @"consider|かんがえる", @"-|まける",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"渡", @"data|", @"elder sister|あね", @"ford|わたる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"失", @"loss|うしなう", @"eight|や", @"finger|ゆび",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"差", @"person|ひと", @"margin|さす", @"help|たすける",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"末", @"cut|わる", @"tip|すえ", @"beginning|はじめ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"守", @"before|まえ", @"dog|いぬ", @"obey|まもる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"若", @"don|きる", @"I|あらかじめ", @"if|わかい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"種", @"sell|うる", @"kind|たね", @"home|タ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"美", @"craft|コウ", @"beauty|ビ", @"mountain|サン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"命", @"war|いくさ", @"visit|おとずれる", @"life|いのち",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"福", @"elect|えらぶ", @"noon|ひる", @"luck|フ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"望", @"hope|のぞむ", @"ask|きく", @"usual|つね",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"非", @"fire|はなす", @"un-|あらず", @"mouth|くち",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"観", @"anti-|そる", @"look|みる", @"certain|かならず",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"察", @"judge|サツ", @"summer|なつ", @"next|つぐ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"段", @"ease|たのしい", @"steps|ダン", @"blue|あお",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"横", @"selling|ショウ", @"side|よこ", @"limit|かぎる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"深", @"deep|ふかい", @"hand|て", @"ask|とう",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"申", @"3-5PM|もうす", @"selling|ショウ", @"before|まえ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"様", @"east|トウ", @"art|すべ", @"way|さま",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"財", @"world|よ", @"selling|ショウ", @"money|ザイ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"港", @"harbor|みなと", @"above|うえ", @"doctor|いやす",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"識", @"elder sister|あね", @"left|サ", @"know|シ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"呼", @"tea|チャ", @"call|コ", @"sea|カイ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"達", @"age|かわる", @"reach|タツ", @"tell|コク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"良", @"good|よい", @"act|エン", @"fact|こと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"候", @"offer|そなえる", @"parent|おや", @"season|そうろう",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"程", @"3-5PM|もうす", @"going|いく", @"law|ほど",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"満", @"origin|ゲン", @"full|みちる", @"mat|むしろ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"敗", @"craft|コウ", @"defeat|やぶれる", @"toil|ろうする",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"値", @"eight|や", @"a reason|よし", @"cost|ね",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"突", @"stab|つく", @"weekday|ヨ", @"luck|フ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"光", @"color|ショク", @"ray|ひかる", @"act|エン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"路", @"road|じ", @"side|よこ", @"some|くらい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"科", @"course|", @"luck|フ", @"lobe|ヨウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"積", @"stack|つむ", @"mind|かみ", @"rain|あめ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"他", @"other|ほか", @"moon|ゲツ", @"warp|へる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"処", @"act|ところ", @"springtime|シュン", @"branch|しんよう",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"太", @"mind|りっしんべん", @"thick|ふとい", @"fix|ただちに",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"客", @"arts|ギョウ", @"guest|キャク", @"facts|なさけ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"否", @"know|しる", @"evening|セキ", @"no|いな",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"師", @"lead to|かえる", @"talk|はなす", @"war|",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"登", @"ten|とお", @"cut|わる", @"ascend|のぼる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"易", @"series|つづく", @"easy|やさしい", @"ask|とう",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"速", @"fast|はやい", @"war|ヤク", @"meal|ハン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"存", @"make|つくる", @"feel|ソン", @"prince|コウ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"飛", @"fly|とぶ", @"kill|ころす", @"beauty|ビ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"殺", @"key|とく", @"beginning|はじめ", @"kill|ころす",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"号", @"before|さき", @"item|さけぶ", @"living|いきる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"単", @"one|ひとえ", @"game|まわる", @"fork|わかれる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"座", @"have|ユウ", @"ill|やむ", @"sit|すわる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"破", @"finger|ゆび", @"Inst.|イン", @"rip|やぶる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"除", @"3)|のぞく", @"mat|むしろ", @"speech|かたる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"完", @"ascend|のぼる", @"shop|みせ", @"end|カン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"降", @"halt|とまる", @"next|つぐ", @"fall|おりる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"責", @"special|トク", @"blame|せめる", @"course|",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"捕", @"autumn|あき", @"catch|とらえる", @"road|じ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"危", @"male|おとこ", @"fear|あぶない", @"finish|すむ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"給", @"wage|たまう", @"next|つぐ", @"effect|あかし",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"苦", @"no|いな", @"rite|シ", @"trial|くるしい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"迎", @"phase|あい", @"meet|ゲイ", @"world|カイ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"園", @"get|うける", @"now|コン", @"yard|エン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"具", @"tool|そなえる", @"nine|ここの", @"guest|キャク",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"辞", @"city|シ", @"beauty|ビ", @"word|やめる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"因", @"blue|あお", @"cause|よる", @"China|カ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"馬", @"horse|うま", @"wood|き", @"he|かれ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"愛", @"join|のる", @"tribe|ゾ", @"love|アイ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"富", @"low|した", @"enrich|とむ", @"doubt|うたがう",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"彼", @"he|かれ", @"dying|ない", @"small|ちいさい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"未", @"before|まえ", @"change|ころがる", @"un-|いまだ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"舞", @"noise|おと", @"light|あかり", @"flit|まう",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"亡", @"yen|まるい", @"dying|ない", @"call|コ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"冷", @"cool|つめたい", @"taste|あじ", @"space|あいだ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"適", @"rare|かなう", @"going|いく", @"black|くろ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"婦", @"pour|そそぐ", @"wife|", @"east|トウ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"寄", @"send|よる", @"art|すべ", @"outside|そと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"込", @"stone|セキ", @"right|ウ", @"mixture|こむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"顔", @"elder sister|あね", @"duty|かかる", @"face|かお",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"類", @"3-5PM|もうす", @"English|エイ", @"kind|たぐい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"余", @"other|あまる", @"fix|ただちに", @"springtime|シュン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"王", @"study|ガク", @"rule|オウ", @"dog|いぬ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"返", @"politics|まつりごと", @"guest|キャク", @"fade|かえす",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"妻", @"wife|サイ", @"item|さけぶ", @"ill|やむ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"背", @"certain|かならず", @"back|せ", @"soil|ド",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"熱", @"heat|ネツ", @"barrier|せき", @"strong|つよい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"宿", @"inn|やど", @"usage|たとえる", @"blame|せめる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"薬", @"meet|あう", @"offer|そなえる", @"enamel|ヤク",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"険", @"sing|うた", @"sharp eyes|けわしい", @"moon|ゲツ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"頼", @"trust|たのむ", @"barrier|せき", @"year|ネン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"覚", @"learn|おぼえる", @"stack|つむ", @"avenue|とおる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"船", @"selling|ショウ", @"boat|ふね", @"arts|ギョウ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"途", @"rule|オウ", @"way|", @"sit|すわる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"許", @"repel|しりぞく", @"what|なに", @"permit|ゆるす",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"抜", @"omit|ぬく", @"debate|", @"big|おお",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"便", @"light|あかり", @"convenience|たより", @"call|コ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"留", @"halt|とめる", @"guest|キャク", @"three|み",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"罪", @"old|ふるい", @"moon|ゲツ", @"sin|つみ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"努", @"fear|あぶない", @"fire|はなす", @"toil|つとめる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"精", @"ghost|セイ", @"spirit|いき", @"fact|こと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"散", @"spend|ちる", @"study|ガク", @"cost|ついやす",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"静", @"quiet|しず", @"sell|うる", @"every|ごと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"婚", @"home|タ", @"fire|ひ", @"marriage|コン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"喜", @"half|ハン", @"rejoice|よろこぶ", @"war|いくさ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"浮", @"float|うく", @"law|セイ", @"case|くだん",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"絶", @"beginning|はじめ", @"sever|たえる", @"see|みる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"幸", @"fortune|さいわい", @"rule|オウ", @"father|ちち",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"押", @"person|ひと", @"stop|おす", @"time|たび",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"倒", @"doctor|いやす", @"fall|たおれる", @"sex|さが",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"等", @"exert|リョク", @"rite|シ", @"etc.|ひとしい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"老", @"ford|わたる", @"view|ケ", @"old age|おいる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"曲", @"lobe|ヨウ", @"lean|まがる", @"polish|ケン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"払", @"kill|ころす", @"pay|はらう", @"one|ひとえ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"庭", @"going|いく", @"horse|うま", @"yard|テイ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"徒", @"defeat|やぶれる", @"two|ふた", @"set|いたずら",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"勤", @"change|ころがる", @"serve|つとめる", @"say|いう",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"遅", @"late|おくれる", @"mind|かみ", @"body|からだ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"居", @"to be|いる", @"reach|タツ", @"yen|まるい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"雑", @"miscellaneous|まじえる", @"un-|いまだ", @"country|コク",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"招", @"invite|まねく", @"rouse|おきる", @"float|うく",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"困", @"annoyed|こまる", @"cost|ね", @"law|ホウ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"欠", @"home|タ", @"gap|あくび", @"hundred|ヒャク",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"更", @"springtime|シュン", @"trust|たのむ", @"of course|さら",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"刻", @"late|おくれる", @"field|ゲン", @"chop|きざむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"賛", @"thing|もの", @"praise|たすける", @"noon|うま",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"抱", @"sing|うた", @"rest|やすむ", @"hug|だく",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"犯", @"sin|おかす", @"limit|かぎる", @"lot|はこぶ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"恐", @"awe|おそれる", @"low|やすい", @"word|あざ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"息", @"four|よ", @"catch|とらえる", @"son|いき",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"遠", @"low|やすい", @"far|エン", @"mouth|くち",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"戻", @"seal|わかる", @"re-|もどす", @"change|ころがる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"願", @"mind|", @"vow|ねがう", @"all|まったく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"絵", @"home|いえ", @"sketch|カイ", @"outside|そと",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"越", @"home|タ", @"good|よい", @"exceed|こす",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"欲", @"proceed|すすむ", @"greed|ほっする", @"laugh|わらう",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"痛", @"hurt|いたい", @"English|エイ", @"un-|いまだ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"笑", @"truth|リ", @"laugh|わらう", @"no|いな",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"互", @"north|ホク", @"together|たがい", @"long|ながい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"束", @"loss|うしなう", @"silver|ギン", @"ream|たば",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"似", @"imitate|にる", @"cut|わる", @"learn|ならう",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"列", @"because|イ", @"home|ナイ", @"row|レツ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"探", @"picture|えがく", @"polish|ケン", @"grope|さぐる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"逃", @"flee|にげる", @"form|ヨウ", @"effect|あかし",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"遊", @"play|あそぶ", @"topic|ダイ", @"age|かわる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"迷", @"err|まよう", @"key|とく", @"voice|こえ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"夢", @"witness|みとめる", @"night|よ", @"dream|ゆめ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"君", @"old boy|きみ", @"judge|サツ", @"face|かお",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"閉", @"fact|こと", @"shut|とじる", @"station|エキ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"緒", @"end|お", @"steep|いそぐ", @"trial|くるしい",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"折", @"etc.|ひとしい", @"bend|おる", @"sea|カイ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"草", @"weeds|くさ", @"old|ふるい", @"warp|へる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"暮", @"bear|うむ", @"spend time|くれる", @"ford|わたる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"酒", @"friend|ユウ", @"dog|いぬ", @"sake|さけ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"悲", @"sad|かなしい", @"evening|セキ", @"lean|かわ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"晴", @"clear up|はれる", @"elder sister|あね", @"most|もっとも",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"掛", @"tax|かける", @"mixture|こむ", @"way|",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"到", @"reach|いたる", @"follow|つたわる", @"shrink|ヤク",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"寝", @"bed|ねる", @"view|ケ", @"argument|ロン",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"暗", @"study|ガク", @"shade|くらい", @"ease|たのしい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"盗", @"ball|キュウ", @"long|ながい", @"rob|ぬすむ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"吸", @"sip|すう", @"a reason|よし", @"0.1|あう",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"陽", @"male|ヨウ", @"snow|セツ", @"time|キ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"御", @"big brother|ケイ", @"ream|たば", @"govern|おん",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"歯", @"item|さけぶ", @"doctor|いやす", @"cog|よわい",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"忘", @"forget|わすれる", @"selling|ショウ", @"reach|いたる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"雪", @"hall|ドウ", @"snow|セツ", @"finger|ゆび",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"吹", @"puff|スイ", @"fall|おりる", @"person|ひと",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"娘", @"girl|むすめ", @"small|ちいさい", @"ream|たば",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"誤", @"-|まける", @"color|ショク", @"err|あやまる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"洗", @"flower|カ", @"sketch|カイ", @"wash|セン",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"慣", @"toil|つとめる", @"accustomed|なれる", @"admonish|いましめる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"礼", @"harm|ガイ", @"stop|おす", @"bow|レイ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"窓", @"feeling|カン", @"case|くだん", @"pane|まど",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"昔", @"noon|うま", @"antiquity|むかし", @"exertion|ベン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"貧", @"poor|まずしい", @"noon|ひる", @"other|あまる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"怒", @"angry|いかる", @"no|いな", @"taste|あじ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"泳", @"friend|ユウ", @"swim|およぐ", @"late|おくれる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"祖", @"view|ケ", @"pioneer|", @"plan|はかる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"杯", @"wood|き", @"hug|だく", @"glass|さかずき",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"疲", @"tire|つかれる", @"fast|はやい", @"0.1|あう",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"皆", @"silver|ギン", @"all|みな", @"polish|ケン",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"鳴", @"cry|なく", @"lobe|ヨウ", @"inside|なか",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"腹", @"small|ちいさい", @"belly|はら", @"have|もつ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"煙", @"work|ショク", @"side|きわ", @"smoke|けむる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"眠", @"sky|そら", @"firm|たしか", @"die|ねむる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"怖", @"map|え", @"fearful|こわい", @"mark|つける",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"耳", @"ear|ジ", @"head|あたま", @"make|つくる",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"頂", @"actual|あらわれる", @"war|ヤク", @"top|いただく",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"箱", @"hair of the head|ハツ", @"deep|ふかい", @"bin|はこ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"晩", @"lend|かす", @"night|バン", @"swim|およぐ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"寒", @"pioneer|", @"cold|カン", @"swim|およぐ",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"髪", @"form|かた", @"idea|おもう", @"hair of the head|ハツ",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"忙", @"world|カイ", @"busy|いそがしい", @"son|いき",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"才", @"genius|サイ", @"weekday|ヨ", @"ear|ジ",@"1", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"靴", @"enter|いる", @"shoes|くつ", @"walk|あるく",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"恥", @"3)|のぞく", @"fall|おりる", @"shame|はじる",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"偶", @"flat|たいら", @"room|むろ", @"couple|たま",@"3", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"偉", @"take|とる", @"famous|イ", @"change|ころがる",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"猫", @"harbor|みなと", @"cat|ねこ", @"busy|いそがしい",@"2", nil]];
-	[nodeContentArray addObject:[NSArray arrayWithObjects: @"幾", @"how far|いく", @"mouth|くち", @"fast|はやい",@"1", nil]];
+	gameContentArray = @[
+	@[@"日", @"two|ふた", @"sun|ひ", @"long|ながい",@"2"],
+	@[@"一", @"one|ひと", @"long|ながい", @"country|コク",@"1"],
+	@[@"国", @"ten|とお", @"country|コク", @"exit|でる",@"2"],
+	@[@"人", @"person|ひと", @"country|コク", @"long|ながい",@"1"],
+	@[@"年", @"exit|でる", @"year|ネン", @"hour|とき",@"2"],
+	@[@"大", @"book|ホン", @"big|おお", @"going|いく",@"2"],
+	@[@"十", @"moon|ゲツ", @"long|ながい", @"ten|とお",@"3"],
+	@[@"二", @"back|のち", @"two|ふた", @"inside|なか",@"2"],
+	@[@"本", @"book|ホン", @"going|いく", @"moon|ゲツ",@"1"],
+	@[@"中", @"long|ながい", @"going|いく", @"inside|なか",@"3"],
+	@[@"長", @"long|ながい", @"five|いつ", @"life|いきる",@"1"],
+	@[@"出", @"exit|でる", @"space|あいだ", @"ten|とお",@"1"],
+	@[@"三", @"see|みる", @"three|み", @"five|いつ",@"2"],
+	@[@"時", @"big|おお", @"hour|とき", @"person|ひと",@"2"],
+	@[@"行", @"space|あいだ", @"going|いく", @"big|おお",@"2"],
+	@[@"見", @"see|みる", @"moon|ゲツ", @"one|ひと",@"1"],
+	@[@"月", @"moon|ゲツ", @"person|ひと", @"five|いつ",@"1"],
+	@[@"後", @"moon|ゲツ", @"one|ひと", @"back|のち",@"3"],
+	@[@"前", @"before|まえ", @"enter|いる", @"four|よ",@"1"],
+	@[@"生", @"enter|いる", @"life|いきる", @"exit|でる",@"2"],
+	@[@"五", @"five|いつ", @"inside|なか", @"year|ネン",@"1"],
+	@[@"間", @"space|あいだ", @"book|ホン", @"east|トウ",@"1"],
+	@[@"上", @"inside|なか", @"high|たかい", @"above|うえ",@"3"],
+	@[@"東", @"east|トウ", @"going|いく", @"year|ネン",@"1"],
+	@[@"四", @"four|よ", @"high|たかい", @"long|ながい",@"1"],
+	@[@"今", @"child|こ", @"three|み", @"now|コン",@"3"],
+	@[@"金", @"big|おお", @"gold|かね", @"child|こ",@"2"],
+	@[@"九", @"child|こ", @"high|たかい", @"nine|ここの",@"3"],
+	@[@"入", @"come|くる", @"inside|なか", @"enter|いる",@"3"],
+	@[@"学", @"study|ガク", @"before|まえ", @"hour|とき",@"1"],
+	@[@"高", @"high|たかい", @"study|ガク", @"before|まえ",@"1"],
+	@[@"円", @"yen|まるい", @"hour|とき", @"three|み",@"1"],
+	@[@"子", @"enter|いる", @"inside|なか", @"child|こ",@"3"],
+	@[@"外", @"talk|はなす", @"three|み", @"outside|そと",@"3"],
+	@[@"八", @"six|む", @"eight|や", @"now|コン",@"2"],
+	@[@"六", @"six|む", @"moon|ゲツ", @"now|コン",@"1"],
+	@[@"下", @"low|した", @"east|トウ", @"six|む",@"1"],
+	@[@"来", @"small|ちいさい", @"come|くる", @"see|みる",@"2"],
+	@[@"気", @"four|よ", @"back|のち", @"spirit|いき",@"3"],
+	@[@"小", @"small|ちいさい", @"person|ひと", @"country|コク",@"1"],
+	@[@"七", @"hour|とき", @"seven|なな", @"three|み",@"2"],
+	@[@"山", @"east|トウ", @"mountain|サン", @"three|み",@"2"],
+	@[@"話", @"child|こ", @"talk|はなす", @"river|セン",@"2"],
+	@[@"女", @"north|ホク", @"woman|おんな", @"book|ホン",@"2"],
+	@[@"北", @"north|ホク", @"now|コン", @"exit|でる",@"1"],
+	@[@"午", @"north|ホク", @"noon|うま", @"thousand|セン",@"2"],
+	@[@"百", @"hundred|ヒャク", @"male|おとこ", @"talk|はなす",@"1"],
+	@[@"書", @"two|ふた", @"write|かく", @"study|ガク",@"2"],
+	@[@"先", @"now|コン", @"child|こ", @"before|さき",@"3"],
+	@[@"名", @"name|な", @"outside|そと", @"study|ガク",@"1"],
+	@[@"川", @"male|おとこ", @"before|まえ", @"river|セン",@"3"],
+	@[@"千", @"water|みず", @"thousand|セン", @"east|トウ",@"2"],
+	@[@"水", @"water|みず", @"low|した", @"come|くる",@"1"],
+	@[@"半", @"eight|や", @"half|ハン", @"before|さき",@"2"],
+	@[@"男", @"high|たかい", @"male|おとこ", @"half|ハン",@"2"],
+	@[@"西", @"yen|まるい", @"space|あいだ", @"west|セイ",@"3"],
+	@[@"電", @"exam|コウ", @"speech|かたる", @"electricity|デン",@"3"],
+	@[@"校", @"exam|コウ", @"space|あいだ", @"ten|とお",@"1"],
+	@[@"語", @"seven|なな", @"speech|かたる", @"year|ネン",@"2"],
+	@[@"土", @"ten|とお", @"soil|ド", @"eat|くう",@"2"],
+	@[@"木", @"one|ひと", @"wood|き", @"car|シャ",@"2"],
+	@[@"聞", @"fire|ひ", @"ask|きく", @"ten|とお",@"2"],
+	@[@"食", @"long|ながい", @"eat|くう", @"year|ネン",@"2"],
+	@[@"車", @"car|シャ", @"hour|とき", @"come|くる",@"1"],
+	@[@"何", @"year|ネン", @"what|なに", @"low|した",@"2"],
+	@[@"南", @"south|ナン", @"ask|きく", @"back|のち",@"1"],
+	@[@"万", @"river|セン", @"10000|マン", @"east|トウ",@"2"],
+	@[@"毎", @"car|シャ", @"east|トウ", @"every|ごと",@"3"],
+	@[@"白", @"south|ナン", @"country|コク", @"white|しろ",@"3"],
+	@[@"天", @"small|ちいさい", @"sky|あまつ", @"what|なに",@"2"],
+	@[@"母", @"ten|とお", @"mama|はは", @"electricity|デン",@"2"],
+	@[@"火", @"fire|ひ", @"ask|きく", @"friend|ユウ",@"1"],
+	@[@"右", @"right|ウ", @"noon|うま", @"above|うえ",@"1"],
+	@[@"読", @"what|なに", @"read|よむ", @"left|サ",@"2"],
+	@[@"友", @"male|おとこ", @"friend|ユウ", @"fact|こと",@"2"],
+	@[@"左", @"left|サ", @"emit|たつ", @"hour|とき",@"1"],
+	@[@"休", @"one|ひと", @"rest|やすむ", @"life|いきる",@"2"],
+	@[@"父", @"father|ちち", @"country|コク", @"person|ひと",@"1"],
+	@[@"雨", @"rain|あめ", @"south|ナン", @"half|ハン",@"1"],
+	@[@"会", @"woman|おんな", @"hundred|ヒャク", @"meet|あう",@"3"],
+	@[@"同", @"big|おお", @"noon|うま", @"same|おなじ",@"3"],
+	@[@"事", @"firm|シャ", @"fact|こと", @"above|うえ",@"2"],
+	@[@"自", @"oneself|みずから", @"before|まえ", @"stand up|たつ",@"1"],
+	@[@"社", @"firm|シャ", @"going|いく", @"electricity|デン",@"1"],
+	@[@"発", @"soil|ド", @"emit|たつ", @"south|ナン",@"2"],
+	@[@"者", @"meet|あう", @"white|しろ", @"person|もの",@"3"],
+	@[@"地", @"woman|おんな", @"life|いきる", @"earth|チ",@"3"],
+	@[@"業", @"sky|あまつ", @"five|いつ", @"arts|ギョウ",@"3"],
+	@[@"方", @"sky|あまつ", @"person|かた", @"exam|コウ",@"2"],
+	@[@"新", @"ask|とう", @"fact|こと", @"new|あたらしい",@"3"],
+	@[@"場", @"place|ば", @"moon|ゲツ", @"two|ふた",@"1"],
+	@[@"員", @"yen|まるい", @"every|ごと", @"member|イ",@"3"],
+	@[@"立", @"stand up|たつ", @"ten|とお", @"water|みず",@"1"],
+	@[@"開", @"open|ひらく", @"exit|でる", @"moon|ゲツ",@"1"],
+	@[@"手", @"hand|て", @"three|み", @"hour|とき",@"1"],
+	@[@"力", @"exert|リョク", @"father|ちち", @"fact|こと",@"1"],
+	@[@"問", @"ask|とう", @"come|くる", @"10000|マン",@"1"],
+	@[@"代", @"age|かわる", @"emit|たつ", @"person|かた",@"1"],
+	@[@"明", @"light|あかり", @"age|かわる", @"come|くる",@"1"],
+	@[@"動", @"move|うごく", @"rain|あめ", @"before|まえ",@"1"],
+	@[@"京", @"person|もの", @"capital|キョウ", @"eight|や",@"2"],
+	@[@"目", @"eye|め", @"thousand|セン", @"firm|シャ",@"1"],
+	@[@"通", @"what|なに", @"age|かわる", @"avenue|とおる",@"3"],
+	@[@"言", @"white|しろ", @"ask|とう", @"say|いう",@"3"],
+	@[@"理", @"above|うえ", @"truth|リ", @"fact|こと",@"2"],
+	@[@"体", @"body|からだ", @"ask|きく", @"speech|かたる",@"1"],
+	@[@"田", @"name|な", @"light|あかり", @"rice paddy|デン",@"3"],
+	@[@"主", @"lord|ぬし", @"right|ウ", @"have|もつ",@"1"],
+	@[@"題", @"topic|ダイ", @"six|む", @"eye|め",@"1"],
+	@[@"意", @"mind|", @"fire|ひ", @"going|いく",@"1"],
+	@[@"不", @"bad|フ", @"four|よ", @"east|トウ",@"1"],
+	@[@"作", @"make|つくる", @"long|ながい", @"arts|ギョウ",@"1"],
+	@[@"用", @"fire|ひ", @"water|みず", @"use|ヨウ",@"3"],
+	@[@"度", @"because|イ", @"time|たび", @"exit|でる",@"2"],
+	@[@"強", @"time|たび", @"strong|つよい", @"woman|おんな",@"2"],
+	@[@"公", @"life|いきる", @"prince|コウ", @"light|あかり",@"2"],
+	@[@"持", @"meet|あう", @"have|もつ", @"soil|ド",@"2"],
+	@[@"野", @"study|ガク", @"friend|ユウ", @"field|の",@"3"],
+	@[@"以", @"capital|キョウ", @"make|つくる", @"because|イ",@"3"],
+	@[@"思", @"much|おおい", @"think|おもう", @"big|おお",@"2"],
+	@[@"家", @"use|ヨウ", @"rain|あめ", @"home|いえ",@"3"],
+	@[@"世", @"arts|ギョウ", @"world|よ", @"now|コン",@"2"],
+	@[@"多", @"much|おおい", @"mama|はは", @"year|ネン",@"1"],
+	@[@"正", @"prince|コウ", @"justice|ただしい", @"rain|あめ",@"2"],
+	@[@"安", @"wood|き", @"two|ふた", @"low|やすい",@"3"],
+	@[@"院", @"person|もの", @"Inst.|イン", @"before|さき",@"2"],
+	@[@"心", @"west|セイ", @"mind|りっしんべん", @"study|ガク",@"2"],
+	@[@"界", @"fire|ひ", @"world|カイ", @"think|おもう",@"2"],
+	@[@"教", @"have|もつ", @"faith|おしえる", @"gold|かね",@"2"],
+	@[@"文", @"avenue|とおる", @"water|みず", @"art|ふみ",@"3"],
+	@[@"元", @"mind|りっしんべん", @"going|いく", @"origin|ゲン",@"3"],
+	@[@"重", @"white|しろ", @"-fold|え", @"thousand|セン",@"2"],
+	@[@"近", @"going|いく", @"akin|キン", @"above|うえ",@"2"],
+	@[@"考", @"west|セイ", @"consider|かんがえる", @"big|おお",@"2"],
+	@[@"画", @"picture|えがく", @"male|おとこ", @"fork|わかれる",@"1"],
+	@[@"海", @"six|む", @"sea|カイ", @"low|やすい",@"2"],
+	@[@"売", @"rain|あめ", @"water|みず", @"sell|うる",@"3"],
+	@[@"知", @"eat|くう", @"know|しる", @"field|の",@"2"],
+	@[@"道", @"faith|おしえる", @"moral|ドウ", @"car|シャ",@"2"],
+	@[@"集", @"field|の", @"have|もつ", @"meet|あつまる",@"3"],
+	@[@"別", @"fork|わかれる", @"person|ひと", @"father|ちち",@"1"],
+	@[@"物", @"earth|チ", @"thing|もの", @"light|あかり",@"2"],
+	@[@"使", @"use|つかう", @"hand|て", @"half|ハン",@"1"],
+	@[@"品", @"I|わたくし", @"goods|しな", @"move|うごく",@"2"],
+	@[@"計", @"person|もの", @"sea|カイ", @"plan|はかる",@"3"],
+	@[@"死", @"-fold|え", @"enter|いる", @"die|しぬ",@"3"],
+	@[@"特", @"time|たび", @"special|トク", @"two|ふた",@"2"],
+	@[@"私", @"lord|ぬし", @"I|わたくし", @"ask|きく",@"2"],
+	@[@"始", @"special|トク", @"begin|はじめる", @"rice paddy|デン",@"2"],
+	@[@"朝", @"sky|あまつ", @"epoch|チョウ", @"-fold|え",@"2"],
+	@[@"運", @"epoch|チョウ", @"enter|いる", @"lot|はこぶ",@"3"],
+	@[@"終", @"soil|ド", @"east|トウ", @"end|おわる",@"3"],
+	@[@"台", @"person|ひと", @"justice|ただしい", @"a stand|うてな",@"3"],
+	@[@"広", @"a stand|うてな", @"wide|ひろい", @"member|イ",@"2"],
+	@[@"住", @"mountain|サン", @"light|あかり", @"live|すむ",@"3"],
+	@[@"真", @"firm|シャ", @"true|ま", @"white|しろ",@"2"],
+	@[@"有", @"friend|ユウ", @"hour|とき", @"have|ユウ",@"3"],
+	@[@"口", @"mouth|くち", @"much|おおい", @"low|した",@"1"],
+	@[@"少", @"few|すくない", @"think|おもう", @"six|む",@"1"],
+	@[@"町", @"goods|しな", @"move|うごく", @"town|まち",@"3"],
+	@[@"料", @"fee|リョウ", @"inside|なか", @"world|よ",@"1"],
+	@[@"工", @"sky|あまつ", @"craft|コウ", @"few|すくない",@"2"],
+	@[@"建", @"begin|はじめる", @"build|たてる", @"move|うごく",@"2"],
+	@[@"空", @"sky|そら", @"leg|あし", @"picture|えがく",@"1"],
+	@[@"急", @"long|ながい", @"steep|いそぐ", @"halt|とまる",@"2"],
+	@[@"止", @"halt|とまる", @"enter|いる", @"sea|カイ",@"1"],
+	@[@"送", @"a stand|うてな", @"ease|たのしい", @"send|おくる",@"3"],
+	@[@"切", @"move|うごく", @"consider|かんがえる", @"cut|きる",@"3"],
+	@[@"転", @"change|ころがる", @"before|さき", @"study|ガク",@"1"],
+	@[@"研", @"exert|リョク", @"polish|ケン", @"wide|ひろい",@"2"],
+	@[@"足", @"yen|まるい", @"rain|あめ", @"leg|あし",@"3"],
+	@[@"究", @"friend|ユウ", @"study|キュウ", @"town|まち",@"2"],
+	@[@"楽", @"low|した", @"ease|たのしい", @"send|おくる",@"2"],
+	@[@"起", @"try|こころみる", @"Inst.|イン", @"rouse|おきる",@"3"],
+	@[@"着", @"don|きる", @"place|ば", @"move|うごく",@"1"],
+	@[@"店", @"north|ホク", @"shop|みせ", @"book|ホン",@"2"],
+	@[@"病", @"river|セン", @"ill|やむ", @"change|ころがる",@"2"],
+	@[@"質", @"life|いきる", @"matter|たち", @"age|かわる",@"2"],
+	@[@"待", @"ten|とお", @"wait|まつ", @"matter|たち",@"2"],
+	@[@"試", @"try|こころみる", @"rest|やすむ", @"thing|もの",@"1"],
+	@[@"族", @"wood|き", @"every|ごと", @"tribe|ゾ",@"3"],
+	@[@"銀", @"river|セン", @"mouth|くち", @"silver|ギン",@"3"],
+	@[@"早", @"sky|あまつ", @"fast|はやい", @"taste|あじ",@"2"],
+	@[@"映", @"reflect|うつる", @"big|おお", @"fee|リョウ",@"1"],
+	@[@"親", @"half|ハン", @"parent|おや", @"make|つくる",@"2"],
+	@[@"験", @"effect|あかし", @"before|まえ", @"ill|やむ",@"1"],
+	@[@"英", @"same|おなじ", @"English|エイ", @"prince|コウ",@"2"],
+	@[@"医", @"write|かく", @"doctor|いやす", @"much|おおい",@"2"],
+	@[@"仕", @"picture|えがく", @"think|おもう", @"doing|つかえる",@"3"],
+	@[@"去", @"emit|たつ", @"spirit|いき", @"past|さる",@"3"],
+	@[@"味", @"taste|あじ", @"picture|えがく", @"before|さき",@"1"],
+	@[@"写", @"fork|わかれる", @"hour|とき", @"copy|うつす",@"3"],
+	@[@"字", @"town|まち", @"build|たてる", @"word|あざ",@"3"],
+	@[@"答", @"answer|こたえる", @"name|な", @"polish|ケン",@"1"],
+	@[@"夜", @"night|よ", @"person|もの", @"reflect|うつる",@"1"],
+	@[@"音", @"wide|ひろい", @"noise|おと", @"wait|まつ",@"2"],
+	@[@"注", @"four|よ", @"pour|そそぐ", @"friend|ユウ",@"2"],
+	@[@"帰", @"Inst.|イン", @"lead to|かえる", @"south|ナン",@"2"],
+	@[@"古", @"epoch|チョウ", @"old|ふるい", @"sell|うる",@"2"],
+	@[@"歌", @"faith|おしえる", @"sing|うた", @"meet|あう",@"2"],
+	@[@"買", @"goods|しな", @"buy|かう", @"small|ちいさい",@"2"],
+	@[@"悪", @"bad|わるい", @"person|ひと", @"fast|はやい",@"1"],
+	@[@"図", @"map|え", @"craft|コウ", @"friend|ユウ",@"1"],
+	@[@"週", @"speech|かたる", @"week|シュウ", @"mind|りっしんべん",@"2"],
+	@[@"室", @"room|むろ", @"week|シュウ", @"lead to|かえる",@"1"],
+	@[@"歩", @"palace|やかた", @"river|セン", @"walk|あるく",@"3"],
+	@[@"風", @"change|ころがる", @"air|かぜ", @"east|トウ",@"2"],
+	@[@"紙", @"paper|かみ", @"body|からだ", @"polish|ケン",@"1"],
+	@[@"黒", @"black|くろ", @"springtime|シュン", @"use|つかう",@"1"],
+	@[@"花", @"shop|オク", @"flower|カ", @"small|ちいさい",@"2"],
+	@[@"春", @"wood|き", @"springtime|シュン", @"mind|りっしんべん",@"2"],
+	@[@"赤", @"sky|そら", @"red|あか", @"room|むろ",@"2"],
+	@[@"青", @"blue|あお", @"doctor|いやす", @"faith|おしえる",@"1"],
+	@[@"館", @"moon|ゲツ", @"capital|キョウ", @"palace|やかた",@"3"],
+	@[@"屋", @"autumn|あき", @"shop|オク", @"water|みず",@"2"],
+	@[@"色", @"earth|チ", @"color|ショク", @"eye|め",@"2"],
+	@[@"走", @"station|エキ", @"above|うえ", @"run|ソウ",@"3"],
+	@[@"秋", @"moral|ドウ", @"walk|あるく", @"autumn|あき",@"3"],
+	@[@"夏", @"summer|なつ", @"springtime|シュン", @"exert|リョク",@"1"],
+	@[@"習", @"learn|ならう", @"rain|あめ", @"because|イ",@"1"],
+	@[@"駅", @"station|エキ", @"space|あいだ", @"south|ナン",@"1"],
+	@[@"洋", @"low|やすい", @"ocean|ヨ", @"space|あいだ",@"2"],
+	@[@"旅", @"take|のむ", @"trip|たび", @"bad|わるい",@"2"],
+	@[@"服", @"obey|フ", @"read|よむ", @"autumn|あき",@"1"],
+	@[@"夕", @"evening|セキ", @"wide|ひろい", @"speech|かたる",@"1"],
+	@[@"借", @"origin|ゲン", @"meet|あつまる", @"rent|かりる",@"3"],
+	@[@"曜", @"world|よ", @"weekday|ヨ", @"yen|まるい",@"2"],
+	@[@"飲", @"live|すむ", @"wide|ひろい", @"take|のむ",@"3"],
+	@[@"肉", @"meat|ニク", @"hour|とき", @"before|まえ",@"1"],
+	@[@"貸", @"lend|かす", @"small|ちいさい", @"fast|はやい",@"1"],
+	@[@"堂", @"have|もつ", @"lot|はこぶ", @"hall|ドウ",@"3"],
+	@[@"鳥", @"weekday|ヨ", @"bird|チョウ", @"nine|ここの",@"2"],
+	@[@"飯", @"long|ながい", @"meal|ハン", @"person|かた",@"2"],
+	@[@"勉", @"hall|ドウ", @"exertion|ベン", @"know|しる",@"2"],
+	@[@"冬", @"winter|ふゆ", @"polish|ケン", @"long|ながい",@"1"],
+	@[@"昼", @"noon|ひる", @"buy|かう", @"long|ながい",@"1"],
+	@[@"茶", @"shop|オク", @"nine|ここの", @"tea|チャ",@"3"],
+	@[@"弟", @"every|ごと", @"above|うえ", @"younger brother|テイ",@"3"],
+	@[@"牛", @"ill|やむ", @"cow|ギュウ", @"fork|わかれる",@"2"],
+	@[@"魚", @"tea|チャ", @"change|ころがる", @"fish|うお",@"3"],
+	@[@"兄", @"book|ホン", @"person|かた", @"big brother|ケイ",@"3"],
+	@[@"犬", @"dog|いぬ", @"eight|や", @"lord|ぬし",@"1"],
+	@[@"妹", @"younger sister|マイ", @"because|イ", @"exert|リョク",@"1"],
+	@[@"姉", @"elder sister|あね", @"body|からだ", @"electricity|デン",@"1"],
+	@[@"漢", @"consider|かんがえる", @"meet|あつまる", @"China|カ",@"3"],
+	@[@"政", @"craft|コウ", @"politics|まつりごと", @"fork|わかれる",@"2"],
+	@[@"議", @"paper|かみ", @"study|ガク", @"debate|",@"3"],
+	@[@"民", @"map|え", @"dept|ブ", @"nation|ミン",@"3"],
+	@[@"連", @"firm|シャ", @"fact|こと", @"lead|つらなる",@"3"],
+	@[@"対", @"even|あいて", @"electricity|デン", @"east|トウ",@"1"],
+	@[@"部", @"matter|たち", @"world|よ", @"dept|ブ",@"3"],
+	@[@"合", @"lend|かす", @"0.1|あう", @"study|ガク",@"2"],
+	@[@"市", @"thousand|セン", @"city|シ", @"run|ソウ",@"2"],
+	@[@"内", @"noise|おと", @"woman|おんな", @"home|ナイ",@"3"],
+	@[@"相", @"phase|あい", @"life|いきる", @"polish|ケン",@"1"],
+	@[@"定", @"fix|さだめる", @"home|いえ", @"have|もつ",@"1"],
+	@[@"回", @"what|なに", @"game|まわる", @"wide|ひろい",@"2"],
+	@[@"選", @"home|いえ", @"take|のむ", @"elect|えらぶ",@"3"],
+	@[@"米", @"left|サ", @"now|コン", @"USA|こめ",@"3"],
+	@[@"実", @"west|セイ", @"truth|み", @"outside|そと",@"2"],
+	@[@"関", @"barrier|せき", @"game|まわる", @"all|まったく",@"1"],
+	@[@"決", @"fix|きめる", @"rain|あめ", @"warp|へる",@"1"],
+	@[@"全", @"all|まったく", @"cut|きる", @"eye|め",@"1"],
+	@[@"表", @"table|おもて", @"ocean|ヨ", @"fact|こと",@"1"],
+	@[@"戦", @"hundred|ヒャク", @"war|いくさ", @"air|かぜ",@"2"],
+	@[@"経", @"lead to|かえる", @"elder sister|あね", @"warp|へる",@"3"],
+	@[@"最", @"most|もっとも", @"earth|チ", @"phase|あい",@"1"],
+	@[@"現", @"moral|ドウ", @"exit|でる", @"actual|あらわれる",@"3"],
+	@[@"調", @"tone|しらべる", @"change|ころがる", @"one|ひと",@"1"],
+	@[@"化", @"delude|ばける", @"law|ホウ", @"ask|とう",@"1"],
+	@[@"当", @"halt|とまる", @"hit|あたる", @"field|の",@"2"],
+	@[@"約", @"special|トク", @"buy|かう", @"shrink|ヤク",@"3"],
+	@[@"首", @"neck|シュ", @"sing|うた", @"emit|たつ",@"1"],
+	@[@"法", @"send|おくる", @"law|ホウ", @"meet|あう",@"2"],
+	@[@"性", @"come|くる", @"sex|さが", @"black|くろ",@"2"],
+	@[@"要", @"need|ヨウ", @"truth|リ", @"plan|はかる",@"1"],
+	@[@"制", @"govt|おさめる", @"die|しぬ", @"law|セイ",@"3"],
+	@[@"治", @"govt|おさめる", @"doctor|いやす", @"yen|まるい",@"1"],
+	@[@"務", @"truth|リ", @"lot|はこぶ", @"task|ム",@"3"],
+	@[@"成", @"10000|マン", @"pour|そそぐ", @"get|なる",@"3"],
+	@[@"期", @"make|つくる", @"lead|つらなる", @"time|キ",@"3"],
+	@[@"取", @"pour|そそぐ", @"topic|ダイ", @"take|とる",@"3"],
+	@[@"都", @"send|おくる", @"friend|ユウ", @"capital|ト",@"3"],
+	@[@"和", @"fast|はやい", @"peace|やわらぐ", @"ten|とお",@"2"],
+	@[@"機", @"faith|おしえる", @"age|かわる", @"machine|はた",@"3"],
+	@[@"平", @"proceed|すすむ", @"flat|たいら", @"beginning|はじめ",@"2"],
+	@[@"加", @"add|くわえる", @"blue|あお", @"what|なに",@"1"],
+	@[@"受", @"have|もつ", @"hall|ドウ", @"get|うける",@"3"],
+	@[@"続", @"series|つづく", @"speech|かたる", @"station|エキ",@"1"],
+	@[@"進", @"proceed|すすむ", @"rain|あめ", @"study|ガク",@"1"],
+	@[@"数", @"law|かず", @"have|ユウ", @"get|なる",@"1"],
+	@[@"記", @"picture|えがく", @"flat|たいら", @"scribe|キ",@"3"],
+	@[@"初", @"beginning|はじめ", @"name|な", @"fish|うお",@"1"],
+	@[@"指", @"run|ソウ", @"younger brother|テイ", @"finger|ゆび",@"3"],
+	@[@"権", @"lot|はこぶ", @"China|カ", @"power|おもり",@"3"],
+	@[@"支", @"branch|しんよう", @"west|セイ", @"buy|かう",@"1"],
+	@[@"産", @"strong|つよい", @"home|いえ", @"bear|うむ",@"3"],
+	@[@"点", @"mark|つける", @"fast|はやい", @"before|まえ",@"1"],
+	@[@"報", @"eight|や", @"news|むくいる", @"member|イ",@"2"],
+	@[@"済", @"finish|すむ", @"year|ネン", @"akin|キン",@"1"],
+	@[@"活", @"male|おとこ", @"white|しろ", @"living|いきる",@"3"],
+	@[@"原", @"win|かつ", @"field|ゲン", @"paper|かみ",@"2"],
+	@[@"共", @"all|まったく", @"all|とも", @"have|もつ",@"2"],
+	@[@"得", @"get|える", @"book|ホン", @"copy|うつす",@"1"],
+	@[@"解", @"key|とく", @"outside|そと", @"mama|はは",@"1"],
+	@[@"交", @"learn|ならう", @"person|かた", @"mixing|まじわる",@"3"],
+	@[@"資", @"data|", @"send|おくる", @"use|ヨウ",@"1"],
+	@[@"予", @"leg|あし", @"nation|ミン", @"I|あらかじめ",@"3"],
+	@[@"向", @"profit|リ", @"shrink|ヤク", @"defy|むく",@"3"],
+	@[@"際", @"machine|はた", @"firm|シャ", @"side|きわ",@"3"],
+	@[@"勝", @"exist|ザイ", @"sex|さが", @"win|かつ",@"3"],
+	@[@"面", @"face|おも", @"dog|いぬ", @"every|ごと",@"1"],
+	@[@"告", @"need|ヨウ", @"tell|コク", @"field|の",@"2"],
+	@[@"反", @"meat|ニク", @"copy|うつす", @"anti-|そる",@"3"],
+	@[@"判", @"spirit|いき", @"seal|わかる", @"half|ハン",@"2"],
+	@[@"認", @"mouth|くち", @"witness|みとめる", @"field|の",@"2"],
+	@[@"参", @"die|まいる", @"face|おも", @"live|すむ",@"1"],
+	@[@"利", @"profit|リ", @"tell|コク", @"inside|なか",@"1"],
+	@[@"組", @"war|いくさ", @"male|おとこ", @"braid|くむ",@"3"],
+	@[@"信", @"field|ゲン", @"make|つくる", @"truth|シ",@"3"],
+	@[@"在", @"city|シ", @"exist|ザイ", @"truth|リ",@"2"],
+	@[@"件", @"case|くだん", @"ocean|ヨ", @"die|しぬ",@"1"],
+	@[@"側", @"justice|ただしい", @"buy|かう", @"lean|かわ",@"3"],
+	@[@"任", @"male|おとこ", @"duty|まかせる", @"bad|フ",@"2"],
+	@[@"引", @"tug|ひく", @"actual|あらわれる", @"law|かず",@"1"],
+	@[@"求", @"0.1|あう", @"want|もとめる", @"thing|もの",@"2"],
+	@[@"所", @"five|いつ", @"parent|おや", @"place|ところ",@"3"],
+	@[@"次", @"news|むくいる", @"next|つぐ", @"even|あいて",@"2"],
+	@[@"昨", @"doing|つかえる", @"previous|サク", @"small|ちいさい",@"2"],
+	@[@"論", @"argument|ロン", @"doctor|いやす", @"tribe|ゾ",@"1"],
+	@[@"官", @"bureaucrat|カン", @"rest|やすむ", @"truth|シ",@"1"],
+	@[@"増", @"add|ます", @"place|ば", @"field|ゲン",@"1"],
+	@[@"係", @"space|あいだ", @"game|まわる", @"duty|かかる",@"3"],
+	@[@"感", @"station|エキ", @"anti-|そる", @"feeling|カン",@"3"],
+	@[@"情", @"few|すくない", @"facts|なさけ", @"bird|チョウ",@"2"],
+	@[@"投", @"take|とる", @"join|なげる", @"rite|シ",@"2"],
+	@[@"示", @"show|しめす", @"six|む", @"power|おもり",@"1"],
+	@[@"変", @"take|のむ", @"akin|キン", @"change|かわる",@"3"],
+	@[@"打", @"flower|カ", @"sky|あまつ", @"hit|うつ",@"3"],
+	@[@"直", @"craft|コウ", @"fix|ただちに", @"male|おとこ",@"2"],
+	@[@"両", @"barrier|せき", @"two|てる", @"have|もつ",@"2"],
+	@[@"式", @"rite|シ", @"China|カ", @"study|ガク",@"1"],
+	@[@"確", @"firm|たしか", @"war|いくさ", @"low|やすい",@"1"],
+	@[@"果", @"west|セイ", @"end|はたす", @"send|おくる",@"2"],
+	@[@"容", @"form|ヨウ", @"strong|つよい", @"get|なる",@"1"],
+	@[@"必", @"certain|かならず", @"before|まえ", @"profit|リ",@"1"],
+	@[@"演", @"person|かた", @"person|ひと", @"act|エン",@"3"],
+	@[@"歳", @"one|ひと", @"have|もつ", @"age|とし",@"3"],
+	@[@"争", @"act|エン", @"argue|あらそう", @"noon|うま",@"2"],
+	@[@"談", @"member|イ", @"talk|ダン", @"copy|うつす",@"2"],
+	@[@"能", @"skill|ノウ", @"braid|くむ", @"exertion|ベン",@"1"],
+	@[@"位", @"same|おなじ", @"some|くらい", @"fix|きめる",@"2"],
+	@[@"置", @"put|おく", @"effect|あかし", @"shrink|ヤク",@"1"],
+	@[@"流", @"week|シュウ", @"exertion|ベン", @"flow|ながれる",@"3"],
+	@[@"格", @"noon|ひる", @"rank|カク", @"doctor|いやす",@"2"],
+	@[@"疑", @"hit|うつ", @"hit|あたる", @"doubt|うたがう",@"3"],
+	@[@"過", @"bad|フ", @"error|すぎる", @"end|おわる",@"2"],
+	@[@"局", @"war|いくさ", @"act|エン", @"board|つぼね",@"3"],
+	@[@"放", @"fire|はなす", @"neck|シュ", @"get|うける",@"1"],
+	@[@"常", @"usual|つね", @"effect|あかし", @"barrier|せき",@"1"],
+	@[@"状", @"year|ネン", @"form|ジョウ", @"few|すくない",@"2"],
+	@[@"球", @"eight|や", @"braid|くむ", @"ball|キュウ",@"3"],
+	@[@"職", @"study|キュウ", @"work|ショク", @"goods|しな",@"2"],
+	@[@"与", @"exertion|ベン", @"series|つづく", @"give|あたえる",@"3"],
+	@[@"供", @"rice paddy|デン", @"elect|えらぶ", @"offer|そなえる",@"3"],
+	@[@"役", @"tea|チャ", @"war|ヤク", @"city|シ",@"2"],
+	@[@"構", @"build|かまえる", @"polish|ケン", @"doing|つかえる",@"1"],
+	@[@"割", @"usual|つね", @"father|ちち", @"cut|わる",@"3"],
+	@[@"費", @"nation|ミン", @"add|ます", @"cost|ついやす",@"3"],
+	@[@"付", @"attach|つける", @"firm|たしか", @"fast|はやい",@"1"],
+	@[@"由", @"finish|すむ", @"a reason|よし", @"autumn|あき",@"2"],
+	@[@"説", @"dog|いぬ", @"lean|かわ", @"rumor|セツ",@"3"],
+	@[@"難", @"defect|かたい", @"defy|むく", @"talk|ダン",@"1"],
+	@[@"優", @"thing|もの", @"evening|セキ", @"excel|やさしい",@"3"],
+	@[@"夫", @"hour|とき", @"talk|はなす", @"man|おっと",@"3"],
+	@[@"収", @"think|おもう", @"lord|ぬし", @"pay|おさめる",@"3"],
+	@[@"断", @"soil|ド", @"fast|はやい", @"warn|たつ",@"3"],
+	@[@"石", @"stone|セキ", @"right|ウ", @"gold|かね",@"1"],
+	@[@"違", @"life|いきる", @"nation|ミン", @"differ|ちがう",@"3"],
+	@[@"消", @"cancel|きえる", @"skill|ノウ", @"bird|チョウ",@"1"],
+	@[@"神", @"mind|かみ", @"lead to|かえる", @"what|なに",@"1"],
+	@[@"番", @"turn|バン", @"all|とも", @"law|かず",@"1"],
+	@[@"規", @"measure|", @"obey|フ", @"seven|なな",@"1"],
+	@[@"術", @"feeling|カン", @"back|のち", @"art|すべ",@"3"],
+	@[@"備", @"map|え", @"change|かわる", @"equip|そなえる",@"3"],
+	@[@"宅", @"home|タ", @"defect|かたい", @"see|みる",@"1"],
+	@[@"害", @"harm|ガイ", @"fish|うお", @"key|とく",@"1"],
+	@[@"配", @"exile|くばる", @"goods|しな", @"east|トウ",@"1"],
+	@[@"警", @"form|ヨウ", @"person|かた", @"admonish|いましめる",@"3"],
+	@[@"育", @"voice|こえ", @"ten|とお", @"rear|そだつ",@"3"],
+	@[@"席", @"exertion|ベン", @"mat|むしろ", @"above|うえ",@"2"],
+	@[@"訪", @"earth|チ", @"fact|こと", @"visit|おとずれる",@"3"],
+	@[@"乗", @"join|のる", @"home|いえ", @"elder sister|あね",@"1"],
+	@[@"残", @"ask|とう", @"truth|み", @"balance|のこる",@"3"],
+	@[@"想", @"move|うごく", @"equip|そなえる", @"idea|おもう",@"3"],
+	@[@"声", @"voice|こえ", @"excel|やさしい", @"home|タ",@"1"],
+	@[@"念", @"idea|ネン", @"member|イ", @"name|な",@"1"],
+	@[@"助", @"age|かわる", @"rain|あめ", @"help|たすける",@"3"],
+	@[@"労", @"begin|はじめる", @"toil|ろうする", @"eye|め",@"2"],
+	@[@"例", @"usage|たとえる", @"law|ホウ", @"much|おおい",@"1"],
+	@[@"然", @"so|しか", @"a reason|よし", @"halt|とまる",@"1"],
+	@[@"限", @"obey|フ", @"dog|いぬ", @"limit|かぎる",@"3"],
+	@[@"追", @"station|エキ", @"work|ショク", @"chase|ツイ",@"3"],
+	@[@"商", @"bureaucrat|カン", @"sing|うた", @"selling|ショウ",@"3"],
+	@[@"葉", @"beginning|はじめ", @"male|おとこ", @"lobe|ヨウ",@"3"],
+	@[@"伝", @"consider|かんがえる", @"gold|かね", @"follow|つたわる",@"3"],
+	@[@"働", @"hundred|ヒャク", @"work|はたらく", @"rice paddy|デン",@"2"],
+	@[@"形", @"time|キ", @"form|かた", @"govt|おさめる",@"2"],
+	@[@"景", @"doing|つかえる", @"nine|ここの", @"view|ケ",@"3"],
+	@[@"落", @"drop|おちる", @"board|つぼね", @"place|ところ",@"1"],
+	@[@"好", @"I|あらかじめ", @"fond|このむ", @"long|ながい",@"2"],
+	@[@"退", @"feeling|カン", @"repel|しりぞく", @"lead to|かえる",@"2"],
+	@[@"頭", @"sky|あまつ", @"head|あたま", @"reflect|うつる",@"2"],
+	@[@"負", @"city|シ", @"fact|こと", @"-|まける",@"3"],
+	@[@"渡", @"firm|シャ", @"ill|やむ", @"ford|わたる",@"3"],
+	@[@"失", @"fond|このむ", @"loss|うしなう", @"shop|オク",@"2"],
+	@[@"差", @"change|かわる", @"margin|さす", @"ease|たのしい",@"2"],
+	@[@"末", @"oneself|みずから", @"father|ちち", @"tip|すえ",@"3"],
+	@[@"守", @"obey|まもる", @"need|ヨウ", @"answer|こたえる",@"1"],
+	@[@"若", @"proceed|すすむ", @"balance|のこる", @"if|わかい",@"3"],
+	@[@"種", @"kind|たね", @"arts|ギョウ", @"sell|うる",@"1"],
+	@[@"美", @"leg|あし", @"beauty|ビ", @"duty|まかせる",@"2"],
+	@[@"命", @"harm|ガイ", @"skill|ノウ", @"life|いのち",@"3"],
+	@[@"福", @"luck|フ", @"ford|わたる", @"field|の",@"1"],
+	@[@"望", @"faith|おしえる", @"hope|のぞむ", @"add|ます",@"2"],
+	@[@"非", @"rumor|セツ", @"un-|あらず", @"wait|まつ",@"2"],
+	@[@"観", @"long|ながい", @"man|おっと", @"look|みる",@"3"],
+	@[@"察", @"judge|サツ", @"polish|ケン", @"meal|ハン",@"1"],
+	@[@"段", @"elect|えらぶ", @"a reason|よし", @"steps|ダン",@"3"],
+	@[@"横", @"side|よこ", @"big|おお", @"even|あいて",@"1"],
+	@[@"深", @"work|ショク", @"deep|ふかい", @"yen|まるい",@"2"],
+	@[@"申", @"3-5PM|もうす", @"lot|はこぶ", @"field|ゲン",@"1"],
+	@[@"様", @"big|おお", @"lead to|かえる", @"way|さま",@"3"],
+	@[@"財", @"build|かまえる", @"right|ウ", @"money|ザイ",@"3"],
+	@[@"港", @"inside|なか", @"offer|そなえる", @"harbor|みなと",@"3"],
+	@[@"識", @"member|イ", @"child|こ", @"know|シ",@"3"],
+	@[@"呼", @"call|コ", @"justice|ただしい", @"end|はたす",@"1"],
+	@[@"達", @"reach|タツ", @"epoch|チョウ", @"map|え",@"1"],
+	@[@"良", @"good|よい", @"winter|ふゆ", @"black|くろ",@"1"],
+	@[@"候", @"harm|ガイ", @"south|ナン", @"season|そうろう",@"3"],
+	@[@"程", @"warp|へる", @"law|ほど", @"bureaucrat|カン",@"2"],
+	@[@"満", @"meal|ハン", @"full|みちる", @"because|イ",@"2"],
+	@[@"敗", @"rite|シ", @"give|あたえる", @"defeat|やぶれる",@"3"],
+	@[@"値", @"idea|ネン", @"a stand|うてな", @"cost|ね",@"3"],
+	@[@"突", @"govt|おさめる", @"winter|ふゆ", @"stab|つく",@"3"],
+	@[@"光", @"ray|ひかる", @"autumn|あき", @"country|コク",@"1"],
+	@[@"路", @"ascend|のぼる", @"palace|やかた", @"road|じ",@"3"],
+	@[@"科", @"course|", @"electricity|デン", @"feeling|カン",@"1"],
+	@[@"積", @"autumn|あき", @"red|あか", @"stack|つむ",@"3"],
+	@[@"他", @"other|ほか", @"limit|かぎる", @"fish|うお",@"1"],
+	@[@"処", @"face|おも", @"act|ところ", @"name|な",@"2"],
+	@[@"太", @"oneself|みずから", @"balance|のこる", @"thick|ふとい",@"3"],
+	@[@"客", @"guest|キャク", @"change|ころがる", @"die|まいる",@"1"],
+	@[@"否", @"rear|そだつ", @"braid|くむ", @"no|いな",@"3"],
+	@[@"師", @"fire|ひ", @"reach|タツ", @"war|",@"3"],
+	@[@"登", @"high|たかい", @"ascend|のぼる", @"stack|つむ",@"2"],
+	@[@"易", @"easy|やさしい", @"tone|しらべる", @"China|カ",@"1"],
+	@[@"速", @"fast|はやい", @"five|いつ", @"lead to|かえる",@"1"],
+	@[@"存", @"feel|ソン", @"nation|ミン", @"witness|みとめる",@"1"],
+	@[@"飛", @"wait|まつ", @"big|おお", @"fly|とぶ",@"3"],
+	@[@"殺", @"kill|ころす", @"even|あいて", @"thick|ふとい",@"1"],
+	@[@"号", @"eye|め", @"item|さけぶ", @"above|うえ",@"2"],
+	@[@"単", @"epoch|チョウ", @"one|ひとえ", @"ask|きく",@"2"],
+	@[@"座", @"sit|すわる", @"woman|おんな", @"way|さま",@"1"],
+	@[@"破", @"rip|やぶる", @"paper|かみ", @"die|しぬ",@"1"],
+	@[@"除", @"weekday|ヨ", @"3)|のぞく", @"make|つくる",@"2"],
+	@[@"完", @"home|いえ", @"end|カン", @"sing|うた",@"2"],
+	@[@"降", @"fall|おりる", @"mind|りっしんべん", @"try|こころみる",@"1"],
+	@[@"責", @"blame|せめる", @"fee|リョウ", @"fish|うお",@"1"],
+	@[@"捕", @"catch|とらえる", @"fix|きめる", @"wait|まつ",@"1"],
+	@[@"危", @"sell|うる", @"fear|あぶない", @"word|あざ",@"2"],
+	@[@"給", @"wage|たまう", @"lot|はこぶ", @"take|のむ",@"1"],
+	@[@"苦", @"trial|くるしい", @"man|おっと", @"don|きる",@"1"],
+	@[@"迎", @"elder sister|あね", @"get|うける", @"meet|ゲイ",@"3"],
+	@[@"園", @"younger sister|マイ", @"yard|エン", @"English|エイ",@"2"],
+	@[@"具", @"tool|そなえる", @"cost|ついやす", @"firm|たしか",@"1"],
+	@[@"辞", @"noon|うま", @"move|うごく", @"word|やめる",@"3"],
+	@[@"因", @"cause|よる", @"springtime|シュン", @"so|しか",@"1"],
+	@[@"馬", @"no|いな", @"horse|うま", @"take|のむ",@"2"],
+	@[@"愛", @"love|アイ", @"fast|はやい", @"man|おっと",@"1"],
+	@[@"富", @"enrich|とむ", @"ask|きく", @"China|カ",@"1"],
+	@[@"彼", @"he|かれ", @"small|ちいさい", @"yard|エン",@"1"],
+	@[@"未", @"spirit|いき", @"un-|いまだ", @"face|おも",@"2"],
+	@[@"舞", @"flit|まう", @"send|おくる", @"night|よ",@"1"],
+	@[@"亡", @"dying|ない", @"obey|フ", @"other|あまる",@"1"],
+	@[@"冷", @"call|コ", @"lobe|ヨウ", @"cool|つめたい",@"3"],
+	@[@"適", @"back|のち", @"rare|かなう", @"town|まち",@"2"],
+	@[@"婦", @"flow|ながれる", @"wife|", @"tip|すえ",@"2"],
+	@[@"寄", @"truth|リ", @"cut|きる", @"send|よる",@"3"],
+	@[@"込", @"air|かぜ", @"mixture|こむ", @"mama|はは",@"2"],
+	@[@"顔", @"face|かお", @"harm|ガイ", @"-|まける",@"1"],
+	@[@"類", @"half|ハン", @"kind|たぐい", @"Inst.|イン",@"2"],
+	@[@"余", @"show|しめす", @"other|あまる", @"3)|のぞく",@"2"],
+	@[@"王", @"rule|オウ", @"think|おもう", @"try|こころみる",@"1"],
+	@[@"返", @"big|おお", @"rite|シ", @"fade|かえす",@"3"],
+	@[@"妻", @"equip|そなえる", @"even|あいて", @"wife|サイ",@"3"],
+	@[@"背", @"back|せ", @"admonish|いましめる", @"thick|ふとい",@"1"],
+	@[@"熱", @"heat|ネツ", @"moon|ゲツ", @"attach|つける",@"1"],
+	@[@"宿", @"form|かた", @"take|とる", @"inn|やど",@"3"],
+	@[@"薬", @"join|のる", @"enamel|ヤク", @"time|キ",@"2"],
+	@[@"険", @"money|ザイ", @"younger sister|マイ", @"sharp eyes|けわしい",@"3"],
+	@[@"頼", @"give|あたえる", @"don|きる", @"trust|たのむ",@"3"],
+	@[@"覚", @"book|ホン", @"show|しめす", @"learn|おぼえる",@"3"],
+	@[@"船", @"rest|やすむ", @"power|おもり", @"boat|ふね",@"3"],
+	@[@"途", @"don|きる", @"tug|ひく", @"way|",@"3"],
+	@[@"許", @"two|てる", @"permit|ゆるす", @"person|ひと",@"2"],
+	@[@"抜", @"omit|ぬく", @"English|エイ", @"taste|あじ",@"1"],
+	@[@"便", @"enamel|ヤク", @"yard|エン", @"convenience|たより",@"3"],
+	@[@"留", @"halt|とめる", @"doubt|うたがう", @"man|おっと",@"1"],
+	@[@"罪", @"sin|つみ", @"man|おっと", @"un-|あらず",@"1"],
+	@[@"努", @"noise|おと", @"toil|つとめる", @"luck|フ",@"2"],
+	@[@"精", @"ghost|セイ", @"proceed|すすむ", @"USA|こめ",@"1"],
+	@[@"散", @"ask|とう", @"attach|つける", @"spend|ちる",@"3"],
+	@[@"静", @"quiet|しず", @"no|いな", @"town|まち",@"1"],
+	@[@"婚", @"marriage|コン", @"put|おく", @"black|くろ",@"1"],
+	@[@"喜", @"side|きわ", @"river|セン", @"rejoice|よろこぶ",@"3"],
+	@[@"浮", @"fond|このむ", @"mind|かみ", @"float|うく",@"3"],
+	@[@"絶", @"winter|ふゆ", @"trial|くるしい", @"sever|たえる",@"3"],
+	@[@"幸", @"rain|あめ", @"act|エン", @"fortune|さいわい",@"3"],
+	@[@"押", @"bad|フ", @"stop|おす", @"fire|ひ",@"2"],
+	@[@"倒", @"fall|たおれる", @"serve|つとめる", @"low|やすい",@"1"],
+	@[@"等", @"etc.|ひとしい", @"add|くわえる", @"study|キュウ",@"1"],
+	@[@"老", @"make|つくる", @"art|すべ", @"old age|おいる",@"3"],
+	@[@"曲", @"harbor|みなと", @"lean|まがる", @"head|あたま",@"2"],
+	@[@"払", @"gap|あくび", @"pay|はらう", @"red|あか",@"2"],
+	@[@"庭", @"toil|ろうする", @"mind|りっしんべん", @"yard|テイ",@"3"],
+	@[@"徒", @"set|いたずら", @"truth|シ", @"sit|すわる",@"1"],
+	@[@"勤", @"hall|ドウ", @"chop|きざむ", @"serve|つとめる",@"3"],
+	@[@"遅", @"gap|あくび", @"admonish|いましめる", @"late|おくれる",@"3"],
+	@[@"居", @"meet|あつまる", @"to be|いる", @"boat|ふね",@"2"],
+	@[@"雑", @"miscellaneous|まじえる", @"make|つくる", @"fork|わかれる",@"1"],
+	@[@"招", @"barrier|せき", @"invite|まねく", @"tug|ひく",@"2"],
+	@[@"困", @"cause|よる", @"annoyed|こまる", @"inn|やど",@"2"],
+	@[@"欠", @"gap|あくび", @"exert|リョク", @"get|なる",@"1"],
+	@[@"更", @"of course|さら", @"room|むろ", @"have|もつ",@"1"],
+	@[@"刻", @"map|え", @"chop|きざむ", @"member|イ",@"2"],
+	@[@"賛", @"hall|ドウ", @"shop|みせ", @"praise|たすける",@"3"],
+	@[@"抱", @"know|シ", @"father|ちち", @"hug|だく",@"3"],
+	@[@"犯", @"taste|あじ", @"station|エキ", @"sin|おかす",@"3"],
+	@[@"恐", @"awe|おそれる", @"tug|ひく", @"cut|きる",@"1"],
+	@[@"息", @"exist|ザイ", @"much|おおい", @"son|いき",@"3"],
+	@[@"遠", @"far|エン", @"debate|", @"sin|つみ",@"1"],
+	@[@"戻", @"re-|もどす", @"left|サ", @"map|え",@"1"],
+	@[@"願", @"vow|ねがう", @"power|おもり", @"mixing|まじわる",@"1"],
+	@[@"絵", @"wage|たまう", @"sketch|カイ", @"float|うく",@"2"],
+	@[@"越", @"exceed|こす", @"mountain|サン", @"skill|ノウ",@"1"],
+	@[@"欲", @"table|おもて", @"age|とし", @"greed|ほっする",@"3"],
+	@[@"痛", @"think|おもう", @"black|くろ", @"hurt|いたい",@"3"],
+	@[@"笑", @"duty|かかる", @"oneself|みずから", @"laugh|わらう",@"3"],
+	@[@"互", @"add|ます", @"together|たがい", @"person|かた",@"2"],
+	@[@"束", @"cost|ついやす", @"ream|たば", @"hit|うつ",@"2"],
+	@[@"似", @"high|たかい", @"arts|ギョウ", @"imitate|にる",@"3"],
+	@[@"列", @"marriage|コン", @"turn|バン", @"row|レツ",@"3"],
+	@[@"探", @"grope|さぐる", @"move|うごく", @"child|こ",@"1"],
+	@[@"逃", @"thick|ふとい", @"flee|にげる", @"ten|とお",@"2"],
+	@[@"遊", @"word|あざ", @"play|あそぶ", @"half|ハン",@"2"],
+	@[@"迷", @"meat|ニク", @"before|さき", @"err|まよう",@"3"],
+	@[@"夢", @"know|しる", @"task|ム", @"dream|ゆめ",@"3"],
+	@[@"君", @"old boy|きみ", @"talk|はなす", @"sit|すわる",@"1"],
+	@[@"閉", @"end|カン", @"shut|とじる", @"member|イ",@"2"],
+	@[@"緒", @"epoch|チョウ", @"end|お", @"meet|あつまる",@"2"],
+	@[@"折", @"bend|おる", @"most|もっとも", @"picture|えがく",@"1"],
+	@[@"草", @"hit|うつ", @"fork|わかれる", @"weeds|くさ",@"3"],
+	@[@"暮", @"nine|ここの", @"spend time|くれる", @"cow|ギュウ",@"2"],
+	@[@"酒", @"sake|さけ", @"peace|やわらぐ", @"shop|オク",@"1"],
+	@[@"悲", @"sad|かなしい", @"horse|うま", @"north|ホク",@"1"],
+	@[@"晴", @"rumor|セツ", @"clear up|はれる", @"rare|かなう",@"2"],
+	@[@"掛", @"get|なる", @"tax|かける", @"fire|はなす",@"2"],
+	@[@"到", @"reach|いたる", @"outside|そと", @"get|なる",@"1"],
+	@[@"寝", @"polish|ケン", @"bed|ねる", @"a reason|よし",@"2"],
+	@[@"暗", @"shade|くらい", @"argument|ロン", @"hit|うつ",@"1"],
+	@[@"盗", @"before|まえ", @"rob|ぬすむ", @"law|セイ",@"2"],
+	@[@"吸", @"son|いき", @"most|もっとも", @"sip|すう",@"3"],
+	@[@"陽", @"face|おも", @"obey|フ", @"male|ヨウ",@"3"],
+	@[@"御", @"akin|キン", @"govern|おん", @"lead to|かえる",@"2"],
+	@[@"歯", @"obey|フ", @"cog|よわい", @"person|もの",@"2"],
+	@[@"忘", @"fee|リョウ", @"time|たび", @"forget|わすれる",@"3"],
+	@[@"雪", @"send|よる", @"snow|セツ", @"strong|つよい",@"2"],
+	@[@"吹", @"heat|ネツ", @"akin|キン", @"puff|スイ",@"3"],
+	@[@"娘", @"girl|むすめ", @"learn|おぼえる", @"steep|いそぐ",@"1"],
+	@[@"誤", @"fast|はやい", @"man|おっと", @"err|あやまる",@"3"],
+	@[@"洗", @"wash|セン", @"capital|キョウ", @"repel|しりぞく",@"1"],
+	@[@"慣", @"accustomed|なれる", @"life|いきる", @"tool|そなえる",@"1"],
+	@[@"礼", @"bow|レイ", @"weeds|くさ", @"ray|ひかる",@"1"],
+	@[@"窓", @"firm|シャ", @"machine|はた", @"pane|まど",@"3"],
+	@[@"昔", @"full|みちる", @"antiquity|むかし", @"autumn|あき",@"2"],
+	@[@"貧", @"dept|ブ", @"poor|まずしい", @"sex|さが",@"2"],
+	@[@"怒", @"doubt|うたがう", @"law|ほど", @"angry|いかる",@"3"],
+	@[@"泳", @"ocean|ヨ", @"swim|およぐ", @"cost|ね",@"2"],
+	@[@"祖", @"delude|ばける", @"pioneer|", @"defect|かたい",@"2"],
+	@[@"杯", @"glass|さかずき", @"phase|あい", @"loss|うしなう",@"1"],
+	@[@"疲", @"trip|たび", @"tire|つかれる", @"lend|かす",@"2"],
+	@[@"皆", @"row|レツ", @"all|みな", @"add|くわえる",@"2"],
+	@[@"鳴", @"age|とし", @"convenience|たより", @"cry|なく",@"3"],
+	@[@"腹", @"belly|はら", @"luck|フ", @"living|いきる",@"1"],
+	@[@"煙", @"warp|へる", @"big|おお", @"smoke|けむる",@"3"],
+	@[@"眠", @"don|きる", @"wife|サイ", @"die|ねむる",@"3"],
+	@[@"怖", @"wide|ひろい", @"kind|たぐい", @"fearful|こわい",@"3"],
+	@[@"耳", @"fork|わかれる", @"ear|ジ", @"one|ひと",@"2"],
+	@[@"頂", @"top|いただく", @"exertion|ベン", @"what|なに",@"1"],
+	@[@"箱", @"3)|のぞく", @"bin|はこ", @"heat|ネツ",@"2"],
+	@[@"晩", @"night|バン", @"eight|や", @"map|え",@"1"],
+	@[@"寒", @"cold|カン", @"omit|ぬく", @"topic|ダイ",@"1"],
+	@[@"髪", @"hair of the head|ハツ", @"true|ま", @"how far|いく",@"1"],
+	@[@"忙", @"busy|いそがしい", @"strong|つよい", @"pay|はらう",@"1"],
+	@[@"才", @"genius|サイ", @"smoke|けむる", @"space|あいだ",@"1"],
+	@[@"靴", @"shoes|くつ", @"above|うえ", @"omit|ぬく",@"1"],
+	@[@"恥", @"shame|はじる", @"rob|ぬすむ", @"rice paddy|デン",@"1"],
+	@[@"偶", @"tell|コク", @"famous|イ", @"couple|たま",@"3"],
+	@[@"偉", @"now|コン", @"pay|はらう", @"famous|イ",@"3"],
+	@[@"猫", @"margin|さす", @"cat|ねこ", @"how far|いく",@"2"],
+	@[@"幾", @"summer|なつ", @"how far|いく", @"harm|ガイ",@"2"]
+	];
 }
 
-- (void) userStart
-{
-	userProgress = 1;
+#pragma mark User -
+
+- (void) userStart {
+	
+	userLastLessonReached = 1;
 	userContentRecords = [[NSMutableArray alloc] init];
 }
 
-- (void) userSaveRecord :(int)location :(float)record
-{
+- (void) userSaveRecord :(int)location :(float)record {
+	
 	NSLog(@"> Save  | Saved Record: %f", record);
 	[userContentRecords addObject:[NSArray arrayWithObjects: [NSString stringWithFormat:@"%d",location], [NSString stringWithFormat:@"%f",record], nil]];
 }
 
-- (void) userReset
-{
+- (void) userReset {
+	
 	NSLog(@"> Reset | Reset User Records");
 	userContentRecords = [[NSMutableArray alloc] init];
 	[userContentRecords addObject:[NSArray arrayWithObjects: @"1",@"1",nil]];
 	self.interfaceMenuProgress.text = @"Press \"Next\" to begin";
 	[self userErase];
-	[self gameFinish];
+	[self gameIsFinished];
 	[self userStart];
 }
 
-- (void)userErase
-{
+- (void)userErase {
+	
 	NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
 	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
 }
 
-- (void)userLoad
-{
+- (void)userLoad {
 	
-	if( [ [[NSUserDefaults standardUserDefaults] objectForKey:@"userLesson"] intValue] > 0 ){
+	if( [[[NSUserDefaults standardUserDefaults] objectForKey:@"userLastLessonReached"] intValue] > 0 ){
 		
 		NSLog(@"= User  | Loading..");
 		
-		userLesson	= [ [[NSUserDefaults standardUserDefaults] objectForKey:@"userLesson"] intValue];
-		userNextType	= [ [[NSUserDefaults standardUserDefaults] objectForKey:@"userNextType"] intValue];
-		userProgress	= [ [[NSUserDefaults standardUserDefaults] objectForKey:@"userProgress"] intValue];
+		userLastLessonReached	= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userLastLessonReached"] intValue];
 		
 		NSLog(@"= User  | Loaded.");
-		
 	}
-	
 }
 
-- (void)userSave
-{
+- (void)userIsSaving {
 	
 	NSLog(@"= User  | Saving..");
 	
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",userLesson] forKey:@"userLesson"];
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",userNextType] forKey:@"userNextType"];
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",userProgress] forKey:@"userProgress"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userLastLessonReached] forKey:@"userLastLessonReached"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	NSLog(@"= User  | Saved.");
-	
 }
 
 @end
