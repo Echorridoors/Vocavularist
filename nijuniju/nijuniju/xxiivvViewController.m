@@ -40,8 +40,6 @@ AVAudioPlayer *audioPlayerSounds;
 	[self userStart];
 	[self userLoad];
 	
-	userLastLessonReached = 600;
-	
 	[self templateStart];
 	[self templateMenuBetweenKanjiRefresh];
 	[self optionMenuAnimateHide];
