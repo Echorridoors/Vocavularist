@@ -199,15 +199,18 @@
 	
 	char wrongAnswers[3];
 
-	for (int i=0; i<20; i++){
+	for (int i=0; i<3; i++){
 		wrongAnswers[i] = arc4random()%(userLastLessonReached+3) + 1;
 	}
-	while(wrongAnswers[0] == gameCurrentLesson || wrongAnswers[0] == wrongAnswers[1] || wrongAnswers[0] == wrongAnswers[2]){
+	while(wrongAnswers[0] == gameCurrentLesson || wrongAnswers[0] == wrongAnswers[1] || wrongAnswers[0] == wrongAnswers[2] || wrongAnswers[0] < 0 ){
 		wrongAnswers[0] = arc4random()%(userLastLessonReached+3) + 1;
 	}
-	while(wrongAnswers[1] == gameCurrentLesson || wrongAnswers[1] == wrongAnswers[2] || wrongAnswers[1] == wrongAnswers[0]){
+	while(wrongAnswers[1] == gameCurrentLesson || wrongAnswers[1] == wrongAnswers[2] || wrongAnswers[1] == wrongAnswers[0] || wrongAnswers[1] < 0 ){
 		wrongAnswers[1] = arc4random()%(userLastLessonReached+3) + 1;
-	}	
+	}
+	while(wrongAnswers[2] == gameCurrentLesson || wrongAnswers[2] < 0 ){
+		wrongAnswers[2] = arc4random()%(userLastLessonReached+3) + 1;
+	}
 	
 	int goodAnswerPosition = (arc4random()%3);
 	
@@ -221,9 +224,8 @@
 			hiraganaForm = gameContentArray[gameCurrentLesson][1];
 			englishForm = gameContentArray[gameCurrentLesson][2];
 			kanjiForm = gameContentArray[gameCurrentLesson][0];
-			wrongAnswers[i] = gameCurrentLesson;
 		}
-		
+
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 		[button addTarget:self action:NSSelectorFromString(@"optionSelection:") forControlEvents:UIControlEventTouchDown];
 		button.tag = wrongAnswers[i];
@@ -234,6 +236,10 @@
 		[button setTitle: englishForm forState: UIControlStateNormal];
 		[button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
 		button.contentEdgeInsets = UIEdgeInsetsMake(-1*(screenMargin*0.2), 0, 0, 0);
+		
+		if( i == goodAnswerPosition ){
+			button.tag = gameCurrentLesson;
+		}
 		
 		if( userEnglishMode == 1 ){
 			[button setTitle: kanjiForm forState: UIControlStateNormal];
@@ -247,8 +253,6 @@
 			hiragana.font = [self fontTiny];
 			[button addSubview:hiragana];
 		}
-		
-		
 		
 		[self.interfaceOptions addSubview:button];
 	}

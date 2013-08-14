@@ -40,6 +40,8 @@ AVAudioPlayer *audioPlayerSounds;
 	[self userStart];
 	[self userLoad];
 	
+	userLastLessonReached = 600;
+	
 	[self templateStart];
 	[self templateMenuBetweenKanjiRefresh];
 	[self optionMenuAnimateHide];
@@ -62,7 +64,7 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	NSLog(@"> Phase | Setup");
 	
-	if(gameNextLessonIsReview == TRUE){
+	if(gameNextLessonIsReview == TRUE || userLastLessonReached == 611){
 		gameCurrentLesson = (arc4random()%userLastLessonReached+10);
 		gameNextLessonIsReview = FALSE;
 	}
@@ -106,16 +108,16 @@ AVAudioPlayer *audioPlayerSounds;
 	else{
 		[self gameJapaneseMode];
 	}
-	
+
 	[self templateEnglishWordLabelSize];
 	[self templateButtonsGenerate];
 	[self templateButtonsAnimationShow];
 	[self templateStartAnimation];
-	
+
 	self.interfaceMenuTimeRemainingLabel.text = NSLocalizedString(@"3_seconds_left", nil);
 	self.blurTargetGlyph.text = gameCurrentLessonKanji;
 	self.blurTargetEnglishWord.text = gameCurrentLessonEnglishWord;
-	
+
 	gameTimeElapsed = 0;
 
 	gameTimeRemaining = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameIsFinished) userInfo:nil repeats:NO];
@@ -152,6 +154,9 @@ AVAudioPlayer *audioPlayerSounds;
 		if( userCurrentKanjiSeen == 1 && ([gameContentArray count]-1) > userLastLessonReached ){
 			userLastLessonReached += 1;
 			self.interfaceMenuProgress.text = [NSString stringWithFormat:NSLocalizedString(@"chapter_%d_kanji_0_to_%@", nil),(userLastLessonReached/10)+1, ((userLastLessonReached/10)+1)*10];
+		}
+		if( userLastLessonReached > 600 ){
+			self.interfaceMenuProgress.text = @"Nijuniju Master";
 		}
 		
 		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%@_seconds", nil), [[NSString stringWithFormat:@"%f", userCurrentKanjiScore] substringWithRange:NSMakeRange(0, 4)]];
@@ -198,9 +203,7 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	int optionId = ((UIView*)sender).tag;
 	
-	NSLog(@"+ Acted | Option: %d",optionId);
-	
-//	gameCurrentKanjiAnswer = [gameContentArray[gameCurrentLesson][4] intValue];
+	NSLog(@"+ Acted | Option: %d - Answer: %d",optionId, gameCurrentLesson);
 	
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		if( subview.tag != optionId ){
