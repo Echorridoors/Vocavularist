@@ -190,16 +190,36 @@
 		[subview removeFromSuperview];
 	}
 	
+	// Find 2 different wrong answers
+	
+	char wrongAnswers[3];
+
+	for (int i=0; i<20; i++){
+		wrongAnswers[i] = arc4random()%(userLastLessonReached+3) + 1;
+	}
+	while(wrongAnswers[0] == gameCurrentLesson || wrongAnswers[0] == wrongAnswers[1] || wrongAnswers[0] == wrongAnswers[2]){
+		wrongAnswers[0] = arc4random()%(userLastLessonReached+3) + 1;
+	}
+	while(wrongAnswers[1] == gameCurrentLesson || wrongAnswers[1] == wrongAnswers[2] || wrongAnswers[1] == wrongAnswers[0]){
+		wrongAnswers[1] = arc4random()%(userLastLessonReached+3) + 1;
+	}	
+	
+	int goodAnswerPosition = (arc4random()%3);
+	
 	for(int i = 0; i < 3; i++){
 		
-		NSArray* answerForm = [gameContentArray[gameCurrentLesson][i+1] componentsSeparatedByString: @"|"];
+		NSString *hiraganaForm = gameContentArray[wrongAnswers[i]][1];
+		NSString *englishForm = gameContentArray[wrongAnswers[i]][2];
 		
-		NSString *hiraganaForm = [answerForm objectAtIndex: 1];
-		NSString *englishForm = [[answerForm objectAtIndex: 0] capitalizedString];
+		if( i == goodAnswerPosition ){
+			hiraganaForm = gameContentArray[gameCurrentLesson][1];
+			englishForm = gameContentArray[gameCurrentLesson][2];
+			wrongAnswers[i] = gameCurrentLesson;
+		}
 		
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 		[button addTarget:self action:NSSelectorFromString(@"optionSelection:") forControlEvents:UIControlEventTouchDown];
-		button.tag = i+1;
+		button.tag = wrongAnswers[i];
 		button.frame = CGRectMake(i*((screen.size.width/3)+1), 0, screen.size.width/3, screenMargin*1.5);
 		button.backgroundColor = [UIColor whiteColor];
 		[button setTitle: englishForm forState: UIControlStateNormal];

@@ -63,7 +63,7 @@ AVAudioPlayer *audioPlayerSounds;
 	NSLog(@"> Phase | Setup");
 	
 	if(gameNextLessonIsReview == TRUE){
-		gameCurrentLesson = ((arc4random()%(userLastLessonReached))+1);
+		gameCurrentLesson = (arc4random()%userLastLessonReached+10);
 		gameNextLessonIsReview = FALSE;
 	}
 	else{
@@ -97,21 +97,20 @@ AVAudioPlayer *audioPlayerSounds;
 	NSLog(@"> Phase | Start");
 	
 	[gameTimeUntilMenu invalidate];
-	
 	gameCurrentLessonKanji = gameContentArray[gameCurrentLesson][0];
-	
-	self.interfaceMenuTimeRemainingLabel.text = NSLocalizedString(@"3_seconds_left", nil);
-	
-	self.blurTargetGlyph.text = gameCurrentLessonKanji;
 	
 	[self templateButtonsGenerate];
 	[self templateButtonsAnimationShow];
 	[self templateStartAnimation];
 	
-	gameTimeElapsed = 0;
+	self.interfaceMenuTimeRemainingLabel.text = NSLocalizedString(@"3_seconds_left", nil);
+	self.blurTargetGlyph.text = gameCurrentLessonKanji;
 	
+	gameTimeElapsed = 0;
+
 	gameTimeRemaining = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameIsFinished) userInfo:nil repeats:NO];
 	gameTimeElapsing = [NSTimer scheduledTimerWithTimeInterval:(0.1) target:self selector:@selector(gameTimeIsCounting) userInfo:nil repeats:YES];
+
 }
 
 -(void)gameTimeIsCounting{
@@ -135,7 +134,7 @@ AVAudioPlayer *audioPlayerSounds;
 
 -(void)gameVerify:(int)input{
 	
-	if(input == gameCurrentKanjiAnswer){
+	if(input == gameCurrentLesson){
 		userCurrentKanjiScore = (3- [[gameTimeRemaining fireDate] timeIntervalSinceNow]);
 		
 		[self userSaveRecord:gameCurrentLesson :userCurrentKanjiScore];
@@ -193,7 +192,7 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	NSLog(@"+ Acted | Option: %d",optionId);
 	
-	gameCurrentKanjiAnswer = [gameContentArray[gameCurrentLesson][4] intValue];
+//	gameCurrentKanjiAnswer = [gameContentArray[gameCurrentLesson][4] intValue];
 	
 	for (UIView *subview in [self.interfaceOptions subviews]) {
 		if( subview.tag != optionId ){
