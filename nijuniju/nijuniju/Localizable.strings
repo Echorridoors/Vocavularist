@@ -7,15 +7,16 @@
 */
 
 "test" = "Yesterday you sold %@ apps";
-
 "click_to_begin" = "Click to begin";
-
 "next_kanji_card" = "Next Kanji Card";
-
 "3_seconds_left" = "3 Seconds Left";
-
 "%@_seconds" = "%@ Seconds";
-
 "chapter_%d_kanji_0_to_%@" = "Chapter %d - Kanji 0 to %d";
-
 "%@s_average_%d_kanjis" = "%@s average %d kanjis";
+"learning" = "Learning";
+"sounds" = "Sounds";
+"colours" = "Colours";
+"english" = "英語";
+"japanese" = "日本語";
+"on" = "ON";
+"off" = "OFF";

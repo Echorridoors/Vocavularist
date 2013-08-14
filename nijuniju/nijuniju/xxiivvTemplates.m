@@ -40,7 +40,7 @@
 	self.blurTargetGlyph.textAlignment = NSTextAlignmentCenter;
 	self.blurTargetGlyph.font = [UIFont fontWithName:@"Helvetica Neue" size:152];
 	self.blurTargetGlyph.font = [UIFont boldSystemFontOfSize:152.0f];
-	self.blurTargetGlyph.text = @"二十";
+	self.blurTargetGlyph.text = @"";
 	
 	self.blurTargetPing.frame = CGRectMake(10,400,100,100);
 	self.blurTargetPing.hidden = YES;
@@ -63,6 +63,54 @@
 	
 	self.interfaceMenuTimeAverage.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
 	self.interfaceMenuTimeAverage.image = [UIImage imageNamed:@"icn.arrow.png"];
+	
+	// interfaceMenuBetweenKanjis
+	
+	int buttonInterfaceMenuButton = (screen.size.width - (screenMargin*2))/3;
+	
+	self.interfaceMenuBetweenKanjis.frame = screen;
+	self.interfaceMenuBetweenKanjis.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	
+	self.interfaceMenuModeView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
+	self.interfaceMenuModeView.frame = CGRectMake(screenMargin/2, screenMargin*4, buttonInterfaceMenuButton, buttonInterfaceMenuButton);
+	self.interfaceMenuModeView.layer.cornerRadius = buttonInterfaceMenuButton/2;
+	
+	self.interfaceMenuModeLabel.frame = CGRectMake(screenMargin/2, screenMargin*3, buttonInterfaceMenuButton, screenMargin);
+	self.interfaceMenuModeLabel.textAlignment = NSTextAlignmentCenter;
+	self.interfaceMenuModeLabel.font = [self fontSmall];
+	self.interfaceMenuModeLabel.text = NSLocalizedString(@"learning", nil);
+	
+	self.interfaceMenuModeToggle.titleLabel.font = [self fontMedium];
+	self.interfaceMenuModeToggle.frame = CGRectMake(screenMargin/4, screenMargin/4, buttonInterfaceMenuButton-((screenMargin/4)*2), buttonInterfaceMenuButton-((screenMargin/4)*2));
+	self.interfaceMenuModeToggle.layer.cornerRadius = self.interfaceMenuModeToggle.frame.size.width/2;
+	
+	self.interfaceMenuSoundView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
+	self.interfaceMenuSoundView.frame = CGRectMake(screenMargin+buttonInterfaceMenuButton, screenMargin*4, buttonInterfaceMenuButton, buttonInterfaceMenuButton);
+	self.interfaceMenuSoundView.layer.cornerRadius = buttonInterfaceMenuButton/2;
+	
+	self.interfaceMenuSoundLabel.frame = CGRectMake(screenMargin+buttonInterfaceMenuButton, screenMargin*3, buttonInterfaceMenuButton, screenMargin);
+	self.interfaceMenuSoundLabel.textAlignment = NSTextAlignmentCenter;
+	self.interfaceMenuSoundLabel.font = [self fontSmall];
+	self.interfaceMenuSoundLabel.text = NSLocalizedString(@"sounds", nil);
+	
+	self.interfaceMenuSoundToggle.titleLabel.font = [self fontMedium];
+	self.interfaceMenuSoundToggle.frame = CGRectMake(screenMargin/4, screenMargin/4, buttonInterfaceMenuButton-((screenMargin/4)*2), buttonInterfaceMenuButton-((screenMargin/4)*2));
+	self.interfaceMenuSoundToggle.layer.cornerRadius = self.interfaceMenuModeToggle.frame.size.width/2;
+	
+	self.interfaceMenuColourView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
+	self.interfaceMenuColourView.frame = CGRectMake((screenMargin*1.5)+(buttonInterfaceMenuButton*2), screenMargin*4, buttonInterfaceMenuButton, buttonInterfaceMenuButton);
+	self.interfaceMenuColourView.layer.cornerRadius = buttonInterfaceMenuButton/2;
+	
+	self.interfaceMenuColourLabel.frame = CGRectMake((screenMargin*1.5)+(buttonInterfaceMenuButton*2), screenMargin*3, buttonInterfaceMenuButton, screenMargin);
+	self.interfaceMenuColourLabel.textAlignment = NSTextAlignmentCenter;
+	self.interfaceMenuColourLabel.font = [self fontSmall];
+	self.interfaceMenuColourLabel.text = NSLocalizedString(@"colours", nil);
+	
+	self.interfaceMenuColourToggle.titleLabel.font = [self fontMedium];
+	self.interfaceMenuColourToggle.frame = CGRectMake(screenMargin/4, screenMargin/4, buttonInterfaceMenuButton-((screenMargin/4)*2), buttonInterfaceMenuButton-((screenMargin/4)*2));
+	self.interfaceMenuColourToggle.layer.cornerRadius = self.interfaceMenuModeToggle.frame.size.width/2;
+	
+	
 }
 
 -(void)templateInterface{
@@ -167,6 +215,50 @@
 		[button addSubview:hiragana];
 		
 		[self.interfaceOptions addSubview:button];
+	}
+}
+
+-(void)templateMenuBetweenKanjiRefresh
+{
+	NSLog(@"Setup | %d %d %d",userEnglishMode, userAudio, userColours);
+	
+	if( userEnglishMode == 1 ){
+		[self.interfaceMenuModeToggle setTitle:NSLocalizedString(@"english", nil) forState:normal];
+		[self.interfaceMenuModeToggle setTitleColor:[UIColor blackColor] forState:normal];
+		self.interfaceMenuModeToggle.titleLabel.textColor = [UIColor blackColor];
+		self.interfaceMenuModeToggle.backgroundColor = [UIColor whiteColor];
+	}
+	else{
+		[self.interfaceMenuModeToggle setTitle:NSLocalizedString(@"japanese", nil) forState:normal];
+		[self.interfaceMenuModeToggle setTitleColor:[UIColor whiteColor] forState:normal];
+		self.interfaceMenuModeToggle.titleLabel.textColor = [UIColor whiteColor];
+		self.interfaceMenuModeToggle.backgroundColor = [UIColor blackColor];
+	}
+	
+	if( userAudio == 1 ){
+		[self.interfaceMenuSoundToggle setTitle:NSLocalizedString(@"on", nil) forState:normal];
+		[self.interfaceMenuSoundToggle setTitleColor:[UIColor blackColor] forState:normal];
+		self.interfaceMenuSoundToggle.titleLabel.textColor = [UIColor blackColor];
+		self.interfaceMenuSoundToggle.backgroundColor = [UIColor whiteColor];
+	}
+	else{
+		[self.interfaceMenuSoundToggle setTitle:NSLocalizedString(@"off", nil) forState:normal];
+		[self.interfaceMenuSoundToggle setTitleColor:[UIColor whiteColor] forState:normal];
+		self.interfaceMenuSoundToggle.titleLabel.textColor = [UIColor whiteColor];
+		self.interfaceMenuSoundToggle.backgroundColor = [UIColor blackColor];
+	}
+	
+	if( userColours == 1 ){
+		[self.interfaceMenuColourToggle setTitle:NSLocalizedString(@"on", nil) forState:normal];
+		[self.interfaceMenuColourToggle setTitleColor:[UIColor blackColor] forState:normal];
+		self.interfaceMenuColourToggle.titleLabel.textColor = [UIColor blackColor];
+		self.interfaceMenuColourToggle.backgroundColor = [UIColor whiteColor];
+	}
+	else{
+		[self.interfaceMenuColourToggle setTitle:NSLocalizedString(@"off", nil) forState:normal];
+		[self.interfaceMenuColourToggle setTitleColor:[UIColor whiteColor] forState:normal];
+		self.interfaceMenuColourToggle.titleLabel.textColor = [UIColor whiteColor];
+		self.interfaceMenuColourToggle.backgroundColor = [UIColor blackColor];
 	}
 }
 

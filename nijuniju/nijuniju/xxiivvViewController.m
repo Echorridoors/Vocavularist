@@ -40,6 +40,7 @@ AVAudioPlayer *audioPlayerSounds;
 	[self userStart];
 	[self userLoad];
 	
+	[self templateMenuBetweenKanjiRefresh];
 	[self templateStart];
 	[self gameIsPreparing];
 }
@@ -175,18 +176,8 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	// Update Background color
 	
-	if( userCurrentKanjiScore > 2.5 ){
-		self.feedbackColour.backgroundColor = colorWorse;
-	}
-	else if( userCurrentKanjiScore > 1.5 ){
-		self.feedbackColour.backgroundColor = colorAverage;
-	}
-	else if( userCurrentKanjiScore > (sum/userCurrentKanjiSeen) ){
-		self.feedbackColour.backgroundColor = colorBetter;
-	}
-	else {
-		self.feedbackColour.backgroundColor = colorGood;
-	}
+	
+	self.feedbackColour.backgroundColor = colorGood;
 }
 
 #pragma mark Options -
@@ -218,6 +209,41 @@ AVAudioPlayer *audioPlayerSounds;
 }
 
 #pragma mark Interface Menu -
+
+- (IBAction)interfaceMenuModeToggle:(id)sender {
+	
+	if (userEnglishMode == TRUE) {
+		userEnglishMode = FALSE;
+	}else{
+		userEnglishMode = TRUE;
+	}
+	
+	[self audioPlayerSounds:@"fx.click.wav"];
+	[self templateMenuBetweenKanjiRefresh];
+}
+
+- (IBAction)interfaceMenuSoundToggle:(id)sender {
+	
+	if (userAudio == TRUE) {
+		userAudio = FALSE;
+	}else{
+		userAudio = TRUE;
+	}
+	
+	[self audioPlayerSounds:@"fx.click.wav"];
+	[self templateMenuBetweenKanjiRefresh];
+}
+
+- (IBAction)interfaceMenuColourToggle:(id)sender {
+	
+	if (userColours == TRUE) {
+		userColours = FALSE;
+	}else{
+		userColours = TRUE;
+	}
+	[self audioPlayerSounds:@"fx.click.wav"];
+	[self templateMenuBetweenKanjiRefresh];
+}
 
 -(IBAction)interfaceMenuNext:(id)sender{
 	

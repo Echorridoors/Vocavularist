@@ -18,5 +18,6 @@
 	-(void)templateReadyAnimation;
 	-(void)templateStartAnimation;
 	-(void)templateFinishAnimation;
+	-(void)templateMenuBetweenKanjiRefresh;
 
 @end

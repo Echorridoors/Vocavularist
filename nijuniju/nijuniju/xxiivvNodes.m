@@ -635,6 +635,9 @@
 	
 	userLastLessonReached = 1;
 	userContentRecords = [[NSMutableArray alloc] init];
+	userEnglishMode = 0;
+	userAudio= 1;
+	userColours = 1;
 }
 
 -(void)userSaveRecord:(int)location :(float)record{
