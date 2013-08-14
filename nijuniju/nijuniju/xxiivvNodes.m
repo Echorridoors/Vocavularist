@@ -617,7 +617,7 @@
 	@[@"箱", @"はこ", @"bin"],
 	@[@"晩", @"バン", @"night"],
 	@[@"寒", @"カン", @"cold"],
-	@[@"髪", @"ハツ", @"hair of the head"],
+	@[@"髪", @"ハツ", @"hair"],
 	@[@"忙", @"いそがしい", @"busy"],
 	@[@"才", @"サイ", @"genius"],
 	@[@"靴", @"くつ", @"shoes"],
@@ -636,8 +636,8 @@
 	userLastLessonReached = 1;
 	userContentRecords = [[NSMutableArray alloc] init];
 	userEnglishMode = 0;
-	userAudio= 1;
-	userColours = 1;
+	userAudio = 1;
+	userColours = 0;
 }
 
 -(void)userSaveRecord:(int)location :(float)record{
@@ -670,6 +670,9 @@
 		NSLog(@"= User  | Loading..");
 		
 		userLastLessonReached	= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userLastLessonReached"] intValue];
+		userEnglishMode			= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userEnglishMode"] intValue];
+		userAudio				= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userAudio"] intValue];
+		userColours				= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userColours"] intValue];
 		
 		NSLog(@"= User  | Loaded.");
 	}
@@ -680,6 +683,9 @@
 	NSLog(@"= User  | Saving..");
 	
 	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userLastLessonReached] forKey:@"userLastLessonReached"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userEnglishMode] forKey:@"userEnglishMode"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userAudio] forKey:@"userAudio"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userColours] forKey:@"userColours"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	NSLog(@"= User  | Saved.");

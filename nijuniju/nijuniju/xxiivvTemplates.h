@@ -21,4 +21,7 @@
 	-(void)templateMenuBetweenKanjiRefresh;
 	-(void)optionMenuAnimateShow;
 	-(void)optionMenuAnimateHide;
+	-(void)templateEnglishWordLabelSize;
+	-(void)gameEnglishMode;
+	-(void)gameJapaneseMode;
 @end

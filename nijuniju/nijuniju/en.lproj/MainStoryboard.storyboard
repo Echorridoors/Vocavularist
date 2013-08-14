@@ -33,6 +33,13 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kek-sA-IWs" userLabel="blurTargetEnglishWord">
+                                        <rect key="frame" x="9" y="6" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="2SI-qo-wtJ" userLabel="blurError">
                                         <rect key="frame" x="15" y="8" width="30" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -241,6 +248,7 @@
                         <outlet property="blurContainerView" destination="3sd-FC-SAa" id="Ckk-pP-jpD"/>
                         <outlet property="blurError" destination="2SI-qo-wtJ" id="0hR-kd-96Q"/>
                         <outlet property="blurTarget" destination="sZw-Bh-aqn" id="sBZ-65-EKq"/>
+                        <outlet property="blurTargetEnglishWord" destination="kek-sA-IWs" id="7LI-et-0us"/>
                         <outlet property="blurTargetGlyph" destination="FaD-fz-Zyr" id="WrT-rQ-sfS"/>
                         <outlet property="blurTargetPing" destination="Voa-Rg-Juu" id="l3f-vO-dQy"/>
                         <outlet property="feedbackColour" destination="sIV-71-fxx" id="Fmw-Mz-Nno"/>
@@ -288,6 +296,7 @@
                 <relationship kind="outlet" name="blurContainerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="blurError" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="blurTarget" candidateClass="UIView"/>
+                <relationship kind="outlet" name="blurTargetEnglishWord" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="blurTargetGlyph" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="blurTargetPing" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="feedbackColour" candidateClass="UIImageView"/>

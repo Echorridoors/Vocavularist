@@ -19,6 +19,8 @@
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuProgress;
 	@property (strong, nonatomic) IBOutlet UIView *blurTarget;
 	@property (strong, nonatomic) IBOutlet UILabel *blurTargetGlyph;
+	@property (strong, nonatomic) IBOutlet UILabel *blurTargetEnglishWord;
+
 	@property (strong, nonatomic) IBOutlet UIScrollView *interfaceOptions;
 	@property (strong, nonatomic) IBOutlet UIImageView *blurTargetPing;
 	@property (strong, nonatomic) IBOutlet UIImageView *interfaceMenuTimeBar;
@@ -75,6 +77,7 @@ float	gameTimeElapsed;
 BOOL	gameNextLessonIsReview;
 int		gameCurrentLesson;
 NSString	*gameCurrentLessonKanji;
+NSString	*gameCurrentLessonEnglishWord;
 NSTimer		*gameTimeRemaining;
 NSTimer		*gameTimeElapsing;
 NSTimer		*gameTimeUntilMenu;

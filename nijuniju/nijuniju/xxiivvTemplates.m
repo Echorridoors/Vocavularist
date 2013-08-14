@@ -42,6 +42,11 @@
 	self.blurTargetGlyph.font = [UIFont boldSystemFontOfSize:152.0f];
 	self.blurTargetGlyph.text = @"";
 	
+	self.blurTargetEnglishWord.frame = CGRectMake(0, screenMargin, screen.size.width, screen.size.width-(2*screenMargin));
+	self.blurTargetEnglishWord.textAlignment = NSTextAlignmentCenter;
+	self.blurTargetEnglishWord.font = [UIFont fontWithName:@"Helvetica Neue" size:152];
+	self.blurTargetEnglishWord.text = @"";
+	
 	self.blurTargetPing.frame = CGRectMake(10,400,100,100);
 	self.blurTargetPing.hidden = YES;
 	
@@ -110,8 +115,8 @@
 	self.interfaceMenuColourToggle.titleLabel.font = [self fontMedium];
 	self.interfaceMenuColourToggle.frame = CGRectMake(screenMargin/4, screenMargin/4, buttonInterfaceMenuButton-((screenMargin/4)*2), buttonInterfaceMenuButton-((screenMargin/4)*2));
 	self.interfaceMenuColourToggle.layer.cornerRadius = self.interfaceMenuModeToggle.frame.size.width/2;
-	
-	
+	self.interfaceMenuColourToggle.enabled = NO;
+	self.interfaceMenuColourToggle.alpha = 0.5;
 }
 
 -(void)templateInterface{
@@ -210,10 +215,12 @@
 		
 		NSString *hiraganaForm = gameContentArray[wrongAnswers[i]][1];
 		NSString *englishForm = gameContentArray[wrongAnswers[i]][2];
+		NSString *kanjiForm = gameContentArray[wrongAnswers[i]][0];
 		
 		if( i == goodAnswerPosition ){
 			hiraganaForm = gameContentArray[gameCurrentLesson][1];
 			englishForm = gameContentArray[gameCurrentLesson][2];
+			kanjiForm = gameContentArray[gameCurrentLesson][0];
 			wrongAnswers[i] = gameCurrentLesson;
 		}
 		
@@ -222,18 +229,26 @@
 		button.tag = wrongAnswers[i];
 		button.frame = CGRectMake(i*((screen.size.width/3)+1), 0, screen.size.width/3, screenMargin*1.5);
 		button.backgroundColor = [UIColor whiteColor];
-		[button setTitle: englishForm forState: UIControlStateNormal];
-		[button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
 		button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
 		button.titleLabel.font = [self fontMedium];
+		[button setTitle: englishForm forState: UIControlStateNormal];
+		[button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
 		button.contentEdgeInsets = UIEdgeInsetsMake(-1*(screenMargin*0.2), 0, 0, 0);
 		
-		UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (screenMargin*1.5)*0.55, button.frame.size.width, button.frame.size.height/3)];
-		hiragana.text = hiraganaForm;
-		hiragana.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
-		hiragana.textAlignment = NSTextAlignmentCenter;
-		hiragana.font = [self fontTiny];
-		[button addSubview:hiragana];
+		if( userEnglishMode == 1 ){
+			[button setTitle: kanjiForm forState: UIControlStateNormal];
+			button.titleLabel.font = [UIFont boldSystemFontOfSize:24];
+		}
+		else{
+			UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (screenMargin*1.5)*0.55, button.frame.size.width, button.frame.size.height/3)];
+			hiragana.text = hiraganaForm;
+			hiragana.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+			hiragana.textAlignment = NSTextAlignmentCenter;
+			hiragana.font = [self fontTiny];
+			[button addSubview:hiragana];
+		}
+		
+		
 		
 		[self.interfaceOptions addSubview:button];
 	}
@@ -454,6 +469,34 @@
 }
 
 #pragma mark Responsive Values -
+
+-(void)gameEnglishMode{
+	self.blurTargetGlyph.hidden = YES;
+	self.blurTargetEnglishWord.hidden = NO;
+}
+
+-(void)gameJapaneseMode{
+	self.blurTargetGlyph.hidden = NO;
+	self.blurTargetEnglishWord.hidden = YES;
+}
+
+-(void)templateEnglishWordLabelSize{
+	
+	int length = gameCurrentLessonEnglishWord.length;
+	float fontSize = 90;
+	
+	if( length < 4 ){
+		fontSize = 120;
+	}
+	else if( length < 7 ){
+		fontSize = 80;
+	}
+	else {
+		fontSize = 50;
+	}
+	
+	self.blurTargetEnglishWord.font = [UIFont boldSystemFontOfSize:fontSize];
+}
 
 -(UIFont*)fontTiny{
 	

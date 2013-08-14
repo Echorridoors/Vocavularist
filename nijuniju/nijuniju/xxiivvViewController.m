@@ -98,19 +98,28 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	[gameTimeUntilMenu invalidate];
 	gameCurrentLessonKanji = gameContentArray[gameCurrentLesson][0];
+	gameCurrentLessonEnglishWord = gameContentArray[gameCurrentLesson][2];
 	
+	if( userEnglishMode == 1 ){
+		[self gameEnglishMode];
+	}
+	else{
+		[self gameJapaneseMode];
+	}
+	
+	[self templateEnglishWordLabelSize];
 	[self templateButtonsGenerate];
 	[self templateButtonsAnimationShow];
 	[self templateStartAnimation];
 	
 	self.interfaceMenuTimeRemainingLabel.text = NSLocalizedString(@"3_seconds_left", nil);
 	self.blurTargetGlyph.text = gameCurrentLessonKanji;
+	self.blurTargetEnglishWord.text = gameCurrentLessonEnglishWord;
 	
 	gameTimeElapsed = 0;
 
 	gameTimeRemaining = [NSTimer scheduledTimerWithTimeInterval:(3) target:self selector:@selector(gameIsFinished) userInfo:nil repeats:NO];
 	gameTimeElapsing = [NSTimer scheduledTimerWithTimeInterval:(0.1) target:self selector:@selector(gameTimeIsCounting) userInfo:nil repeats:YES];
-
 }
 
 -(void)gameTimeIsCounting{
@@ -179,7 +188,6 @@ AVAudioPlayer *audioPlayerSounds;
 	gamePositionAverage = screenMargin+(screenMargin/4) + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/userTotalKanjiSeen)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
 	
 	// Update Background color
-	
 	
 	self.feedbackColour.backgroundColor = colorGood;
 }
@@ -274,7 +282,13 @@ AVAudioPlayer *audioPlayerSounds;
 	NSError* err;
 	audioPlayerSounds = [[AVAudioPlayer alloc] initWithContentsOfURL: [NSURL fileURLWithPath:resourcePath] error:&err];
 	
-	audioPlayerSounds.volume = 1.0;
+	if( userAudio == 1 ){
+		audioPlayerSounds.volume = 1.0;
+	}
+	else{
+		audioPlayerSounds.volume = 0.0;
+	}
+	
 	audioPlayerSounds.numberOfLoops = 0;
 	audioPlayerSounds.currentTime = 0;
 	
