@@ -81,7 +81,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y1h-Wf-yhc" userLabel="interfaceMenuColourLabel">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y1h-Wf-yhc" userLabel="interfaceMenuSurvivalLabel">
                                                 <rect key="frame" x="9" y="6" width="42" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -132,11 +132,11 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" id="buJ-TO-WEk" userLabel="interfaceMenuColourView">
+                                            <view contentMode="scaleToFill" id="buJ-TO-WEk" userLabel="interfaceMenuSurvivalView">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3Va-DW-jXr" userLabel="interfaceMenuColourToggle">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3Va-DW-jXr" userLabel="interfaceMenuSurvivalToggle">
                                                         <rect key="frame" x="-7" y="-6" width="73" height="44"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -148,7 +148,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="interfaceMenuColourToggle:" destination="2" eventType="touchUpInside" id="bcR-IO-a5V"/>
+                                                            <action selector="interfaceMenuSurvivalToggle:" destination="2" eventType="touchUpInside" id="DQL-NH-hR9"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -257,9 +257,6 @@
                         <outlet property="interfaceHint" destination="XoW-am-LqA" id="nXD-Ra-4WI"/>
                         <outlet property="interfaceMenu" destination="ZSc-5d-ZeO" id="eJ2-e8-rGS"/>
                         <outlet property="interfaceMenuBetweenKanjis" destination="PaX-ME-Dcr" id="TkX-yk-BZV"/>
-                        <outlet property="interfaceMenuColourLabel" destination="Y1h-Wf-yhc" id="8aq-fd-OSA"/>
-                        <outlet property="interfaceMenuColourToggle" destination="3Va-DW-jXr" id="Qju-EW-g3h"/>
-                        <outlet property="interfaceMenuColourView" destination="buJ-TO-WEk" id="Prs-Or-L61"/>
                         <outlet property="interfaceMenuModeLabel" destination="hqI-G9-zN9" id="0bT-Pr-6vt"/>
                         <outlet property="interfaceMenuModeToggle" destination="nFS-qP-7FB" id="wKL-oZ-SuU"/>
                         <outlet property="interfaceMenuModeView" destination="dbu-Gp-6iD" id="8XD-sg-lUk"/>
@@ -269,6 +266,9 @@
                         <outlet property="interfaceMenuReviewLabel" destination="Mkd-Vs-yuX" id="2Zp-F1-43U"/>
                         <outlet property="interfaceMenuReviewToggle" destination="61h-s9-MnX" id="scz-BE-eVH"/>
                         <outlet property="interfaceMenuReviewView" destination="km3-r5-O6q" id="K3g-La-WSL"/>
+                        <outlet property="interfaceMenuSurvivalLabel" destination="Y1h-Wf-yhc" id="ofE-bS-0dY"/>
+                        <outlet property="interfaceMenuSurvivalToggle" destination="3Va-DW-jXr" id="ngh-cE-QAJ"/>
+                        <outlet property="interfaceMenuSurvivalView" destination="buJ-TO-WEk" id="y6g-jD-9a3"/>
                         <outlet property="interfaceMenuTimeAverage" destination="F8o-ng-DxN" id="PoS-It-Ce2"/>
                         <outlet property="interfaceMenuTimeBar" destination="LF1-zV-jgu" id="3nd-ST-JaW"/>
                         <outlet property="interfaceMenuTimeRemaining" destination="qav-Ho-RpR" id="eMM-go-fGq"/>
@@ -293,7 +293,7 @@
                 <relationship kind="action" name="interfaceMenuNext:"/>
                 <relationship kind="action" name="interfaceMenuReset:"/>
                 <relationship kind="action" name="interfaceMenuReviewToggle:"/>
-                <relationship kind="action" name="interfaceMenuSoundToggle:"/>
+                <relationship kind="action" name="interfaceMenuSurvivalToggle:"/>
                 <relationship kind="outlet" name="blurContainerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="blurError" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="blurTarget" candidateClass="UIView"/>
@@ -306,9 +306,6 @@
                 <relationship kind="outlet" name="interfaceHint" candidateClass="UIView"/>
                 <relationship kind="outlet" name="interfaceMenu" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="interfaceMenuBetweenKanjis" candidateClass="UIView"/>
-                <relationship kind="outlet" name="interfaceMenuColourLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceMenuColourToggle" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceMenuColourView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="interfaceMenuModeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="interfaceMenuModeToggle" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="interfaceMenuModeView" candidateClass="UIView"/>
@@ -318,6 +315,9 @@
                 <relationship kind="outlet" name="interfaceMenuReviewLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="interfaceMenuReviewToggle" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="interfaceMenuReviewView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="interfaceMenuSurvivalLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="interfaceMenuSurvivalToggle" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="interfaceMenuSurvivalView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeAverage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeRemaining" candidateClass="UIImageView"/>

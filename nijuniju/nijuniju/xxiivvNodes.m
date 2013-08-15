@@ -1004,7 +1004,7 @@
 	userContentRecords = [[NSMutableArray alloc] init];
 	userEnglishMode = 0;
 	userReviewMode = 1;
-	userColours = 0;
+	userSurvivalMode = 0;
 }
 
 -(void)userSaveRecord:(int)location :(float)record{
@@ -1039,7 +1039,7 @@
 		userLastLessonReached	= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userLastLessonReached"] intValue];
 		userEnglishMode			= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userEnglishMode"] intValue];
 		userReviewMode				= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userReviewMode"] intValue];
-		userColours				= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userColours"] intValue];
+		userSurvivalMode				= [[[NSUserDefaults standardUserDefaults] objectForKey:@"userSurvivalMode"] intValue];
 		
 		NSLog(@"= User  | Loaded.");
 	}
@@ -1052,7 +1052,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userLastLessonReached] forKey:@"userLastLessonReached"];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userEnglishMode] forKey:@"userEnglishMode"];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userReviewMode] forKey:@"userReviewMode"];
-	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userColours] forKey:@"userColours"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:userSurvivalMode] forKey:@"userSurvivalMode"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	NSLog(@"= User  | Saved.");

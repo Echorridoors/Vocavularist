@@ -36,19 +36,19 @@
 
 	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuModeView;
 	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuReviewView;
-	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuColourView;
+	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuSurvivalView;
 	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuModeToggle;
 	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuReviewToggle;
-	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuColourToggle;
+	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuSurvivalToggle;
 
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuModeLabel;
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuReviewLabel;
-	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuColourLabel;
+	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuSurvivalLabel;
 	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuBetweenKanjis;
 
 	-(IBAction)interfaceMenuModeToggle:(id)sender;
 	-(IBAction)interfaceMenuReviewToggle:(id)sender;
-	-(IBAction)interfaceMenuColourToggle:(id)sender;
+	-(IBAction)interfaceMenuSurvivalToggle:(id)sender;
 
 	-(IBAction)interfaceMenuNext:(id)sender;
 	-(IBAction)interfaceMenuReset:(id)sender;
@@ -67,7 +67,7 @@ int		userTotalKanjiSeen;
 int		userCurrentKanjiSeen;
 int		userEnglishMode;
 int		userReviewMode;
-int	userColours;
+int		userSurvivalMode;
 
 // Game Variables
 

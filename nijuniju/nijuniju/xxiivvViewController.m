@@ -161,6 +161,10 @@ AVAudioPlayer *audioPlayerSounds;
 		[self audioPlayerSounds:@"fx.accepted.wav"];
 	}
 	else{
+		NSLog(@"!!!!! > %d", userSurvivalMode);
+		if( userSurvivalMode == 1 ){
+			[self userReset];
+		}
 		[self audioPlayerSounds:@"fx.error.wav"];
 		self.feedbackColour.backgroundColor = colorBad;
 		self.blurTarget.alpha = 0;
@@ -230,10 +234,10 @@ AVAudioPlayer *audioPlayerSounds;
 
 - (IBAction)interfaceMenuModeToggle:(id)sender {
 	
-	if (userEnglishMode == TRUE) {
-		userEnglishMode = FALSE;
+	if (userEnglishMode == 1) {
+		userEnglishMode = 0;
 	}else{
-		userEnglishMode = TRUE;
+		userEnglishMode = 1;
 	}
 	
 	[self userIsSaving];
@@ -244,10 +248,10 @@ AVAudioPlayer *audioPlayerSounds;
 
 - (IBAction)interfaceMenuReviewToggle:(id)sender {
 	
-	if (userReviewMode == TRUE) {
-		userReviewMode = FALSE;
+	if (userReviewMode == 1) {
+		userReviewMode = 0;
 	}else{
-		userReviewMode = TRUE;
+		userReviewMode = 1;
 	}
 	
 	[self userIsSaving];
@@ -256,12 +260,12 @@ AVAudioPlayer *audioPlayerSounds;
 	[self templateMenuBetweenKanjiRefresh];
 }
 
-- (IBAction)interfaceMenuColourToggle:(id)sender {
+- (IBAction)interfaceMenuSurvivalToggle:(id)sender {
 	
-	if (userColours == TRUE) {
-		userColours = FALSE;
+	if (userSurvivalMode == 1) {
+		userSurvivalMode = 0;
 	}else{
-		userColours = TRUE;
+		userSurvivalMode = 1;
 	}
 	
 	[self userIsSaving];

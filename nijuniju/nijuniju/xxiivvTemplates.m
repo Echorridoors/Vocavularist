@@ -103,20 +103,18 @@
 	self.interfaceMenuReviewToggle.frame = CGRectMake(screenMargin/4, screenMargin/4, buttonInterfaceMenuButton-((screenMargin/4)*2), buttonInterfaceMenuButton-((screenMargin/4)*2));
 	self.interfaceMenuReviewToggle.layer.cornerRadius = self.interfaceMenuModeToggle.frame.size.width/2;
 	
-	self.interfaceMenuColourView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
-	self.interfaceMenuColourView.frame = CGRectMake((screenMargin*1.5)+(buttonInterfaceMenuButton*2), screenMargin*4, buttonInterfaceMenuButton, buttonInterfaceMenuButton);
-	self.interfaceMenuColourView.layer.cornerRadius = buttonInterfaceMenuButton/2;
+	self.interfaceMenuSurvivalView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
+	self.interfaceMenuSurvivalView.frame = CGRectMake((screenMargin*1.5)+(buttonInterfaceMenuButton*2), screenMargin*4, buttonInterfaceMenuButton, buttonInterfaceMenuButton);
+	self.interfaceMenuSurvivalView.layer.cornerRadius = buttonInterfaceMenuButton/2;
 	
-	self.interfaceMenuColourLabel.frame = CGRectMake((screenMargin*1.5)+(buttonInterfaceMenuButton*2), screenMargin*3, buttonInterfaceMenuButton, screenMargin);
-	self.interfaceMenuColourLabel.textAlignment = NSTextAlignmentCenter;
-	self.interfaceMenuColourLabel.font = [self fontSmall];
-	self.interfaceMenuColourLabel.text = NSLocalizedString(@"colours", nil);
+	self.interfaceMenuSurvivalLabel.frame = CGRectMake((screenMargin*1.5)+(buttonInterfaceMenuButton*2), screenMargin*3, buttonInterfaceMenuButton, screenMargin);
+	self.interfaceMenuSurvivalLabel.textAlignment = NSTextAlignmentCenter;
+	self.interfaceMenuSurvivalLabel.font = [self fontSmall];
+	self.interfaceMenuSurvivalLabel.text = NSLocalizedString(@"survival", nil);
 	
-	self.interfaceMenuColourToggle.titleLabel.font = [self fontMedium];
-	self.interfaceMenuColourToggle.frame = CGRectMake(screenMargin/4, screenMargin/4, buttonInterfaceMenuButton-((screenMargin/4)*2), buttonInterfaceMenuButton-((screenMargin/4)*2));
-	self.interfaceMenuColourToggle.layer.cornerRadius = self.interfaceMenuModeToggle.frame.size.width/2;
-	self.interfaceMenuColourToggle.enabled = NO;
-	self.interfaceMenuColourToggle.alpha = 0.5;
+	self.interfaceMenuSurvivalToggle.titleLabel.font = [self fontMedium];
+	self.interfaceMenuSurvivalToggle.frame = CGRectMake(screenMargin/4, screenMargin/4, buttonInterfaceMenuButton-((screenMargin/4)*2), buttonInterfaceMenuButton-((screenMargin/4)*2));
+	self.interfaceMenuSurvivalToggle.layer.cornerRadius = self.interfaceMenuModeToggle.frame.size.width/2;
 }
 
 -(void)templateInterface{
@@ -260,7 +258,7 @@
 
 -(void)templateMenuBetweenKanjiRefresh
 {
-	NSLog(@"Setup | %d %d %d",userEnglishMode, userReviewMode, userColours);
+	NSLog(@"Setup | %d %d %d",userEnglishMode, userReviewMode, userSurvivalMode);
 	
 	if( userEnglishMode == 1 ){
 		[self.interfaceMenuModeToggle setTitle:NSLocalizedString(@"english", nil) forState:normal];
@@ -288,17 +286,17 @@
 		self.interfaceMenuReviewToggle.backgroundColor = [UIColor blackColor];
 	}
 	
-	if( userColours == 1 ){
-		[self.interfaceMenuColourToggle setTitle:NSLocalizedString(@"on", nil) forState:normal];
-		[self.interfaceMenuColourToggle setTitleColor:[UIColor blackColor] forState:normal];
-		self.interfaceMenuColourToggle.titleLabel.textColor = [UIColor blackColor];
-		self.interfaceMenuColourToggle.backgroundColor = [UIColor whiteColor];
+	if( userSurvivalMode == 1 ){
+		[self.interfaceMenuSurvivalToggle setTitle:NSLocalizedString(@"on", nil) forState:normal];
+		[self.interfaceMenuSurvivalToggle setTitleColor:[UIColor whiteColor] forState:normal];
+		self.interfaceMenuSurvivalToggle.titleLabel.textColor = [UIColor whiteColor];
+		self.interfaceMenuSurvivalToggle.backgroundColor = [UIColor redColor];
 	}
 	else{
-		[self.interfaceMenuColourToggle setTitle:NSLocalizedString(@"off", nil) forState:normal];
-		[self.interfaceMenuColourToggle setTitleColor:[UIColor whiteColor] forState:normal];
-		self.interfaceMenuColourToggle.titleLabel.textColor = [UIColor whiteColor];
-		self.interfaceMenuColourToggle.backgroundColor = [UIColor blackColor];
+		[self.interfaceMenuSurvivalToggle setTitle:NSLocalizedString(@"off", nil) forState:normal];
+		[self.interfaceMenuSurvivalToggle setTitleColor:[UIColor whiteColor] forState:normal];
+		self.interfaceMenuSurvivalToggle.titleLabel.textColor = [UIColor whiteColor];
+		self.interfaceMenuSurvivalToggle.backgroundColor = [UIColor blackColor];
 	}
 }
 
