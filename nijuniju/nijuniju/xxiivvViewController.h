@@ -35,19 +35,19 @@
 	@property (strong, nonatomic) IBOutlet UIImageView *interfaceMenuTimeAverage;
 
 	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuModeView;
-	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuSoundView;
+	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuReviewView;
 	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuColourView;
 	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuModeToggle;
-	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuSoundToggle;
+	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuReviewToggle;
 	@property (strong, nonatomic) IBOutlet UIButton *interfaceMenuColourToggle;
 
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuModeLabel;
-	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuSoundLabel;
+	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuReviewLabel;
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceMenuColourLabel;
 	@property (strong, nonatomic) IBOutlet UIView *interfaceMenuBetweenKanjis;
 
 	-(IBAction)interfaceMenuModeToggle:(id)sender;
-	-(IBAction)interfaceMenuSoundToggle:(id)sender;
+	-(IBAction)interfaceMenuReviewToggle:(id)sender;
 	-(IBAction)interfaceMenuColourToggle:(id)sender;
 
 	-(IBAction)interfaceMenuNext:(id)sender;
@@ -65,8 +65,8 @@ int		userLastLessonReached;
 float	userCurrentKanjiScore;
 int		userTotalKanjiSeen;
 int		userCurrentKanjiSeen;
-int	userEnglishMode;
-int	userAudio;
+int		userEnglishMode;
+int		userReviewMode;
 int	userColours;
 
 // Game Variables

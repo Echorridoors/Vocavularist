@@ -74,7 +74,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mkd-Vs-yuX" userLabel="interfaceMenuSoundLabel">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mkd-Vs-yuX" userLabel="interfaceMenuReviewLabel">
                                                 <rect key="frame" x="9" y="6" width="42" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -110,11 +110,11 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" id="km3-r5-O6q" userLabel="interfaceMenuSoundView">
+                                            <view contentMode="scaleToFill" id="km3-r5-O6q" userLabel="interfaceMenuReviewView">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="61h-s9-MnX" userLabel="interfaceMenuSoundToggle">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="61h-s9-MnX" userLabel="interfaceMenuReviewToggle">
                                                         <rect key="frame" x="-7" y="-6" width="73" height="44"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -126,7 +126,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="interfaceMenuSoundToggle:" destination="2" eventType="touchUpInside" id="6hY-sT-aQh"/>
+                                                            <action selector="interfaceMenuReviewToggle:" destination="2" eventType="touchUpInside" id="0qo-Bj-Zms"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -266,9 +266,9 @@
                         <outlet property="interfaceMenuNext" destination="7tV-qG-bkN" id="1FM-k1-g0W"/>
                         <outlet property="interfaceMenuProgress" destination="SOk-xb-Bnp" id="hjv-m9-fGn"/>
                         <outlet property="interfaceMenuReset" destination="OW2-OD-4tD" id="Mw5-pE-UFq"/>
-                        <outlet property="interfaceMenuSoundLabel" destination="Mkd-Vs-yuX" id="XyN-f4-Ktm"/>
-                        <outlet property="interfaceMenuSoundToggle" destination="61h-s9-MnX" id="wip-Wy-WqI"/>
-                        <outlet property="interfaceMenuSoundView" destination="km3-r5-O6q" id="OGa-zK-JYK"/>
+                        <outlet property="interfaceMenuReviewLabel" destination="Mkd-Vs-yuX" id="2Zp-F1-43U"/>
+                        <outlet property="interfaceMenuReviewToggle" destination="61h-s9-MnX" id="scz-BE-eVH"/>
+                        <outlet property="interfaceMenuReviewView" destination="km3-r5-O6q" id="K3g-La-WSL"/>
                         <outlet property="interfaceMenuTimeAverage" destination="F8o-ng-DxN" id="PoS-It-Ce2"/>
                         <outlet property="interfaceMenuTimeBar" destination="LF1-zV-jgu" id="3nd-ST-JaW"/>
                         <outlet property="interfaceMenuTimeRemaining" destination="qav-Ho-RpR" id="eMM-go-fGq"/>
@@ -292,6 +292,7 @@
                 <relationship kind="action" name="interfaceMenuModeToggle:"/>
                 <relationship kind="action" name="interfaceMenuNext:"/>
                 <relationship kind="action" name="interfaceMenuReset:"/>
+                <relationship kind="action" name="interfaceMenuReviewToggle:"/>
                 <relationship kind="action" name="interfaceMenuSoundToggle:"/>
                 <relationship kind="outlet" name="blurContainerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="blurError" candidateClass="UIImageView"/>
@@ -314,9 +315,9 @@
                 <relationship kind="outlet" name="interfaceMenuNext" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="interfaceMenuProgress" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="interfaceMenuReset" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceMenuSoundLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceMenuSoundToggle" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceMenuSoundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="interfaceMenuReviewLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="interfaceMenuReviewToggle" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="interfaceMenuReviewView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeAverage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="interfaceMenuTimeRemaining" candidateClass="UIImageView"/>

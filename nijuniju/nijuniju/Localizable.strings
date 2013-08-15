@@ -12,8 +12,8 @@
 "%@_seconds" = "%@ Seconds";
 "chapter_%d_kanji_0_to_%@" = "Chapter %d - Words 0 to %d";
 "%@s_average_%d_kanjis" = "%@s average %d Word Cards";
-"learning" = "Learning";
-"sounds" = "Sounds";
+"language" = "Language";
+"review" = "Review";
 "colours" = "Colours";
 "english" = "英語";
 "japanese" = "日本語";

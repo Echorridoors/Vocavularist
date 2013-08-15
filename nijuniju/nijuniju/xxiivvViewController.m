@@ -62,12 +62,12 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	NSLog(@"> Phase | Setup");
 	
-	if(gameNextLessonIsReview == TRUE || userLastLessonReached == 611){
+	if((gameNextLessonIsReview == TRUE && userReviewMode == 1) ){
 		gameCurrentLesson = (arc4random()%userLastLessonReached+10);
 		gameNextLessonIsReview = FALSE;
 	}
 	else{
-		gameCurrentLesson = userLastLessonReached;
+		gameCurrentLesson = userLastLessonReached-1;
 		gameNextLessonIsReview = TRUE;
 	}
 	
@@ -222,6 +222,7 @@ AVAudioPlayer *audioPlayerSounds;
 }
 
 -(void)optionMenuDisplay{
+	
 	[self optionMenuAnimateShow];
 }
 
@@ -235,17 +236,21 @@ AVAudioPlayer *audioPlayerSounds;
 		userEnglishMode = TRUE;
 	}
 	
+	[self userIsSaving];
+	
 	[self audioPlayerSounds:@"fx.click.wav"];
 	[self templateMenuBetweenKanjiRefresh];
 }
 
-- (IBAction)interfaceMenuSoundToggle:(id)sender {
+- (IBAction)interfaceMenuReviewToggle:(id)sender {
 	
-	if (userAudio == TRUE) {
-		userAudio = FALSE;
+	if (userReviewMode == TRUE) {
+		userReviewMode = FALSE;
 	}else{
-		userAudio = TRUE;
+		userReviewMode = TRUE;
 	}
+	
+	[self userIsSaving];
 	
 	[self audioPlayerSounds:@"fx.click.wav"];
 	[self templateMenuBetweenKanjiRefresh];
@@ -258,6 +263,9 @@ AVAudioPlayer *audioPlayerSounds;
 	}else{
 		userColours = TRUE;
 	}
+	
+	[self userIsSaving];
+	
 	[self audioPlayerSounds:@"fx.click.wav"];
 	[self templateMenuBetweenKanjiRefresh];
 }
@@ -283,12 +291,7 @@ AVAudioPlayer *audioPlayerSounds;
 	NSError* err;
 	audioPlayerSounds = [[AVAudioPlayer alloc] initWithContentsOfURL: [NSURL fileURLWithPath:resourcePath] error:&err];
 	
-	if( userAudio == 1 ){
-		audioPlayerSounds.volume = 1.0;
-	}
-	else{
-		audioPlayerSounds.volume = 0.0;
-	}
+	audioPlayerSounds.volume = 1.0;
 	
 	audioPlayerSounds.numberOfLoops = 0;
 	audioPlayerSounds.currentTime = 0;
