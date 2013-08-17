@@ -62,16 +62,17 @@ AVAudioPlayer *audioPlayerSounds;
 	
 	NSLog(@"> Phase | Setup");
 	
-	if((gameNextLessonIsReview == TRUE && userReviewMode == 1) ){
+	if((gameNextLessonIsReview == 1 && userReviewMode == 1) ){
+		NSLog(@"> Phase | Review %d Next Lesson %d", userLastLessonReached, gameCurrentLesson);
 		gameCurrentLesson = (arc4random()%userLastLessonReached+10);
-		gameNextLessonIsReview = FALSE;
+		gameNextLessonIsReview = 0;
 	}
 	else{
+		NSLog(@"> Phase | Forward %d Next Lesson %d", userLastLessonReached, gameCurrentLesson);
 		gameCurrentLesson = userLastLessonReached-1;
-		gameNextLessonIsReview = TRUE;
+		gameNextLessonIsReview = 1;
 	}
 	
-	NSLog(@"> Phase | Progress %d Next Lesson %d", userLastLessonReached, gameCurrentLesson);
 	
 	[self gameIsReady];
 }

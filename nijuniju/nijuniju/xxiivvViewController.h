@@ -74,7 +74,7 @@ int		userSurvivalMode;
 int		gameCurrentKanjiAnswer;
 float	gamePositionAverage;
 float	gameTimeElapsed;
-BOOL	gameNextLessonIsReview;
+int		gameNextLessonIsReview;
 int		gameCurrentLesson;
 NSString	*gameCurrentLessonKanji;
 NSString	*gameCurrentLessonEnglishWord;
