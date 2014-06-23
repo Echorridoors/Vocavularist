@@ -44,6 +44,8 @@ AVAudioPlayer *audioPlayerSounds;
 	[self templateMenuBetweenKanjiRefresh];
 	[self optionMenuAnimateHide];
 	[self gameIsPreparing];
+	
+	gamePositionAverage = screenMargin;
 }
 
 
@@ -192,6 +194,9 @@ AVAudioPlayer *audioPlayerSounds;
 	// Update Average pointer
 	
 	gamePositionAverage = screenMargin+(screenMargin/4) + ((screen.size.width - ((screenMargin+(screenMargin/4))*2))) - (((averageSum/userTotalKanjiSeen)/3) * (screen.size.width - ((screenMargin+(screenMargin/4))*2)));
+	
+	if(gamePositionAverage < screenMargin){ gamePositionAverage = screenMargin; }
+	if(gamePositionAverage > screen.size.width-screenMargin){ gamePositionAverage = screen.size.width-screenMargin; }
 	
 	// Update Background color
 	

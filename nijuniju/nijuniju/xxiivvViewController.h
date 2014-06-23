@@ -45,6 +45,11 @@
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceWordsLabel;
 	@property (strong, nonatomic) IBOutlet UILabel *interfaceSpeedLabel;
 
+@property (strong, nonatomic) IBOutlet UIView *interfaceNextView;
+@property (strong, nonatomic) IBOutlet UILabel *interfaceNextLabel;
+
+
+
 	-(IBAction)interfaceMenuModeToggle:(id)sender;
 	-(IBAction)interfaceMenuReviewToggle:(id)sender;
 	-(IBAction)interfaceMenuSurvivalToggle:(id)sender;

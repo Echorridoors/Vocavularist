@@ -38,8 +38,6 @@
 	self.blurTarget.frame = CGRectMake(0, 0, screen.size.width, screen.size.height-screenMargin);
 	self.blurTargetGlyph.frame = CGRectMake(0, screenMargin, screen.size.width, screen.size.width-(2*screenMargin));
 	self.blurTargetGlyph.textAlignment = NSTextAlignmentCenter;
-	self.blurTargetGlyph.font = [UIFont fontWithName:@"Helvetica Neue" size:152];
-	self.blurTargetGlyph.font = [UIFont boldSystemFontOfSize:152.0f];
 	self.blurTargetGlyph.text = @"";
 	
 	self.blurTargetEnglishWord.frame = CGRectMake(0, screenMargin, screen.size.width, screen.size.width-(2*screenMargin));
@@ -67,9 +65,7 @@
 	self.interfaceSpeedLabel.textColor = [UIColor colorWithWhite:0 alpha:0.2];
 	self.interfaceSpeedLabel.text = @"";
 	
-	
-	
-	self.interfaceMenuTimeAverage.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
+	self.interfaceMenuTimeAverage.frame = CGRectMake(screenMargin, screenMargin*1.5, (screenMargin/4), (screenMargin/4) );
 	self.interfaceMenuTimeAverage.image = [UIImage imageNamed:@"icn.arrow.png"];
 	
 	// interfaceMenuBetweenKanjis
@@ -125,7 +121,7 @@
 	self.interfaceOptions.frame = CGRectMake(0, screen.size.height-(screenMargin*2), screen.size.width, screenMargin*2);
 	
 	self.interfaceMenuTimeBar.alpha = 0;
-	self.interfaceMenuTimeBar.frame = CGRectMake(screenMargin, screenMargin*8, screen.size.width-(2*screenMargin), (screenMargin/4) );
+	self.interfaceMenuTimeBar.frame = CGRectMake(screenMargin, screenMargin, screen.size.width-(2*screenMargin), (screenMargin/4) );
 	self.interfaceMenuTimeBar.backgroundColor = [UIColor colorWithWhite:1 alpha:0.4];
 	self.interfaceMenuTimeBar.layer.cornerRadius = (screenMargin/4)/2;
 	
@@ -135,7 +131,7 @@
 	self.interfaceMenuTimeRemaining.layer.cornerRadius = (screenMargin/4)/2;
 	
 	self.interfaceHint.frame = screen;
-	self.interfaceHint.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	self.interfaceHint.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
 	
 	self.interfaceMenuTimeRemainingLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
 	self.interfaceMenuTimeRemainingLabel.textAlignment = NSTextAlignmentCenter;
@@ -144,10 +140,12 @@
 	self.interfaceMenuTimeRemainingLabel.text = @"3 seconds left";
 	self.interfaceMenuTimeRemainingLabel.alpha = 0;
 	
-	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
+	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, 0, screen.size.width-(2*screenMargin), screenMargin);
 	
-	self.interfaceMenuNext.frame = CGRectMake(0, screenMargin*6.9, screen.size.width, screenMargin*2);
-	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+	self.interfaceNextView.backgroundColor = [UIColor clearColor];
+	self.interfaceNextView.frame = CGRectMake(0, screen.size.height-(6*screenMargin), screen.size.width, screenMargin*2);
+	
+	self.interfaceMenuNext.frame = CGRectMake(0, 0, screen.size.width, screenMargin*2);
 }
 
 -(void)templateButtonsGenerate{
@@ -331,11 +329,15 @@
 	
 	[self optionMenuAnimateHide];
 	
+	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5];
+	
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.blurTarget.alpha = 1;
+	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
 	[UIView commitAnimations];
+	
 	
 	[UIView beginAnimations: @"templateStartAnimation" context:nil];
 	[UIView setAnimationDuration:3];
@@ -350,7 +352,6 @@
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuNext.alpha = 0;
-	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
 	[UIView commitAnimations];
 }
 
@@ -360,7 +361,7 @@
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.blurTarget.alpha = 0;
-	self.interfaceMenuTimeAverage.frame = CGRectMake(gamePositionAverage, screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
+	self.interfaceMenuTimeAverage.frame = CGRectMake(gamePositionAverage, screenMargin*1.5, (screenMargin/4), (screenMargin/4) );
 	[UIView commitAnimations];
 }
 

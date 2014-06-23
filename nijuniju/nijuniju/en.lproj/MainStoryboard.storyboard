@@ -26,11 +26,11 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.028320737233226589" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hello there" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FaD-fz-Zyr" userLabel="blurTargetGlyph">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hello there" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="FaD-fz-Zyr" userLabel="blurTargetGlyph">
                                         <rect key="frame" x="-55" y="-16" width="169" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.90261645788150235" blue="0.35981048794564541" alpha="0.0" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="152"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -158,8 +158,34 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7tV-qG-bkN" userLabel="interfaceMenuNext">
-                                        <rect key="frame" x="23" y="10" width="73" height="44"/>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="EyN-U8-zOb" userLabel="interfaceNextView">
+                                <rect key="frame" x="130" y="268" width="60" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="LDl-9R-VHt" userLabel="interfaceMenuTimeBar">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="Uem-VB-1T8" userLabel="interfaceMenuTimeRemaining">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xD6-Kd-bY1" userLabel="interfaceMenuTimeRemainingLabel">
+                                        <rect key="frame" x="9" y="6" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7tV-qG-bkN" userLabel="interfaceMenuNextButton">
+                                        <rect key="frame" x="-7" y="-6" width="73" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
@@ -173,27 +199,8 @@
                                             <action selector="interfaceMenuNext:" destination="2" eventType="touchUpInside" id="aW6-SD-p8q"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" id="LDl-9R-VHt" userLabel="interfaceMenuTimeBar">
-                                        <rect key="frame" x="30" y="16" width="60" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" id="Uem-VB-1T8" userLabel="interfaceMenuTimeRemaining">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xD6-Kd-bY1" userLabel="interfaceMenuTimeRemainingLabel">
-                                        <rect key="frame" x="39" y="22" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="F8o-ng-DxN" userLabel="interfaceMenuTimeAverage">
-                                        <rect key="frame" x="30" y="16" width="60" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -247,6 +254,7 @@
                         <outlet property="interfaceMenuTimeBar" destination="LDl-9R-VHt" id="h0g-Wf-cll"/>
                         <outlet property="interfaceMenuTimeRemaining" destination="Uem-VB-1T8" id="zOC-QP-byu"/>
                         <outlet property="interfaceMenuTimeRemainingLabel" destination="xD6-Kd-bY1" id="g24-uG-XrN"/>
+                        <outlet property="interfaceNextView" destination="EyN-U8-zOb" id="0Eg-Bs-dLm"/>
                         <outlet property="interfaceOptions" destination="Zbf-R1-IDh" id="ETn-wp-ysl"/>
                         <outlet property="interfaceSpeedLabel" destination="mGs-ms-cLd" id="iOB-lw-lxN"/>
                         <outlet property="interfaceWordsLabel" destination="22w-sg-0ee" id="VxX-Yf-VQx"/>
