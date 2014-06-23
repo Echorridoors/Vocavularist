@@ -152,10 +152,6 @@ AVAudioPlayer *audioPlayerSounds;
 				
 		if( userCurrentKanjiSeen == 1 && ([gameContentArray count]-1) > userLastLessonReached ){
 			userLastLessonReached += 1;
-			self.interfaceMenuProgress.text = [NSString stringWithFormat:NSLocalizedString(@"chapter_%d_kanji_0_to_%@", nil),(userLastLessonReached/10)+1, ((userLastLessonReached/10)+1)*10];
-		}
-		if( userLastLessonReached > 600 ){
-			self.interfaceMenuProgress.text = @"Nijuniju Master";
 		}
 		
 		self.interfaceMenuTimeRemainingLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%@_seconds", nil), [[NSString stringWithFormat:@"%f", userCurrentKanjiScore] substringWithRange:NSMakeRange(0, 4)]];
@@ -189,7 +185,9 @@ AVAudioPlayer *audioPlayerSounds;
 		userTotalKanjiSeen+=1;
 	}
 	
-	self.interfaceChapterName.text = [NSString stringWithFormat:NSLocalizedString(@"%@s_average_%d_kanjis", nil), [[NSString stringWithFormat:@"%f", averageSum/userTotalKanjiSeen] substringWithRange:NSMakeRange(0, 4)],userTotalKanjiSeen];
+	//
+	self.interfaceWordsLabel.text = [NSString stringWithFormat:@"%d Cards",userTotalKanjiSeen];
+	self.interfaceSpeedLabel.text = [NSString stringWithFormat:@"%@ Seconds",[[NSString stringWithFormat:@"%f", averageSum/userTotalKanjiSeen] substringWithRange:NSMakeRange(0, 4)]];
 	
 	// Update Average pointer
 	
@@ -306,6 +304,11 @@ AVAudioPlayer *audioPlayerSounds;
 		[audioPlayerSounds prepareToPlay];
 		[audioPlayerSounds play];
 	}
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 

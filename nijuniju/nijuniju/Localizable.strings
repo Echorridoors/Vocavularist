@@ -6,11 +6,11 @@
   Copyright (c) 2013 XXIIVV. All rights reserved.
 */
 
-"click_to_begin" = "Click to begin";
-"next_kanji_card" = "Next Word Card";
+"click_to_begin" = "Begin";
+"next_kanji_card" = "Begin";
 "3_seconds_left" = "3 Seconds Left";
 "%@_seconds" = "%@ Seconds";
-"chapter_%d_kanji_0_to_%@" = "Chapter %d - Words 0 to %d";
+"kanji_0_to_%@" = "%d Cards";
 "%@s_average_%d_kanjis" = "%@s average %d Word Cards";
 "language" = "Language";
 "review" = "Review";

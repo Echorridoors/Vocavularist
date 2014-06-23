@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Xxiivv View Controller-->
@@ -9,7 +10,7 @@
             <objects>
                 <viewController id="2" customClass="xxiivvViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="sIV-71-fxx" userLabel="feedbackColour">
@@ -20,7 +21,7 @@
                                 <rect key="frame" x="130" y="258" width="60" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Default-568h@2x.png" id="Voa-Rg-Juu" userLabel="blurTargetPing">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Default-568h.png" id="Voa-Rg-Juu" userLabel="blurTargetPing">
                                         <rect key="frame" x="-90" y="-48" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.028320737233226589" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -172,14 +173,18 @@
                                             <action selector="interfaceMenuNext:" destination="2" eventType="touchUpInside" id="aW6-SD-p8q"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="LF1-zV-jgu" userLabel="interfaceMenuTimeBar">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="64"/>
+                                    <view contentMode="scaleToFill" id="LDl-9R-VHt" userLabel="interfaceMenuTimeBar">
+                                        <rect key="frame" x="30" y="16" width="60" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="qav-Ho-RpR" userLabel="interfaceMenuTimeRemaining">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="Uem-VB-1T8" userLabel="interfaceMenuTimeRemaining">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xD6-Kd-bY1" userLabel="interfaceMenuTimeRemainingLabel">
                                         <rect key="frame" x="39" y="22" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -194,56 +199,30 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zbf-R1-IDh" userLabel="interfaceOptions">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ZSc-5d-ZeO" userLabel="interfaceMenu">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOk-xb-Bnp" userLabel="interfaceMenuProgress">
-                                        <rect key="frame" x="99" y="54" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OW2-OD-4tD" userLabel="interfaceMenuReset">
-                                        <rect key="frame" x="83" y="42" width="73" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="interfaceMenuReset:" destination="2" eventType="touchUpInside" id="fP4-1Q-gpK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.80681818181818177" green="0.90961509888077641" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
-                            </scrollView>
-                            <view contentMode="scaleToFill" id="Rke-P2-qWj" userLabel="interfaceChapter">
-                                <rect key="frame" x="80" y="137" width="160" height="274"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="22w-sg-0ee" userLabel="interfaceWordsLabel">
+                                <rect key="frame" x="139" y="274" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="22w-sg-0ee" userLabel="interfaceChapterName">
-                                        <rect key="frame" x="59" y="127" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mGs-ms-cLd" userLabel="interfaceSpeedLabel">
+                                <rect key="frame" x="139" y="274" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zbf-R1-IDh" userLabel="interfaceOptions">
+                                <rect key="frame" x="40" y="230" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="blurContainerView" destination="3sd-FC-SAa" id="Ckk-pP-jpD"/>
                         <outlet property="blurError" destination="2SI-qo-wtJ" id="0hR-kd-96Q"/>
@@ -252,17 +231,12 @@
                         <outlet property="blurTargetGlyph" destination="FaD-fz-Zyr" id="WrT-rQ-sfS"/>
                         <outlet property="blurTargetPing" destination="Voa-Rg-Juu" id="l3f-vO-dQy"/>
                         <outlet property="feedbackColour" destination="sIV-71-fxx" id="Fmw-Mz-Nno"/>
-                        <outlet property="interfaceChapter" destination="Rke-P2-qWj" id="AUH-uy-4ZP"/>
-                        <outlet property="interfaceChapterName" destination="22w-sg-0ee" id="IXx-Zm-YfG"/>
                         <outlet property="interfaceHint" destination="XoW-am-LqA" id="nXD-Ra-4WI"/>
-                        <outlet property="interfaceMenu" destination="ZSc-5d-ZeO" id="eJ2-e8-rGS"/>
                         <outlet property="interfaceMenuBetweenKanjis" destination="PaX-ME-Dcr" id="TkX-yk-BZV"/>
                         <outlet property="interfaceMenuModeLabel" destination="hqI-G9-zN9" id="0bT-Pr-6vt"/>
                         <outlet property="interfaceMenuModeToggle" destination="nFS-qP-7FB" id="wKL-oZ-SuU"/>
                         <outlet property="interfaceMenuModeView" destination="dbu-Gp-6iD" id="8XD-sg-lUk"/>
                         <outlet property="interfaceMenuNext" destination="7tV-qG-bkN" id="1FM-k1-g0W"/>
-                        <outlet property="interfaceMenuProgress" destination="SOk-xb-Bnp" id="hjv-m9-fGn"/>
-                        <outlet property="interfaceMenuReset" destination="OW2-OD-4tD" id="Mw5-pE-UFq"/>
                         <outlet property="interfaceMenuReviewLabel" destination="Mkd-Vs-yuX" id="2Zp-F1-43U"/>
                         <outlet property="interfaceMenuReviewToggle" destination="61h-s9-MnX" id="scz-BE-eVH"/>
                         <outlet property="interfaceMenuReviewView" destination="km3-r5-O6q" id="K3g-La-WSL"/>
@@ -270,10 +244,12 @@
                         <outlet property="interfaceMenuSurvivalToggle" destination="3Va-DW-jXr" id="ngh-cE-QAJ"/>
                         <outlet property="interfaceMenuSurvivalView" destination="buJ-TO-WEk" id="y6g-jD-9a3"/>
                         <outlet property="interfaceMenuTimeAverage" destination="F8o-ng-DxN" id="PoS-It-Ce2"/>
-                        <outlet property="interfaceMenuTimeBar" destination="LF1-zV-jgu" id="3nd-ST-JaW"/>
-                        <outlet property="interfaceMenuTimeRemaining" destination="qav-Ho-RpR" id="eMM-go-fGq"/>
+                        <outlet property="interfaceMenuTimeBar" destination="LDl-9R-VHt" id="h0g-Wf-cll"/>
+                        <outlet property="interfaceMenuTimeRemaining" destination="Uem-VB-1T8" id="zOC-QP-byu"/>
                         <outlet property="interfaceMenuTimeRemainingLabel" destination="xD6-Kd-bY1" id="g24-uG-XrN"/>
                         <outlet property="interfaceOptions" destination="Zbf-R1-IDh" id="ETn-wp-ysl"/>
+                        <outlet property="interfaceSpeedLabel" destination="mGs-ms-cLd" id="iOB-lw-lxN"/>
+                        <outlet property="interfaceWordsLabel" destination="22w-sg-0ee" id="VxX-Yf-VQx"/>
                         <outlet property="transparentView" destination="fO9-xI-k8Q" id="PNx-aI-TQo"/>
                     </connections>
                 </viewController>
@@ -282,51 +258,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Default-568h@2x.png" width="640" height="1136"/>
+        <image name="Default-568h.png" width="640" height="1136"/>
     </resources>
-    <classes>
-        <class className="xxiivvViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/xxiivvViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="interfaceMenuColourToggle:"/>
-                <relationship kind="action" name="interfaceMenuModeToggle:"/>
-                <relationship kind="action" name="interfaceMenuNext:"/>
-                <relationship kind="action" name="interfaceMenuReset:"/>
-                <relationship kind="action" name="interfaceMenuReviewToggle:"/>
-                <relationship kind="action" name="interfaceMenuSurvivalToggle:"/>
-                <relationship kind="outlet" name="blurContainerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="blurError" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="blurTarget" candidateClass="UIView"/>
-                <relationship kind="outlet" name="blurTargetEnglishWord" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="blurTargetGlyph" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="blurTargetPing" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="feedbackColour" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="interfaceChapter" candidateClass="UIView"/>
-                <relationship kind="outlet" name="interfaceChapterName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceHint" candidateClass="UIView"/>
-                <relationship kind="outlet" name="interfaceMenu" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="interfaceMenuBetweenKanjis" candidateClass="UIView"/>
-                <relationship kind="outlet" name="interfaceMenuModeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceMenuModeToggle" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceMenuModeView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="interfaceMenuNext" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceMenuProgress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceMenuReset" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceMenuReviewLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceMenuReviewToggle" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceMenuReviewView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="interfaceMenuSurvivalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceMenuSurvivalToggle" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="interfaceMenuSurvivalView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="interfaceMenuTimeAverage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="interfaceMenuTimeBar" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="interfaceMenuTimeRemaining" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="interfaceMenuTimeRemainingLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="interfaceOptions" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="transparentView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

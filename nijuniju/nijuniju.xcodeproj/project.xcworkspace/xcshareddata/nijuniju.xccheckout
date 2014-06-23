@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CC720A82-EBC8-440C-81DE-E2FDBA41A638</string>
+	<key>IDESourceControlProjectName</key>
+	<string>nijuniju</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7C6DDB85-9DF1-44DB-BAF3-22654643443A</key>
+		<string>https://github.com/aliceffekt/nijuniju.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>nijuniju/nijuniju.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7C6DDB85-9DF1-44DB-BAF3-22654643443A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aliceffekt/nijuniju.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7C6DDB85-9DF1-44DB-BAF3-22654643443A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7C6DDB85-9DF1-44DB-BAF3-22654643443A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>nijuniju</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -35,7 +35,7 @@
 	
 	self.blurTarget.backgroundColor = [UIColor whiteColor];
 	
-	self.blurTarget.frame = CGRectMake(0, screenMargin, screen.size.width, screen.size.height-screenMargin);
+	self.blurTarget.frame = CGRectMake(0, 0, screen.size.width, screen.size.height-screenMargin);
 	self.blurTargetGlyph.frame = CGRectMake(0, screenMargin, screen.size.width, screen.size.width-(2*screenMargin));
 	self.blurTargetGlyph.textAlignment = NSTextAlignmentCenter;
 	self.blurTargetGlyph.font = [UIFont fontWithName:@"Helvetica Neue" size:152];
@@ -55,16 +55,19 @@
 	self.blurTarget.hidden = NO;
 	self.blurContainerView.hidden = YES;
 	
-	self.interfaceChapter.frame = CGRectMake(screenMargin/4, screenMargin, screen.size.width, screenMargin);
+	self.interfaceWordsLabel.frame = CGRectMake(screenMargin/2, 0, screen.size.width/2-screenMargin/2, screenMargin);
+	self.interfaceWordsLabel.textAlignment = NSTextAlignmentLeft;
+	self.interfaceWordsLabel.font = [self fontSmall];
+	self.interfaceWordsLabel.textColor = [UIColor colorWithWhite:0 alpha:1];
+	self.interfaceWordsLabel.text = @"";
 	
-	self.interfaceChapterName.frame = CGRectMake(0, 0, screen.size.width, screenMargin);
-	self.interfaceChapterName.textAlignment = NSTextAlignmentLeft;
-	self.interfaceChapterName.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
-	self.interfaceChapterName.font = [self fontSmall];
-	self.interfaceChapterName.textColor = [UIColor colorWithWhite:0 alpha:0.2];
-	self.interfaceChapterName.text = @"New Game";
-	self.interfaceChapterName.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
-	self.interfaceChapter.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+	self.interfaceSpeedLabel.frame = CGRectMake(screen.size.width/2, 0, (screen.size.width-screenMargin)/2, screenMargin);
+	self.interfaceSpeedLabel.textAlignment = NSTextAlignmentRight;
+	self.interfaceSpeedLabel.font = [self fontSmall];
+	self.interfaceSpeedLabel.textColor = [UIColor colorWithWhite:0 alpha:0.2];
+	self.interfaceSpeedLabel.text = @"";
+	
+	
 	
 	self.interfaceMenuTimeAverage.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8.35, (screenMargin/4), (screenMargin/4) );
 	self.interfaceMenuTimeAverage.image = [UIImage imageNamed:@"icn.arrow.png"];
@@ -117,56 +120,17 @@
 	self.interfaceMenuSurvivalToggle.layer.cornerRadius = self.interfaceMenuModeToggle.frame.size.width/2;
 }
 
--(void)templateInterface{
-	
-	self.interfaceMenu.frame = CGRectMake(0, 0, screen.size.width, screenMargin);
-	
-	CAGradientLayer *bgLayer = [self darkGradient];
-	bgLayer.frame = self.interfaceMenu.frame;
-	[self.interfaceMenu.layer insertSublayer:bgLayer atIndex:0];
-	
-	CALayer *bottomBorder = [CALayer layer];bottomBorder.frame = CGRectMake(0, screenMargin-1, screen.size.width, 1);
-	bottomBorder.backgroundColor = [UIColor colorWithWhite:0 alpha:1].CGColor;[self.interfaceMenu.layer addSublayer:bottomBorder];
-	CALayer *bottomBorder2 = [CALayer layer];bottomBorder2.frame = CGRectMake(0, screenMargin-2, screen.size.width, 1);
-	bottomBorder2.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1].CGColor;[self.interfaceMenu.layer addSublayer:bottomBorder2];
-	
-	self.interfaceMenuProgress.frame = CGRectMake(screenMargin/4, 0, screen.size.width/2, screenMargin-2);
-	self.interfaceMenuProgress.text = @"Chapter 1 - Kanji 0 to 10";
-	self.interfaceMenuProgress.textColor = [UIColor colorWithWhite:0.5 alpha:1];
-	self.interfaceMenuProgress.layer.shadowColor = [[UIColor blackColor] CGColor];
-	self.interfaceMenuProgress.layer.shadowOffset = CGSizeMake(0, -1.0f);
-	self.interfaceMenuProgress.layer.shadowOpacity = 1.0f;
-	self.interfaceMenuProgress.layer.shadowRadius = 0;
-	self.interfaceMenuProgress.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
-	self.interfaceMenuProgress.font = [self fontSmall];
-	
-	self.interfaceMenuReset.frame = CGRectMake( screen.size.width-(self.interfaceMenuReset.titleLabel.frame.size.width*2)-(screenMargin/4), (screenMargin/4)/2, self.interfaceMenuReset.titleLabel.frame.size.width*2, (screenMargin-2)-(screenMargin/4));
-	self.interfaceMenuReset.titleLabel.textAlignment = NSTextAlignmentCenter;
-	self.interfaceMenuReset.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:12];
-	[self.interfaceMenuReset setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	self.interfaceMenuReset.titleLabel.font = [self fontSmall];
-	[self.interfaceMenuReset setTitle:@"Start Over" forState:UIControlStateNormal];
-	self.interfaceMenuReset.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
-	self.interfaceMenuReset.layer.cornerRadius = 4; // this value vary as per your desire
-    self.interfaceMenuReset.clipsToBounds = YES;
-	self.interfaceMenuReset.layer.shadowColor = [[UIColor blackColor] CGColor];
-	self.interfaceMenuReset.layer.shadowOffset = CGSizeMake(0, -1.0f);
-	self.interfaceMenuReset.layer.shadowOpacity = 1.0f;
-	self.interfaceMenuReset.layer.shadowRadius = 0;
-	CALayer *gradient = [CALayer layer];
-	gradient.frame = CGRectMake(0, 0, self.interfaceMenuReset.frame.size.width, self.interfaceMenuReset.frame.size.height/2);
-	gradient.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1].CGColor;
-	[self.interfaceMenuReset.layer addSublayer:gradient];
-	
-	self.interfaceOptions.frame = CGRectMake(0, screen.size.height - (screenMargin*2), screen.size.width, screenMargin*1.5);
+-(void)templateInterface
+{
+	self.interfaceOptions.frame = CGRectMake(0, screen.size.height-(screenMargin*2), screen.size.width, screenMargin*2);
 	
 	self.interfaceMenuTimeBar.alpha = 0;
-	self.interfaceMenuTimeBar.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, screen.size.width-(2*screenMargin)-(2*(screenMargin/4)), (screenMargin/4) );
+	self.interfaceMenuTimeBar.frame = CGRectMake(screenMargin, screenMargin*8, screen.size.width-(2*screenMargin), (screenMargin/4) );
 	self.interfaceMenuTimeBar.backgroundColor = [UIColor colorWithWhite:1 alpha:0.4];
 	self.interfaceMenuTimeBar.layer.cornerRadius = (screenMargin/4)/2;
 	
 	self.interfaceMenuTimeRemaining.alpha = 0;
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, (screenMargin/4), (screenMargin/4) );
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(0,0,self.interfaceMenuTimeBar.frame.size.width,self.interfaceMenuTimeBar.frame.size.height);
 	self.interfaceMenuTimeRemaining.backgroundColor = [UIColor whiteColor];
 	self.interfaceMenuTimeRemaining.layer.cornerRadius = (screenMargin/4)/2;
 	
@@ -182,8 +146,7 @@
 	
 	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
 	
-	self.interfaceMenuNext.frame = CGRectMake(screenMargin/2, screenMargin*6.9, screen.size.width- (2*(screenMargin/2)), screenMargin*2);
-	self.interfaceMenuNext.layer.cornerRadius = (screenMargin/4)/2;
+	self.interfaceMenuNext.frame = CGRectMake(0, screenMargin*6.9, screen.size.width, screenMargin*2);
 	self.interfaceMenuNext.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
 }
 
@@ -227,7 +190,7 @@
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 		[button addTarget:self action:NSSelectorFromString(@"optionSelection:") forControlEvents:UIControlEventTouchDown];
 		button.tag = wrongAnswers[i];
-		button.frame = CGRectMake(i*((screen.size.width/3)+1), 0, screen.size.width/3, screenMargin*1.5);
+		button.frame = CGRectMake(i*((screen.size.width/3)), 0, (screen.size.width/3), screenMargin*2);
 		button.backgroundColor = [UIColor whiteColor];
 		button.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
 		button.titleLabel.font = [self fontMedium];
@@ -244,7 +207,7 @@
 			button.titleLabel.font = [UIFont boldSystemFontOfSize:24];
 		}
 		else{
-			UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (screenMargin*1.5)*0.55, button.frame.size.width, button.frame.size.height/3)];
+			UILabel *hiragana = [[UILabel alloc] initWithFrame:CGRectMake(0, (screenMargin*1.1), button.frame.size.width, button.frame.size.height/3)];
 			hiragana.text = hiraganaForm;
 			hiragana.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
 			hiragana.textAlignment = NSTextAlignmentCenter;
@@ -334,7 +297,7 @@
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 		[UIView setAnimationDuration:0.25];
 		[UIView setAnimationDelay:(i*0.1)];
-		subview.frame = CGRectOffset(origin, 0, screenMargin*1.5);
+		subview.frame = CGRectOffset(origin, 0, screenMargin*1.6);
 		[UIView commitAnimations];
 		i += 1;
 	}
@@ -353,10 +316,9 @@
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	[UIView setAnimationDuration:0.3];
-	self.interfaceChapter.alpha = 1;
 	self.interfaceMenuTimeBar.alpha = 1;
 	self.interfaceMenuTimeRemainingLabel.alpha = 1;
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, screen.size.width-(2*screenMargin)-(2*(screenMargin/4)), (screenMargin/4) );
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(0,0,self.interfaceMenuTimeBar.frame.size.width,self.interfaceMenuTimeBar.frame.size.height);
 	[UIView commitAnimations];
 }
 
@@ -378,7 +340,7 @@
 	[UIView beginAnimations: @"templateStartAnimation" context:nil];
 	[UIView setAnimationDuration:3];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
-	self.interfaceMenuTimeRemaining.frame = CGRectMake(screenMargin+(screenMargin/4), screenMargin*8, (screenMargin/4), (screenMargin/4) );
+	self.interfaceMenuTimeRemaining.frame = CGRectMake(0,0,0,self.interfaceMenuTimeBar.frame.size.height);
 	self.blurContainerView.alpha = 0.5;
 	[UIView commitAnimations];
 	
@@ -388,7 +350,6 @@
 	[UIView setAnimationDuration:0.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveLinear];
 	self.interfaceMenuNext.alpha = 0;
-	self.interfaceChapter.alpha = 0;
 	self.interfaceMenuTimeRemainingLabel.frame = CGRectMake(screenMargin, screenMargin*6.5, screen.size.width- (2*screenMargin), screenMargin*2);
 	[UIView commitAnimations];
 }
