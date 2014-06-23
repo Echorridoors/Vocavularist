@@ -21,6 +21,16 @@
 		032871A617B089F900425BE8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032871A517B089F900425BE8 /* CoreImage.framework */; };
 		032871A817B08A0900425BE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032871A717B08A0900425BE8 /* QuartzCore.framework */; };
 		032871AB17B0C63300425BE8 /* xxiivvTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 032871AA17B0C63300425BE8 /* xxiivvTemplates.m */; };
+		0344B20319586E110001945B /* icon.76.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20019586E110001945B /* icon.76.png */; };
+		0344B20419586E110001945B /* icon.120.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20119586E110001945B /* icon.120.png */; };
+		0344B20519586E110001945B /* icon.152.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20219586E110001945B /* icon.152.png */; };
+		0344B20719586E230001945B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20619586E230001945B /* Images.xcassets */; };
+		0344B21119586E780001945B /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344B20A19586E780001945B /* segueFade.m */; };
+		0344B21219586E780001945B /* splash.load.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20B19586E780001945B /* splash.load.png */; };
+		0344B21319586E780001945B /* splash.logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20C19586E780001945B /* splash.logo.png */; };
+		0344B21419586E780001945B /* splash.support.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20D19586E780001945B /* splash.support.png */; };
+		0344B21519586E780001945B /* splash.tune.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20E19586E780001945B /* splash.tune.wav */; };
+		0344B21619586E780001945B /* xxiivvSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344B21019586E780001945B /* xxiivvSplash.m */; };
 		0365EBBE17BB17740031B727 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0365EBBD17BB17740031B727 /* Localizable.strings */; };
 		03DDF1F117B356C40070E1D4 /* xxiivvNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */; };
 		03DDF1F317B3D35A0070E1D4 /* icn.arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */; };
@@ -56,6 +66,18 @@
 		032871A717B08A0900425BE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		032871A917B0C63300425BE8 /* xxiivvTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvTemplates.h; sourceTree = "<group>"; };
 		032871AA17B0C63300425BE8 /* xxiivvTemplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvTemplates.m; sourceTree = "<group>"; };
+		0344B20019586E110001945B /* icon.76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.76.png; sourceTree = "<group>"; };
+		0344B20119586E110001945B /* icon.120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.120.png; sourceTree = "<group>"; };
+		0344B20219586E110001945B /* icon.152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.152.png; sourceTree = "<group>"; };
+		0344B20619586E230001945B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0344B20919586E780001945B /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
+		0344B20A19586E780001945B /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
+		0344B20B19586E780001945B /* splash.load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.load.png; sourceTree = "<group>"; };
+		0344B20C19586E780001945B /* splash.logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.logo.png; sourceTree = "<group>"; };
+		0344B20D19586E780001945B /* splash.support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.support.png; sourceTree = "<group>"; };
+		0344B20E19586E780001945B /* splash.tune.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = splash.tune.wav; sourceTree = "<group>"; };
+		0344B20F19586E780001945B /* xxiivvSplash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSplash.h; sourceTree = "<group>"; };
+		0344B21019586E780001945B /* xxiivvSplash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvSplash.m; sourceTree = "<group>"; };
 		0365EBBD17BB17740031B727 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		03DDF1EF17B356C40070E1D4 /* xxiivvNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvNodes.h; sourceTree = "<group>"; };
 		03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvNodes.m; sourceTree = "<group>"; };
@@ -92,6 +114,10 @@
 		0328717617B0870B00425BE8 = {
 			isa = PBXGroup;
 			children = (
+				0344B20819586E780001945B /* splash */,
+				0344B20019586E110001945B /* icon.76.png */,
+				0344B20119586E110001945B /* icon.120.png */,
+				0344B20219586E110001945B /* icon.152.png */,
 				03DDF20E17B3DFCA0070E1D4 /* icon.144.png */,
 				03DDF20C17B3DFC60070E1D4 /* icon.72.png */,
 				03DDF20A17B3DFBB0070E1D4 /* icon.114.png */,
@@ -137,6 +163,7 @@
 				03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */,
 				0328719A17B0870B00425BE8 /* MainStoryboard.storyboard */,
 				0365EBBD17BB17740031B727 /* Localizable.strings */,
+				0344B20619586E230001945B /* Images.xcassets */,
 				0328718917B0870B00425BE8 /* Supporting Files */,
 			);
 			path = nijuniju;
@@ -157,6 +184,22 @@
 				0328719817B0870B00425BE8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0344B20819586E780001945B /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				0344B20919586E780001945B /* segueFade.h */,
+				0344B20A19586E780001945B /* segueFade.m */,
+				0344B20B19586E780001945B /* splash.load.png */,
+				0344B20C19586E780001945B /* splash.logo.png */,
+				0344B20D19586E780001945B /* splash.support.png */,
+				0344B20E19586E780001945B /* splash.tune.wav */,
+				0344B20F19586E780001945B /* xxiivvSplash.h */,
+				0344B21019586E780001945B /* xxiivvSplash.m */,
+			);
+			name = splash;
+			path = nijuniju/splash;
 			sourceTree = "<group>";
 		};
 		03DDF21017B3EA400070E1D4 /* Icons */ = {
@@ -236,14 +279,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0344B21219586E780001945B /* splash.load.png in Resources */,
 				0328718D17B0870B00425BE8 /* InfoPlist.strings in Resources */,
+				0344B21419586E780001945B /* splash.support.png in Resources */,
+				0344B20519586E110001945B /* icon.152.png in Resources */,
 				0328719517B0870B00425BE8 /* Default.png in Resources */,
+				0344B20319586E110001945B /* icon.76.png in Resources */,
 				0328719717B0870B00425BE8 /* Default@2x.png in Resources */,
 				0328719917B0870B00425BE8 /* Default-568h@2x.png in Resources */,
 				0328719C17B0870B00425BE8 /* MainStoryboard.storyboard in Resources */,
 				03DDF1F317B3D35A0070E1D4 /* icn.arrow.png in Resources */,
 				03DDF1FB17B3DC120070E1D4 /* fx.click.wav in Resources */,
+				0344B20719586E230001945B /* Images.xcassets in Resources */,
 				03DDF1FD17B3DCE60070E1D4 /* fx.error.wav in Resources */,
+				0344B21319586E780001945B /* splash.logo.png in Resources */,
+				0344B21519586E780001945B /* splash.tune.wav in Resources */,
+				0344B20419586E110001945B /* icon.120.png in Resources */,
 				03DDF1FF17B3DDCD0070E1D4 /* fx.accepted.wav in Resources */,
 				03DDF20917B3DFB70070E1D4 /* icon.57.png in Resources */,
 				03DDF20B17B3DFBB0070E1D4 /* icon.114.png in Resources */,
@@ -261,8 +312,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0328718F17B0870B00425BE8 /* main.m in Sources */,
+				0344B21119586E780001945B /* segueFade.m in Sources */,
 				0328719317B0870B00425BE8 /* xxiivvAppDelegate.m in Sources */,
 				0328719F17B0870B00425BE8 /* xxiivvViewController.m in Sources */,
+				0344B21619586E780001945B /* xxiivvSplash.m in Sources */,
 				032871AB17B0C63300425BE8 /* xxiivvTemplates.m in Sources */,
 				03DDF1F117B356C40070E1D4 /* xxiivvNodes.m in Sources */,
 			);
@@ -302,6 +355,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -333,7 +387,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: David Mondou-Labbe (B948MFAE5C)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -349,6 +404,8 @@
 		032871A317B0870B00425BE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nijuniju/nijuniju-Prefix.pch";
 				INFOPLIST_FILE = "nijuniju/nijuniju-Info.plist";
@@ -362,6 +419,8 @@
 		032871A417B0870B00425BE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nijuniju/nijuniju-Prefix.pch";
 				INFOPLIST_FILE = "nijuniju/nijuniju-Info.plist";
