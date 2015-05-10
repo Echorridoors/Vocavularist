@@ -20,6 +20,10 @@ Lesson *activeLesson;
 int lessonId;
 int answerPosition;
 
+CGRect choice1Frame;
+CGRect choice2Frame;
+CGRect choice3Frame;
+
 @interface xxiivvViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *choice1Button;
@@ -118,17 +122,20 @@ int answerPosition;
 	CGRect screen = [[UIScreen mainScreen] bounds];
 	float screenMargin = screen.size.width/8;
 	
-	_choice1View.frame = CGRectMake(0, screenHeight-(screenMargin*6)-2, screenWidth, screenMargin*2);
+	choice1Frame = CGRectMake(0, screenHeight-(screenMargin*6)-2, screenWidth, screenMargin*2);
+	_choice1View.frame = choice1Frame;
 	_choice1View.backgroundColor = [UIColor whiteColor];
 	_choice1Label.frame = CGRectMake(screenMargin/2, 0, _choice1View.frame.size.width, _choice1View.frame.size.height);
 	_choice1Button.frame = CGRectMake(0, 0,_choice1View.frame.size.width, _choice1View.frame.size.height);
 	
-	_choice2View.frame = CGRectMake(0, screenHeight-(screenMargin*4)-1, screenWidth, screenMargin*2);
+	choice2Frame = CGRectMake(0, screenHeight-(screenMargin*4)-1, screenWidth, screenMargin*2);
+	_choice2View.frame = choice2Frame;
 	_choice2View.backgroundColor = [UIColor whiteColor];
 	_choice2Label.frame = CGRectMake(screenMargin/2, 0, _choice2View.frame.size.width, _choice2View.frame.size.height);
 	_choice2Button.frame = CGRectMake(0, 0,_choice2View.frame.size.width, _choice2View.frame.size.height);
 	
-	_choice3View.frame = CGRectMake(0, screenHeight-(screenMargin*2), screenWidth, screenMargin*2);
+	choice3Frame = CGRectMake(0, screenHeight-(screenMargin*2), screenWidth, screenMargin*2);
+	_choice3View.frame = choice3Frame;
 	_choice3View.backgroundColor = [UIColor whiteColor];
 	_choice3Label.frame = CGRectMake(screenMargin/2, 0, _choice3View.frame.size.width, _choice3View.frame.size.height);
 	_choice3Button.frame = CGRectMake(0, 0,_choice3View.frame.size.width, _choice3View.frame.size.height);
@@ -167,22 +174,69 @@ int answerPosition;
 
 # pragma mark - Interactions
 
+-(void)displayChoices
+{
+	_choice1View.frame = CGRectOffset(choice1Frame, screenWidth * -1, 0);
+	_choice2View.frame = CGRectOffset(choice2Frame, screenWidth * -1, 0);
+	_choice3View.frame = CGRectOffset(choice3Frame, screenWidth * -1, 0);
+	_choice1View.alpha = 1;
+	_choice2View.alpha = 1;
+	_choice3View.alpha = 1;
+	
+	[UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		_choice1View.frame = choice1Frame;
+	} completion:^(BOOL finished){}];
+	[UIView animateWithDuration:0.25 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		_choice2View.frame = choice2Frame;
+	} completion:^(BOOL finished){}];
+	[UIView animateWithDuration:0.25 delay:0.2 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		_choice3View.frame = choice3Frame;
+	} completion:^(BOOL finished){}];
+}
+
 - (IBAction)choice1Button:(id)sender
 {
 	if( answerPosition == 0){ [self correctChoice]; }
 	else{ [self wrongChoice]; }
+	
+	[UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_choice1View.frame = CGRectOffset(choice1Frame, screenWidth, 0);
+	} completion:^(BOOL finished){ [self displayChoices]; }];
+	
+	[UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_choice2View.frame = CGRectOffset(choice2Frame, screenWidth, 0);
+		_choice3View.frame = CGRectOffset(choice3Frame, screenWidth, 0);
+	} completion:^(BOOL finished){  }];
 }
 
 - (IBAction)choice2Button:(id)sender
 {
 	if( answerPosition == 1){ [self correctChoice]; }
 	else{ [self wrongChoice]; }
+	
+	[UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_choice2View.frame = CGRectOffset(choice2Frame, screenWidth, 0);
+	} completion:^(BOOL finished){ [self displayChoices]; }];
+	
+	[UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_choice1View.frame = CGRectOffset(choice1Frame, screenWidth, 0);
+		_choice3View.frame = CGRectOffset(choice3Frame, screenWidth, 0);
+	} completion:^(BOOL finished){  }];
 }
 
 - (IBAction)choice3Button:(id)sender
 {
 	if( answerPosition == 2){ [self correctChoice]; }
 	else{ [self wrongChoice]; }
+	
+	[UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_choice3View.frame = CGRectOffset(choice3Frame, screenWidth, 0);
+	} completion:^(BOOL finished){ [self displayChoices]; }];
+	
+	[UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_choice1View.frame = CGRectOffset(choice1Frame, screenWidth, 0);
+		_choice2View.frame = CGRectOffset(choice2Frame, screenWidth, 0);
+	} completion:^(BOOL finished){  }];
 }
 
 # pragma mark - Defaults
