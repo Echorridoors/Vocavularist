@@ -13,7 +13,10 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 
+#import "Lesson.h"
+
 AVAudioPlayer *audioPlayerSounds;
+Lesson *activeLesson;
 
 @interface xxiivvViewController ()
 
@@ -27,6 +30,7 @@ AVAudioPlayer *audioPlayerSounds;
 @property (weak, nonatomic) IBOutlet UILabel *choice2Label;
 @property (weak, nonatomic) IBOutlet UILabel *choice3Label;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 
 @end
 
@@ -46,7 +50,16 @@ AVAudioPlayer *audioPlayerSounds;
 -(void)start
 {
 	[self templateStart];
+	[self startLesson:@"Japanese"];
+	
 }
+
+-(void)startLesson:(NSString*)targetLanguage
+{
+	NSLog(@"! LESSON | Start");
+	activeLesson = [[Lesson alloc] initWithString:targetLanguage];
+}
+
 
 -(void)templateStart
 {
@@ -66,7 +79,7 @@ AVAudioPlayer *audioPlayerSounds;
 	_choice3Label.frame = CGRectMake(screenMargin/2, 0, _choice3View.frame.size.width, _choice3View.frame.size.height);
 	
 	_questionLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*9), screenWidth, screenMargin*2);
-	
+	_progressLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*7), screenWidth, screenMargin);
 }
 
 -(void)audioPlayerSounds:(NSString *)filename{

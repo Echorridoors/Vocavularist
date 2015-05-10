@@ -10,4 +10,6 @@
 
 @interface Lesson : NSObject
 
+-(Lesson*)initWithString:(NSString*)language;
+
 @end

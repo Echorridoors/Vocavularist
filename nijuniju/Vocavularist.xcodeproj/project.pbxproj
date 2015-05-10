@@ -36,7 +36,6 @@
 		03DDF1FD17B3DCE60070E1D4 /* fx.error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FC17B3DCE60070E1D4 /* fx.error.wav */; };
 		03DDF1FF17B3DDCD0070E1D4 /* fx.accepted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */; };
 		5785359F1AFFA6EF00A096F4 /* Lesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5785359E1AFFA6EF00A096F4 /* Lesson.m */; };
-		578535A21AFFA71300A096F4 /* Lessons.m in Sources */ = {isa = PBXBuildFile; fileRef = 578535A11AFFA71300A096F4 /* Lessons.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,8 +76,6 @@
 		03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.accepted.wav; path = en.assets/fx.accepted.wav; sourceTree = "<group>"; };
 		5785359D1AFFA6EF00A096F4 /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
 		5785359E1AFFA6EF00A096F4 /* Lesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson.m; sourceTree = "<group>"; };
-		578535A01AFFA71300A096F4 /* Lessons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lessons.h; sourceTree = "<group>"; };
-		578535A11AFFA71300A096F4 /* Lessons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lessons.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +140,6 @@
 				0328719E17B0870B00425BE8 /* xxiivvViewController.m */,
 				5785359D1AFFA6EF00A096F4 /* Lesson.h */,
 				5785359E1AFFA6EF00A096F4 /* Lesson.m */,
-				578535A01AFFA71300A096F4 /* Lessons.h */,
-				578535A11AFFA71300A096F4 /* Lessons.m */,
 				0328719A17B0870B00425BE8 /* MainStoryboard.storyboard */,
 				0365EBBD17BB17740031B727 /* Localizable.strings */,
 				0344B20619586E230001945B /* Images.xcassets */,
@@ -298,7 +293,6 @@
 				5785359F1AFFA6EF00A096F4 /* Lesson.m in Sources */,
 				0328719F17B0870B00425BE8 /* xxiivvViewController.m in Sources */,
 				0344B21619586E780001945B /* xxiivvSplash.m in Sources */,
-				578535A21AFFA71300A096F4 /* Lessons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

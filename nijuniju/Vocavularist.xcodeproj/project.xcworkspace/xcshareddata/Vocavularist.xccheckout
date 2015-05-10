@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>220A323C-D598-4A7D-AFD6-83510673658C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Vocavularist</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D1FA54D58535A2565982F8266DB3572228991DA0</key>
 		<string>https://github.com/aliceffekt/vocavularist.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>nijuniju/Vocavularist.xcodeproj</string>
+	<string>nijuniju/Vocavularist.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D1FA54D58535A2565982F8266DB3572228991DA0</key>
