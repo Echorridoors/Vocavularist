@@ -23,6 +23,9 @@
                                         <state key="normal" title="Choice1">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="choice1Button:" destination="2" eventType="touchUpInside" id="fNj-X3-qKH"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="79K-Ao-Trg" userLabel="choice1Label">
                                         <rect key="frame" x="59" y="132" width="42" height="21"/>
@@ -44,6 +47,9 @@
                                         <state key="normal" title="Choice2">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="choice2Button:" destination="2" eventType="touchUpInside" id="r0s-U6-K6Q"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9en-bQ-Ymx" userLabel="choice2Label">
                                         <rect key="frame" x="59" y="132" width="42" height="21"/>
@@ -65,6 +71,9 @@
                                         <state key="normal" title="Choice3">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="choice3Button:" destination="2" eventType="touchUpInside" id="zTa-Ke-sEz"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o8o-7U-KON" userLabel="choice3Label">
                                         <rect key="frame" x="59" y="132" width="42" height="21"/>

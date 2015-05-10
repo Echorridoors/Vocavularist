@@ -11,5 +11,7 @@
 @interface Lesson : NSObject
 
 -(Lesson*)initWithString:(NSString*)language;
+-(NSArray*)mistakesFromLessonId:(int)lessonId;
+-(NSString*)answerFromLessonId:(int)lessonId;
 
 @end

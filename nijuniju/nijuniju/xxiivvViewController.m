@@ -17,6 +17,8 @@
 
 AVAudioPlayer *audioPlayerSounds;
 Lesson *activeLesson;
+int lessonId;
+int answerPosition;
 
 @interface xxiivvViewController ()
 
@@ -51,13 +53,25 @@ Lesson *activeLesson;
 {
 	[self templateStart];
 	[self startLesson:@"Japanese"];
-	
 }
 
 -(void)startLesson:(NSString*)targetLanguage
 {
 	NSLog(@"! LESSON | Start");
 	activeLesson = [[Lesson alloc] initWithString:targetLanguage];
+	
+	// Load Mistakes
+	NSArray* mistakes = [activeLesson mistakesFromLessonId:lessonId];
+	_choice1Label.text = mistakes[0];
+	_choice2Label.text = mistakes[1];
+	_choice3Label.text = mistakes[2];
+	
+	// Insert Answer
+	NSString* answer = [activeLesson answerFromLessonId:lessonId];
+	answerPosition = arc4random_uniform(3);
+	if( answerPosition == 0 ){ _choice1Label.text = answer; }
+	else if( answerPosition == 1 ){ _choice2Label.text = answer; }
+	else { _choice3Label.text = answer; }
 }
 
 
@@ -102,6 +116,19 @@ Lesson *activeLesson;
 		[audioPlayerSounds play];
 	}
 }
+
+- (IBAction)choice1Button:(id)sender {
+	
+}
+- (IBAction)choice2Button:(id)sender {
+	
+}
+- (IBAction)choice3Button:(id)sender {
+	
+}
+
+
+
 
 - (BOOL)prefersStatusBarHidden
 {

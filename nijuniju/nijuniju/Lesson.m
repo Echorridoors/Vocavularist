@@ -8,15 +8,43 @@
 
 #import "Lesson.h"
 
+NSArray * currentLesson;
+
 @implementation Lesson
 
 -(Lesson*)initWithString:(NSString*)language
 {
+	if( [language isEqualToString:@"Japanese"] ){ currentLesson = [self japaneseLesson]; }
+	else{ currentLesson = [self russianLesson]; }
+	
 	return self;
 }
 
+-(NSArray*)mistakesFromLessonId:(int)lessonId
+{
+	return @[@"A",@"B",@"C"];
+}
+
+-(NSString*)answerFromLessonId:(int)lessonId
+{
+	return @"ANSWER";
+}
+
+-(NSArray*)russianLesson
+{
+	NSLog(@"! LESSON | Loading Russian");
+	
+	return @[
+	 @[@"日", @"ひ", @"sun"],
+	 @[@"一", @"ひと", @"one"]
+	];
+}
+
+
 -(NSArray*)japaneseLesson
 {
+	NSLog(@"! LESSON | Loading Japanese");
+	
 	return @[
 	 @[@"日", @"ひ", @"sun"],
 	 @[@"一", @"ひと", @"one"],
