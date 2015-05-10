@@ -56,7 +56,7 @@ CGRect choice3Frame;
 
 -(void)start
 {
-	activeLesson = [[Lesson alloc] initWithString:@"Japanese"];
+	activeLesson = [[Lesson alloc] initWithString:@"Russian"];
 	
 	[self templateStart];
 	[self questionStart];
@@ -184,13 +184,13 @@ CGRect choice3Frame;
 	_choice2View.alpha = 1;
 	_choice3View.alpha = 1;
 	
-	[UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+	[UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		_choice1View.frame = choice1Frame;
 	} completion:^(BOOL finished){}];
-	[UIView animateWithDuration:0.25 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+	[UIView animateWithDuration:0.15 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		_choice2View.frame = choice2Frame;
 	} completion:^(BOOL finished){}];
-	[UIView animateWithDuration:0.25 delay:0.2 options:UIViewAnimationOptionCurveEaseOut animations:^{
+	[UIView animateWithDuration:0.15 delay:0.2 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		_choice3View.frame = choice3Frame;
 	} completion:^(BOOL finished){}];
 }
@@ -200,11 +200,11 @@ CGRect choice3Frame;
 	if( answerPosition == 0){ [self correctChoice]; }
 	else{ [self wrongChoice]; }
 	
-	[UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
+	[UIView animateWithDuration:0.15 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
 		_choice1View.frame = CGRectOffset(choice1Frame, screenWidth, 0);
 	} completion:^(BOOL finished){ [self displayChoices]; }];
 	
-	[UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+	[UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
 		_choice2View.frame = CGRectOffset(choice2Frame, screenWidth, 0);
 		_choice3View.frame = CGRectOffset(choice3Frame, screenWidth, 0);
 	} completion:^(BOOL finished){  }];
@@ -215,11 +215,11 @@ CGRect choice3Frame;
 	if( answerPosition == 1){ [self correctChoice]; }
 	else{ [self wrongChoice]; }
 	
-	[UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
+	[UIView animateWithDuration:0.15 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
 		_choice2View.frame = CGRectOffset(choice2Frame, screenWidth, 0);
 	} completion:^(BOOL finished){ [self displayChoices]; }];
 	
-	[UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+	[UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
 		_choice1View.frame = CGRectOffset(choice1Frame, screenWidth, 0);
 		_choice3View.frame = CGRectOffset(choice3Frame, screenWidth, 0);
 	} completion:^(BOOL finished){  }];
@@ -230,11 +230,11 @@ CGRect choice3Frame;
 	if( answerPosition == 2){ [self correctChoice]; }
 	else{ [self wrongChoice]; }
 	
-	[UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
+	[UIView animateWithDuration:0.15 delay:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
 		_choice3View.frame = CGRectOffset(choice3Frame, screenWidth, 0);
 	} completion:^(BOOL finished){ [self displayChoices]; }];
 	
-	[UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+	[UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
 		_choice1View.frame = CGRectOffset(choice1Frame, screenWidth, 0);
 		_choice2View.frame = CGRectOffset(choice2Frame, screenWidth, 0);
 	} completion:^(BOOL finished){  }];
@@ -243,7 +243,6 @@ CGRect choice3Frame;
 - (IBAction)choiceGeneric:(id)sender
 {
 }
-
 
 # pragma mark - Defaults
 
