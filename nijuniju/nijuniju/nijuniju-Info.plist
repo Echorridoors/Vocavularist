@@ -33,7 +33,7 @@
 			<string>com.xxiivv</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>vocabularist</string>
+				<string>vocavularist</string>
 			</array>
 		</dict>
 	</array>
