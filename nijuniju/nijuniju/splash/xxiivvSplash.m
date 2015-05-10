@@ -23,7 +23,8 @@ NSString *supportUrl;
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	[self start];
+//	[self start]; // TODO
+	[self splashClose];
 }
 
 -(void)start

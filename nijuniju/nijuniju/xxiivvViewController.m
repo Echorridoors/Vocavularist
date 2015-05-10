@@ -45,6 +45,27 @@ AVAudioPlayer *audioPlayerSounds;
 
 -(void)start
 {
+	[self templateStart];
+}
+
+-(void)templateStart
+{
+	CGRect screen = [[UIScreen mainScreen] bounds];
+	float screenMargin = screen.size.width/8;
+	
+	_choice1View.frame = CGRectMake(0, screenHeight-(screenMargin*6)-2, screenWidth, screenMargin*2);
+	_choice1View.backgroundColor = [UIColor whiteColor];
+	_choice1Label.frame = CGRectMake(screenMargin/2, 0, _choice1View.frame.size.width, _choice1View.frame.size.height);
+	
+	_choice2View.frame = CGRectMake(0, screenHeight-(screenMargin*4)-1, screenWidth, screenMargin*2);
+	_choice2View.backgroundColor = [UIColor whiteColor];
+	_choice2Label.frame = CGRectMake(screenMargin/2, 0, _choice2View.frame.size.width, _choice2View.frame.size.height);
+	
+	_choice3View.frame = CGRectMake(0, screenHeight-(screenMargin*2), screenWidth, screenMargin*2);
+	_choice3View.backgroundColor = [UIColor whiteColor];
+	_choice3Label.frame = CGRectMake(screenMargin/2, 0, _choice3View.frame.size.width, _choice3View.frame.size.height);
+	
+	_questionLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*9), screenWidth, screenMargin*2);
 	
 }
 
@@ -73,6 +94,5 @@ AVAudioPlayer *audioPlayerSounds;
 {
     return YES;
 }
-
 
 @end
