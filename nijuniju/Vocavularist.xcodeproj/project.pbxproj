@@ -20,7 +20,6 @@
 		0328719F17B0870B00425BE8 /* xxiivvViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0328719E17B0870B00425BE8 /* xxiivvViewController.m */; };
 		032871A617B089F900425BE8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032871A517B089F900425BE8 /* CoreImage.framework */; };
 		032871A817B08A0900425BE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032871A717B08A0900425BE8 /* QuartzCore.framework */; };
-		032871AB17B0C63300425BE8 /* xxiivvTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 032871AA17B0C63300425BE8 /* xxiivvTemplates.m */; };
 		0344B20719586E230001945B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20619586E230001945B /* Images.xcassets */; };
 		0344B21119586E780001945B /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344B20A19586E780001945B /* segueFade.m */; };
 		0344B21319586E780001945B /* splash.logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20C19586E780001945B /* splash.logo.png */; };
@@ -30,13 +29,14 @@
 		03C598DC19A79D33008AFFFE /* icon.76.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C598D919A79D33008AFFFE /* icon.76.png */; };
 		03C598DD19A79D33008AFFFE /* icon.120.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C598DA19A79D33008AFFFE /* icon.120.png */; };
 		03C598DE19A79D33008AFFFE /* icon.152.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C598DB19A79D33008AFFFE /* icon.152.png */; };
-		03DDF1F117B356C40070E1D4 /* xxiivvNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */; };
 		03DDF1F317B3D35A0070E1D4 /* icn.arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */; };
 		03DDF1F517B3DA340070E1D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DDF1F417B3DA340070E1D4 /* AVFoundation.framework */; };
 		03DDF1F717B3DAA20070E1D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DDF1F617B3DAA20070E1D4 /* AudioToolbox.framework */; };
 		03DDF1FB17B3DC120070E1D4 /* fx.click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FA17B3DC120070E1D4 /* fx.click.wav */; };
 		03DDF1FD17B3DCE60070E1D4 /* fx.error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FC17B3DCE60070E1D4 /* fx.error.wav */; };
 		03DDF1FF17B3DDCD0070E1D4 /* fx.accepted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */; };
+		5785359F1AFFA6EF00A096F4 /* Lesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5785359E1AFFA6EF00A096F4 /* Lesson.m */; };
+		578535A21AFFA71300A096F4 /* Lessons.m in Sources */ = {isa = PBXBuildFile; fileRef = 578535A11AFFA71300A096F4 /* Lessons.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +58,6 @@
 		0328719E17B0870B00425BE8 /* xxiivvViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvViewController.m; sourceTree = "<group>"; };
 		032871A517B089F900425BE8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		032871A717B08A0900425BE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		032871A917B0C63300425BE8 /* xxiivvTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvTemplates.h; sourceTree = "<group>"; };
-		032871AA17B0C63300425BE8 /* xxiivvTemplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvTemplates.m; sourceTree = "<group>"; };
 		0344B20619586E230001945B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0344B20919586E780001945B /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
 		0344B20A19586E780001945B /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
@@ -71,14 +69,16 @@
 		03C598D919A79D33008AFFFE /* icon.76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.76.png; sourceTree = "<group>"; };
 		03C598DA19A79D33008AFFFE /* icon.120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.120.png; sourceTree = "<group>"; };
 		03C598DB19A79D33008AFFFE /* icon.152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.152.png; sourceTree = "<group>"; };
-		03DDF1EF17B356C40070E1D4 /* xxiivvNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvNodes.h; sourceTree = "<group>"; };
-		03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvNodes.m; sourceTree = "<group>"; };
 		03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icn.arrow.png; path = en.assets/icn.arrow.png; sourceTree = "<group>"; };
 		03DDF1F417B3DA340070E1D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		03DDF1F617B3DAA20070E1D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		03DDF1FA17B3DC120070E1D4 /* fx.click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.click.wav; path = en.assets/fx.click.wav; sourceTree = "<group>"; };
 		03DDF1FC17B3DCE60070E1D4 /* fx.error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.error.wav; path = en.assets/fx.error.wav; sourceTree = "<group>"; };
 		03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.accepted.wav; path = en.assets/fx.accepted.wav; sourceTree = "<group>"; };
+		5785359D1AFFA6EF00A096F4 /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
+		5785359E1AFFA6EF00A096F4 /* Lesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson.m; sourceTree = "<group>"; };
+		578535A01AFFA71300A096F4 /* Lessons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lessons.h; sourceTree = "<group>"; };
+		578535A11AFFA71300A096F4 /* Lessons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lessons.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +141,10 @@
 				0328719217B0870B00425BE8 /* xxiivvAppDelegate.m */,
 				0328719D17B0870B00425BE8 /* xxiivvViewController.h */,
 				0328719E17B0870B00425BE8 /* xxiivvViewController.m */,
-				032871A917B0C63300425BE8 /* xxiivvTemplates.h */,
-				032871AA17B0C63300425BE8 /* xxiivvTemplates.m */,
-				03DDF1EF17B356C40070E1D4 /* xxiivvNodes.h */,
-				03DDF1F017B356C40070E1D4 /* xxiivvNodes.m */,
+				5785359D1AFFA6EF00A096F4 /* Lesson.h */,
+				5785359E1AFFA6EF00A096F4 /* Lesson.m */,
+				578535A01AFFA71300A096F4 /* Lessons.h */,
+				578535A11AFFA71300A096F4 /* Lessons.m */,
 				0328719A17B0870B00425BE8 /* MainStoryboard.storyboard */,
 				0365EBBD17BB17740031B727 /* Localizable.strings */,
 				0344B20619586E230001945B /* Images.xcassets */,
@@ -295,10 +295,10 @@
 				0328718F17B0870B00425BE8 /* main.m in Sources */,
 				0344B21119586E780001945B /* segueFade.m in Sources */,
 				0328719317B0870B00425BE8 /* xxiivvAppDelegate.m in Sources */,
+				5785359F1AFFA6EF00A096F4 /* Lesson.m in Sources */,
 				0328719F17B0870B00425BE8 /* xxiivvViewController.m in Sources */,
 				0344B21619586E780001945B /* xxiivvSplash.m in Sources */,
-				032871AB17B0C63300425BE8 /* xxiivvTemplates.m in Sources */,
-				03DDF1F117B356C40070E1D4 /* xxiivvNodes.m in Sources */,
+				578535A21AFFA71300A096F4 /* Lessons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
