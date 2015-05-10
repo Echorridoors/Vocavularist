@@ -17,6 +17,17 @@ AVAudioPlayer *audioPlayerSounds;
 
 @interface xxiivvViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *choice1Button;
+@property (weak, nonatomic) IBOutlet UIButton *choice2Button;
+@property (weak, nonatomic) IBOutlet UIButton *choice3Button;
+@property (weak, nonatomic) IBOutlet UIView *choice1View;
+@property (weak, nonatomic) IBOutlet UIView *choice2View;
+@property (weak, nonatomic) IBOutlet UIView *choice3View;
+@property (weak, nonatomic) IBOutlet UILabel *choice1Label;
+@property (weak, nonatomic) IBOutlet UILabel *choice2Label;
+@property (weak, nonatomic) IBOutlet UILabel *choice3Label;
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+
 @end
 
 @implementation xxiivvViewController
