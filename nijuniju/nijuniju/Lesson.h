@@ -15,5 +15,6 @@
 -(NSString*)answerFromLessonId:(int)lessonId;
 
 -(NSUInteger)length;
+-(NSString*)question:(int)lessonId;
 
 @end

@@ -20,6 +20,11 @@ NSArray * currentLesson;
 	return self;
 }
 
+-(NSString*)question:(int)lessonId
+{
+	return currentLesson[lessonId][0];
+}
+
 -(NSUInteger)length
 {
 	return [currentLesson count];
@@ -27,13 +32,33 @@ NSArray * currentLesson;
 
 -(NSArray*)mistakesFromLessonId:(int)lessonId
 {
-	return @[@"A",@"B",@"C"];
+	// Make potential answers
+	NSMutableArray * newArray = [NSMutableArray arrayWithArray:[currentLesson subarrayWithRange:NSMakeRange(0, lessonId+4)]];
+	[newArray removeObjectAtIndex:lessonId];
+	
+	newArray = [self shuffleArray:newArray];
+	
+	return @[newArray[0][2],newArray[1][2],newArray[2][2]];
 }
 
 -(NSString*)answerFromLessonId:(int)lessonId
 {
-	return @"ANSWER";
+	return currentLesson[lessonId][2];
 }
+
+
+- (NSMutableArray*)shuffleArray:(NSMutableArray*)targetArray
+{
+	NSUInteger count = [targetArray count];
+	for (NSUInteger i = 0; i < count; ++i) {
+		NSInteger remainingCount = count - i;
+		NSInteger exchangeIndex = i + arc4random_uniform((u_int32_t )remainingCount);
+		[targetArray exchangeObjectAtIndex:i withObjectAtIndex:exchangeIndex];
+	}
+	
+	return targetArray;
+}
+
 
 -(NSArray*)russianLesson
 {

@@ -44,6 +44,7 @@
                                         </state>
                                         <connections>
                                             <action selector="choice1Button:" destination="2" eventType="touchUpInside" id="fNj-X3-qKH"/>
+                                            <action selector="choiceGeneric:" destination="2" eventType="touchUpInside" id="aZ3-Mi-69i"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="79K-Ao-Trg" userLabel="choice1Label">
@@ -68,6 +69,7 @@
                                         </state>
                                         <connections>
                                             <action selector="choice2Button:" destination="2" eventType="touchUpInside" id="r0s-U6-K6Q"/>
+                                            <action selector="choiceGeneric:" destination="2" eventType="touchUpInside" id="0EV-96-6zc"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9en-bQ-Ymx" userLabel="choice2Label">
@@ -92,6 +94,7 @@
                                         </state>
                                         <connections>
                                             <action selector="choice3Button:" destination="2" eventType="touchUpInside" id="zTa-Ke-sEz"/>
+                                            <action selector="choiceGeneric:" destination="2" eventType="touchUpInside" id="B5i-nA-mEn"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o8o-7U-KON" userLabel="choice3Label">

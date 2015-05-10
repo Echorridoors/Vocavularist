@@ -69,6 +69,7 @@ CGRect choice3Frame;
 	NSLog(@"! LESSON | Start");
 	
 	_progressLabel.text = [NSString stringWithFormat:@"%d/%lu",lessonId,(unsigned long)[activeLesson length]];
+	_questionLabel.text = [NSString stringWithFormat:@"%@",[activeLesson question:lessonId]];
 	
 	// Load Mistakes
 	NSArray* mistakes = [activeLesson mistakesFromLessonId:lessonId];
@@ -90,22 +91,20 @@ CGRect choice3Frame;
 {
 	NSLog(@"- ANSWER | Correct answer!");
 	lessonId += 1;
-	[self questionStart];
 	
 	// Animate Feedback
 	_feedbackView.alpha = 1;
 	_feedbackView.backgroundColor = [UIColor whiteColor];
 	[UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
 		_feedbackView.alpha = 0;
-	} completion:^(BOOL finished){}];
+	} completion:^(BOOL finished){ }];
 }
 
 -(void)wrongChoice
 {
 	NSLog(@"- ANSWER | Wrong answer..");
-	lessonId -= 1;
+	lessonId -= 2;
 	if( lessonId < 1 ){ lessonId = 0; }
-	[self questionStart];
 	
 	// Animate Feedback
 	_feedbackView.alpha = 1;
@@ -176,6 +175,8 @@ CGRect choice3Frame;
 
 -(void)displayChoices
 {
+	[self questionStart];
+	
 	_choice1View.frame = CGRectOffset(choice1Frame, screenWidth * -1, 0);
 	_choice2View.frame = CGRectOffset(choice2Frame, screenWidth * -1, 0);
 	_choice3View.frame = CGRectOffset(choice3Frame, screenWidth * -1, 0);
@@ -238,6 +239,11 @@ CGRect choice3Frame;
 		_choice2View.frame = CGRectOffset(choice2Frame, screenWidth, 0);
 	} completion:^(BOOL finished){  }];
 }
+
+- (IBAction)choiceGeneric:(id)sender
+{
+}
+
 
 # pragma mark - Defaults
 
