@@ -55,6 +55,8 @@ int answerPosition;
 	[self startLesson:@"Japanese"];
 }
 
+# pragma mark - Start
+
 -(void)startLesson:(NSString*)targetLanguage
 {
 	NSLog(@"! LESSON | Start");
@@ -74,6 +76,19 @@ int answerPosition;
 	else { _choice3Label.text = answer; }
 }
 
+# pragma mark - Response
+
+-(void)correctChoice
+{
+	NSLog(@"- ANSWER | Correct answer!");
+}
+
+-(void)wrongChoice
+{
+	NSLog(@"- ANSWER | Wrong answer..");
+}
+
+# pragma mark - Template
 
 -(void)templateStart
 {
@@ -99,6 +114,9 @@ int answerPosition;
 	_progressLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*7), screenWidth, screenMargin);
 }
 
+
+# pragma mark - Audio
+
 -(void)audioPlayerSounds:(NSString *)filename{
 	
 	NSLog(@"$ Audio | Play %@",filename);
@@ -120,28 +138,27 @@ int answerPosition;
 	}
 }
 
+# pragma mark - Interactions
+
 - (IBAction)choice1Button:(id)sender
 {
-	if( answerPosition == 0){ NSLog(@" ANSWR | Good answer!"); }
-	else{ NSLog(@" ANSWR | Bad answer.."); }
+	if( answerPosition == 0){ [self correctChoice]; }
+	else{ [self wrongChoice]; }
 }
 
 - (IBAction)choice2Button:(id)sender
 {
-	if( answerPosition == 1){ NSLog(@" ANSWR | Good answer!"); }
-	else{ NSLog(@" ANSWR | Bad answer.."); }
-	
+	if( answerPosition == 1){ [self correctChoice]; }
+	else{ [self wrongChoice]; }
 }
 
 - (IBAction)choice3Button:(id)sender
 {
-	if( answerPosition == 2){ NSLog(@" ANSWR | Good answer!"); }
-	else{ NSLog(@" ANSWR | Bad answer.."); }
-	
+	if( answerPosition == 2){ [self correctChoice]; }
+	else{ [self wrongChoice]; }
 }
 
-
-
+# pragma mark - Defaults
 
 - (BOOL)prefersStatusBarHidden
 {
