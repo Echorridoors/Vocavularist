@@ -83,14 +83,17 @@ int answerPosition;
 	_choice1View.frame = CGRectMake(0, screenHeight-(screenMargin*6)-2, screenWidth, screenMargin*2);
 	_choice1View.backgroundColor = [UIColor whiteColor];
 	_choice1Label.frame = CGRectMake(screenMargin/2, 0, _choice1View.frame.size.width, _choice1View.frame.size.height);
+	_choice1Button.frame = CGRectMake(0, 0,_choice1View.frame.size.width, _choice1View.frame.size.height);
 	
 	_choice2View.frame = CGRectMake(0, screenHeight-(screenMargin*4)-1, screenWidth, screenMargin*2);
 	_choice2View.backgroundColor = [UIColor whiteColor];
 	_choice2Label.frame = CGRectMake(screenMargin/2, 0, _choice2View.frame.size.width, _choice2View.frame.size.height);
+	_choice2Button.frame = CGRectMake(0, 0,_choice2View.frame.size.width, _choice2View.frame.size.height);
 	
 	_choice3View.frame = CGRectMake(0, screenHeight-(screenMargin*2), screenWidth, screenMargin*2);
 	_choice3View.backgroundColor = [UIColor whiteColor];
 	_choice3Label.frame = CGRectMake(screenMargin/2, 0, _choice3View.frame.size.width, _choice3View.frame.size.height);
+	_choice3Button.frame = CGRectMake(0, 0,_choice3View.frame.size.width, _choice3View.frame.size.height);
 	
 	_questionLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*9), screenWidth, screenMargin*2);
 	_progressLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*7), screenWidth, screenMargin);
@@ -117,13 +120,23 @@ int answerPosition;
 	}
 }
 
-- (IBAction)choice1Button:(id)sender {
+- (IBAction)choice1Button:(id)sender
+{
+	if( answerPosition == 0){ NSLog(@" ANSWR | Good answer!"); }
+	else{ NSLog(@" ANSWR | Bad answer.."); }
+}
+
+- (IBAction)choice2Button:(id)sender
+{
+	if( answerPosition == 1){ NSLog(@" ANSWR | Good answer!"); }
+	else{ NSLog(@" ANSWR | Bad answer.."); }
 	
 }
-- (IBAction)choice2Button:(id)sender {
-	
-}
-- (IBAction)choice3Button:(id)sender {
+
+- (IBAction)choice3Button:(id)sender
+{
+	if( answerPosition == 2){ NSLog(@" ANSWR | Good answer!"); }
+	else{ NSLog(@" ANSWR | Bad answer.."); }
 	
 }
 
