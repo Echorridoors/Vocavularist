@@ -51,16 +51,17 @@ int answerPosition;
 
 -(void)start
 {
+	activeLesson = [[Lesson alloc] initWithString:@"Japanese"];
+	
 	[self templateStart];
-	[self startLesson:@"Japanese"];
+	[self questionStart];
 }
 
 # pragma mark - Start
 
--(void)startLesson:(NSString*)targetLanguage
+-(void)questionStart
 {
 	NSLog(@"! LESSON | Start");
-	activeLesson = [[Lesson alloc] initWithString:targetLanguage];
 	
 	// Load Mistakes
 	NSArray* mistakes = [activeLesson mistakesFromLessonId:lessonId];
@@ -81,11 +82,16 @@ int answerPosition;
 -(void)correctChoice
 {
 	NSLog(@"- ANSWER | Correct answer!");
+	lessonId += 1;
+	[self questionStart];
 }
 
 -(void)wrongChoice
 {
 	NSLog(@"- ANSWER | Wrong answer..");
+	lessonId -= 1;
+	if( lessonId < 1 ){ lessonId = 0; }
+	[self questionStart];
 }
 
 # pragma mark - Template
