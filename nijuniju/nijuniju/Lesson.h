@@ -14,4 +14,6 @@
 -(NSArray*)mistakesFromLessonId:(int)lessonId;
 -(NSString*)answerFromLessonId:(int)lessonId;
 
+-(NSUInteger)length;
+
 @end

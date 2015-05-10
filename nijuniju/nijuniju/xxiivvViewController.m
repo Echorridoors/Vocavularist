@@ -33,6 +33,7 @@ int answerPosition;
 @property (weak, nonatomic) IBOutlet UILabel *choice3Label;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
+@property (weak, nonatomic) IBOutlet UIView *feedbackView;
 
 @end
 
@@ -63,6 +64,8 @@ int answerPosition;
 {
 	NSLog(@"! LESSON | Start");
 	
+	_progressLabel.text = [NSString stringWithFormat:@"%d/%lu",lessonId,(unsigned long)[activeLesson length]];
+	
 	// Load Mistakes
 	NSArray* mistakes = [activeLesson mistakesFromLessonId:lessonId];
 	_choice1Label.text = mistakes[0];
@@ -84,6 +87,13 @@ int answerPosition;
 	NSLog(@"- ANSWER | Correct answer!");
 	lessonId += 1;
 	[self questionStart];
+	
+	// Animate Feedback
+	_feedbackView.alpha = 1;
+	_feedbackView.backgroundColor = [UIColor whiteColor];
+	[UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_feedbackView.alpha = 0;
+	} completion:^(BOOL finished){}];
 }
 
 -(void)wrongChoice
@@ -92,6 +102,13 @@ int answerPosition;
 	lessonId -= 1;
 	if( lessonId < 1 ){ lessonId = 0; }
 	[self questionStart];
+	
+	// Animate Feedback
+	_feedbackView.alpha = 1;
+	_feedbackView.backgroundColor = [UIColor redColor];
+	[UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_feedbackView.alpha = 0;
+	} completion:^(BOOL finished){}];
 }
 
 # pragma mark - Template
@@ -118,6 +135,10 @@ int answerPosition;
 	
 	_questionLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*9), screenWidth, screenMargin*2);
 	_progressLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*7), screenWidth, screenMargin);
+	
+	_feedbackView.backgroundColor = [UIColor redColor];
+	_feedbackView.frame = CGRectMake(0, 0, screenWidth, screenHeight-(7*screenMargin) );
+	_feedbackView.alpha = 0;
 }
 
 
