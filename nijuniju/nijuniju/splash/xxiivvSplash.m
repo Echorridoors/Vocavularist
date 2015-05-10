@@ -28,7 +28,7 @@ NSString *supportUrl;
 
 -(void)start
 {
-	applicationName = @"vocabularist";
+	applicationName = @"vocavularist";
 	supportUrl = [NSString stringWithFormat:@"http://wiki.xxiivv.com/%@",applicationName];
 	
 	[self splashTemplate];
