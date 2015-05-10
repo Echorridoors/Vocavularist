@@ -9,14 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface splash : UIViewController
-
-@property (strong, nonatomic) IBOutlet UIImageView *splashLogo;
-@property (strong, nonatomic) IBOutlet UIImageView *splashLoader;
-@property (strong, nonatomic) IBOutlet UIImageView *splashSupport;
-@property (strong, nonatomic) IBOutlet UIButton *btnSplashSupport;
-
 @end
-
-NSString *supportUrl;
-
-NSTimer *blinker;

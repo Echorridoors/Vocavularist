@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A11C7253-C228-4594-9728-7F41D9484C0C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D1FA54D58535A2565982F8266DB3572228991DA0</key>
+		<string>https://github.com/aliceffekt/vocabularist.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>nijuniju/vocabularist.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D1FA54D58535A2565982F8266DB3572228991DA0</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aliceffekt/vocabularist.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D1FA54D58535A2565982F8266DB3572228991DA0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D1FA54D58535A2565982F8266DB3572228991DA0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>vocabularist</string>
+		</dict>
+	</array>
+</dict>
+</plist>

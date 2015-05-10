@@ -23,9 +23,7 @@
 		032871AB17B0C63300425BE8 /* xxiivvTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 032871AA17B0C63300425BE8 /* xxiivvTemplates.m */; };
 		0344B20719586E230001945B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20619586E230001945B /* Images.xcassets */; };
 		0344B21119586E780001945B /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344B20A19586E780001945B /* segueFade.m */; };
-		0344B21219586E780001945B /* splash.load.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20B19586E780001945B /* splash.load.png */; };
 		0344B21319586E780001945B /* splash.logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20C19586E780001945B /* splash.logo.png */; };
-		0344B21419586E780001945B /* splash.support.png in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20D19586E780001945B /* splash.support.png */; };
 		0344B21519586E780001945B /* splash.tune.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20E19586E780001945B /* splash.tune.wav */; };
 		0344B21619586E780001945B /* xxiivvSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344B21019586E780001945B /* xxiivvSplash.m */; };
 		0365EBBE17BB17740031B727 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0365EBBD17BB17740031B727 /* Localizable.strings */; };
@@ -65,9 +63,7 @@
 		0344B20619586E230001945B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0344B20919586E780001945B /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
 		0344B20A19586E780001945B /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
-		0344B20B19586E780001945B /* splash.load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.load.png; sourceTree = "<group>"; };
 		0344B20C19586E780001945B /* splash.logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.logo.png; sourceTree = "<group>"; };
-		0344B20D19586E780001945B /* splash.support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.support.png; sourceTree = "<group>"; };
 		0344B20E19586E780001945B /* splash.tune.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = splash.tune.wav; sourceTree = "<group>"; };
 		0344B20F19586E780001945B /* xxiivvSplash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSplash.h; sourceTree = "<group>"; };
 		0344B21019586E780001945B /* xxiivvSplash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvSplash.m; sourceTree = "<group>"; };
@@ -179,9 +175,7 @@
 			children = (
 				0344B20919586E780001945B /* segueFade.h */,
 				0344B20A19586E780001945B /* segueFade.m */,
-				0344B20B19586E780001945B /* splash.load.png */,
 				0344B20C19586E780001945B /* splash.logo.png */,
-				0344B20D19586E780001945B /* splash.support.png */,
 				0344B20E19586E780001945B /* splash.tune.wav */,
 				0344B20F19586E780001945B /* xxiivvSplash.h */,
 				0344B21019586E780001945B /* xxiivvSplash.m */,
@@ -250,7 +244,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0328717A17B0870B00425BE8 /* Build configuration list for PBXProject "nijuniju" */;
+			buildConfigurationList = 0328717A17B0870B00425BE8 /* Build configuration list for PBXProject "vocabularist" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -272,9 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0344B21219586E780001945B /* splash.load.png in Resources */,
 				0328718D17B0870B00425BE8 /* InfoPlist.strings in Resources */,
-				0344B21419586E780001945B /* splash.support.png in Resources */,
 				0328719517B0870B00425BE8 /* Default.png in Resources */,
 				03C598DC19A79D33008AFFFE /* icon.76.png in Resources */,
 				0328719717B0870B00425BE8 /* Default@2x.png in Resources */,
@@ -429,7 +421,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0328717A17B0870B00425BE8 /* Build configuration list for PBXProject "nijuniju" */ = {
+		0328717A17B0870B00425BE8 /* Build configuration list for PBXProject "vocabularist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				032871A017B0870B00425BE8 /* Debug */,
