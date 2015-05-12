@@ -15,10 +15,14 @@
 
 #import "Lesson.h"
 
+
 AVAudioPlayer *audioPlayerSounds;
 Lesson *activeLesson;
 int lessonId;
+int lessonRecord;
 int answerPosition;
+
+lessonMode currentMode = kanji;
 
 CGRect choice1Frame;
 CGRect choice2Frame;
@@ -38,25 +42,26 @@ CGRect choice3Frame;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 @property (weak, nonatomic) IBOutlet UIView *feedbackView;
+@property (weak, nonatomic) IBOutlet UILabel *notificationLabel;
 
 @end
 
 @implementation xxiivvViewController
 
--(void)viewDidLoad{
-	
+-(void)viewDidLoad
+{
 	[super viewDidLoad];
 	[self start];
 }
 
--(void)didReceiveMemoryWarning{
-	
+-(void)didReceiveMemoryWarning
+{
 	[super didReceiveMemoryWarning];
 }
 
 -(void)start
 {
-	activeLesson = [[Lesson alloc] initWithString:@"Russian"];
+	activeLesson = [[Lesson alloc] initWithLessonMode:kanjiKana];
 	
 	[self templateStart];
 	[self questionStart];
@@ -71,14 +76,26 @@ CGRect choice3Frame;
 	_progressLabel.text = [NSString stringWithFormat:@"%d/%lu",lessonId,(unsigned long)[activeLesson length]];
 	_questionLabel.text = [NSString stringWithFormat:@"%@",[activeLesson question:lessonId]];
 	
+	// Notification
+	if( lessonId == lessonRecord ){ _notificationLabel.text = @"New Word"; }
+	else{ _notificationLabel.text = @"Review"; }
+	_notificationLabel.alpha = 1;
+	[UIView animateWithDuration:1.5 delay:1.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		_notificationLabel.alpha = 0;
+	} completion:^(BOOL finished){ }];
+	
 	// Load Mistakes
-	NSArray* mistakes = [activeLesson mistakesFromLessonId:lessonId];
+	NSString* answer = [activeLesson answerFromLessonId:lessonId:currentMode];
+	NSArray* mistakes = [activeLesson mistakesFromLessonId:lessonId:currentMode];
+	
+	// Reload if twice the same mistakes, or if mistake is equal to answer
+	if( [mistakes indexOfObject:answer] > -1 ){ mistakes = [activeLesson mistakesFromLessonId:lessonId:currentMode]; }
+	
 	_choice1Label.text = mistakes[0];
 	_choice2Label.text = mistakes[1];
 	_choice3Label.text = mistakes[2];
 	
 	// Insert Answer
-	NSString* answer = [activeLesson answerFromLessonId:lessonId];
 	answerPosition = arc4random_uniform(3);
 	if( answerPosition == 0 ){ _choice1Label.text = answer; }
 	else if( answerPosition == 1 ){ _choice2Label.text = answer; }
@@ -91,6 +108,7 @@ CGRect choice3Frame;
 {
 	NSLog(@"- ANSWER | Correct answer!");
 	lessonId += 1;
+	if( lessonId > lessonRecord ){ lessonRecord = lessonId; }
 	
 	// Animate Feedback
 	_feedbackView.alpha = 1;
@@ -141,6 +159,7 @@ CGRect choice3Frame;
 	
 	_questionLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*9), screenWidth, screenMargin*2);
 	_progressLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*7), screenWidth, screenMargin);
+	_notificationLabel.frame = CGRectMake(screenMargin/2 + (screenMargin*2), screenHeight-(screenMargin*7), screenWidth, screenMargin);
 	
 	_feedbackView.backgroundColor = [UIColor redColor];
 	_feedbackView.frame = CGRectMake(0, 0, screenWidth, screenHeight-(7*screenMargin) );

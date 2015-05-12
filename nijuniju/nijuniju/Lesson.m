@@ -7,14 +7,15 @@
 //
 
 #import "Lesson.h"
+#import "xxiivvViewController.h"
 
 NSArray * currentLesson;
 
 @implementation Lesson
 
--(Lesson*)initWithString:(NSString*)language
+-(Lesson*)initWithLessonMode :(lessonMode)lessonMode
 {
-	if( [language isEqualToString:@"Japanese"] ){ currentLesson = [self japaneseLesson]; }
+	if( lessonMode == kanjiKana ){ currentLesson = [self japaneseLesson]; }
 	else{ currentLesson = [self russianLesson]; }
 	
 	return self;
@@ -30,7 +31,7 @@ NSArray * currentLesson;
 	return [currentLesson count];
 }
 
--(NSArray*)mistakesFromLessonId:(int)lessonId
+-(NSArray*)mistakesFromLessonId:(int)lessonId :(lessonMode)lessonMode
 {
 	// Make potential answers
 	NSMutableArray * newArray = [NSMutableArray arrayWithArray:[currentLesson subarrayWithRange:NSMakeRange(0, lessonId+4)]];
@@ -38,15 +39,19 @@ NSArray * currentLesson;
 	
 	newArray = [self shuffleArray:newArray];
 	
-	int englishField = (int)[newArray[0] count] -1;
+	int targetField = (int)[newArray[0] count] -1;
 	
-	return @[newArray[0][englishField],newArray[1][englishField],newArray[2][englishField]];
+	if( lessonMode == kanji ){ targetField = 2; }
+	
+	return @[newArray[0][targetField],newArray[1][targetField],newArray[2][targetField]];
 }
 
--(NSString*)answerFromLessonId:(int)lessonId
+-(NSString*)answerFromLessonId:(int)lessonId :(lessonMode)lessonMode
 {
-	int englishField = (int)[currentLesson[lessonId] count] -1;
-	return currentLesson[lessonId][englishField];
+	int targetField = (int)[currentLesson[lessonId] count] -1;
+	
+	if( lessonMode == kanjiKana ){ targetField = 1; }
+	return currentLesson[lessonId][targetField];
 }
 
 - (NSMutableArray*)shuffleArray:(NSMutableArray*)targetArray
@@ -67,6 +72,8 @@ NSArray * currentLesson;
 	NSLog(@"! LESSON | Loading Russian");
 	
 	return @[
+		@[@"друг", @"friend"],
+		@[@"большой", @"big, large, important"],
 		@[@"и", @"and, though"],
 		@[@"в", @"in, at"],
 		@[@"не", @"not"],
@@ -75,10 +82,9 @@ NSArray * currentLesson;
 		@[@"я", @"I"],
 		@[@"что", @"what, that, why"],
 		@[@"тот", @"that"],
-		@[@"быть", @"tobe"],
 		@[@"с", @"with, and, from, of"],
 		@[@"а", @"while, and, but"],
-		@[@"весь", @"all, everything", @"pron"],
+		@[@"весь", @"all, everything"],
 		@[@"это", @"that, this, it"],
 		@[@"как", @"how, what, as, like"],
 		@[@"она", @"she"],
@@ -115,9 +121,9 @@ NSArray * currentLesson;
 		@[@"вот", @"here, there, this is, that's"],
 		@[@"кто", @"who, that, some"],
 		@[@"да", @"yes, but"],
-		@[@"говорить", @"tosay, totell, tospeak"],
+		@[@"говорить", @"to say, to tell, to speak"],
 		@[@"год", @"year"],
-		@[@"знать", @"toknow, beaware"],
+		@[@"знать", @"to know, beaware"],
 		@[@"мой", @"my, mine"],
 		@[@"до", @"to, up to, about, before"],
 		@[@"или", @"or"],
@@ -128,7 +134,6 @@ NSArray * currentLesson;
 		@[@"самый", @"most, thevery, thesame"],
 		@[@"ни", @"nota, not, neither"],
 		@[@"стать", @"become, begin, come"],
-		@[@"большой", @"big, large, important"],
 		@[@"даже", @"even"],
 		@[@"другой", @"other, another, different"],
 		@[@"наш", @"our, ours"],
@@ -158,14 +163,13 @@ NSArray * currentLesson;
 		@[@"ли", @"whether, if"],
 		@[@"при", @"attached to, in the presence of, by"],
 		@[@"голова", @"head, mind, brains"],
-		@[@"надо", @"over, above, oughtto"],
+		@[@"надо", @"over, above, ought to"],
 		@[@"без", @"without"],
 		@[@"видеть", @"to see"],
 		@[@"идти", @"to go, come"],
 		@[@"теперь", @"now, nowadays"],
 		@[@"тоже", @"also, aswell, too"],
 		@[@"стоять", @"tostand, be, standup"],
-		@[@"друг", @"friend"],
 		@[@"дом", @"house, home"],
 		@[@"сейчас", @"now, presently, soon"],
 		@[@"можно", @"onecan"],
@@ -332,7 +336,7 @@ NSArray * currentLesson;
 		@[@"заметить", @"tonotice,observe"],
 		@[@"словно", @"asif,like"],
 		@[@"прошлый", @"past"],
-		@[@"уйти", @"toleave,goaway"],
+		@[@"уйти", @"to leave,go away"],
 		@[@"известный", @"well-known,famous"],
 		@[@"давно", @"longago"],
 		@[@"слышать", @"tohear"],
@@ -482,6 +486,7 @@ NSArray * currentLesson;
 		@[@"начать", @"to begin"],
 		@[@"следующий", @"next, following"],
 		@[@"личный", @"personal"],
+		@[@"уйти", @"to leave,go away"],
 		@[@"труд", @"labour,work"],
 		@[@"верить", @"to believe"],
 		@[@"группа", @"group"],

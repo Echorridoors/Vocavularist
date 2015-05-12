@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "xxiivvViewController.h"
 
 @interface Lesson : NSObject
 
--(Lesson*)initWithString:(NSString*)language;
--(NSArray*)mistakesFromLessonId:(int)lessonId;
--(NSString*)answerFromLessonId:(int)lessonId;
+-(Lesson*)initWithLessonMode:(lessonMode)mode;
+-(NSArray*)mistakesFromLessonId:(int)lessonId :(lessonMode)lessonMode;
+-(NSString*)answerFromLessonId:(int)lessonId :(lessonMode)lessonMode;
 
 -(NSUInteger)length;
 -(NSString*)question:(int)lessonId;

@@ -9,6 +9,8 @@
 #define screenWidth self.view.frame.size.width
 #define screenHeight self.view.frame.size.height
 
+typedef enum { kanji, kanjiKana, russian } lessonMode;
+
 #import <UIKit/UIKit.h>
 
 @interface xxiivvViewController : UIViewController {
