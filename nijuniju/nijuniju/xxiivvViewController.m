@@ -22,7 +22,7 @@ int lessonId;
 int lessonRecord;
 int answerPosition;
 
-lessonMode currentMode = kanji;
+lessonMode currentMode = kanjiKana;
 
 CGRect choice1Frame;
 CGRect choice2Frame;
@@ -43,6 +43,7 @@ CGRect choice3Frame;
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 @property (weak, nonatomic) IBOutlet UIView *feedbackView;
 @property (weak, nonatomic) IBOutlet UILabel *notificationLabel;
+@property (weak, nonatomic) IBOutlet UIButton *languageToggleButton;
 
 @end
 
@@ -51,7 +52,7 @@ CGRect choice3Frame;
 -(void)viewDidLoad
 {
 	[super viewDidLoad];
-	[self start];
+	[self start:kanji];
 }
 
 -(void)didReceiveMemoryWarning
@@ -59,9 +60,9 @@ CGRect choice3Frame;
 	[super didReceiveMemoryWarning];
 }
 
--(void)start
+-(void)start:(lessonMode)newMode
 {
-	activeLesson = [[Lesson alloc] initWithLessonMode:kanjiKana];
+	activeLesson = [[Lesson alloc] initWithLessonMode:newMode];
 	
 	[self templateStart];
 	[self questionStart];
@@ -75,6 +76,9 @@ CGRect choice3Frame;
 	
 	_progressLabel.text = [NSString stringWithFormat:@"%d/%lu",lessonId,(unsigned long)[activeLesson length]];
 	_questionLabel.text = [NSString stringWithFormat:@"%@",[activeLesson question:lessonId]];
+	
+	if( currentMode == kanjiKana ){ [_languageToggleButton setTitle:@"日本語" forState:UIControlStateNormal]; }
+	else{ [_languageToggleButton setTitle:@"РУССКИЙ" forState:UIControlStateNormal]; }
 	
 	// Notification
 	if( lessonId == lessonRecord ){ _notificationLabel.text = @"New Word"; }
@@ -160,6 +164,7 @@ CGRect choice3Frame;
 	_questionLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*9), screenWidth, screenMargin*2);
 	_progressLabel.frame = CGRectMake(screenMargin/2, screenHeight-(screenMargin*7), screenWidth, screenMargin);
 	_notificationLabel.frame = CGRectMake(screenMargin/2 + (screenMargin*2), screenHeight-(screenMargin*7), screenWidth, screenMargin);
+	_languageToggleButton.frame = CGRectMake(0, screenHeight-(screenMargin*7), screenWidth-(screenMargin/2), screenMargin);
 	
 	_feedbackView.backgroundColor = [UIColor redColor];
 	_feedbackView.frame = CGRectMake(0, 0, screenWidth, screenHeight-(7*screenMargin) );
@@ -262,6 +267,21 @@ CGRect choice3Frame;
 - (IBAction)choiceGeneric:(id)sender
 {
 }
+
+- (IBAction)languageToggleButton:(id)sender
+{
+	lessonId = 0;
+	lessonRecord = 0;
+	
+	if( currentMode == kanjiKana ){
+		currentMode = russian;
+	}
+	else{
+		currentMode = kanjiKana;
+	}
+	[self start:russian];	
+}
+
 
 # pragma mark - Defaults
 

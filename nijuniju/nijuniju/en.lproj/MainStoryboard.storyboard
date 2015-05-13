@@ -39,6 +39,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pp2-0n-YcA" userLabel="languageToggleButton">
+                                <rect key="frame" x="32" y="58" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="10"/>
+                                <state key="normal" title="日本語">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="languageToggleButton:" destination="2" eventType="touchUpInside" id="Btp-IV-30o"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" id="R7Y-U1-0dy" userLabel="choice1View">
                                 <rect key="frame" x="80" y="142" width="160" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,6 +139,7 @@
                         <outlet property="choice3Label" destination="o8o-7U-KON" id="HhB-Ou-dNG"/>
                         <outlet property="choice3View" destination="oMF-SB-GfD" id="yUG-dE-Z6m"/>
                         <outlet property="feedbackView" destination="wGT-1j-uar" id="Njn-OB-A6V"/>
+                        <outlet property="languageToggleButton" destination="Pp2-0n-YcA" id="0Xq-Vo-yCT"/>
                         <outlet property="notificationLabel" destination="un1-Xx-OZo" id="W0x-l5-EXb"/>
                         <outlet property="progressLabel" destination="K7v-52-xlP" id="ss8-6o-9sA"/>
                         <outlet property="questionLabel" destination="Reu-cB-f7i" id="Znj-EB-1C5"/>
