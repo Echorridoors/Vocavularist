@@ -52,6 +52,9 @@ CGRect choice3Frame;
 -(void)viewDidLoad
 {
 	[super viewDidLoad];
+	
+	lessonId = 231;
+	
 	[self start:kanji];
 }
 
@@ -274,10 +277,10 @@ CGRect choice3Frame;
 	lessonRecord = 0;
 	
 	if( currentMode == kanjiKana ){
-		currentMode = russian;
+		currentMode = kanjiKana;
 	}
 	else{
-		currentMode = kanjiKana;
+		currentMode = russian;
 	}
 	[self start:russian];	
 }
