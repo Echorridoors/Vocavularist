@@ -34,7 +34,10 @@ NSArray * currentLesson;
 -(NSArray*)mistakesFromLessonId:(int)lessonId :(lessonMode)lessonMode
 {
 	// Make potential answers
-	NSMutableArray * newArray = [NSMutableArray arrayWithArray:[currentLesson subarrayWithRange:NSMakeRange(0, lessonId+4)]];
+	NSRange targetRange = NSMakeRange(0, lessonId+4);
+	if(lessonId > 200){ targetRange = NSMakeRange(0, lessonId+1); }
+	NSMutableArray * newArray = [NSMutableArray arrayWithArray:[currentLesson subarrayWithRange:targetRange]];
+	
 	[newArray removeObjectAtIndex:lessonId];
 	
 	newArray = [self shuffleArray:newArray];
@@ -48,9 +51,10 @@ NSArray * currentLesson;
 
 -(NSString*)answerFromLessonId:(int)lessonId :(lessonMode)lessonMode
 {
+	return @"-";
 	int targetField = (int)[currentLesson[lessonId] count] -1;
 	
-	if( lessonMode == kanjiKana ){ targetField = 1; }
+	if( lessonMode == kanjiKana ){ targetField = 2; }
 	return currentLesson[lessonId][targetField];
 }
 

@@ -43,7 +43,7 @@
                                 <rect key="frame" x="32" y="58" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="10"/>
-                                <state key="normal" title="日本語">
+                                <state key="normal" title="- - -">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
