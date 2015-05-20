@@ -52,8 +52,6 @@ CGRect choice3Frame;
 -(void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-	lessonId = 498;
 	[self start:russian];
 }
 
@@ -115,6 +113,9 @@ CGRect choice3Frame;
 -(void)correctChoice
 {
 	NSLog(@"- ANSWER | Correct answer!");
+	
+	[self audioPlayerSounds:@"fx.correct.wav"];
+	
 	lessonId += 1;
 	if( lessonId > lessonRecord ){ lessonRecord = lessonId; }
 	
@@ -129,6 +130,9 @@ CGRect choice3Frame;
 -(void)wrongChoice
 {
 	NSLog(@"- ANSWER | Wrong answer..");
+	
+	[self audioPlayerSounds:@"fx.mistake.wav"];
+	
 	lessonId -= 2;
 	if( lessonId < 1 ){ lessonId = 0; }
 	
@@ -207,6 +211,8 @@ CGRect choice3Frame;
 {
 	_progressLabel.text = @"500/500";
 	_questionLabel.text = @"Complete";
+	[self audioPlayerSounds:@"fx.completed.wav"];
+	
 	
 	self.view.backgroundColor = UIColorFromRGB(0x72DEC2);
 }
@@ -229,13 +235,13 @@ CGRect choice3Frame;
 	
 	[UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		_choice1View.frame = choice1Frame;
-	} completion:^(BOOL finished){}];
+	} completion:^(BOOL finished){ [self audioPlayerSounds:@"fx.click.wav"]; }];
 	[UIView animateWithDuration:0.15 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		_choice2View.frame = choice2Frame;
-	} completion:^(BOOL finished){}];
+	} completion:^(BOOL finished){ [self audioPlayerSounds:@"fx.click.wav"]; }];
 	[UIView animateWithDuration:0.15 delay:0.2 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		_choice3View.frame = choice3Frame;
-	} completion:^(BOOL finished){}];
+	} completion:^(BOOL finished){ [self audioPlayerSounds:@"fx.click.wav"]; }];
 }
 
 - (IBAction)choice1Button:(id)sender
@@ -293,6 +299,8 @@ CGRect choice3Frame;
 	lessonId = 0;
 	lessonRecord = 0;
 	
+	[self audioPlayerSounds:@"fx.click.wav"];
+	
 	if( currentMode == kanjiKana ){
 		currentMode = russian;
 	}
@@ -302,7 +310,6 @@ CGRect choice3Frame;
 	
 	[self start:currentMode];
 }
-
 
 # pragma mark - Defaults
 

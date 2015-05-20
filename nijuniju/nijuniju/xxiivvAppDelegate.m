@@ -7,13 +7,14 @@
 //
 
 #import "xxiivvAppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation xxiivvAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    return YES;
+	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+	return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

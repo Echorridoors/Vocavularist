@@ -51,7 +51,6 @@ NSArray * currentLesson;
 
 -(NSString*)answerFromLessonId:(int)lessonId :(lessonMode)lessonMode
 {
-	return @"-";
 	int targetField = (int)[currentLesson[lessonId] count] -1;
 	
 	if( lessonMode == kanjiKana ){ targetField = 2; }

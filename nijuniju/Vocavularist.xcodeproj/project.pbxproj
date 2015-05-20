@@ -33,8 +33,9 @@
 		03DDF1F517B3DA340070E1D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DDF1F417B3DA340070E1D4 /* AVFoundation.framework */; };
 		03DDF1F717B3DAA20070E1D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DDF1F617B3DAA20070E1D4 /* AudioToolbox.framework */; };
 		03DDF1FB17B3DC120070E1D4 /* fx.click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FA17B3DC120070E1D4 /* fx.click.wav */; };
-		03DDF1FD17B3DCE60070E1D4 /* fx.error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FC17B3DCE60070E1D4 /* fx.error.wav */; };
-		03DDF1FF17B3DDCD0070E1D4 /* fx.accepted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */; };
+		03DDF1FD17B3DCE60070E1D4 /* fx.mistake.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FC17B3DCE60070E1D4 /* fx.mistake.wav */; };
+		03DDF1FF17B3DDCD0070E1D4 /* fx.correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1FE17B3DDCD0070E1D4 /* fx.correct.wav */; };
+		5712D2CF1B0C0A9F0051FEFB /* fx.completed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5712D2CE1B0C0A9F0051FEFB /* fx.completed.wav */; };
 		5785359F1AFFA6EF00A096F4 /* Lesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5785359E1AFFA6EF00A096F4 /* Lesson.m */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +73,9 @@
 		03DDF1F417B3DA340070E1D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		03DDF1F617B3DAA20070E1D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		03DDF1FA17B3DC120070E1D4 /* fx.click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.click.wav; path = en.assets/fx.click.wav; sourceTree = "<group>"; };
-		03DDF1FC17B3DCE60070E1D4 /* fx.error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.error.wav; path = en.assets/fx.error.wav; sourceTree = "<group>"; };
-		03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.accepted.wav; path = en.assets/fx.accepted.wav; sourceTree = "<group>"; };
+		03DDF1FC17B3DCE60070E1D4 /* fx.mistake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.mistake.wav; path = en.assets/fx.mistake.wav; sourceTree = "<group>"; };
+		03DDF1FE17B3DDCD0070E1D4 /* fx.correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.correct.wav; path = en.assets/fx.correct.wav; sourceTree = "<group>"; };
+		5712D2CE1B0C0A9F0051FEFB /* fx.completed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fx.completed.wav; path = en.assets/fx.completed.wav; sourceTree = "<group>"; };
 		5785359D1AFFA6EF00A096F4 /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
 		5785359E1AFFA6EF00A096F4 /* Lesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,8 +191,9 @@
 		03DDF21117B3EA470070E1D4 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				03DDF1FE17B3DDCD0070E1D4 /* fx.accepted.wav */,
-				03DDF1FC17B3DCE60070E1D4 /* fx.error.wav */,
+				5712D2CE1B0C0A9F0051FEFB /* fx.completed.wav */,
+				03DDF1FE17B3DDCD0070E1D4 /* fx.correct.wav */,
+				03DDF1FC17B3DCE60070E1D4 /* fx.mistake.wav */,
 				03DDF1FA17B3DC120070E1D4 /* fx.click.wav */,
 			);
 			name = Audio;
@@ -261,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5712D2CF1B0C0A9F0051FEFB /* fx.completed.wav in Resources */,
 				0328718D17B0870B00425BE8 /* InfoPlist.strings in Resources */,
 				0328719517B0870B00425BE8 /* Default.png in Resources */,
 				03C598DC19A79D33008AFFFE /* icon.76.png in Resources */,
@@ -270,12 +274,12 @@
 				03DDF1F317B3D35A0070E1D4 /* icn.arrow.png in Resources */,
 				03DDF1FB17B3DC120070E1D4 /* fx.click.wav in Resources */,
 				0344B20719586E230001945B /* Images.xcassets in Resources */,
-				03DDF1FD17B3DCE60070E1D4 /* fx.error.wav in Resources */,
+				03DDF1FD17B3DCE60070E1D4 /* fx.mistake.wav in Resources */,
 				03C598DE19A79D33008AFFFE /* icon.152.png in Resources */,
 				0344B21319586E780001945B /* splash.logo.png in Resources */,
 				0344B21519586E780001945B /* splash.tune.wav in Resources */,
 				03C598DD19A79D33008AFFFE /* icon.120.png in Resources */,
-				03DDF1FF17B3DDCD0070E1D4 /* fx.accepted.wav in Resources */,
+				03DDF1FF17B3DDCD0070E1D4 /* fx.correct.wav in Resources */,
 				0365EBBE17BB17740031B727 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
