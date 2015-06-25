@@ -14,7 +14,7 @@ green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
 blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
 alpha:1.0]
 
-typedef enum { kanji, kanjiKana, russian, korean } lessonMode;
+typedef enum { japanese, russian, korean } lessonMode;
 
 #import <UIKit/UIKit.h>
 

@@ -1,6 +1,6 @@
 # Vocabularist
 
-Vocabularist is a vocabulary review program for iOS.
+Vocavularist, is a Japanese, Russian & Korean vocabulary review program for iOS. It contains the 600 first kanji, 600 simple Russian words and 894 simple korean expressions.
 
 ## Languages
 1. Japanese - First 600 Kanji.

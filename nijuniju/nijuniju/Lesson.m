@@ -15,7 +15,7 @@ NSArray * currentLesson;
 
 -(Lesson*)initWithLessonMode :(lessonMode)lessonMode
 {
-	if( lessonMode == kanjiKana ){ currentLesson = [self japaneseLesson]; }
+	if( lessonMode == japanese ){ currentLesson = [self japaneseLesson]; }
     else if (lessonMode == korean) { currentLesson = [self koreanLesson]; }
 	else{ currentLesson = [self russianLesson]; }
 	
@@ -45,7 +45,7 @@ NSArray * currentLesson;
 	
 	int targetField = (int)[newArray[0] count] -1;
 	
-	if( lessonMode == kanji ){ targetField = 2; }
+	if( lessonMode == japanese ){ targetField = 2; }
 	
 	return @[newArray[0][targetField],newArray[1][targetField],newArray[2][targetField]];
 }
@@ -54,7 +54,7 @@ NSArray * currentLesson;
 {
 	int targetField = (int)[currentLesson[lessonId] count] -1;
 	
-	if( lessonMode == kanjiKana ){ targetField = 2; }
+	if( lessonMode == japanese ){ targetField = 2; }
 	return currentLesson[lessonId][targetField];
 }
 

@@ -22,7 +22,7 @@ int lessonId;
 int lessonRecord;
 int answerPosition;
 
-lessonMode currentMode = kanjiKana;
+lessonMode currentMode = japanese;
 
 CGRect choice1Frame;
 CGRect choice2Frame;
@@ -78,7 +78,7 @@ CGRect choice3Frame;
 	_progressLabel.text = [NSString stringWithFormat:@"%d/%lu",lessonId,(unsigned long)[activeLesson length]];
 	_questionLabel.text = [NSString stringWithFormat:@"%@",[activeLesson question:lessonId]];
 	
-	if( currentMode == kanjiKana ){ [_languageToggleButton setTitle:@"日本語" forState:UIControlStateNormal]; }
+	if( currentMode == japanese ){ [_languageToggleButton setTitle:@"日本語" forState:UIControlStateNormal]; }
 	else if( currentMode == russian ){ [_languageToggleButton setTitle:@"РУССКИЙ" forState:UIControlStateNormal]; }
     else if( currentMode == korean ) { [_languageToggleButton setTitle:@"한국어" forState:UIControlStateNormal]; }
 	else{ [_languageToggleButton setTitle:@"---" forState:UIControlStateNormal]; }
@@ -302,14 +302,14 @@ CGRect choice3Frame;
 	
 	[self audioPlayerSounds:@"fx.click.wav"];
 	
-	if( currentMode == kanjiKana ){
+	if( currentMode == japanese ){
 		currentMode = russian;
 	}
     else if (currentMode == russian) {
         currentMode = korean;
     }
 	else{
-		currentMode = kanjiKana;
+		currentMode = japanese;
 	}
 	
 	[self start:currentMode];
