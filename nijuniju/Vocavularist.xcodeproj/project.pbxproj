@@ -26,9 +26,6 @@
 		0344B21519586E780001945B /* splash.tune.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0344B20E19586E780001945B /* splash.tune.wav */; };
 		0344B21619586E780001945B /* xxiivvSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344B21019586E780001945B /* xxiivvSplash.m */; };
 		0365EBBE17BB17740031B727 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0365EBBD17BB17740031B727 /* Localizable.strings */; };
-		03C598DC19A79D33008AFFFE /* icon.76.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C598D919A79D33008AFFFE /* icon.76.png */; };
-		03C598DD19A79D33008AFFFE /* icon.120.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C598DA19A79D33008AFFFE /* icon.120.png */; };
-		03C598DE19A79D33008AFFFE /* icon.152.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C598DB19A79D33008AFFFE /* icon.152.png */; };
 		03DDF1F317B3D35A0070E1D4 /* icn.arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */; };
 		03DDF1F517B3DA340070E1D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DDF1F417B3DA340070E1D4 /* AVFoundation.framework */; };
 		03DDF1F717B3DAA20070E1D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DDF1F617B3DAA20070E1D4 /* AudioToolbox.framework */; };
@@ -66,9 +63,6 @@
 		0344B20F19586E780001945B /* xxiivvSplash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSplash.h; sourceTree = "<group>"; };
 		0344B21019586E780001945B /* xxiivvSplash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvSplash.m; sourceTree = "<group>"; };
 		0365EBBD17BB17740031B727 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		03C598D919A79D33008AFFFE /* icon.76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.76.png; sourceTree = "<group>"; };
-		03C598DA19A79D33008AFFFE /* icon.120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.120.png; sourceTree = "<group>"; };
-		03C598DB19A79D33008AFFFE /* icon.152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.152.png; sourceTree = "<group>"; };
 		03DDF1F217B3D35A0070E1D4 /* icn.arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icn.arrow.png; path = en.assets/icn.arrow.png; sourceTree = "<group>"; };
 		03DDF1F417B3DA340070E1D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		03DDF1F617B3DAA20070E1D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -133,9 +127,6 @@
 		0328718817B0870B00425BE8 /* nijuniju */ = {
 			isa = PBXGroup;
 			children = (
-				03C598D919A79D33008AFFFE /* icon.76.png */,
-				03C598DA19A79D33008AFFFE /* icon.120.png */,
-				03C598DB19A79D33008AFFFE /* icon.152.png */,
 				0328719117B0870B00425BE8 /* xxiivvAppDelegate.h */,
 				0328719217B0870B00425BE8 /* xxiivvAppDelegate.m */,
 				0328719D17B0870B00425BE8 /* xxiivvViewController.h */,
@@ -234,7 +225,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = xxiivv;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = XXIIVV;
 				TargetAttributes = {
 					0328717E17B0870B00425BE8 = {
@@ -267,7 +258,6 @@
 				5712D2CF1B0C0A9F0051FEFB /* fx.completed.wav in Resources */,
 				0328718D17B0870B00425BE8 /* InfoPlist.strings in Resources */,
 				0328719517B0870B00425BE8 /* Default.png in Resources */,
-				03C598DC19A79D33008AFFFE /* icon.76.png in Resources */,
 				0328719717B0870B00425BE8 /* Default@2x.png in Resources */,
 				0328719917B0870B00425BE8 /* Default-568h@2x.png in Resources */,
 				0328719C17B0870B00425BE8 /* MainStoryboard.storyboard in Resources */,
@@ -275,10 +265,8 @@
 				03DDF1FB17B3DC120070E1D4 /* fx.click.wav in Resources */,
 				0344B20719586E230001945B /* Images.xcassets in Resources */,
 				03DDF1FD17B3DCE60070E1D4 /* fx.mistake.wav in Resources */,
-				03C598DE19A79D33008AFFFE /* icon.152.png in Resources */,
 				0344B21319586E780001945B /* splash.logo.png in Resources */,
 				0344B21519586E780001945B /* splash.tune.wav in Resources */,
-				03C598DD19A79D33008AFFFE /* icon.120.png in Resources */,
 				03DDF1FF17B3DDCD0070E1D4 /* fx.correct.wav in Resources */,
 				0365EBBE17BB17740031B727 /* Localizable.strings in Resources */,
 			);
@@ -337,6 +325,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -391,6 +380,7 @@
 				GCC_PREFIX_HEADER = "nijuniju/nijuniju-Prefix.pch";
 				INFOPLIST_FILE = "nijuniju/nijuniju-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,6 +399,7 @@
 				GCC_PREFIX_HEADER = "nijuniju/nijuniju-Prefix.pch";
 				INFOPLIST_FILE = "nijuniju/nijuniju-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
